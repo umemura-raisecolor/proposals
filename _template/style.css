@@ -1,0 +1,412 @@
+/* 株式会社建粧 ご提案用デモ — 紺×白、差し色に建粧の黄色 */
+:root{
+  --blue:#14285e;
+  --blue-deep:#0b1a40;
+  --blue-soft:#eef0f3;
+  --yellow:#e09a12;
+  --ink:#12203f;
+  --text:#2a3442;
+  --muted:#5a6575;
+  --line:#d8deea;
+  --gray:#f3f5f9;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",system-ui,sans-serif;font-size:17px;line-height:1.9;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--max),100% - 32px);margin-inline:auto}
+.num{font-family:"Bebas Neue",sans-serif}
+
+.demo-ribbon{background:var(--ink);color:#cfd6e2;font-size:12.5px;text-align:center;padding:6px 12px;line-height:1.6}
+.demo-ribbon strong{color:#fff}
+
+/* ヘッダー */
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--blue)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:78px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{width:46px;height:52px;object-fit:contain}
+.logo .t{display:flex;flex-direction:column;line-height:1.25}
+.logo .name{font-size:21px;font-weight:900;color:var(--blue);letter-spacing:.06em;white-space:nowrap}
+.logo .sub{font-size:11.5px;color:var(--muted);letter-spacing:.06em;white-space:nowrap}
+.nav{display:flex;gap:24px;align-items:center}
+.nav a{font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;position:relative;padding:4px 0}
+.nav a::after{content:"";position:absolute;left:0;bottom:-3px;height:3px;width:100%;background:var(--yellow);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav a:hover::after,.nav a.current::after{transform:scaleX(1);transform-origin:left}
+.head-tel{display:flex;flex-direction:column;align-items:flex-end;line-height:1.15}
+.head-tel .free{font-size:11px;font-weight:700;color:#fff;background:var(--blue);padding:1px 8px;letter-spacing:.06em}
+.head-tel .n{font-family:"Bebas Neue",sans-serif;font-size:30px;font-weight:700;color:var(--blue);white-space:nowrap}
+.head-tel .time{font-size:11.5px;color:var(--muted)}
+.menu-btn{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
+.menu-btn span{position:absolute;left:10px;right:10px;height:2px;background:var(--blue);transition:.3s}
+.menu-btn span:nth-child(1){top:14px}.menu-btn span:nth-child(2){top:21px}.menu-btn span:nth-child(3){top:28px}
+.menu-open .menu-btn span:nth-child(1){top:21px;transform:rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+/* ボタン */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:18px 34px;font-size:17px;font-weight:900;letter-spacing:.05em;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:background .3s,color .3s,transform .2s;font-family:inherit}
+.btn::after{content:"";position:absolute;top:-20%;left:-75%;width:45%;height:140%;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.6) 50%,rgba(255,255,255,0));transform:skewX(-22deg);animation:shine 4.5s ease-in-out infinite}
+.btn:hover::after{animation:shineFast .8s ease-out}
+@keyframes shine{0%,70%{left:-75%}100%{left:135%}}
+@keyframes shineFast{0%{left:-75%}100%{left:135%}}
+.btn-yellow{background:var(--yellow);color:#fff}
+.btn-yellow:hover{background:#f2b23a}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-deep)}
+.btn-ghost{color:#fff;border-color:#fff;background:transparent}
+.btn-ghost::after{display:none}
+.btn-ghost:hover{background:#fff;color:var(--blue)}
+.btn .ar{width:18px;height:2px;background:currentColor;position:relative;transition:transform .3s}
+.btn .ar::after{content:"";position:absolute;right:0;top:-4px;width:9px;height:9px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
+.btn:hover .ar{transform:translateX(5px)}
+
+/* ヒーロー(左に文字、右に写真) */
+.hero{position:relative;display:grid;grid-template-columns:46% 54%;min-height:620px;background:var(--blue);color:#fff;overflow:hidden}
+.hero .txt{position:relative;z-index:2;padding:72px 48px 72px max(16px,calc((100vw - var(--max))/2));display:flex;flex-direction:column;justify-content:center}
+.hero .since{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--yellow);color:#fff;font-weight:900;padding:6px 16px;font-size:15px;letter-spacing:.06em;opacity:0;animation:up .8s .2s forwards}
+.hero h1{font-size:clamp(32px,4vw,52px);font-weight:900;line-height:1.4;letter-spacing:.04em;margin-top:22px;opacity:0;animation:up .9s .4s forwards}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero .lead{margin-top:18px;color:#dbe3f2;font-size:clamp(16px,1.5vw,18px);opacity:0;animation:up .9s .65s forwards}
+.hero .areas{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;opacity:0;animation:up .9s .8s forwards}
+.hero .areas span{font-size:13.5px;font-weight:700;border:1px solid rgba(255,255,255,.55);padding:3px 10px}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;opacity:0;animation:up .9s 1s forwards}
+.hero .ph{position:relative;clip-path:polygon(12% 0,100% 0,100% 100%,0 100%);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);animation:zoom 12s ease-out forwards}
+.hero .ph::before{content:"";position:absolute;inset:0;z-index:1;background:var(--yellow);transform-origin:right;animation:wipe 1s .1s cubic-bezier(.7,0,.3,1) forwards}
+.hero .rino{position:absolute;z-index:3;right:28px;bottom:24px;display:flex;align-items:center;gap:10px;background:#fff;color:var(--blue);padding:8px 16px 8px 8px;font-size:13px;font-weight:900;box-shadow:0 8px 24px rgba(0,0,0,.18);opacity:0;animation:up .8s 1.4s forwards}
+.hero .rino img{width:46px;height:46px;object-fit:contain}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes zoom{to{transform:scale(1)}}
+@keyframes wipe{to{transform:scaleX(0)}}
+
+/* 下層の見出し */
+.page-head{background:var(--blue);color:#fff;position:relative;overflow:hidden;padding:80px 0 64px}
+.page-head .bg{position:absolute;right:0;top:0;bottom:0;width:48%;background-size:cover;background-position:center;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);opacity:.9}
+.page-head .wrap{position:relative}
+.page-head .en{font-family:"Bebas Neue",sans-serif;font-size:16px;letter-spacing:.3em;color:var(--yellow);font-weight:600}
+.page-head h1{font-size:clamp(28px,4vw,42px);font-weight:900;letter-spacing:.05em;margin-top:4px}
+.breadcrumb{font-size:13px;color:#c9d3e6;margin-top:12px}
+.breadcrumb a{text-decoration:underline;text-underline-offset:3px}
+
+/* 共通 */
+section{padding:96px 0}
+.bg-gray{background:var(--gray)}
+.bg-blue{background:var(--blue);color:#fff}
+.title{margin-bottom:52px}
+.title.center{text-align:center}
+.title .en{display:inline-block;font-family:"Bebas Neue",sans-serif;font-weight:600;font-size:16px;letter-spacing:.3em;color:var(--blue);border-bottom:3px solid var(--yellow);padding-bottom:2px;margin-bottom:12px}
+.bg-blue .title .en{color:var(--yellow);border-color:var(--yellow)}
+.title h2{font-size:clamp(25px,3.2vw,36px);font-weight:900;color:var(--ink);line-height:1.5;letter-spacing:.04em}
+.bg-blue .title h2{color:#fff}
+.title h2 em{font-style:normal;color:var(--blue)}
+.bg-blue .title h2 em{color:var(--yellow)}
+.title p{margin-top:16px;color:var(--muted)}
+.bg-blue .title p{color:#d3dcee}
+
+/* 不安と答え */
+.qa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.qa{background:#fff;border-top:5px solid var(--blue);padding:26px 22px;box-shadow:0 6px 24px rgba(27,63,139,.08)}
+.qa .q{font-weight:900;color:var(--ink);font-size:17px;line-height:1.6;padding-left:34px;position:relative}
+.qa .q::before{content:"Q";position:absolute;left:0;top:-2px;font-family:"Bebas Neue",sans-serif;font-size:26px;color:var(--blue)}
+.qa .a{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);padding-left:34px;position:relative;font-size:15.5px}
+.qa .a::before{content:"A";position:absolute;left:0;top:10px;font-family:"Bebas Neue",sans-serif;font-size:26px;color:#d9650c}
+
+/* 4つの理由 */
+.reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.reason{display:grid;grid-template-columns:44% 1fr;background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform .35s,box-shadow .35s}
+.reason:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(27,63,139,.14)}
+.reason .ph{overflow:hidden}
+.reason .ph img{width:100%;height:100%;object-fit:cover;min-height:230px;transition:transform .8s}
+.reason:hover .ph img{transform:scale(1.06)}
+.reason .body{padding:26px 26px 28px}
+.reason .no{font-family:"Bebas Neue",sans-serif;font-weight:700;color:var(--yellow);background:var(--blue);display:inline-block;padding:0 10px;font-size:15px;letter-spacing:.1em}
+.reason h3{font-size:21px;font-weight:900;color:var(--blue);margin:10px 0 8px;line-height:1.5}
+.reason p{font-size:15.5px}
+
+/* 数字 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.3)}
+.stat{text-align:center;padding:34px 12px;border-right:1px solid rgba(255,255,255,.3)}
+.stat:last-child{border-right:0}
+.stat .v{font-family:"Bebas Neue",sans-serif;font-size:clamp(46px,5.6vw,70px);font-weight:700;line-height:1;color:var(--yellow)}
+.stat .u{font-size:19px;font-weight:900;margin-left:4px}
+.stat .c{display:block;margin-top:12px;font-size:15px;color:#d8e0f0}
+
+/* 費用実例 */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.case{background:#fff;border:1px solid var(--line);transition:transform .35s,box-shadow .35s}
+.case:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(27,63,139,.12)}
+.case .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.case .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.case:hover .ph img{transform:scale(1.06)}
+.case .area{position:absolute;left:0;top:0;background:var(--blue);color:#fff;font-size:13px;font-weight:900;padding:4px 14px}
+.case .body{padding:20px 22px 24px}
+.case h3{font-size:19px;font-weight:900;color:var(--ink)}
+.case .price{display:flex;align-items:baseline;gap:6px;margin:6px 0 12px;color:var(--blue);font-weight:900}
+.case .price small{font-size:13px;color:var(--muted);font-weight:700}
+.case .price .num{font-size:40px;line-height:1}
+.case ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.case li{font-size:13px;background:var(--blue-soft);color:var(--blue);padding:2px 10px;font-weight:700}
+.market{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;background:#fff;border-left:6px solid var(--yellow);padding:28px 30px;margin-bottom:44px;box-shadow:0 6px 24px rgba(27,63,139,.08)}
+.market .big{font-weight:900;color:var(--blue);line-height:1.2;text-align:center}
+.market .big .num{font-size:56px}
+.market .big small{display:block;font-size:13px;color:var(--muted)}
+
+/* 塗料 */
+.paints{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.paint{background:#fff;padding:30px 26px;border:1px solid var(--line);position:relative}
+.paint.pop{border:3px solid var(--yellow)}
+.paint .badge{position:absolute;top:-14px;left:22px;background:var(--yellow);color:var(--blue-deep);font-weight:900;font-size:13px;padding:2px 12px}
+.paint h3{font-size:21px;font-weight:900;color:var(--blue)}
+.paint .catch{font-weight:900;color:var(--ink);margin:6px 0 10px}
+.paint p{font-size:15.5px}
+
+/* 施工事例 */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.work{background:#fff;border:1px solid var(--line);transition:transform .35s,box-shadow .35s}
+.work:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(27,63,139,.12)}
+.work .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.work .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.work:hover .ph img{transform:scale(1.06)}
+.work .cat{position:absolute;left:0;top:0;background:var(--yellow);color:var(--blue-deep);font-size:13px;font-weight:900;padding:4px 14px}
+.work .body{padding:18px 22px 22px}
+.work .area{font-size:13px;font-weight:900;color:var(--blue)}
+.work h3{font-size:18px;color:var(--ink);line-height:1.6;margin-top:2px}
+.work p{font-size:14.5px;color:var(--muted);margin-top:6px;line-height:1.8}
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:38px}
+.filters button{font:inherit;font-size:15px;font-weight:900;padding:10px 22px;background:#fff;color:var(--blue);border:2px solid var(--blue);cursor:pointer;transition:.25s}
+.filters button.on,.filters button:hover{background:var(--blue);color:#fff}
+.work.hide{display:none}
+.note{font-size:13.5px;color:var(--muted);margin-top:24px;text-align:center}
+
+/* お客様の声 */
+.rating{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:40px;flex-wrap:wrap}
+.rating .score{font-family:"Bebas Neue",sans-serif;font-size:64px;font-weight:700;color:var(--blue);line-height:1}
+.rating .stars{color:#f07c1e;font-size:26px;letter-spacing:4px}
+.rating small{display:block;color:var(--muted);font-size:14px}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.voice{background:#fff;padding:26px 24px;border-top:4px solid var(--blue);position:relative}
+.voice .who{font-weight:900;color:var(--blue);font-size:15px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px}
+.voice .who span{color:#f07c1e;letter-spacing:2px;font-size:14px}
+.voice p{font-size:15.5px}
+
+/* 2カラム */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.split + .split{margin-top:80px}
+.split.rev .ph{order:2}
+.split .ph{position:relative}
+.split .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;position:relative;z-index:1}
+.split .ph::after{content:"";position:absolute;left:-14px;top:-14px;width:55%;height:55%;background:var(--yellow);z-index:0}
+.split.rev .ph::after{left:auto;right:-14px}
+.split .tag{display:inline-block;font-family:"Bebas Neue",sans-serif;font-weight:600;letter-spacing:.25em;color:var(--blue);font-size:15px;margin-bottom:8px}
+.split h3{font-size:clamp(23px,2.6vw,30px);font-weight:900;color:var(--ink);line-height:1.5;margin-bottom:16px}
+.split p + p{margin-top:12px}
+.checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.checks li{background:#fff;border:1px solid var(--line);padding:12px 14px 12px 42px;position:relative;font-weight:700;font-size:15.5px;line-height:1.6}
+.checks li::before{content:"";position:absolute;left:14px;top:17px;width:16px;height:9px;border-left:3px solid var(--blue);border-bottom:3px solid var(--blue);transform:rotate(-45deg)}
+.photos3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.photos3 img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.photos3 figcaption{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* 流れ */
+.flow{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s}
+.flow li{position:relative;background:#fff;border:1px solid var(--line);padding:26px 18px;margin-right:22px}
+.flow li:last-child{margin-right:0}
+.flow li:not(:last-child)::after{content:"";position:absolute;right:-17px;top:50%;border:9px solid transparent;border-left:10px solid var(--blue);transform:translateY(-50%)}
+.flow .s{font-family:"Bebas Neue",sans-serif;font-weight:700;color:var(--blue);font-size:15px;letter-spacing:.15em}
+.flow h3{font-size:18px;font-weight:900;color:var(--ink);margin:4px 0 8px;line-height:1.5}
+.flow p{font-size:14.5px}
+
+/* 表 */
+.table{width:100%;border-collapse:collapse;background:#fff;font-size:16px}
+.table th,.table td{border:1px solid var(--line);padding:16px 20px;text-align:left;vertical-align:top}
+.table th{background:var(--blue-soft);color:var(--blue);font-weight:900;width:26%}
+
+/* ごあいさつ */
+.greeting{display:grid;grid-template-columns:320px 1fr;gap:44px;align-items:start}
+.greeting .ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.greeting .ph figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.greeting h3{font-size:clamp(22px,2.6vw,28px);font-weight:900;color:var(--blue);line-height:1.55;margin-bottom:18px}
+.greeting p + p{margin-top:14px}
+.greeting .sign{margin-top:20px;text-align:right;font-weight:900;font-size:18px;color:var(--ink)}
+
+/* 店舗 */
+.shops{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.shop{background:#fff;border:1px solid var(--line)}
+.shop img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.shop .body{padding:22px 24px}
+.shop h3{font-size:20px;font-weight:900;color:var(--blue)}
+.shop .tel{font-family:"Bebas Neue",sans-serif;font-size:30px;font-weight:700;color:var(--blue);display:block;margin-top:4px}
+.shop iframe{width:100%;height:240px;border:0;display:block}
+
+/* エリア */
+.area-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.area-grid a{display:flex;align-items:center;justify-content:center;background:#fff;color:var(--blue);border:2px solid var(--blue);font-weight:900;padding:16px 6px;font-size:16px;transition:.25s}
+.area-grid a:hover{background:var(--blue);color:#fff}
+
+/* FAQ */
+.faq{max-width:900px;margin-inline:auto;display:grid;gap:12px}
+.faq h3{font-size:19px;font-weight:900;color:var(--blue);margin:22px 0 4px;padding-left:14px;border-left:5px solid var(--yellow)}
+.faq details{background:#fff;border:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 56px 20px 60px;position:relative;font-weight:900;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";position:absolute;left:22px;top:15px;font-family:"Bebas Neue",sans-serif;font-size:26px;color:var(--blue)}
+.faq summary::after{content:"";position:absolute;right:24px;top:50%;width:11px;height:11px;border-right:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:translateY(-70%) rotate(45deg);transition:transform .3s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .a{padding:0 28px 22px 60px;position:relative}
+.faq .a::before{content:"A";position:absolute;left:22px;top:-6px;font-family:"Bebas Neue",sans-serif;font-size:26px;color:#d9650c}
+
+/* フォーム */
+.contact-box{display:grid;grid-template-columns:1fr 1.4fr;gap:36px;align-items:start}
+.tel-card{background:var(--blue);color:#fff;padding:36px 30px}
+.tel-card h3{font-size:19px;font-weight:900;margin-bottom:14px}
+.tel-card .row + .row{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.25)}
+.tel-card small{display:block;font-size:13px;color:#cfd8ea}
+.tel-card .n{font-family:"Bebas Neue",sans-serif;font-size:40px;font-weight:700;color:var(--yellow);line-height:1.15;display:block}
+.tel-card p{font-size:14.5px;color:#d3dcee;margin-top:16px}
+.form{background:#fff;border:1px solid var(--line);padding:36px}
+.form .row{margin-bottom:20px}
+.form label{display:block;font-weight:900;color:var(--ink);margin-bottom:8px}
+.form label .req{font-size:12px;background:var(--blue);color:#fff;padding:1px 8px;margin-left:8px}
+.form input,.form select,.form textarea{width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid #c6cfdd;background:#fafbfd;border-radius:0}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--blue);background:#fff}
+.form textarea{min-height:150px;resize:vertical}
+.form .msg{display:none;margin-top:16px;padding:14px 18px;background:var(--blue-soft);color:var(--blue);font-weight:900}
+.form .msg.show{display:block}
+
+/* CTA */
+.cta{background:var(--yellow);color:var(--blue-deep);text-align:center;position:relative;overflow:hidden}
+.cta .rino{position:absolute;left:4%;bottom:-20px;width:170px;opacity:.95}
+.cta h2{font-size:clamp(24px,3.2vw,34px);font-weight:900;line-height:1.55}
+.cta p{margin-top:12px;font-weight:700}
+.cta .tels{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 40px;margin-top:24px}
+.cta .tels a{display:block;line-height:1.1}
+.cta .tels small{display:block;font-size:13px;font-weight:900}
+.cta .tels .num{font-size:clamp(34px,4.4vw,48px);font-weight:700;color:var(--blue)}
+.cta .btns{margin-top:26px}
+.cta .btn-blue{min-width:320px}
+
+/* フッター */
+.footer{background:var(--blue-deep);color:#c6d0e3;padding:60px 0 26px;font-size:15px}
+.footer .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.footer .logo .name{color:#fff}
+.footer .logo .sub{color:#9fb0cf}
+.footer address{font-style:normal;margin-top:16px;line-height:2}
+.footer nav{display:grid;grid-template-columns:repeat(2,auto);gap:8px 30px;align-content:start;justify-content:end}
+.footer nav a:hover{color:#fff;text-decoration:underline}
+.footer .copy{border-top:1px solid rgba(255,255,255,.14);margin-top:40px;padding-top:20px;text-align:center;font-size:12.5px;color:#8293b3}
+
+.sp-bar{display:none}
+
+/* スクロールで表示 */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.hero .since,.hero h1,.hero .lead,.hero .areas,.hero .btns,.hero .rino{opacity:1;transform:none}.hero .ph::before{display:none}}
+
+@media (max-width:1180px){.head-tel{display:none}.nav{gap:18px}}
+@media (max-width:1000px){
+  .qa-grid{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr;gap:14px}
+  .flow li{margin-right:0}
+  .flow li:not(:last-child)::after{right:50%;top:auto;bottom:-22px;transform:translateX(50%);border:9px solid transparent;border-top:10px solid var(--blue)}
+  .area-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:900px){
+  body{font-size:16px}
+  .header .wrap{height:64px}
+  .logo img{width:38px;height:42px}
+  .logo .name{font-size:18px}
+  .menu-btn{display:block;z-index:2}
+  .nav{position:fixed;top:0;right:0;bottom:0;width:min(320px,86vw);display:none;flex-direction:column;align-items:stretch;gap:0;background:var(--blue);padding:88px 0 30px;z-index:-1;overflow-y:auto}
+  .nav a{color:#fff;padding:16px 28px;border-bottom:1px solid rgba(255,255,255,.14);font-size:16px}
+  .nav a::after{display:none}
+  .menu-open .nav{display:flex;animation:slideIn .35s ease}
+  @keyframes slideIn{from{transform:translateX(100%)}to{transform:none}}
+  .menu-open .menu-btn span{background:#fff}
+  section{padding:70px 0}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero .ph{order:-1;height:300px;clip-path:polygon(0 0,100% 0,100% 88%,0 100%)}
+  .hero .txt{padding:36px 16px 48px}
+  .hero .rino{right:12px;bottom:12px}
+  .page-head .bg{width:100%;opacity:.25;clip-path:none}
+  .qa-grid,.reasons,.cases,.paints,.works,.voices,.split,.shops,.contact-box,.greeting{grid-template-columns:1fr}
+  .reason{grid-template-columns:1fr}
+  .reason .ph img{min-height:0;aspect-ratio:16/9}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.3)}
+  .split{gap:30px}
+  .split.rev .ph{order:0}
+  .split .ph::after{display:none}
+  .checks{grid-template-columns:1fr}
+  .market{grid-template-columns:1fr;text-align:center}
+  .area-grid{grid-template-columns:repeat(2,1fr)}
+  .greeting .ph{max-width:300px}
+  .form{padding:24px 18px}
+  .footer .cols{grid-template-columns:1fr}
+  .footer nav{justify-content:start}
+  .cta .rino{display:none}
+  .cta .btn-blue{min-width:0;width:100%}
+  .btn{width:100%;padding:16px 22px;font-size:16px}
+  .sp-bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -4px 18px rgba(0,0,0,.18)}
+  .sp-bar a{display:flex;align-items:center;justify-content:center;padding:15px 8px;font-weight:900;font-size:15px}
+  .sp-bar .t{background:var(--blue);color:#fff}
+  .sp-bar .m{background:var(--yellow);color:var(--blue-deep)}
+  .footer{padding-bottom:90px}
+}
+
+/* ---- 村山塗装用:全面写真のヒーロー ---- */
+.hero.full{display:flex;align-items:center;min-height:min(88vh,760px);grid-template-columns:none}
+.hero.full .bgimg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.08);animation:zoom 14s ease-out forwards}
+.hero.full::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(10,15,26,.92) 0%,rgba(10,15,26,.78) 45%,rgba(10,15,26,.2) 100%)}
+.hero.full::after{content:"";position:absolute;left:0;bottom:0;height:8px;width:100%;z-index:2;background:var(--yellow);transform-origin:left;transform:scaleX(0);animation:bar 1.2s .3s cubic-bezier(.7,0,.3,1) forwards}
+@keyframes bar{to{transform:scaleX(1)}}
+.hero.full .txt{width:min(var(--max),100% - 32px);margin-inline:auto;padding:90px 0}
+.hero.full h1{font-size:clamp(34px,5vw,62px);max-width:760px}
+.hero.full .lead{max-width:600px}
+.licenses{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;opacity:0;animation:up .9s .85s forwards}
+.licenses span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.4);padding:6px 14px;font-weight:700;font-size:14.5px}
+.licenses span::before{content:"";width:8px;height:8px;background:var(--yellow);transform:rotate(45deg)}
+.lic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.lic{background:#fff;border-top:5px solid var(--yellow);padding:30px 26px;box-shadow:0 6px 24px rgba(18,26,43,.08)}
+.lic .k{font-family:"Bebas Neue",sans-serif;letter-spacing:.2em;color:var(--yellow);font-size:16px}
+.lic h3{font-size:22px;font-weight:900;color:var(--ink);margin:4px 0 10px}
+.lic p{font-size:15.5px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ba figure{position:relative}
+.ba img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ba figcaption{position:absolute;left:0;top:0;background:var(--blue);color:#fff;font-family:"Bebas Neue",sans-serif;letter-spacing:.15em;padding:4px 14px;font-size:18px}
+.ba figure.after figcaption{background:var(--yellow)}
+.case-detail{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;background:#fff;border:1px solid var(--line);padding:32px}
+.spec{list-style:none;display:grid;gap:8px;margin-top:16px}
+.spec li{display:grid;grid-template-columns:110px 1fr;border-bottom:1px dashed var(--line);padding-bottom:8px;font-size:15.5px}
+.spec li b{color:var(--blue)}
+.pay{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.pay span{background:var(--blue-soft);color:var(--ink);font-weight:700;font-size:14px;padding:4px 12px}
+@media (max-width:900px){
+  .hero.full{min-height:600px}
+  .hero.full .txt{padding:60px 0}
+  .lic-grid,.ba,.case-detail{grid-template-columns:1fr}
+  .case-detail{padding:20px}
+  .ba figure{grid-column:auto!important}
+}
+
+/* 建粧デモ 追加 */
+.price-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.price{min-width:720px;width:100%;border-collapse:collapse;background:#fff;font-size:15.5px}
+.price th,.price td{border:1px solid var(--line);padding:13px 12px;text-align:center;white-space:nowrap}
+.price thead th{background:var(--blue);color:#fff;font-weight:900}
+.price tbody th{background:var(--blue-soft);color:var(--blue);text-align:left;font-weight:900}
+.price td.na{color:#aab2c0}
+.price tr.rec td:nth-child(3){background:#fff7e6;font-weight:900;color:var(--ink)}
+.memo{border:2px dashed var(--yellow);background:#fffaf0;padding:18px 22px;font-size:15px;max-width:900px;margin:0 auto 34px}
+.memo b{color:var(--yellow)}
+.vows{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.vow{background:#fff;border-top:4px solid var(--yellow);padding:22px 22px 24px;box-shadow:0 6px 18px rgba(20,40,94,.07)}
+.vow .k{font-family:"Bebas Neue",sans-serif;color:var(--yellow);letter-spacing:.15em;font-size:15px}
+.vow h3{font-size:19px;font-weight:900;color:var(--blue);margin:4px 0 6px;line-height:1.5}
+.vow p{font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips span{border:1px solid var(--blue);color:var(--blue);font-size:14px;font-weight:700;padding:3px 12px}
