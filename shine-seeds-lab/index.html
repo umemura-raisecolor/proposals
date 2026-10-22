@@ -371,6 +371,8 @@ h2:before{content:"✧";display:block;color:#b18b70;font-family:serif;font-size:
 .en::after{content:"";display:block;width:24px;height:1px;background:#b18b70;margin:9px auto 0;opacity:.65}
 .monitor .en,.monitor h2{text-align:left}
 .monitor .en::after{margin-left:0}
+.hero::before,.hero::after{z-index:0;pointer-events:none}
+.hero .wrap{z-index:2}
 /* Keep motion understated and respect visitors who prefer reduced motion. */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
