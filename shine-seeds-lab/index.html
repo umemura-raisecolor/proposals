@@ -324,6 +324,65 @@ footer{background:#29312c}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
 </style>
+
+<style>
+/* ===== Quiet editorial details: subtle depth without visual clutter ===== */
+:root{
+  --ornament-sage: rgba(135,155,140,.18);
+  --ornament-rose: rgba(234,216,209,.38);
+  --ornament-gold: rgba(177,139,112,.36);
+}
+body{
+  background-image: radial-gradient(circle at 8% 16%, rgba(234,216,209,.18) 0, transparent 24rem),
+                    radial-gradient(circle at 94% 44%, rgba(135,155,140,.10) 0, transparent 28rem);
+  background-attachment: fixed;
+}
+section{position:relative;isolation:isolate}
+/* Quiet alternating washes help the eye understand each chapter. */
+.worries,.flow,.profile,.voice-sec,.salon{background-color:rgba(255,253,251,.82)!important}
+.why{background:linear-gradient(125deg,#fbf8f5 0%,#f8f3ef 58%,#edf1ec 100%)!important}
+.session,.faq{background:linear-gradient(135deg,#f2ebe7 0%,#f5efeb 58%,#edf0e9 100%)!important}
+/* Fine corner arcs, like a very light botanical/editorial frame. */
+.why::before,.session::before,.profile::before,.voice-sec::before,.flow::before,.salon::before,.faq::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;width:210px;height:210px;border:1px solid var(--ornament-sage);border-radius:50%;opacity:.75
+}
+.why::before,.profile::before,.flow::before{right:-128px;top:30px}
+.session::before,.voice-sec::before,.salon::before,.faq::before{left:-138px;bottom:10px;border-color:var(--ornament-gold)}
+/* Small leaf-like accents beside section headings, not extra content. */
+h2{position:relative}
+h2:before{content:"✧";display:block;color:#b18b70;font-family:serif;font-size:17px;line-height:1;margin:0 auto 12px;opacity:.8}
+/* The monitor and price panels remain strong visual pauses. */
+.monitor,.price{position:relative;overflow:hidden}
+.monitor::after,.price::after{
+  content:"";position:absolute;right:-95px;bottom:-150px;width:300px;height:300px;border:1px solid rgba(217,187,167,.22);border-radius:50%;pointer-events:none
+}
+.monitor::before,.price::before{
+  content:"";position:absolute;right:-55px;bottom:-110px;width:220px;height:220px;border:1px solid rgba(217,187,167,.16);border-radius:50%;pointer-events:none
+}
+/* A little more editorial polish for the session cards and testimonial panels. */
+.card,.voice,.salon-box,.worry-list li,details{box-shadow:0 8px 26px rgba(78,68,59,.035)}
+.card{background:rgba(255,253,251,.96)}
+.card .card-img{filter:saturate(.92)}
+.card .num{display:inline-block;margin-top:22px}
+.voice{border-radius:3px 14px 3px 14px}
+.salon-img{outline:1px solid rgba(177,139,112,.35);outline-offset:7px}
+/* Hairline section markers add rhythm while preserving the generous whitespace. */
+.en{position:relative;width:max-content;max-width:100%;margin-left:auto;margin-right:auto}
+.en::after{content:"";display:block;width:24px;height:1px;background:#b18b70;margin:9px auto 0;opacity:.65}
+.monitor .en,.monitor h2{text-align:left}
+.monitor .en::after{margin-left:0}
+/* Keep motion understated and respect visitors who prefer reduced motion. */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+@media(max-width:820px){
+  .why::before,.session::before,.profile::before,.voice-sec::before,.flow::before,.salon::before,.faq::before{width:145px;height:145px;opacity:.55}
+  .monitor::after,.price::after{width:210px;height:210px;right:-110px;bottom:-110px}
+  h2:before{font-size:15px;margin-bottom:9px}
+  .salon-img{outline-offset:4px}
+}
+</style>
+
 </head>
 <body>
 
