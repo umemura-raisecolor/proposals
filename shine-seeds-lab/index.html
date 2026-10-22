@@ -446,6 +446,29 @@ header:not(.is-scrolled) .logo small{color:#e6d3c4}
 }
 @media(prefers-reduced-motion:reduce){.slide{animation:none}.slide.s1{opacity:1}}
 </style>
+
+<style>
+/* ===== Media band (quiet credentials) ===== */
+.media-band{background:#fffdfb;border-bottom:1px solid #eee1d9;padding:30px 0 32px}
+.media-band .wrap{max-width:1000px;display:flex;align-items:center;gap:36px}
+.media-label{flex:0 0 auto;font-family:"Noto Serif JP",serif;font-size:12px;letter-spacing:.26em;color:var(--sage);text-transform:uppercase;padding-right:30px;border-right:1px solid #e4d6cc;line-height:1.6}
+.media-list{list-style:none;display:flex;flex:1;justify-content:space-around;gap:20px}
+.media-list li{display:flex;flex-direction:column;align-items:center;text-align:center;line-height:1.5;opacity:0;transform:translateY(10px);transition:opacity .9s ease,transform .9s ease}
+.media-band.on .media-list li{opacity:1;transform:none}
+.media-band.on .media-list li:nth-child(2){transition-delay:.15s}
+.media-band.on .media-list li:nth-child(3){transition-delay:.3s}
+.m-name{font-family:"Noto Serif JP",serif;font-size:21px;font-weight:600;letter-spacing:.1em;color:#5c5650}
+.m-note{font-size:12px;color:#9b8a7e;letter-spacing:.08em;margin-top:2px}
+@media(max-width:820px){
+  .media-band{padding:24px 0 26px}
+  .media-band .wrap{flex-direction:column;gap:14px}
+  .media-label{padding-right:0;border-right:0;font-size:11px}
+  .media-list{width:100%;justify-content:space-between;gap:8px}
+  .m-name{font-size:16px;letter-spacing:.06em}
+  .m-note{font-size:10.5px;letter-spacing:.02em}
+}
+@media(prefers-reduced-motion:reduce){.media-list li{opacity:1;transform:none}}
+</style>
 </head>
 <body>
 
@@ -472,6 +495,18 @@ header:not(.is-scrolled) .logo small{color:#e6d3c4}
   <div class="hero-dots" aria-hidden="true"><i></i><i></i><i></i></div>
   <a class="hero-scroll" href="#monitor"><span>Scroll</span><i></i></a>
 </section>
+
+<!-- MEDIA -->
+<div class="media-band" aria-label="メディア掲載・出演・著書">
+  <div class="wrap">
+    <p class="media-label">Media &amp; Books</p>
+    <ul class="media-list">
+      <li><span class="m-name">毎日新聞</span><span class="m-note">掲載(2026年10月)</span></li>
+      <li><span class="m-name">TOKYO MX</span><span class="m-note">出演</span></li>
+      <li><span class="m-name">著書 2冊</span><span class="m-note">Amazonランキング1位</span></li>
+    </ul>
+  </div>
+</div>
 
 <!-- MONITOR -->
 <section class="monitor" id="monitor">
@@ -684,5 +719,6 @@ const st=document.querySelector('.stats'); if(st) co.observe(st);
 <script>
 (function(){var h=document.querySelector('header');function f(){h.classList.toggle('is-scrolled',window.scrollY>60)}window.addEventListener('scroll',f,{passive:true});f();})();
 </script>
+<script>(function(){var m=document.querySelector('.media-band');if(!m)return;if(!('IntersectionObserver' in window)){m.classList.add('on');return;}var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){m.classList.add('on');o.disconnect();}},{threshold:.4});o.observe(m);})();</script>
 </body>
 </html>
