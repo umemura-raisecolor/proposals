@@ -611,13 +611,18 @@ h2:before{content:"✧";display:block;color:#b18b70;font-family:serif;font-size:
 const io = new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 // count up
+document.querySelectorAll('.count').forEach(el=>{el.textContent='0'});
 const co = new IntersectionObserver(es=>{es.forEach(e=>{
   if(!e.isIntersecting) return;
-  const el=e.target, to=+el.dataset.to, dur=1600, t0=performance.now();
-  const tick=t=>{const p=Math.min((t-t0)/dur,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)};
-  requestAnimationFrame(tick); co.unobserve(el);
-})},{threshold:.6});
-document.querySelectorAll('.count').forEach(el=>co.observe(el));
+  co.unobserve(e.target);
+  e.target.querySelectorAll('.count').forEach(el=>{
+    const to=+el.dataset.to, dur=2200;
+    setTimeout(()=>{const t0=performance.now();
+      const tick=t=>{const p=Math.min((t-t0)/dur,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)};
+      requestAnimationFrame(tick);},500);
+  });
+})},{threshold:.5});
+const st=document.querySelector('.stats'); if(st) co.observe(st);
 </script>
 </body>
 </html>
