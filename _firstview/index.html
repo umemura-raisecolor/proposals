@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title></title>
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Shippori+Mincho+B1:wght@700;800&display=swap">
+<!--
+  ファーストビューの型(紺×ゴールド/写真の切り替え+すりガラス+数字のカウントアップ)
+  このファイルは共通の型なので触りません。会社ごとの文字・写真・数字は site.js だけを書き換えます。
+-->
+<style>
+/* 配色:紺に近い黒 × シャンパンゴールド(site.js の colors で上書きできます) */
+:root{
+  --white:#fff;--muted:#5c5c5c;--line:#d9d8d4;
+  --black:#0b1322;--char:#0f1a2d;--line-dark:#26324a;--ink:#141a26;
+  --accent:#c9a55c;--accent-hover:#e2c385;--on-accent:#0b1322;--shade:9,14,26;
+  --display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --body:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --w:1160px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:18px;line-height:2;letter-spacing:.04em;font-weight:500}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--w);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1{font-family:var(--display);font-weight:800;margin:0;word-break:auto-phrase}
+
+/* ヘッダー */
+.top-note{background:var(--black);color:#bdbdbd;font-size:14px;border-bottom:1px solid var(--line-dark)}
+.top-note .wrap{padding-block:6px}
+header.site{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.brand img{width:50px;height:auto}
+.brand b{font-family:var(--display);font-size:23px;font-weight:800;letter-spacing:.1em;display:block;line-height:1.2;white-space:nowrap}
+.brand small{display:block;font-size:12px;color:var(--muted);letter-spacing:.32em;line-height:1.5}
+nav.gnav{display:flex;gap:28px;font-size:16px;white-space:nowrap}
+nav.gnav a{color:var(--ink);text-decoration:none;font-weight:700;padding-block:4px;border-bottom:2px solid transparent;transition:border-color .2s}
+nav.gnav a:hover,nav.gnav a[aria-current]{border-bottom-color:var(--accent)}
+.tel-btn{display:flex;flex-direction:column;align-items:flex-end;text-decoration:none;color:var(--ink);line-height:1.15}
+.tel-btn span{font-size:13px;color:var(--accent);font-weight:700}
+.tel-btn strong{font-family:var(--display);font-size:28px;font-weight:800;color:var(--black);letter-spacing:.04em;white-space:nowrap}
+@media (max-width:1180px){nav.gnav{display:none}}
+@media (max-width:620px){.brand b{font-size:17px}.brand small,.tel-btn span{display:none}.brand img{width:40px}.tel-btn strong{font-size:22px}}
+
+/* ===== ヒーロー:写真がゆっくり切り替わる+すりガラス ===== */
+.hero{position:relative;overflow:hidden;background:var(--black);color:#fff;min-height:min(86vh,780px);display:flex;align-items:center}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+.slide.on{opacity:1}
+.slide.on img{animation:zoom 9s ease-out forwards}
+@keyframes zoom{from{transform:scale(1.02)}to{transform:scale(1.14)}}
+
+/* 背景全体:建物の写真がうっすら見える層 */
+.ghost{z-index:0}
+.ghost .slide img{filter:grayscale(.6) blur(2px)}
+.ghost::after{content:"";position:absolute;inset:0;background:rgba(var(--shade),.8)}
+
+/* 右半分:建物の写真をくっきり見せる(左端を斜めにカット) */
+.photo{z-index:1;left:auto;width:54%;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%);overflow:hidden}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--shade),.35) 0%,rgba(var(--shade),0) 30%),linear-gradient(0deg,rgba(var(--shade),.45) 0%,rgba(var(--shade),0) 35%);pointer-events:none}
+/* 斜めの境目に入れる差し色の線 */
+.edge{position:absolute;z-index:1;top:0;bottom:0;right:0;width:54%;background:var(--accent);
+  clip-path:polygon(calc(16% - 6px) 0,16% 0,0 100%,-6px 100%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:56px 110px}
+.glass{
+  max-width:640px;padding:38px 44px 40px;
+  background:rgba(var(--shade),.42);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+  border:1px solid rgba(255,255,255,.18);border-left:4px solid var(--accent);
+  box-shadow:0 30px 60px rgba(0,0,0,.35);
+}
+.since{display:flex;align-items:center;gap:14px;font-family:var(--display);font-weight:700;font-size:17px;color:var(--accent);letter-spacing:.12em;margin:0 0 22px}
+.since::before{content:"";width:40px;height:2px;background:var(--accent)}
+.hero h1{font-size:clamp(28px,3.6vw,46px);line-height:1.38;letter-spacing:.06em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lead{margin:20px 0 0;font-size:19px;max-width:32em;color:#e2e2e2;line-height:1.9}
+.acts{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px}
+
+/* 文字がふわっと出てくる動き */
+.rise{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1 .ln{display:block}
+.d1{animation-delay:.2s}.d2{animation-delay:.38s}.d3{animation-delay:.56s}.d4{animation-delay:.74s}.d5{animation-delay:.95s}.d6{animation-delay:1.15s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ボタン:斜めの光がキラッと走る */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:62px;padding:0 32px;font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.06em;text-decoration:none;transition:background .2s,border-color .2s}
+.btn-sun{background:var(--accent);color:var(--on-accent)}
+.btn-sun:hover{background:var(--accent-hover)}
+.btn-line{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.55)}
+.btn-line:hover{border-color:#fff;background:rgba(255,255,255,.14)}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.4) 50%,transparent 100%);transform:skewX(-20deg);pointer-events:none}
+.btn-sun::after{animation:shine 4.5s ease-in-out 2s infinite}
+.btn:hover::after{animation:shine .8s ease-out}
+@keyframes shine{0%{left:-80%}22%,100%{left:140%}}
+
+/* 右下:いま映っている施工事例と、切り替えバー */
+.slide-info{position:absolute;z-index:3;right:max(20px,calc((100vw - var(--w))/2 + 20px));bottom:34px;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.cap{font-size:15px;line-height:1.5;padding:8px 16px;color:#fff;background:rgba(var(--shade),.4);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);transition:opacity .5s}
+.cap b{color:var(--accent);font-family:var(--display);margin-right:.6em}
+.bars{display:flex;gap:8px}
+.bars button{all:unset;cursor:pointer;width:56px;height:20px;display:flex;align-items:center}
+.bars button span{display:block;width:100%;height:3px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.bars button span i{position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left}
+.bars button.on span i{animation:fill 6.5s linear forwards}
+.bars button.done span i{transform:scaleX(1)}
+.bars button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@keyframes fill{to{transform:scaleX(1)}}
+
+/* 下へ誘うライン */
+.scroll{position:absolute;z-index:3;left:max(20px,calc((100vw - var(--w))/2 + 20px));bottom:30px;font-size:13px;letter-spacing:.3em;color:#cfcfcf;display:flex;align-items:center;gap:12px}
+.scroll::after{content:"";width:60px;height:1px;background:rgba(255,255,255,.4);position:relative;overflow:hidden;background-image:linear-gradient(90deg,var(--accent),var(--accent));background-size:30% 100%;background-repeat:no-repeat;animation:run 2.2s ease-in-out infinite}
+@keyframes run{from{background-position:-40% 0}to{background-position:140% 0}}
+
+/* 数字の帯(カウントアップ) */
+.facts{background:var(--char);color:#fff;border-top:1px solid var(--line-dark)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-block:44px}
+.fact{text-align:center;padding:6px 10px;border-left:1px solid var(--line-dark)}
+.fact:first-child{border-left:0}
+.fact b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(64px,8vw,104px);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:0;margin-bottom:10px}
+.fact b .count{display:inline-block}
+.fact b .count.pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+.fact b small{font-size:.3em;margin-left:6px;color:#fff;font-weight:700}
+.fact > span{font-size:16px;color:#d0d0d0}
+
+@media (max-width:860px){
+  .hero{min-height:auto;flex-direction:column;align-items:stretch}
+  .photo{position:relative;inset:auto;width:100%;height:240px;clip-path:polygon(0 0,100% 0,100% 100%,0 86%)}
+  .edge{display:none}
+  .hero .wrap{padding-block:0 120px;margin-top:-40px}
+  .glass{padding:30px 24px 32px}
+  .lead{font-size:17px}
+  .acts .btn{flex:1 1 100%;font-size:17px;padding:0 16px;white-space:nowrap}
+  .slide-info{left:20px;right:20px;align-items:flex-start;bottom:28px}
+  .scroll{display:none}
+}
+@media (max-width:720px){.facts .wrap{grid-template-columns:repeat(2,1fr);row-gap:32px;padding-block:36px}.fact b{font-size:64px}.fact:nth-child(3){border-left:0}}
+
+/* 営業先向けの「ご提案用デモ」帯 */
+.ribbon{background:var(--accent);color:var(--on-accent);font-size:13px;line-height:1.6;text-align:center;padding:6px 16px}
+.ribbon:empty{display:none}
+.brand img[src=""]{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  .slide.on img,.btn::after,.scroll::after{animation:none}
+  .rise{animation:none;opacity:1;transform:none}
+  .bars button.on span i{animation:none;transform:scaleX(1)}
+}
+</style>
+<script src="site.js"></script>
+</head>
+<body>
+
+<div class="ribbon" id="ribbon"></div>
+<div class="top-note"><div class="wrap" id="topNote"></div></div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html" id="brand">
+      <img id="logo" src="" alt="">
+      <span><b id="company"></b><small id="companyEn"></small></span>
+    </a>
+    <nav class="gnav" aria-label="メインメニュー" id="nav"></nav>
+    <a class="tel-btn" id="telBtn" href="#"><span id="telNote"></span><strong id="tel"></strong></a>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="ご紹介">
+  <div class="slides ghost" aria-hidden="true" id="ghost"></div>
+  <div class="slides photo" aria-hidden="true" id="photo"></div>
+  <div class="edge" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="glass">
+      <p class="since rise d1" id="since"></p>
+      <h1 id="catch"></h1>
+      <p class="lead rise d5" id="lead"></p>
+      <div class="acts rise d6">
+        <a class="btn btn-sun" id="btnMain" href="#"></a>
+        <a class="btn btn-line" id="btnSub" href="#"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-info">
+    <p class="cap" id="cap"></p>
+    <div class="bars" role="group" aria-label="写真の切り替え" id="bars"></div>
+  </div>
+  <p class="scroll">SCROLL</p>
+</section>
+
+<div class="facts" aria-label="数字で見る会社">
+  <div class="wrap" id="facts"></div>
+</div>
+</main>
+
+<script>
+(function(){
+  var S = window.SITE || {};
+  var $ = function(id){ return document.getElementById(id); };
+  var esc = function(t){ return String(t == null ? '' : t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+
+  // 色の上書き(任意)
+  if(S.colors){
+    var r = document.documentElement.style, c = S.colors;
+    if(c.base) r.setProperty('--black', c.base);
+    if(c.band) r.setProperty('--char', c.band);
+    if(c.accent) r.setProperty('--accent', c.accent);
+    if(c.accentHover) r.setProperty('--accent-hover', c.accentHover);
+  }
+
+  // 文字を流し込む
+  document.title = S.title || S.company || '';
+  var md = document.querySelector('meta[name="description"]'); if(md) md.content = S.description || '';
+  $('ribbon').textContent = S.ribbon || '';
+  $('topNote').textContent = S.topNote || '';
+  $('logo').src = S.logo || '';
+  $('company').textContent = S.company || '';
+  $('companyEn').textContent = S.companyEn || '';
+  $('brand').setAttribute('aria-label', (S.company || '') + ' トップへ');
+  $('tel').textContent = S.tel || '';
+  $('telNote').textContent = S.telNote || '';
+  $('telBtn').href = 'tel:' + String(S.tel || '').replace(/[^0-9+]/g, '');
+  $('nav').innerHTML = (S.nav || []).map(function(n){
+    return '<a href="' + esc(n.href) + '"' + (n.current ? ' aria-current="page"' : '') + '>' + esc(n.label) + '</a>';
+  }).join('');
+  $('since').textContent = S.since || '';
+  var lines = S.catch || [];
+  $('catch').innerHTML = lines.map(function(t, k){
+    var inner = k === 1 ? '<em>' + esc(t) + '</em>' : esc(t);
+    return '<span class="ln rise d' + (k + 2) + '">' + inner + '</span>';
+  }).join('');
+  $('lead').textContent = S.lead || '';
+  var b = S.buttons || {};
+  if(b.main){ $('btnMain').textContent = b.main.label; $('btnMain').href = b.main.href; } else { $('btnMain').remove(); }
+  if(b.sub){ $('btnSub').textContent = b.sub.label; $('btnSub').href = b.sub.href; } else { $('btnSub').remove(); }
+
+  // 写真
+  var slides = S.slides || [];
+  var slideHTML = slides.map(function(s, k){
+    return '<div class="slide' + (k === 0 ? ' on' : '') + '"><img src="' + esc(s.img) + '" alt=""' + (k ? ' loading="lazy"' : '') + '></div>';
+  }).join('');
+  $('ghost').innerHTML = slideHTML;
+  $('photo').innerHTML = slideHTML;
+  $('bars').innerHTML = slides.length > 1 ? slides.map(function(s, k){
+    return '<button' + (k === 0 ? ' class="on"' : '') + ' aria-label="' + (k + 1) + '枚目"><span><i></i></span></button>';
+  }).join('') : '';
+  var capText = function(s){ return s ? '<b>' + esc(s.tag) + '</b>' + esc(s.caption) : ''; };
+  $('cap').innerHTML = capText(slides[0]);
+  if(!slides.length || !(slides[0].tag || slides[0].caption)) $('cap').style.display = 'none';
+
+  // 数字
+  $('facts').innerHTML = (S.facts || []).map(function(f){
+    return '<div class="fact"><b><span class="count" data-to="' + esc(f.num) + '">' + esc(f.num) + '</span><small>' + esc(f.unit) + '</small></b><span>' + esc(f.label) + '</span></div>';
+  }).join('');
+
+  // ---- 動き ----
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var layers = [document.querySelectorAll('#ghost .slide'), document.querySelectorAll('#photo .slide')];
+  var bars = document.querySelectorAll('#bars button');
+  var cap = $('cap');
+  var i = 0, timer;
+  function show(n){
+    layers.forEach(function(L){ L[i].classList.remove('on'); });
+    bars.forEach(function(x, k){ x.classList.remove('on', 'done'); if(k < n) x.classList.add('done'); });
+    i = n;
+    layers.forEach(function(L){ L[i].classList.add('on'); });
+    void bars[i].offsetWidth;
+    bars[i].classList.add('on');
+    cap.style.opacity = 0;
+    setTimeout(function(){ cap.innerHTML = capText(slides[i]); cap.style.opacity = 1; }, 300);
+  }
+  function start(){ clearInterval(timer); if(!reduce && slides.length > 1) timer = setInterval(function(){ show((i + 1) % slides.length); }, 6500); }
+  bars.forEach(function(x, k){ x.addEventListener('click', function(){ show(k); start(); }); });
+  start();
+
+  // 数字のカウントアップ(止まった瞬間にポンと弾む)
+  var counted = false;
+  function countUp(){
+    if(counted) return; counted = true;
+    document.querySelectorAll('.count').forEach(function(el){
+      var to = +el.dataset.to, t0 = null, dur = 1600;
+      if(reduce || isNaN(to)) return;
+      function step(t){
+        if(!t0) t0 = t;
+        var p = Math.min((t - t0) / dur, 1);
+        el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        if(p < 1) requestAnimationFrame(step); else el.classList.add('pop');
+      }
+      el.textContent = 0;
+      requestAnimationFrame(step);
+    });
+  }
+  var facts = document.querySelector('.facts');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es, o){ if(es[0].isIntersecting){ countUp(); o.disconnect(); } }, {threshold:.4}).observe(facts);
+  } else { countUp(); }
+})();
+</script>
+</body>
+</html>
