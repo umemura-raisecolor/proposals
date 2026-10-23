@@ -99,6 +99,7 @@ input:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);
 .summary{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-size:14.5px}
 .summary dt{color:var(--muted);font-size:13px;padding-top:1px}
 .summary dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.time-note{font-size:12.5px;color:var(--muted);margin:10px 0 0}
 .notes{font-size:12.5px;color:var(--muted);line-height:1.8;margin:0;padding-left:1.2em}
 
 .actions{display:flex;gap:12px;flex-wrap:wrap}
@@ -171,6 +172,7 @@ footer{text-align:center;font-size:12px;color:var(--muted)}
     <div class="field">
       <span class="lbl" id="timeLbl">日付を選ぶと、空いている時間が表示されます</span>
       <div class="times" id="times"></div>
+      <p class="time-note">＊日時は別途相談可</p>
     </div>
     <div class="actions">
       <button class="btn ghost" data-back="1">戻る</button>
@@ -304,7 +306,7 @@ $("#to2").addEventListener("click", async ()=>{
 // 見本データ:不定休・埋まっている枠をそれっぽく作る(日付から決まるので毎回同じ)
 function demoSlots(){
   const out={}; const base=new Date(); base.setHours(0,0,0,0);
-  const starts=["10:00","11:30","13:30","15:00","16:30","18:00"];
+  const starts=["9:00","10:30","12:00","14:00","15:30","17:00"];
   for(let i=1;i<=MAX_DAYS;i++){
     const d=new Date(base); d.setDate(d.getDate()+i);
     const h=(d.getDate()*7+d.getMonth()*13)%11;
