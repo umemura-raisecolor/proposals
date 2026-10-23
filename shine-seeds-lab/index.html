@@ -138,6 +138,20 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .profile-catch ~ p{margin-bottom:16px}
 .profile-catch ~ p.badges{margin-bottom:0}
 @media (max-width:768px){.profile-catch{font-size:19px}}
+/* media */
+.media-sec{background:var(--bg)}
+.media-card{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:44px 40px;box-shadow:0 14px 34px rgba(80,60,40,.06)}
+.media-date{font-size:13px;letter-spacing:.12em;color:var(--gold);margin-bottom:10px}
+.media-card h3{font-family:"Noto Serif JP",serif;font-size:21px;font-weight:600;line-height:1.75;margin-bottom:22px}
+.media-count{display:flex;align-items:baseline;gap:6px;margin-bottom:16px;font-family:"Noto Serif JP",serif}
+.media-count b{font-size:56px;line-height:1;color:var(--gold);font-weight:700}
+.media-count > span{font-size:17px}
+.media-lead{font-size:15.5px;line-height:1.95;color:var(--sub);margin-bottom:26px}
+.media-sub{font-size:13px;font-weight:700;letter-spacing:.1em;margin-bottom:12px;padding-top:22px;border-top:1px solid var(--line)}
+.press-list{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start}
+.media-chip{font-size:13.5px;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--bg);transition:border-color .2s,color .2s}
+.media-chip:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:768px){.media-card{padding:32px 20px}.media-card h3{font-size:17px}.media-count b{font-size:44px}.media-chip{font-size:12.5px;padding:6px 12px}}
 /* voice */
 .voices{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:860px;margin:0 auto}
 .voice{background:#fff;padding:36px 32px;position:relative;border:1px solid var(--line)}
@@ -615,6 +629,46 @@ header:not(.is-scrolled) .logo small{color:#e6d3c4}
   </div>
 </section>
 
+<!-- MEDIA -->
+<section class="media-sec">
+  <div class="wrap">
+    <span class="en reveal">Topics</span>
+    <h2 class="reveal">メディア掲載</h2>
+    <div class="media-card reveal">
+      <p class="media-date">2026.10.17　プレスリリース</p>
+      <h3>1,000人以上の看取りを経験した看護師が、歌でランナーを応援。<br class="pc-br">HalScene Recordsから歌手デビューした小西紀江、東京夢舞いマラソンで「My Life－走り続けて－」を歌唱</h3>
+      <div class="media-count"><span>計</span><b><span class="count" data-to="52">52</span></b><span>媒体に掲載</span></div>
+      <p class="media-lead">1,000人の看取り × マラソン大会 × 歌手デビューという経歴が注目され、朝日新聞デジタル＆[and]、毎日新聞デジタル、産経ニュースなど、計52媒体に掲載されました。</p>
+      <p class="media-sub">主な掲載媒体</p>
+      <div class="press-list">
+        <a class="media-chip" href="https://www.asahi.com/and/pressrelease/16973426" target="_blank" rel="noopener">朝日新聞デジタルマガジン＆[and]</a>
+        <a class="media-chip" href="https://mainichi.jp/articles/20261017/pr2/00m/020/160000c" target="_blank" rel="noopener">毎日新聞デジタル</a>
+        <a class="media-chip" href="https://www.sankei.com/pressrelease/prtimes/FN47UWPBXROQVJ4VRHTNRRNLHE/" target="_blank" rel="noopener">産経ニュース</a>
+        <a class="media-chip" href="https://adv.tokyo-np.co.jp/prtimes/article216291/" target="_blank" rel="noopener">東京新聞 TOKYO Web</a>
+        <a class="media-chip" href="https://newsdig.tbs.co.jp/articles/prtimes/3019707?display=1" target="_blank" rel="noopener">TBS NEWS DIG</a>
+        <a class="media-chip" href="https://www.tv-tokyo.co.jp/plus/external-pr/entry/281018.html" target="_blank" rel="noopener">テレ東プラス</a>
+        <a class="media-chip" href="https://www.jiji.com/jc/article?k=000000008.000186323&amp;g=prt" target="_blank" rel="noopener">時事ドットコム</a>
+        <a class="media-chip" href="https://dg.chunichi.co.jp/prtimes/tokai/article.php?guid=c186323_r8" target="_blank" rel="noopener">中日新聞しずおかWeb</a>
+        <a class="media-chip" href="https://ibarakinews.jp/news/newsdetail.php?f_jun=c186323_r8&amp;elem=prt" target="_blank" rel="noopener">茨城新聞クロスアイ</a>
+        <a class="media-chip" href="https://www.yamagata-np.jp/prtimes/index_pr.php?id=c186323_r8" target="_blank" rel="noopener">山形新聞 やまがたニュースオンライン</a>
+        <a class="media-chip" href="https://www.sannichi.co.jp/prtimes/others/c186323_r8" target="_blank" rel="noopener">山梨日日新聞電子版</a>
+        <a class="media-chip" href="https://president.jp/ud/pressrelease/6ad32ebe7079c863e400000e" target="_blank" rel="noopener">PRESIDENT Online</a>
+        <a class="media-chip" href="https://gendai.media/ud/pressrelease/cmvc6sbb70000074183nkwku7" target="_blank" rel="noopener">現代ビジネス</a>
+        <a class="media-chip" href="https://news.livedoor.com/pr_topics/detail/32591221/" target="_blank" rel="noopener">ライブドアニュース</a>
+        <a class="media-chip" href="https://toyokeizai.net/ud/pressrelease/6ad332d31262171c0c00001c" target="_blank" rel="noopener">東洋経済オンライン</a>
+        <a class="media-chip" href="https://www.walkerplus.com/release/c186323_r8/" target="_blank" rel="noopener">ウォーカープラス</a>
+        <a class="media-chip" href="https://www.iwate-np.co.jp/pr/prtimes/32872" target="_blank" rel="noopener">岩手日報ONLINE</a>
+        <a class="media-chip" href="https://www.oricon.co.jp/pressrelease/3042351/" target="_blank" rel="noopener">ORICON NEWS</a>
+        <a class="media-chip" href="https://jbpress.ismedia.jp/ud/pressrelease/6ad32ebf12621706cf00000e" target="_blank" rel="noopener">JBpress</a>
+        <a class="media-chip" href="https://www.excite.co.jp/news/article/Prtimes_2026-10-17-186323-8/" target="_blank" rel="noopener">エキサイトニュース</a>
+        <a class="media-chip" href="https://news.infoseek.co.jp/article/prtimes_000000008_000186323/" target="_blank" rel="noopener">Infoseek ニュース</a>
+        <a class="media-chip" href="https://news.nicovideo.jp/watch/nw19890496" target="_blank" rel="noopener">ニコニコニュース</a>
+        <a class="media-chip" href="https://mantan-web.jp/prtimes/article/20261017prt00m200000148a.html" target="_blank" rel="noopener">MANTANWEB</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- VOICE -->
 <section class="voice-sec" style="background:var(--bg2)">
   <div class="wrap">
@@ -747,6 +801,7 @@ const co = new IntersectionObserver(es=>{es.forEach(e=>{
   });
 })},{threshold:.5});
 const st=document.querySelector('.stats'); if(st) co.observe(st);
+const mc=document.querySelector('.media-count'); if(mc) co.observe(mc);
 </script>
 <script>
 (function(){var h=document.querySelector('header');function f(){h.classList.toggle('is-scrolled',window.scrollY>60)}window.addEventListener('scroll',f,{passive:true});f();})();
