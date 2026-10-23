@@ -124,6 +124,16 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .sub-price b{color:var(--gold2);font-size:22px;font-family:"Noto Serif JP",serif}
 .price .cta{text-align:center;margin-top:48px}
 
+.price-list{max-width:760px;margin:0 auto;display:grid;gap:36px}
+.price-list .price-box{max-width:none;width:100%;padding:36px 32px}
+.price-list .price-box h3{font-size:21px;line-height:1.6}
+.price-list .price-box .detail{margin-bottom:14px}
+.price-list .price-box .yen{font-size:40px}
+.price-list .price-main{padding:48px 32px}
+.price-list .price-main h3{font-size:26px}
+.price-list .price-main .yen{font-size:52px}
+@media (max-width:768px){.price-list .price-box{padding:36px 20px}.price-list .price-box h3{font-size:18px}.price-list .price-main .yen{font-size:42px}.price-list .price-box .yen{font-size:34px}}
+
 /* voice */
 .voices{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:860px;margin:0 auto}
 .voice{background:#fff;padding:36px 32px;position:relative;border:1px solid var(--line)}
@@ -615,17 +625,25 @@ header:not(.is-scrolled) .logo small{color:#e6d3c4}
   <div class="wrap">
     <span class="en reveal">Price</span>
     <h2 class="reveal">メニュー・料金</h2>
-    <div class="price-box reveal">
-      <span class="label">おすすめ</span>
-      <h3>統合セッション</h3>
-      <p class="detail">脳幹セラピー × ヘッドマッサージ × カウンセリング<br>60分／対面限定(新宿・若松河田／曙橋)</p>
-      <p class="yen">55,000<small>円(税込)</small></p>
+    <div class="price-list">
+      <div class="price-box reveal">
+        <h3>脳幹セラピー × 共鳴カウンセリング</h3>
+        <p class="detail">60分／対面限定(新宿・若松河田／曙橋)</p>
+        <p class="yen">13,900<small>円(税込)</small></p>
+      </div>
+      <div class="price-box reveal">
+        <h3>脳幹セラピー × 共鳴カウンセリング<br>× リンパデトックス(上半身)</h3>
+        <p class="detail">60分／対面限定(新宿・若松河田／曙橋)</p>
+        <p class="yen">36,900<small>円(税込)</small></p>
+      </div>
+      <div class="price-box price-main reveal">
+        <span class="label">おすすめ</span>
+        <h3>統合セッション</h3>
+        <p class="detail">脳幹セラピー × カウンセリング × リンパデトックス(全身)<br>60分／対面限定(新宿・若松河田／曙橋)</p>
+        <p class="yen">59,900<small>円(税込)</small></p>
+      </div>
     </div>
-    <div class="sub-price reveal">
-      <span>心カウンセリング(60分／オンライン可)</span>
-      <b>33,000円(税込)</b>
-    </div>
-    <div class="cta reveal"><a class="btn btn-gold" href="./reserve/">統合セッションを予約する</a></div>
+    <div class="cta reveal"><a class="btn btn-gold" href="./reserve/">セッションを予約する</a></div>
   </div>
 </section>
 
@@ -670,7 +688,7 @@ header:not(.is-scrolled) .logo small{color:#e6d3c4}
     <div class="faq-list reveal">
       <details><summary>脳幹セラピーを受けるのは初めてでも大丈夫ですか？</summary><p>はい、初めての方も大歓迎です。最初にお身体やお気持ちの状態をお聞きしてから、ていねいに進めていきます。</p></details>
       <details><summary>どんな服装で行けばいいですか？</summary><p>締めつけの少ない、楽な服装でお越しください。</p></details>
-      <details><summary>オンラインでも受けられますか？</summary><p>統合セッションは対面限定です。オンラインをご希望の方は「心カウンセリング(60分)」をご利用ください。</p></details>
+      <details><summary>オンラインでも受けられますか？</summary><p>すべてのメニューを、サロンでの対面のみで行っています。</p></details>
       <details><summary>男性でも受けられますか？</summary><p>はい、男性の方にもご利用いただいています。</p></details>
       <details><summary>施術は痛くありませんか？</summary><p>骨をボキボキ鳴らすような施術ではありませんので、ご安心ください。お一人おひとりのお身体の状態に合わせて、無理のない施術を心がけています。</p></details>
       <details><summary>通院中・服薬中でも施術を受けられますか？ 麻痺がある場合も大丈夫ですか？</summary><p>はい、通院中や服薬中の方、麻痺のある方も、まずはお気軽にご相談ください。看護師として40年以上の経験を持つ施術者が、お身体の状態を丁寧に伺い、一人ひとりに合わせて対応いたします。状態によっては、医師への確認をお願いする場合もございますので、安心してご相談ください。</p></details>

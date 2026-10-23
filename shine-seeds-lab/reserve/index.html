@@ -100,6 +100,8 @@ input:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);
 .summary dt{color:var(--muted);font-size:13px;padding-top:1px}
 .summary dd{margin:0;min-width:0;overflow-wrap:anywhere}
 .time-note{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+.menu .name{word-break:keep-all;overflow-wrap:anywhere}
+@media (max-width:560px){.menu{grid-template-columns:auto 1fr}.menu .price{grid-column:2}.menu .desc,.menu .tags{grid-column:2}}
 .notes{font-size:12.5px;color:var(--muted);line-height:1.8;margin:0;padding-left:1.2em}
 
 .actions{display:flex;gap:12px;flex-wrap:wrap}
@@ -242,10 +244,12 @@ footer{text-align:center;font-size:12px;color:var(--muted)}
 // Google Apps Script を公開したら、そのURLをここに貼ると本番の空き状況・予約登録に切り替わります
 const GAS_URL = "";
 const MENUS = [
-  {id:"integrated", name:"統合セッション", minutes:60, price:55000, styles:["対面"],
-   desc:"脳幹セラピー × ヘッドマッサージ × カウンセリング。張りつめた神経をゆるめて、身体から気持ち、考え方の順に整えていきます。", tags:["60分","対面のみ"]},
-  {id:"counseling", name:"心カウンセリング", minutes:60, price:33000, styles:["対面","オンライン"],
-   desc:"気持ちの整理と、考え方のくせの見直し、これからの行動づくりをお手伝いします。", tags:["60分","オンライン可"]}
+  {id:"basic", name:"脳幹セラピー × 共鳴カウンセリング", minutes:60, price:13900, styles:["対面"],
+   desc:"脳幹セラピーで張りつめた神経をゆるめながら、共鳴カウンセリングで気持ちを整えていきます。", tags:["60分","対面のみ"]},
+  {id:"upper", name:"脳幹セラピー × 共鳴カウンセリング × リンパデトックス(上半身)", minutes:60, price:36900, styles:["対面"],
+   desc:"脳幹セラピーと共鳴カウンセリングに、上半身のリンパデトックスを組み合わせたメニューです。", tags:["60分","対面のみ"]},
+  {id:"integrated", name:"統合セッション", minutes:60, price:59900, styles:["対面"],
+   desc:"脳幹セラピー × カウンセリング × リンパデトックス(全身)。身体から気持ち、考え方の順に、まるごと整えていきます。", tags:["60分","対面のみ","おすすめ"]}
 ];
 const MAX_DAYS = 45;
 
