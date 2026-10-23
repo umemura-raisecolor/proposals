@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>ご予約｜Shine Seeds Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0}
+:root{
+  --bg:#fbf8f2; --paper:#ffffff; --ink:#2b2a28; --muted:#5e5a52; --line:#e4d9c3;
+  --accent:#b8964f; --accent-soft:#f3ede1; --sage:#8a7038; --sage-soft:#f3ede1; --closed:#c9c2b4;
+  --font-display:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --font-body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --font-latin:"Noto Serif JP",serif;
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.85;letter-spacing:.03em;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:640px;margin:0 auto;padding-block:96px 64px;display:flex;flex-direction:column;gap:28px}
+header{text-align:center;display:flex;flex-direction:column;gap:6px}
+.brand{font-family:var(--font-latin);font-style:italic;font-size:15px;letter-spacing:.18em;color:var(--accent)}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(24px,6vw,30px);margin:0;letter-spacing:.08em;text-wrap:balance}
+.lead{color:var(--muted);font-size:13.5px;margin:0}
+.demo{font-size:12.5px;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 14px;align-self:center}
+
+.steps{display:flex;justify-content:center;gap:6px;list-style:none;margin:0;padding:0;font-size:12px;color:var(--muted)}
+.steps li{display:flex;align-items:center;gap:6px}
+.steps li+li::before{content:"";width:18px;height:1px;background:var(--line)}
+.steps li span{font-family:var(--font-latin);font-size:14px}
+.steps li.on{color:var(--ink);font-weight:700}
+.steps li.on span{color:var(--accent)}
+
+section.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px clamp(18px,5vw,32px);display:flex;flex-direction:column;gap:20px}
+h2{font-family:var(--font-display);font-weight:600;font-size:19px;margin:0;letter-spacing:.06em}
+.sub{margin:-12px 0 0;color:var(--muted);font-size:13px}
+
+.menus{display:flex;flex-direction:column;gap:12px}
+.menu{display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:start;border:1px solid var(--line);border-radius:6px;padding:16px 18px;cursor:pointer;text-align:left;background:transparent;color:inherit;font:inherit;transition:border-color .2s,background .2s}
+.menu:hover{border-color:var(--accent)}
+.menu[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.radio{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--muted);margin-top:5px;display:grid;place-items:center}
+.menu[aria-pressed="true"] .radio{border-color:var(--accent)}
+.menu[aria-pressed="true"] .radio::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.menu .name{font-weight:700;font-size:15.5px}
+.menu .price{font-family:var(--font-latin);font-size:19px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.menu .price small{font-family:var(--font-body);font-size:11px;color:var(--muted);margin-left:2px}
+.menu .desc{grid-column:2/4;color:var(--muted);font-size:13px;line-height:1.7}
+.tags{grid-column:2/4;display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11.5px;padding:1px 10px;border-radius:999px;background:var(--sage-soft);color:var(--sage)}
+
+.style-pick{display:flex;gap:10px;flex-wrap:wrap}
+.chip{font:inherit;font-size:14px;padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);font-weight:700}
+
+.cal-head{display:flex;align-items:center;justify-content:space-between}
+.cal-head .ym{font-family:var(--font-display);font-size:17px;letter-spacing:.06em}
+.nav{font:inherit;background:transparent;border:1px solid var(--line);color:inherit;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px}
+.nav:disabled{opacity:.3;cursor:default}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.dow{font-size:11.5px;color:var(--muted);padding-bottom:4px}
+.dow.sun{color:#B4675A}.dow.sat{color:#5A7AA8}
+.day{font:inherit;aspect-ratio:1;max-width:100%;border:none;border-radius:50%;background:transparent;color:var(--closed);font-variant-numeric:tabular-nums;font-size:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1;cursor:default}
+.day.open{color:var(--ink);cursor:pointer}
+.day.open::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--sage);margin-top:3px}
+.day.open:hover{background:var(--sage-soft)}
+.day.sel{background:var(--accent)!important;color:var(--paper)}
+.day.sel::after{background:var(--paper)}
+.legend{font-size:12px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap}
+.legend i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sage);margin-right:6px;vertical-align:middle}
+
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.time{font:inherit;font-variant-numeric:tabular-nums;padding:10px 0;border:1px solid var(--line);border-radius:4px;background:transparent;color:inherit;cursor:pointer;font-size:15px}
+.time:hover{border-color:var(--accent)}
+.time[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--paper);font-weight:700}
+.empty{color:var(--muted);font-size:13.5px;margin:0}
+
+form{display:flex;flex-direction:column;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+label,.lbl{font-size:13.5px;font-weight:700}
+.req{font-size:11px;font-weight:500;color:var(--paper);background:var(--accent);border-radius:3px;padding:0 6px;margin-left:8px}
+.opt{font-size:11px;font-weight:500;color:var(--muted);margin-left:8px}
+input[type=text],input[type=tel],input[type=email],textarea{font:inherit;font-size:16px;padding:11px 13px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical;line-height:1.7}
+input:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row2>*{min-width:0}
+@media (max-width:480px){.row2{grid-template-columns:1fr}}
+.err{color:#B4554A;font-size:12.5px;min-height:0}
+.err:empty{display:none}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;font-weight:500}
+.check input{margin-top:6px;accent-color:var(--accent)}
+
+.summary{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-size:14.5px}
+.summary dt{color:var(--muted);font-size:13px;padding-top:1px}
+.summary dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.notes{font-size:12.5px;color:var(--muted);line-height:1.8;margin:0;padding-left:1.2em}
+
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:700;font-size:15px;letter-spacing:.06em;padding:13px 28px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);cursor:pointer;flex:1;min-width:160px}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line);font-weight:500}
+.btn:disabled{opacity:.4;cursor:default}
+
+.done{text-align:center;align-items:center}
+.done .seal{font-family:var(--font-latin);font-style:italic;font-size:15px;color:var(--accent);letter-spacing:.16em}
+footer{text-align:center;font-size:12px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){section.card{animation:rise .35s ease both}@keyframes rise{from{transform:translateY(6px)}to{transform:none}}}
+
+.top{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(251,248,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top .in{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px))}
+.top .logo{font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--ink);text-decoration:none;line-height:1.3}
+.top .logo small{display:block;font-size:10.5px;color:var(--accent);letter-spacing:.2em;font-weight:400}
+.top .back{font-size:14px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.btn{background:linear-gradient(135deg,#b8964f,#a07f3c);color:#fff;border-radius:2px}
+.btn.ghost{background:transparent}
+.chip,.menu,.time,input[type=text],input[type=tel],input[type=email],textarea{border-radius:2px}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="in">
+  <a class="logo" href="../">Shine Seeds Lab<small>BRAINSTEM THERAPY</small></a>
+  <a class="back" href="../">脳幹セラピーのご案内へ戻る</a>
+</div></header>
+
+
+<div class="wrap">
+  <header>
+        <h1>ご予約</h1>
+    <p class="lead">曙橋駅近くのプライベートサロン　9:00〜19:00・不定休</p>
+    <span class="demo" id="demoBadge">試作版：空き状況は見本です。送信しても予約は入りません</span>
+  </header>
+
+  <ol class="steps" aria-label="ご予約の流れ">
+    <li data-s="1" class="on"><span>1</span>メニュー</li>
+    <li data-s="2"><span>2</span>日時</li>
+    <li data-s="3"><span>3</span>お客様情報</li>
+    <li data-s="4"><span>4</span>確認</li>
+  </ol>
+
+  <!-- STEP 1 -->
+  <section class="card" id="s1">
+    <h2>メニューを選ぶ</h2>
+    <div class="menus" id="menus"></div>
+    <div class="field" id="stylePickWrap" hidden>
+      <span class="lbl">受け方</span>
+      <div class="style-pick" id="stylePick">
+        <button type="button" class="chip" data-v="対面" aria-pressed="true">サロンで対面</button>
+        <button type="button" class="chip" data-v="オンライン" aria-pressed="false">オンライン(Zoom)</button>
+      </div>
+    </div>
+    <div class="actions"><button class="btn" id="to2" disabled>日時を選ぶ</button></div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="card" id="s2" hidden>
+    <h2>日時を選ぶ</h2>
+    <p class="sub" id="s2sub"></p>
+    <div class="cal-head">
+      <button class="nav" id="prevM" aria-label="前の月">‹</button>
+      <div class="ym" id="ym"></div>
+      <button class="nav" id="nextM" aria-label="次の月">›</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="legend"><span><i></i>ご予約いただける日</span></div>
+    <div class="field">
+      <span class="lbl" id="timeLbl">日付を選ぶと、空いている時間が表示されます</span>
+      <div class="times" id="times"></div>
+    </div>
+    <div class="actions">
+      <button class="btn ghost" data-back="1">戻る</button>
+      <button class="btn" id="to3" disabled>お客様情報の入力へ</button>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="card" id="s3" hidden>
+    <h2>お客様情報</h2>
+    <form id="form" novalidate>
+      <div class="row2">
+        <div class="field"><label for="f-name">お名前<span class="req">必須</span></label><input type="text" id="f-name" autocomplete="name" placeholder="小西 花子"><span class="err" data-for="f-name"></span></div>
+        <div class="field"><label for="f-kana">ふりがな<span class="req">必須</span></label><input type="text" id="f-kana" placeholder="こにし はなこ"><span class="err" data-for="f-kana"></span></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="f-tel">電話番号<span class="req">必須</span></label><input type="tel" id="f-tel" autocomplete="tel" inputmode="tel" placeholder="090-1234-5678"><span class="err" data-for="f-tel"></span></div>
+        <div class="field"><label for="f-mail">メールアドレス<span class="req">必須</span></label><input type="email" id="f-mail" autocomplete="email" placeholder="hanako@example.com"><span class="err" data-for="f-mail"></span></div>
+      </div>
+      <div class="field">
+        <span class="lbl">ご利用は<span class="req">必須</span></span>
+        <div class="style-pick" id="visitPick">
+          <button type="button" class="chip" data-v="はじめて" aria-pressed="true">はじめて</button>
+          <button type="button" class="chip" data-v="2回目以降" aria-pressed="false">2回目以降</button>
+        </div>
+      </div>
+      <div class="field"><label for="f-ref">ご紹介者のお名前<span class="opt">任意</span></label><input type="text" id="f-ref" placeholder="ご紹介でお越しの方はお名前を"></div>
+      <div class="field"><label for="f-msg">いまのお悩みや、聞いてほしいこと<span class="opt">任意</span></label><textarea id="f-msg" placeholder="眠りが浅い、気持ちが張りつめている、これからの生き方を考えたい、など。書ける範囲で大丈夫です。"></textarea></div>
+      <label class="check"><input type="checkbox" id="f-agree"> キャンセルは前日までにご連絡ください。サロンの詳しい住所は、ご予約確定後にメールでお知らせします。</label>
+      <span class="err" data-for="f-agree"></span>
+      <div class="actions">
+        <button type="button" class="btn ghost" data-back="2">戻る</button>
+        <button type="submit" class="btn">確認画面へ</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="card" id="s4" hidden>
+    <h2>ご予約内容の確認</h2>
+    <dl class="summary" id="summary"></dl>
+    <ul class="notes">
+      <li>送信すると、のり姉さんに予約のお知らせが届きます。</li>
+      <li>確認のメールを、ご入力のアドレスにお送りします。</li>
+    </ul>
+    <span class="err" id="sendErr"></span>
+    <div class="actions">
+      <button class="btn ghost" data-back="3">修正する</button>
+      <button class="btn" id="send">この内容で予約する</button>
+    </div>
+  </section>
+
+  <!-- DONE -->
+  <section class="card done" id="s5" hidden>
+    <div class="seal">Thank you</div>
+    <h2>ご予約を受け付けました</h2>
+    <p class="empty" id="doneMsg"></p>
+    <p class="empty">ご入力のメールアドレスに確認のメールをお送りしました。<br>当日お会いできるのを楽しみにしております。</p>
+    <div class="actions" style="width:100%;max-width:280px"><button class="btn ghost" id="again">はじめに戻る</button></div>
+  </section>
+
+  <footer>一般社団法人 Shine Seeds Lab　お問い合わせ 070-6666-8307</footer>
+</div>
+
+<script>
+/* ========= 設定 ========= */
+// Google Apps Script を公開したら、そのURLをここに貼ると本番の空き状況・予約登録に切り替わります
+const GAS_URL = "";
+const MENUS = [
+  {id:"integrated", name:"統合セッション", minutes:60, price:55000, styles:["対面"],
+   desc:"脳幹セラピー × ヘッドマッサージ × カウンセリング。張りつめた神経をゆるめて、身体から気持ち、考え方の順に整えていきます。", tags:["60分","対面のみ"]},
+  {id:"counseling", name:"心カウンセリング", minutes:60, price:33000, styles:["対面","オンライン"],
+   desc:"気持ちの整理と、考え方のくせの見直し、これからの行動づくりをお手伝いします。", tags:["60分","オンライン可"]}
+];
+const MAX_DAYS = 45;
+
+/* ========= 状態 ========= */
+const st = {menu:null, style:"対面", date:null, time:null, visit:"はじめて", month:null, slots:{}};
+const $ = s => document.querySelector(s);
+const yen = n => n.toLocaleString("ja-JP");
+const pad = n => String(n).padStart(2,"0");
+const key = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const DOW = ["日","月","火","水","木","金","土"];
+const fmtDate = k => {const [y,m,d]=k.split("-").map(Number);const dt=new Date(y,m-1,d);return `${m}月${d}日(${DOW[dt.getDay()]})`;};
+const isDemo = !GAS_URL;
+if(!isDemo) $("#demoBadge").hidden = true;
+
+/* ========= ステップ表示 ========= */
+function go(n){
+  for(let i=1;i<=5;i++) $("#s"+i).hidden = i!==n;
+  document.querySelectorAll(".steps li").forEach(li=>li.classList.toggle("on", +li.dataset.s===Math.min(n,4)));
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+document.querySelectorAll("[data-back]").forEach(b=>b.addEventListener("click",()=>go(+b.dataset.back)));
+
+/* ========= STEP1 メニュー ========= */
+function renderMenus(){
+  $("#menus").innerHTML = MENUS.map(m=>`
+    <button type="button" class="menu" data-id="${m.id}" aria-pressed="${st.menu?.id===m.id}">
+      <span class="radio"></span><span class="name">${m.name}</span>
+      <span class="price">${yen(m.price)}<small>円(税込)</small></span>
+      <span class="desc">${m.desc}</span>
+      <span class="tags">${m.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</span>
+    </button>`).join("");
+  document.querySelectorAll(".menu").forEach(b=>b.addEventListener("click",()=>{
+    st.menu = MENUS.find(m=>m.id===b.dataset.id);
+    if(!st.menu.styles.includes(st.style)) st.style = st.menu.styles[0];
+    st.date=null; st.time=null; st.slots={};
+    renderMenus(); renderStyle(); $("#to2").disabled=false;
+  }));
+}
+function renderStyle(){
+  const many = st.menu && st.menu.styles.length>1;
+  $("#stylePickWrap").hidden = !many;
+  document.querySelectorAll("#stylePick .chip").forEach(c=>c.setAttribute("aria-pressed", c.dataset.v===st.style));
+}
+function chipGroup(sel, cb){
+  document.querySelectorAll(sel+" .chip").forEach(c=>c.addEventListener("click",()=>{
+    document.querySelectorAll(sel+" .chip").forEach(x=>x.setAttribute("aria-pressed", x===c)); cb(c.dataset.v);
+  }));
+}
+chipGroup("#stylePick", v=>st.style=v);
+chipGroup("#visitPick", v=>st.visit=v);
+$("#to2").addEventListener("click", async ()=>{
+  $("#s2sub").textContent = `${st.menu.name}(${st.menu.minutes}分・${st.style})`;
+  const t=new Date(); st.month = new Date(t.getFullYear(), t.getMonth(), 1);
+  go(2); await loadSlots(); renderCal(); renderTimes();
+});
+
+/* ========= 空き状況 ========= */
+// 見本データ:不定休・埋まっている枠をそれっぽく作る(日付から決まるので毎回同じ)
+function demoSlots(){
+  const out={}; const base=new Date(); base.setHours(0,0,0,0);
+  const starts=["10:00","11:30","13:30","15:00","16:30","18:00"];
+  for(let i=1;i<=MAX_DAYS;i++){
+    const d=new Date(base); d.setDate(d.getDate()+i);
+    const h=(d.getDate()*7+d.getMonth()*13)%11;
+    if(h===0||h===5||d.getDay()===0&&h%2) continue;               // 不定休
+    const free=starts.filter((s,j)=>((d.getDate()+j*3+h)%4)!==0);   // 一部埋まり
+    if(free.length) out[key(d)]=free;
+  }
+  return out;
+}
+async function loadSlots(){
+  if(isDemo){ st.slots = demoSlots(); return; }
+  $("#timeLbl").textContent="空き状況を読み込んでいます…";
+  try{
+    const r = await fetch(`${GAS_URL}?action=slots&menu=${st.menu.id}`);
+    const j = await r.json(); st.slots = j.days || {};
+    $("#timeLbl").textContent="日付を選ぶと、空いている時間が表示されます";
+  }catch(e){
+    st.slots={}; $("#timeLbl").textContent="空き状況を読み込めませんでした。少し時間をおいて開き直すか、お電話でご予約ください。";
+  }
+}
+
+/* ========= STEP2 カレンダー ========= */
+function renderCal(){
+  const m=st.month, y=m.getFullYear(), mo=m.getMonth();
+  $("#ym").textContent = `${y}年 ${mo+1}月`;
+  const first=new Date(y,mo,1).getDay(), days=new Date(y,mo+1,0).getDate();
+  let html = DOW.map((d,i)=>`<div class="dow ${i===0?"sun":i===6?"sat":""}">${d}</div>`).join("");
+  for(let i=0;i<first;i++) html+="<div></div>";
+  for(let d=1; d<=days; d++){
+    const k=key(new Date(y,mo,d)); const open=!!st.slots[k];
+    html+=`<button type="button" class="day ${open?"open":""} ${st.date===k?"sel":""}" ${open?"":"disabled"} data-k="${k}" aria-label="${fmtDate(k)}${open?"":" 受付なし"}">${d}</button>`;
+  }
+  $("#grid").innerHTML=html;
+  document.querySelectorAll(".day.open").forEach(b=>b.addEventListener("click",()=>{
+    st.date=b.dataset.k; st.time=null; $("#to3").disabled=true; renderCal(); renderTimes();
+  }));
+  const t=new Date(); const minM=new Date(t.getFullYear(),t.getMonth(),1);
+  const lim=new Date(); lim.setDate(lim.getDate()+MAX_DAYS); const maxM=new Date(lim.getFullYear(),lim.getMonth(),1);
+  $("#prevM").disabled = m<=minM; $("#nextM").disabled = m>=maxM;
+}
+$("#prevM").addEventListener("click",()=>{st.month=new Date(st.month.getFullYear(),st.month.getMonth()-1,1);renderCal();});
+$("#nextM").addEventListener("click",()=>{st.month=new Date(st.month.getFullYear(),st.month.getMonth()+1,1);renderCal();});
+function renderTimes(){
+  const box=$("#times");
+  if(!st.date){ box.innerHTML=""; return; }
+  $("#timeLbl").textContent = `${fmtDate(st.date)} の空いている時間`;
+  box.innerHTML = st.slots[st.date].map(t=>`<button type="button" class="time" data-t="${t}" aria-pressed="${st.time===t}">${t}</button>`).join("");
+  box.querySelectorAll(".time").forEach(b=>b.addEventListener("click",()=>{
+    st.time=b.dataset.t; renderTimes(); $("#to3").disabled=false;
+  }));
+}
+$("#to3").addEventListener("click",()=>go(3));
+
+/* ========= STEP3 入力 ========= */
+const val = id => $("#"+id).value.trim();
+$("#form").addEventListener("submit", e=>{
+  e.preventDefault();
+  const errs={};
+  if(!val("f-name")) errs["f-name"]="お名前を入力してください";
+  if(!val("f-kana")) errs["f-kana"]="ふりがなを入力してください";
+  if(!/^[0-9０-９\-－ ]{10,14}$/.test(val("f-tel"))) errs["f-tel"]="電話番号を数字で入力してください(例:090-1234-5678)";
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val("f-mail"))) errs["f-mail"]="メールアドレスの形をご確認ください";
+  if(!$("#f-agree").checked) errs["f-agree"]="内容をご確認のうえ、チェックを入れてください";
+  document.querySelectorAll(".err[data-for]").forEach(s=>s.textContent=errs[s.dataset.for]||"");
+  if(Object.keys(errs).length){ const f=Object.keys(errs)[0]; $("#"+f).focus(); return; }
+  const rows=[
+    ["メニュー", `${st.menu.name}(${st.menu.minutes}分)`],
+    ["受け方", st.style],
+    ["日時", `${fmtDate(st.date)} ${st.time}〜`],
+    ["料金", `${yen(st.menu.price)}円(税込)`],
+    ["お名前", `${val("f-name")}(${val("f-kana")})`],
+    ["電話番号", val("f-tel")],
+    ["メール", val("f-mail")],
+    ["ご利用", st.visit],
+    ["ご紹介者", val("f-ref")||"なし"],
+    ["ご相談", val("f-msg")||"なし"]
+  ];
+  $("#summary").innerHTML = rows.map(([a,b])=>`<dt>${a}</dt><dd></dd>`).join("");
+  $("#summary").querySelectorAll("dd").forEach((dd,i)=>dd.textContent=rows[i][1]);
+  $("#sendErr").textContent=""; go(4);
+});
+
+/* ========= STEP4 送信 ========= */
+$("#send").addEventListener("click", async ()=>{
+  const btn=$("#send"); btn.disabled=true; btn.textContent="送信しています…";
+  const payload={menu:st.menu.id, style:st.style, date:st.date, time:st.time,
+    name:val("f-name"), kana:val("f-kana"), tel:val("f-tel"), email:val("f-mail"),
+    visit:st.visit, referrer:val("f-ref"), message:val("f-msg")};
+  try{
+    if(!isDemo){
+      const r=await fetch(GAS_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+      const j=await r.json();
+      if(!j.ok) throw new Error(j.error||"送信できませんでした");
+    }else{ await new Promise(r=>setTimeout(r,700)); }
+    $("#doneMsg").textContent = `${fmtDate(st.date)} ${st.time}〜　${st.menu.name}`;
+    go(5);
+  }catch(err){
+    $("#sendErr").textContent = (err.message==="taken")
+      ? "申し訳ありません。この時間は先に予約が入りました。戻って別の時間をお選びください。"
+      : "送信できませんでした。通信状況をご確認のうえ、もう一度お試しください。";
+  }finally{ btn.disabled=false; btn.textContent="この内容で予約する"; }
+});
+$("#again").addEventListener("click",()=>{
+  st.menu=null; st.date=null; st.time=null; $("#form").reset(); $("#to2").disabled=true; renderMenus(); renderStyle(); go(1);
+});
+
+renderMenus();
+</script>
+
+</body>
+</html>
