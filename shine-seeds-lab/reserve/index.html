@@ -93,6 +93,11 @@ input:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);
 @media (max-width:480px){.row2{grid-template-columns:1fr}}
 .err{color:#B4554A;font-size:12.5px;min-height:0}
 .err:empty{display:none}
+.summary dd{white-space:pre-wrap}
+.q-head{font-family:var(--font-latin),serif;font-size:17px;font-weight:600;margin:14px 0 0;padding-top:18px;border-top:1px solid var(--line)}
+.q-lead{font-size:13px;color:var(--muted);margin:-4px 0 0}
+.checks{display:flex;flex-direction:column;gap:10px;margin-top:2px}
+.checks .check{font-weight:500}
 .check{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;font-weight:500}
 .check input{margin-top:6px;accent-color:var(--accent)}
 
@@ -200,8 +205,39 @@ footer{text-align:center;font-size:12px;color:var(--muted)}
           <button type="button" class="chip" data-v="2回目以降" aria-pressed="false">2回目以降</button>
         </div>
       </div>
+      <h3 class="q-head">事前アンケート</h3>
+      <p class="q-lead">当日のセッションに活かすために、わかる範囲でお答えください。</p>
+      <div class="field" id="f-age">
+        <span class="lbl">ご年代<span class="req">必須</span></span>
+        <div class="style-pick" id="agePick">
+          <button type="button" class="chip" data-v="答えたくない" aria-pressed="false">答えたくない</button>
+          <button type="button" class="chip" data-v="10代" aria-pressed="false">10代</button>
+          <button type="button" class="chip" data-v="20代" aria-pressed="false">20代</button>
+          <button type="button" class="chip" data-v="30代" aria-pressed="false">30代</button>
+          <button type="button" class="chip" data-v="40代" aria-pressed="false">40代</button>
+          <button type="button" class="chip" data-v="50代" aria-pressed="false">50代</button>
+          <button type="button" class="chip" data-v="60代" aria-pressed="false">60代</button>
+          <button type="button" class="chip" data-v="70代" aria-pressed="false">70代</button>
+          <button type="button" class="chip" data-v="80代以上" aria-pressed="false">80代以上</button>
+        </div>
+        <span class="err" data-for="f-age"></span>
+      </div>
+      <div class="field" id="f-cond">
+        <span class="lbl">日頃、どのような不調や疲れを感じていますか？<span class="req">必須</span><span class="opt">複数選択可</span></span>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="cond" value="慢性的な肩こり・腰痛・疲労"> 慢性的な肩こり・腰痛・疲労</label>
+          <label class="check"><input type="checkbox" name="cond" value="思考が休まらない、頭の疲れ・モヤモヤ"> 思考が休まらない、頭の疲れ・モヤモヤ</label>
+          <label class="check"><input type="checkbox" name="cond" value="なんとなくスッキリしない、不調が続いている"> なんとなくスッキリしない、不調が続いている</label>
+          <label class="check"><input type="checkbox" name="cond" value="心からリラックスできない、イライラ・不安感"> 心からリラックスできない、イライラ・不安感</label>
+          <label class="check"><input type="checkbox" name="cond" value="その他" id="cond-other"> その他</label>
+          <input type="text" id="f-cond-other" placeholder="その他の不調や疲れをご記入ください" hidden>
+        </div>
+        <span class="err" data-for="f-cond"></span>
+      </div>
+      <div class="field"><label for="f-goal">心身が整ったら「何ができるようになっていますか」「叶っていることは何ですか」<span class="req">必須</span></label><textarea id="f-goal" placeholder="自由にお書きください"></textarea><span class="err" data-for="f-goal"></span></div>
+      <div class="field"><label for="f-expect">今回のセッションに期待することは何ですか？<span class="req">必須</span></label><textarea id="f-expect" placeholder="自由にお書きください"></textarea><span class="err" data-for="f-expect"></span></div>
       <div class="field"><label for="f-ref">ご紹介者のお名前<span class="opt">任意</span></label><input type="text" id="f-ref" placeholder="ご紹介でお越しの方はお名前を"></div>
-      <div class="field"><label for="f-msg">いまのお悩みや、聞いてほしいこと<span class="opt">任意</span></label><textarea id="f-msg" placeholder="眠りが浅い、気持ちが張りつめている、これからの生き方を考えたい、など。書ける範囲で大丈夫です。"></textarea></div>
+      <div class="field"><label for="f-msg">備考(注意してほしいこと など)<span class="opt">任意</span></label><textarea id="f-msg" placeholder="お身体のことで気をつけてほしいこと、通院・服薬中のことなど、事前に伝えておきたいことがあればご記入ください。"></textarea></div>
       <label class="check"><input type="checkbox" id="f-agree"> キャンセルは前日までにご連絡ください。サロンの詳しい住所は、ご予約確定後にメールでお知らせします。</label>
       <span class="err" data-for="f-agree"></span>
       <div class="actions">
@@ -218,6 +254,7 @@ footer{text-align:center;font-size:12px;color:var(--muted)}
     <ul class="notes">
       <li>送信すると、のり姉さんに予約のお知らせが届きます。</li>
       <li>確認のメールを、ご入力のアドレスにお送りします。</li>
+      <li>お支払いは、現金・銀行お振込み・PayPayからお選びいただけます。</li>
     </ul>
     <span class="err" id="sendErr"></span>
     <div class="actions">
@@ -253,7 +290,7 @@ const MENUS = [
 const MAX_DAYS = 45;
 
 /* ========= 状態 ========= */
-const st = {menu:null, style:"対面", date:null, time:null, visit:"はじめて", month:null, slots:{}};
+const st = {age:null, menu:null, style:"対面", date:null, time:null, visit:"はじめて", month:null, slots:{}};
 const $ = s => document.querySelector(s);
 const yen = n => n.toLocaleString("ja-JP");
 const pad = n => String(n).padStart(2,"0");
@@ -299,6 +336,8 @@ function chipGroup(sel, cb){
 }
 chipGroup("#stylePick", v=>st.style=v);
 chipGroup("#visitPick", v=>st.visit=v);
+chipGroup("#agePick", v=>st.age=v);
+$("#cond-other").addEventListener("change",e=>{const o=$("#f-cond-other");o.hidden=!e.target.checked;if(e.target.checked)o.focus();});
 $("#to2").addEventListener("click", async ()=>{
   $("#s2sub").textContent = `${st.menu.name}(${st.menu.minutes}分・${st.style})`;
   const t=new Date(); st.month = new Date(t.getFullYear(), t.getMonth(), 1);
@@ -372,9 +411,15 @@ $("#form").addEventListener("submit", e=>{
   if(!val("f-kana")) errs["f-kana"]="ふりがなを入力してください";
   if(!/^[0-9０-９\-－ ]{10,14}$/.test(val("f-tel"))) errs["f-tel"]="電話番号を数字で入力してください(例:090-1234-5678)";
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val("f-mail"))) errs["f-mail"]="メールアドレスの形をご確認ください";
+  const conds=[...document.querySelectorAll('input[name=cond]:checked')].map(c=>c.value==="その他"?("その他"+(val("f-cond-other")?`(${val("f-cond-other")})`:"")):c.value);
+  if(!st.age) errs["f-age"]="ご年代をお選びください";
+  if(!conds.length) errs["f-cond"]="あてはまるものを1つ以上お選びください";
+  if(!val("f-goal")) errs["f-goal"]="ご記入をお願いします";
+  if(!val("f-expect")) errs["f-expect"]="ご記入をお願いします";
   if(!$("#f-agree").checked) errs["f-agree"]="内容をご確認のうえ、チェックを入れてください";
   document.querySelectorAll(".err[data-for]").forEach(s=>s.textContent=errs[s.dataset.for]||"");
-  if(Object.keys(errs).length){ const f=Object.keys(errs)[0]; $("#"+f).focus(); return; }
+  if(Object.keys(errs).length){ const f=$("#"+Object.keys(errs)[0]); f.scrollIntoView({behavior:"smooth",block:"center"}); if(f.focus) f.focus({preventScroll:true}); return; }
+  st.conds=conds;
   const rows=[
     ["メニュー", `${st.menu.name}(${st.menu.minutes}分)`],
     ["受け方", st.style],
@@ -384,8 +429,12 @@ $("#form").addEventListener("submit", e=>{
     ["電話番号", val("f-tel")],
     ["メール", val("f-mail")],
     ["ご利用", st.visit],
+    ["ご年代", st.age],
+    ["不調や疲れ", conds.join("、")],
+    ["整ったら叶っていること", val("f-goal")],
+    ["期待すること", val("f-expect")],
     ["ご紹介者", val("f-ref")||"なし"],
-    ["ご相談", val("f-msg")||"なし"]
+    ["備考", val("f-msg")||"なし"]
   ];
   $("#summary").innerHTML = rows.map(([a,b])=>`<dt>${a}</dt><dd></dd>`).join("");
   $("#summary").querySelectorAll("dd").forEach((dd,i)=>dd.textContent=rows[i][1]);
@@ -397,7 +446,7 @@ $("#send").addEventListener("click", async ()=>{
   const btn=$("#send"); btn.disabled=true; btn.textContent="送信しています…";
   const payload={menu:st.menu.id, style:st.style, date:st.date, time:st.time,
     name:val("f-name"), kana:val("f-kana"), tel:val("f-tel"), email:val("f-mail"),
-    visit:st.visit, referrer:val("f-ref"), message:val("f-msg")};
+    visit:st.visit, age:st.age, conditions:st.conds, goal:val("f-goal"), expect:val("f-expect"), referrer:val("f-ref"), message:val("f-msg")};
   try{
     if(!isDemo){
       const r=await fetch(GAS_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
@@ -413,7 +462,7 @@ $("#send").addEventListener("click", async ()=>{
   }finally{ btn.disabled=false; btn.textContent="この内容で予約する"; }
 });
 $("#again").addEventListener("click",()=>{
-  st.menu=null; st.date=null; st.time=null; $("#form").reset(); $("#to2").disabled=true; renderMenus(); renderStyle(); go(1);
+  st.menu=null; st.date=null; st.time=null; st.age=null; $("#form").reset(); $("#f-cond-other").hidden=true; document.querySelectorAll("#agePick .chip").forEach(c=>c.setAttribute("aria-pressed","false")); $("#to2").disabled=true; renderMenus(); renderStyle(); go(1);
 });
 
 renderMenus();
