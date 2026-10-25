@@ -1,0 +1,596 @@
+{
+ "id": "hoshino",
+ "name": "株式会社星野塗装",
+ "short": "星野塗装",
+ "name_en": "HOSHINO PAINTING",
+ "logo": "https://www.hoshino-tosou.com/wp-content/themes/theme-third/img/common/logo.png",
+ "tel_free": "090-1219-0611",
+ "tel": "",
+ "fax": "042-316-6003",
+ "postal": "184-0015",
+ "address": "東京都小金井市貫井北町1-6-13",
+ "region": "東京都",
+ "city": "小金井市",
+ "street": "貫井北町1-6-13",
+ "license": "",
+ "area": "小金井市を中心に、武蔵野市・三鷹市・府中市など近隣地域(東京23区・多摩地域もご相談ください)",
+ "business": "外壁塗装・屋根塗装・内装塗装、アパート・マンション・ビル塗装、防水工事、シーリング工事、鉄部塗装、各種リフォーム",
+ "rep": {
+  "name": "星野 裕季",
+  "title": "代表取締役",
+  "photo": "",
+  "quote": "小金井で生まれ育ち、{今も小金井で}暮らしています。"
+ },
+ "seo": {
+  "title": "株式会社星野塗装｜小金井市の外壁塗装・屋根塗装・防水工事｜料金公開・最大14年保証",
+  "desc": "東京都小金井市の株式会社星野塗装。小金井生まれの代表が自ら施工する自社施工店です。外壁・屋根・ベランダ防水セット100万円(WEB限定)など料金を公開。足場お引越しプラン、最大14年の長期保証、1年・5年の定期点検つき。"
+ },
+ "hero": {
+  "fv": "wall",
+  "place_en": "KOGANEI, TOKYO",
+  "tagline_en": "PAINTING ・ ROOF ・ WATERPROOF",
+  "eyebrow": "SINCE 2013 ・ KOGANEI, TOKYO",
+  "big": 100,
+  "big_en": "万円",
+  "big_label": "外壁・屋根・ベランダ防水、まるごと。",
+  "catch": [
+   "小金井で生まれ育った職人が、",
+   "{値段まで}ぜんぶ見せます。"
+  ],
+  "catch_kanji": [
+   "小金井で生まれ育った職人が、",
+   "{値段まで}ぜんぶ見せます。"
+  ],
+  "sub": "セット料金100万円(税込・25坪目安・WEB限定)。後ろの写真は、ご近所で実際に塗ったお家と、その金額です。",
+  "sub2": "小金井市の自社施工店、星野塗装です。",
+  "en_short": "Honest painting.",
+  "photo": "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/1.png",
+  "photo_pos": "50% 50%",
+  "photo_caption": "三鷹市牟礼の施工事例",
+  "photos": [
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096580_0.jpg",
+    "MUSASHINO"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1474.jpg",
+    "MITAKA"
+   ]
+  ],
+  "wall": [
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/1.png",
+    "三鷹市牟礼 125万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096580_0.jpg",
+    "武蔵野市関前 125万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1474.jpg",
+    "三鷹市下連雀 145万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0159-1.jpeg",
+    "小金井市東町 135万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0157-1.jpeg",
+    "武蔵野市境南 125万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/2.png",
+    "府中市宮町"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916376_0.jpg",
+    "小金井市貫井北町 120万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0378.jpeg",
+    "小平市花小金井 80万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916375_0.jpg",
+    "武蔵野市境町 95万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_1878.jpeg",
+    "小金井市貫井南町 135万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/3.png",
+    "府中市若松町"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_1823.jpeg",
+    "小金井市東町 125万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/05/S__2916371_0.jpg",
+    "武蔵野市吉祥寺南町 125万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916373_0.jpg",
+    "武蔵野市西久保 125万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1479.jpg",
+    "三鷹市上連雀 125万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0369.jpeg",
+    "小金井市 アパート"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096583_0.jpg",
+    "小金井市貫井南 アパート"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0497.jpeg",
+    "アパート 鉄骨階段"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0158-1.jpeg",
+    "小金井市東町"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1475.jpg",
+    "三鷹市下連雀"
+   ]
+  ]
+ },
+ "facts": [
+  [
+   100,
+   "万円",
+   "外壁・屋根・防水セット(WEB限定)"
+  ],
+  [
+   14,
+   "年",
+   "最大の長期保証"
+  ]
+ ],
+ "badges": [
+  "現地調査・お見積り無料",
+  "カラーシミュレーション無料",
+  "相見積もり歓迎"
+ ],
+ "trust": [
+  [
+   "代表が自ら施工",
+   "16歳から塗装一筋の自社施工店"
+  ],
+  [
+   "最大14年の長期保証",
+   "1年・5年の定期点検つき"
+  ],
+  [
+   "料金を公開",
+   "セット100万円(WEB限定)"
+  ],
+  [
+   "小金井市の地元企業",
+   "2013年創業・小金井生まれの代表"
+  ]
+ ],
+ "works": [
+  {
+   "area": "武蔵野市関前",
+   "area_en": "MUSASHINO",
+   "t": "2トーンの外壁・屋根塗装",
+   "b": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096580_0.jpg",
+   "lb": "全景",
+   "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096582_0.jpg",
+   "la": "仕上がり",
+   "rows": [
+    [
+     "工事内容",
+     "外壁塗装(1階ダークブラウン・2階ベージュの2色)／屋根(黒系の遮熱塗料)／破風・雨樋・シャッターBOX／コーキング打ち替え"
+    ],
+    [
+     "金額",
+     "125万円"
+    ],
+    [
+     "お客様の声",
+     "「近所の方にも『かっこいいね!』って言われました!」"
+    ]
+   ]
+  },
+  {
+   "area": "三鷹市下連雀",
+   "area_en": "MITAKA",
+   "t": "ベージュ×ブラックの外壁・屋根塗装",
+   "b": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1474.jpg",
+   "lb": "全景",
+   "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1475.jpg",
+   "la": "仕上がり",
+   "rows": [
+    [
+     "工事内容",
+     "外壁塗装(ベージュ・アクセントにブラック)／屋根(黒系の遮熱塗料)／雨樋・破風・シャッターBOX／コーキング打ち替え"
+    ],
+    [
+     "金額",
+     "145万円"
+    ],
+    [
+     "きっかけ",
+     "お隣の工事を見て、ご紹介いただきました"
+    ]
+   ]
+  },
+  {
+   "area": "小金井市東町",
+   "area_en": "KOGANEI",
+   "t": "ブラウン系の外壁・屋根塗装",
+   "b": "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0159-1.jpeg",
+   "lb": "全景",
+   "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0158-1.jpeg",
+   "la": "仕上がり",
+   "rows": [
+    [
+     "工事内容",
+     "外壁(シリコン・ツヤあり)／屋根(高耐久の遮熱塗料)／バルコニーのウレタン防水／コーキング打ち替え"
+    ],
+    [
+     "金額",
+     "135万円"
+    ],
+    [
+     "ポイント",
+     "近所で施工中だったため足場を共用し、費用を抑えました"
+    ]
+   ]
+  },
+  {
+   "area": "武蔵野市境南",
+   "area_en": "MUSASHINO",
+   "t": "外壁・屋根の同時塗装",
+   "b": "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0157-1.jpeg",
+   "lb": "全景",
+   "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0156-1.jpeg",
+   "la": "仕上がり",
+   "rows": [
+    [
+     "工事内容",
+     "外壁(クリームベージュ×ライトグレー、フッ素樹脂塗料)／屋根(ダークブルーの遮熱シリコン)"
+    ],
+    [
+     "金額",
+     "125万円"
+    ],
+    [
+     "お客様の声",
+     "「屋根の遮熱効果は正直ナメてましたが、確かに涼しい気がします!」"
+    ]
+   ]
+  },
+  {
+   "area": "小平市花小金井",
+   "area_en": "KODAIRA",
+   "t": "外壁だけの塗り替え",
+   "b": "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0378.jpeg",
+   "lb": "全景",
+   "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0379.jpeg",
+   "la": "仕上がり",
+   "rows": [
+    [
+     "工事内容",
+     "外壁塗装(クリーム色・水性シリコン)／雨樋・破風板"
+    ],
+    [
+     "金額",
+     "80万円"
+    ],
+    [
+     "ポイント",
+     "状態の良い瓦屋根はそのままに、外壁だけで費用を抑えました"
+    ]
+   ]
+  },
+  {
+   "area": "三鷹市上連雀",
+   "area_en": "MITAKA",
+   "t": "3トーンの外壁・屋根塗装",
+   "b": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1479.jpg",
+   "lb": "全景",
+   "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1480.jpg",
+   "la": "仕上がり",
+   "rows": [
+    [
+     "工事内容",
+     "外壁塗装(ベージュ・グレー・ブラウンの3色)／屋根／付帯部／コーキング打ち替え"
+    ],
+    [
+     "金額",
+     "125万円"
+    ]
+   ]
+  },
+  {
+   "area": "小金井市",
+   "area_en": "APARTMENT",
+   "t": "アパートの外壁塗装(空室対策)",
+   "b": "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0369.jpeg",
+   "lb": "全景",
+   "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0371.jpeg",
+   "la": "仕上がり",
+   "rows": [
+    [
+     "工事内容",
+     "外壁(白系の水性シリコン)／階段室に濃茶のアクセント／鉄部・雨樋"
+    ],
+    [
+     "ポイント",
+     "近くの現場から足場を“お引越し”して費用を抑えました。内見の印象も良くなったとのこと"
+    ]
+   ]
+  },
+  {
+   "area": "アパート",
+   "area_en": "WATERPROOF",
+   "t": "共用廊下の防水・鉄骨階段の塗装",
+   "b": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0480.jpeg",
+   "lb": "施工前",
+   "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0497.jpeg",
+   "la": "施工後",
+   "rows": [
+    [
+     "工事内容",
+     "共用廊下:ウレタン防水2層・トップコート／鉄骨階段:ケレン・エポキシ錆止め・2液シリコン"
+    ],
+    [
+     "オーナー様の声",
+     "「いつもお願いしている不動産業者よりも価格が良心的で、仕上がりも大満足」"
+    ]
+   ]
+  }
+ ],
+ "works_note": "※金額は、今のホームページの施工事例に掲載されている金額です。",
+ "proof": {
+  "en": "VOICE",
+  "big": 14,
+  "big_label": "年の長期保証(最大)と、1年・5年の定期点検。",
+  "title": "ご近所が、次のお客様になる。",
+  "lead": "近所で塗っているのを見て。お隣の仕上がりを見て。そうしてご依頼くださった方の声をご紹介します。",
+  "items": [
+   {
+    "t": "武蔵野市関前",
+    "k": "外壁・屋根塗装",
+    "tag": "VOICE 01",
+    "when": "125万円",
+    "text": "「すごくきれいになって気分も明るくなりました!色の組み合わせも想像以上に良くて、近所の方にも『かっこいいね!』って言われました!」",
+    "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096582_0.jpg",
+    "la": "武蔵野市関前"
+   },
+   {
+    "t": "三鷹市下連雀",
+    "k": "外壁・屋根塗装",
+    "tag": "VOICE 02",
+    "when": "145万円",
+    "text": "「家全体の雰囲気が落ち着きつつモダンになり、大変満足しています!お隣さんにも『素敵になったね』と言われ、紹介してもらって本当に良かったです!」",
+    "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1475.jpg",
+    "la": "三鷹市下連雀"
+   },
+   {
+    "t": "小金井市貫井北町",
+    "k": "外壁・屋根・防水",
+    "tag": "VOICE 03",
+    "when": "120万円",
+    "text": "「新築のように生まれ変わって本当に嬉しいです!近所で工事されているのを見てお願いしましたが、丁寧な対応で安心できました。」",
+    "a": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916376_0.jpg",
+    "la": "小金井市貫井北町"
+   }
+  ]
+ },
+ "reasons_lead": "16歳で塗装の道に入り、26歳で独立。小金井の皆さまに、正直で誠実な工事を届けるための会社です。",
+ "reasons": [
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/01/IMG_1090.png",
+   "代表が、自分で塗っています",
+   "営業担当も下請けもいない自社施工店なので、中間マージンがかかりません。ご相談から施工、アフターまで同じ顔が対応します。施工中でも、お気軽にお声がけください。"
+  ],
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916376_0.jpg",
+   "足場お引越しプランで、最大15万円以上お得に",
+   "近くで施工中の足場を“お引越し”して使うので、足場代が無料〜大幅割引になります。当社が施工中の現場から半径500m圏内のご近所さま向けのプランです。"
+  ],
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0369.jpeg",
+   "アパート・マンションも、オーナー様から直接",
+   "不動産会社を通さず直接ご依頼いただけるぶん、費用を抑えられます。空室対策としての外装リニューアルもご相談ください。"
+  ]
+ ],
+ "hands": [
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0480.jpeg",
+   "施工前:錆の出た鉄骨階段"
+  ],
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0482.jpeg",
+   "施工前:共用廊下"
+  ],
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0497.jpeg",
+   "仕上がり:鉄骨階段"
+  ]
+ ],
+ "services_lead": "外壁・屋根から、防水・シーリング、アパートの共用部まで。お住まいの外まわりをまとめてお任せください。",
+ "services": [
+  {
+   "id": "paint",
+   "en": "PAINTING",
+   "t": "外壁・屋根塗装",
+   "short": "色選びから一緒に。カラーシミュレーション無料。",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/1.png",
+   "text": "高圧洗浄・下地処理から、下塗り・中塗り・上塗りまで。2色・3色の塗り分けや、遮熱塗料のご提案も。お住まいとご予算に合わせて、6つのプランからお選びいただけます。",
+   "items": [
+    "外壁:シリコン・フッ素・ラジカル制御型など、ご予算と耐久性で",
+    "屋根:遮熱塗料で、夏の室温上昇を抑える",
+    "付帯部:破風・雨樋・シャッターBOXも色を合わせて",
+    "最大14年の長期保証、1年・5年の定期点検つき"
+   ]
+  },
+  {
+   "id": "apartment",
+   "en": "APARTMENT",
+   "t": "アパート・マンション塗装",
+   "short": "空室対策の外装リニューアルを、直接ご依頼で。",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096583_0.jpg",
+   "text": "外観は、入居希望の方が最初に見るところ。外壁・屋根・共用部の塗装と防水で、「管理が行き届いた物件」に見せます。",
+   "items": [
+    "外壁・屋根の塗装(シリコンプラン 6戸規模で140万円〜)",
+    "共用廊下・階段のウレタン防水",
+    "鉄骨階段のケレン・錆止め・塗装",
+    "不動産会社を通さず、オーナー様から直接"
+   ]
+  },
+  {
+   "id": "waterproof",
+   "en": "WATERPROOF",
+   "t": "防水・シーリング工事",
+   "short": "ベランダ防水75,000円(WEB限定)から。",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0678-1.jpg",
+   "text": "ベランダ・バルコニーのウレタン防水や、外壁の目地のコーキング打ち替えで、雨水の入り口をふさぎます。",
+   "items": [
+    "バルコニー・ベランダのウレタン塗膜防水",
+    "コーキング:既存を撤去して、高耐久の変成シリコンで打ち替え",
+    "共用廊下の防水(滑りにくい仕上げ)",
+    "雨漏りが心配なところの点検"
+   ]
+  },
+  {
+   "id": "scaffold",
+   "en": "SCAFFOLD",
+   "t": "足場お引越しプラン",
+   "short": "近くの現場の足場を使って、足場代を無料〜大幅割引に。",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916375_0.jpg",
+   "text": "当社が施工中の現場から半径500m圏内なら、足場を“お引越し”して使えます。ご近所さまだけの、お得なタイミングです。",
+   "items": [
+    "足場代が無料〜大幅割引(最大15万円以上お得に)",
+    "外壁と屋根を同時に塗れば、足場代は一度で済みます",
+    "ご近所で工事中の看板を見かけたら、お気軽にお声がけください",
+    "内装・鉄部・特殊工事もご相談ください"
+   ]
+  }
+ ],
+ "small": [
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/10/8c59f963459975cba6a738caa83a473f-5.png",
+   "外壁塗装",
+   "598,000円(WEB限定)"
+  ],
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/10/af1a4ff3f33359dc85ead42b9edc72b5-4.png",
+   "屋根塗装",
+   "378,000円(WEB限定)"
+  ],
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/10/c5f61d939ff4245b7a40b60bcaa47d57-3.png",
+   "ベランダ防水",
+   "75,000円(WEB限定)"
+  ],
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/10/071cc9e528a172c8c6746a65baf55eea-3.png",
+   "外壁・屋根・防水セット",
+   "1,000,000円(WEB限定・25坪目安)"
+  ],
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2025/10/ece9f12bc7402d174e0ce1fcefdf7a25-1.png",
+   "アパート・マンション",
+   "シリコンプラン 140万円〜"
+  ],
+  [
+   "https://www.hoshino-tosou.com/wp-content/uploads/2026/02/be4917ace5bb47ba4886d27a6a7a45d6.png",
+   "足場お引越しサービス",
+   "近くの現場なら足場代が無料〜大幅割引"
+  ]
+ ],
+ "message": {
+  "title": "地元・小金井の皆さまに、正直で誠実な工事を。",
+  "paras": [
+   "小金井市で生まれ育ち、今も小金井で暮らしています。16歳で地元の塗装会社に入り、技術を磨くなかで、悪徳業者や訪問販売の被害に苦しむ方を数多く見てきました。",
+   "だからこそ「地元・小金井の皆さまに、正直で誠実な工事を届けたい」と、26歳で星野塗装を立ち上げました。",
+   "塗って終わりではなく、定期点検や工事写真のお渡しまで。10年後も気軽に相談できる、地域の“住まいのかかりつけ”でありたいと考えています。"
+  ],
+  "vision": "地域の“住まいのかかりつけ”"
+ },
+ "flow": [
+  [
+   "お問い合わせ",
+   "お電話かフォームから。代表が直接お受けします。"
+  ],
+  [
+   "現地調査・色のご提案",
+   "建物の状態を確かめ、カラーシミュレーションで色を一緒に選びます。"
+  ],
+  [
+   "お見積り",
+   "6つのプランから、ご予算とご希望に合う方法をご説明します。相見積もりも歓迎です。"
+  ],
+  [
+   "施工・定期点検",
+   "自社施工で丁寧に仕上げ、1年・5年の定期点検でその後も見守ります。"
+  ]
+ ],
+ "recruit": {
+  "title": "塗装工を募集しています",
+  "img": "https://www.hoshino-tosou.com/wp-content/uploads/2025/10/8c95acc0d5e4c036758fc0b943477b19-2.png",
+  "text": "経験の有無は問いません。小金井の自社施工店で、塗装の技術を一から身につけませんか。詳しくはお気軽にお問い合わせください。"
+ },
+ "contact_kinds": [
+  "お見積もり・相談",
+  "工事のご依頼",
+  "キャンペーンについて",
+  "求人のご応募",
+  "その他"
+ ],
+ "page_photos": {
+  "service": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096580_0.jpg",
+  "works": "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/2.png",
+  "company": "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0159-1.jpeg",
+  "contact": "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/3.png"
+ },
+ "profile_extra": [
+  [
+   "創業",
+   "2013年"
+  ],
+  [
+   "営業時間",
+   "8:00〜18:00(日曜定休・お電話は対応可)"
+  ],
+  [
+   "メール",
+   "info@hoshino-tosou.com"
+  ],
+  [
+   "保有資格",
+   "塗装技能士、防水施工技能者、足場作業主任者 ほか"
+  ]
+ ],
+ "texts": {
+  "tel_label": "代表直通",
+  "tel_label_long": "代表直通・お電話でのご相談",
+  "tel_word": "代表直通",
+  "works_lead": "ご近所で実際に塗ったお家と、その金額です。",
+  "works_cost_row": false,
+  "works_page_lead": "小金井・三鷹・武蔵野・府中で塗ったお家を、金額とお客様の声と一緒にご紹介します。",
+  "works_desc": "金額とお客様の声つきでご紹介します。",
+  "hands_h": "見えないところも、写真で残す。",
+  "small_h": "料金を、はじめから公開しています",
+  "small_lead": "WEB限定のプランです。詳しい条件は、現地調査のうえでご案内します。",
+  "service_kw": "外壁・屋根塗装、アパート・マンション塗装、防水・シーリング工事、足場お引越しプラン",
+  "form_ph": "例:築15年の戸建てです。外壁の色あせが気になります。近所で工事中の看板を見ました。"
+ },
+ "colors": {
+  "streak": {
+   "accent": "#ff6a14",
+   "accent-ink": "#ffffff",
+   "accent-on-photo": "#ffb37a"
+  }
+ }
+}

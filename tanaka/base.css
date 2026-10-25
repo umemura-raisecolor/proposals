@@ -341,3 +341,8 @@ footer.site .copy{border-top:1px solid rgba(128,128,128,.25);margin-top:36px;pad
   .fvw .acts>*{width:100%}
 }
 @media (prefers-reduced-motion:reduce){.fvw-wall,.fvw-wall .track,.fvw-paint,.fvw-in>*{animation:none;opacity:1;transform:none;clip-path:none}.fvw-wall{transform:rotate(-7deg)}}
+
+/* 代表写真がない会社:ことばのブロック */
+.m-quote{aspect-ratio:4/5;display:flex;align-items:flex-end;padding:34px 30px;background:var(--accent);color:var(--accent-ink)}
+.m-quote p{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.6;letter-spacing:.06em}
+.m-quote em{font-style:normal;border-bottom:3px solid currentColor}

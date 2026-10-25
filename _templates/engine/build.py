@@ -62,7 +62,7 @@ class Site:
 <header class="site{' over' if cur == 'index.html' else ''}">
   <a class="brand" href="index.html" aria-label="{e(d['name'])} トップへ">{logo}</a>
   <nav class="gnav" id="gnav" aria-label="メインメニュー">{nav}</nav>
-  <a class="h-tel" href="tel:{digits(d['tel_free'])}"><small>通話無料</small><b>{e(d['tel_free'])}</b></a>
+  <a class="h-tel" href="tel:{digits(d['tel_free'])}"><small>{e(self.T('tel_label', '通話無料'))}</small><b>{e(d['tel_free'])}</b></a>
   <a class="h-contact" href="contact.html"><b>CONTACT</b><small>無料お見積り</small></a>
   <button class="menu-btn" aria-label="メニュー" aria-controls="gnav" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
@@ -85,7 +85,7 @@ class Site:
     <div class="rv"><p class="en">CONTACT</p><h2>まずは、建物の状態を<br>見せてください。</h2><p>現地を拝見して、塗装で良いのか、防水や交換が必要なのか、建物の状態とご予算に合った方法を正直にご提案します。お見積りは無料です。</p></div>
     <div class="acts rv dl1">
       <a class="btn btn-main" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a>
-      <a class="tel-btn" href="tel:{digits(d['tel_free'])}"><small>通話無料・お電話でのご相談</small><b>{e(d['tel_free'])}</b></a>
+      <a class="tel-btn" href="tel:{digits(d['tel_free'])}"><small>{e(self.T('tel_label_long', '通話無料・お電話でのご相談'))}</small><b>{e(d['tel_free'])}</b></a>
     </div>
   </div>
 </section>'''
@@ -96,13 +96,13 @@ class Site:
         return f'''<footer class="site">
   <div class="wrap">
     <div class="cols">
-      <div><p class="fname">{e(d['name'])}</p><p>〒{e(d['postal'])} {e(d['address'])}<br>フリーダイヤル {e(d['tel_free'])}／TEL {e(d['tel'])}{"／FAX " + e(d['fax']) if d.get('fax') else ""}<br>{e(d['license'])}</p></div>
+      <div><p class="fname">{e(d['name'])}</p><p>〒{e(d['postal'])} {e(d['address'])}<br>{e(self.T('tel_word', 'フリーダイヤル'))} {e(d['tel_free'])}{"／TEL " + e(d['tel']) if d.get('tel') else ""}{"／FAX " + e(d['fax']) if d.get('fax') else ""}{"<br>" + e(d['license']) if d.get('license') else ""}</p></div>
       <nav class="fnav" aria-label="フッターメニュー">{nav}</nav>
     </div>
     <p class="copy">© 2026 {e(d['name'])} All Rights Reserved.</p>
   </div>
 </footer>
-<div class="sp-bar"><a class="t" href="tel:{digits(d['tel_free'])}"><small>通話無料</small>電話で相談</a><a class="m" href="contact.html"><small>かんたん入力</small>無料お見積り</a></div>
+<div class="sp-bar"><a class="t" href="tel:{digits(d['tel_free'])}"><small>{e(self.T('tel_label', '通話無料'))}</small>電話で相談</a><a class="m" href="contact.html"><small>かんたん入力</small>無料お見積り</a></div>
 <a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
 <script src="common.js{V}"></script>
 {js}
@@ -117,7 +117,7 @@ class Site:
 
     def fv(self):
         d, h = self.d, self.d["hero"]
-        acts = f'''<div class="acts"><a class="btn btn-main" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a><a class="tel-btn" href="tel:{digits(d['tel_free'])}"><small>通話無料・お電話でのご相談</small><b>{e(d['tel_free'])}</b></a></div>'''
+        acts = f'''<div class="acts"><a class="btn btn-main" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a><a class="tel-btn" href="tel:{digits(d['tel_free'])}"><small>{e(self.T('tel_label_long', '通話無料・お電話でのご相談'))}</small><b>{e(d['tel_free'])}</b></a></div>'''
         if h.get("fv") == "wall":
             return self.fv_wall(acts)
         if self.skin == "streak":
@@ -244,7 +244,7 @@ class Site:
         paras = "".join(f"<p>{e(x)}</p>" for x in m["paras"])
         btn = "" if full else '<a class="btn btn-line" href="company.html">会社案内を見る <span class="arw">→</span></a>'
         return f'''<section class="sec s-message"><div class="wrap msg">
-  <div class="m-img rv"><div class="reveal-img"><img src="{e(d['rep']['photo'])}" alt="{e(d['rep']['title'])} {e(d['rep']['name'])}" loading="lazy"></div><p class="m-name"><small>{e(d['rep']['title'])}</small>{e(d['rep']['name'])}</p></div>
+  <div class="m-img rv">{f'<div class="reveal-img"><img src="{e(d["rep"]["photo"])}" alt="{e(d["rep"]["title"])} {e(d["rep"]["name"])}" loading="lazy"></div>' if d['rep'].get('photo') else f'<div class="m-quote"><p>{em(d["rep"].get("quote", ""))}</p></div>'}<p class="m-name"><small>{e(d['rep']['title'])}</small>{e(d['rep']['name'])}</p></div>
   <div class="m-tx rv dl1"><p class="en">MESSAGE</p><h2>{e(m['title'])}</h2>{paras}{btn}</div>
 </div>{f'<div class="wrap"><p class="vision rv"><small>OUR VISION</small>{e(m["vision"])}</p></div>' if full else ""}</section>'''
 
@@ -287,8 +287,8 @@ class Site:
     def company(self):
         d = self.d
         rows = [("会社名", d["name"]), ("代表者", f"{d['rep']['title']} {d['rep']['name']}"), ("所在地", f"〒{d['postal']} {d['address']}"),
-                ("電話", f"フリーダイヤル {d['tel_free']}<br>TEL {d['tel']}" + (f"／FAX {d['fax']}" if d.get("fax") else "")), ("事業内容", d["business"]),
-                ("建設業許可", d["license"]), ("対応エリア", d["area"])] + [tuple(x) for x in d.get("profile_extra", [])]
+                ("電話", f"{self.T('tel_word', 'フリーダイヤル')} {d['tel_free']}" + (f"<br>TEL {d['tel']}" if d.get("tel") else "") + (f"<br>FAX {d['fax']}" if d.get("fax") else "")), ("事業内容", d["business"])] + \
+               ([("建設業許可", d["license"])] if d.get("license") else []) + [("対応エリア", d["area"])] + [tuple(x) for x in d.get("profile_extra", [])]
         tbl = "".join(f"<tr><th>{e(a)}</th><td>{b if '<br>' in b else e(b)}</td></tr>" for a, b in rows)
         q = "https://maps.google.com/maps?q=" + __import__("urllib.parse").parse.quote(d["address"]) + "&z=15&output=embed"
         rec = d.get("recruit")
@@ -305,7 +305,7 @@ class Site:
         return (self.head(f"お問い合わせ・無料お見積り｜{d['name']}", f"{d['name']}へのお問い合わせ・無料お見積りはこちら。", "contact.html") +
                 "<main>" + self.page_hero("CONTACT", "お問い合わせ", "お見積り・ご相談は無料です。お電話でも、フォームからでもお気軽にどうぞ。", d["page_photos"]["contact"]) + f'''
 <section class="sec s-contact"><div class="wrap">
-  <div class="tel-box"><a class="rv dl1" href="tel:{digits(d['tel_free'])}"><small>通話無料</small><b>{e(d['tel_free'])}</b></a><a class="rv dl2" href="tel:{digits(d['tel'])}"><small>TEL</small><b>{e(d['tel'])}</b></a></div>
+  <div class="tel-box"><a class="rv dl1" href="tel:{digits(d['tel_free'])}"><small>{e(self.T('tel_label', '通話無料'))}</small><b>{e(d['tel_free'])}</b></a>{f'<a class="rv dl2" href="tel:{digits(d["tel"])}"><small>TEL</small><b>{e(d["tel"])}</b></a>' if d.get('tel') else ''}</div>
   <form class="cf rv" id="cf" novalidate>
     <div class="row"><span class="t">ご相談の内容</span><div class="radios">{kinds}</div></div>
     <div class="row"><label class="t" for="nm">お名前 <span class="req">必須</span></label><input type="text" id="nm" autocomplete="name"></div>
