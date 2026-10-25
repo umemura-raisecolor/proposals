@@ -95,3 +95,8 @@ table.info th{font-family:var(--serif);font-weight:600;letter-spacing:.14em;back
 .vision small{font-family:var(--en);font-style:italic;font-size:18px;letter-spacing:.2em}
 
 footer.site b{font-family:var(--serif);font-weight:600;letter-spacing:.16em}
+
+/* 数字:洋書体の「小文字の数字」をやめて、大きさの揃った数字に */
+.count,.fact b,.aged-tx .yr,.aged-row .yr,.tel b,.tel-box b,.cta .btn-line{font-variant-numeric:lining-nums tabular-nums!important;font-feature-settings:"lnum" 1,"tnum" 1}
+.count{font-size:1em!important;line-height:1}
+.fact b{display:flex!important;align-items:baseline;justify-content:center;gap:6px}
