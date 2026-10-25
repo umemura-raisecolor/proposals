@@ -100,3 +100,12 @@ footer.site b{font-family:var(--serif);font-weight:600;letter-spacing:.16em}
 .count,.fact b,.aged-tx .yr,.aged-row .yr,.tel b,.tel-box b,.cta .btn-line{font-variant-numeric:lining-nums tabular-nums!important;font-feature-settings:"lnum" 1,"tnum" 1}
 .count{font-size:1em!important;line-height:1}
 .fact b{display:flex!important;align-items:baseline;justify-content:center;gap:6px}
+
+/* メインのボタン:白をやめて、深いブルーグリーンの面+内側の細い線+光 */
+.btn-main,form .btn-main{background:linear-gradient(135deg,#123f4a 0%,#1a5361 45%,#23707f 100%);color:#fff;min-height:70px;padding:0 46px;font-size:18px;font-weight:600;box-shadow:0 16px 34px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.28)}
+.btn-main::before{content:"";position:absolute;inset:5px;border:1px solid rgba(255,255,255,.22);pointer-events:none}
+.btn-main:hover,form .btn-main:hover{background:linear-gradient(135deg,#1a5361 0%,#23707f 55%,#2b8495 100%);box-shadow:0 20px 40px rgba(0,0,0,.4),inset 0 0 0 1px rgba(255,255,255,.4)}
+.btn-main::after,form .btn-main::after{background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.38) 50%,transparent 100%);animation:shine 4.5s ease-in-out 2s infinite}
+.btn-main .free{display:inline-flex;align-items:center;justify-content:center;font-size:12.5px;letter-spacing:.12em;background:#fff;color:var(--sea-deep);padding:2px 9px;margin-right:4px;font-weight:700}
+.cta .btn-main{background:linear-gradient(135deg,#0d2f37 0%,#123f4a 60%,#1a5361 100%)}
+.hero .btn-line,.cta .btn-line{min-height:70px}
