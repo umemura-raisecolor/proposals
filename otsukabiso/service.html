@@ -8,7 +8,7 @@
 <meta name="description" content="大塚美装の外壁塗装・屋根塗装の工事の流れと、内装塗装・ポイント塗装のご案内。調査・補修から下塗り・上塗りまで、手を抜かない工程で仕上げます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Shippori+Mincho+B1:wght@700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
 <link rel="stylesheet" href="common.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "大塚美装", "description": "東京・多摩・神奈川を中心に、大切な家屋を守る塗装専門店。外壁塗装・屋根塗装・内装塗装・ポイント塗装。", "address": {"@type": "PostalAddress", "addressCountry": "JP", "addressRegion": "東京都", "addressLocality": "調布市", "streetAddress": "柴崎2-15-7"}, "founder": {"@type": "Person", "name": "大塚 猛"}, "areaServed": ["東京23区", "東京都多摩地域", "神奈川県"], "image": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x10000:format=jpg/path/s12848955a32942dd/image/idaca75e6754dc879/version/1703958757/image.jpg"}</script>
 <style>
@@ -17,94 +17,93 @@
 .svc-block.rev .photo-col{order:2}
 .svc-block .photo-col{position:sticky;top:120px}
 .svc-block .photo-col img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.svc-block h2{font-size:clamp(28px,3.2vw,38px);letter-spacing:.1em}
-.svc-block .en{font-family:var(--display);color:var(--accent);letter-spacing:.42em;font-size:15px;font-weight:700}
-.svc-block .sub{color:var(--muted);margin:8px 0 26px;font-size:16px}
+.svc-block .photo-col::after{content:"";display:block;height:8px;background:var(--c)}
+.svc-block h2{font-size:clamp(28px,3.2vw,38px);letter-spacing:.06em;position:relative;display:inline-block;padding-bottom:16px}
+.svc-block h2 .stroke{left:0;transform:none}
+.svc-block .en{display:block;font-family:var(--en);color:var(--c);letter-spacing:.32em;font-size:14px;font-weight:700}
+.svc-block .sub{color:var(--muted);margin:14px 0 26px;font-size:16px}
 .flow{list-style:none;margin:0;padding:0;position:relative}
-.flow::before{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:2px;background:var(--line)}
-.flow::after{content:"";position:absolute;left:27px;top:28px;width:2px;height:0;background:var(--accent);transition:height 1.8s cubic-bezier(.2,.7,.2,1)}
+.flow::before{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:3px;background:var(--line)}
+.flow::after{content:"";position:absolute;left:27px;top:28px;width:3px;height:0;background:linear-gradient(var(--navy),var(--sky-deep),var(--pink-deep),var(--yellow));transition:height 1.8s cubic-bezier(.2,.7,.2,1)}
 .flow.in::after{height:calc(100% - 56px)}
 .flow li{position:relative;display:grid;grid-template-columns:56px 1fr;gap:22px;padding-bottom:30px}
 .flow li:last-child{padding-bottom:0}
-.flow .n{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--black);color:var(--accent);font-family:var(--display);font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center;transform:scale(.6);opacity:0;transition:transform .6s cubic-bezier(.3,1.6,.5,1),opacity .4s}
+.flow .n{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--en);font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center;transform:scale(.6);opacity:0;transition:transform .6s cubic-bezier(.3,1.6,.5,1),opacity .4s}
+.flow li:nth-child(2) .n{background:var(--sky-deep)}.flow li:nth-child(3) .n{background:var(--pink-deep)}.flow li:nth-child(4) .n{background:var(--yellow);color:var(--navy-ink)}.flow li:nth-child(5) .n{background:var(--navy)}
 .flow.in .n{transform:none;opacity:1}
 .flow li:nth-child(2) .n{transition-delay:.3s}.flow li:nth-child(3) .n{transition-delay:.6s}.flow li:nth-child(4) .n{transition-delay:.9s}.flow li:nth-child(5) .n{transition-delay:1.2s}
-.flow h3{font-size:21px;letter-spacing:.06em;padding-top:10px}
-.flow p{margin:6px 0 0;font-size:16.5px;color:#3a3f4a}
-.note{margin-top:30px;padding:24px 28px;background:var(--paper);border-left:4px solid var(--accent);font-size:16.5px}
+.flow h3{font-size:21px;letter-spacing:.04em;padding-top:10px}
+.flow p{margin:6px 0 0;font-size:16.5px;color:var(--muted)}
+.note{margin-top:30px;padding:24px 28px;background:#fff8dc;border-left:6px solid var(--yellow);font-size:16.5px}
 .note b{font-family:var(--display)}
 .cards2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.card{background:#fff;border:1px solid var(--line);padding:34px 32px;transition:transform .4s,box-shadow .4s}
-.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,19,34,.12)}
-.card h3{font-size:24px;letter-spacing:.08em;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.card{background:#fff;padding:34px 32px;border-top:6px solid var(--c);box-shadow:0 10px 30px rgba(15,37,71,.08);transition:transform .4s,box-shadow .4s}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(15,37,71,.14)}
+.card h3{font-size:24px;letter-spacing:.06em;margin-bottom:14px}
 .card ul{margin:0;padding-left:1.2em}
 .card li{margin-bottom:6px}
-.card li::marker{color:var(--accent)}
+.card li::marker{color:var(--c)}
 @media (max-width:960px){.svc-block,.svc-block.rev{grid-template-columns:1fr;gap:36px}.svc-block.rev .photo-col{order:0}.svc-block .photo-col{position:static}.cards2{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.flow::after{transition:none;height:calc(100% - 56px)}.flow .n{transition:none;transform:none;opacity:1}}
 </style>
 </head>
 <body>
-<div class="top-note"><div class="wrap">東京・多摩・神奈川の外壁塗装・屋根塗装・内装塗装｜調布市柴崎の塗装専門店</div></div>
+<div class="colorbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="大塚美装 トップへ">
-      <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=200x10000:format=png/path/s12848955a32942dd/image/i973d3749f5ec3791/version/1703921001/image.png" alt="">
-      <span><b>大塚美装</b><small>OTSUKA BISOU</small></span>
-    </a>
+    <a class="brand" href="index.html"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=600x10000:format=png/path/s12848955a32942dd/image/i973d3749f5ec3791/version/1703921001/image.png" alt="大塚美装 OTSUKABISO"></a>
     <nav class="gnav" id="gnav" aria-label="メインメニュー"><a href="index.html">トップ</a><a href="service.html" aria-current="page">工事の内容</a><a href="works.html">施工事例</a><a href="company.html">会社案内</a><a href="contact.html">お問い合わせ</a></nav>
     <a class="head-cta" href="contact.html">無料お見積り・ご相談</a>
     <button class="menu-btn" aria-label="メニュー" aria-controls="gnav" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main><section class="page-hero">
-  <div class="bg" aria-hidden="true"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s12848955a32942dd/image/i1d56eaca917883ac/version/1703959554/image.jpg" alt=""></div>
+  <div class="bg" aria-hidden="true"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1400x10000:format=jpg/path/s12848955a32942dd/image/i1d56eaca917883ac/version/1703959554/image.jpg" alt=""></div>
+  <span class="tri p" aria-hidden="true"></span><span class="tri y" aria-hidden="true"></span>
   <div class="wrap">
     <span class="en rv">SERVICE</span>
     <h1 class="rv dl1">工事の内容</h1>
-    <p class="rv dl2">外壁・屋根の塗り替えから、お部屋の雰囲気を変える内装・ポイント塗装まで。見えなくなる下地にこそ手間をかける、大塚美装の工事の流れをご紹介します。</p>
+    <p class="rv dl2">見えなくなる下地にこそ手間をかける、大塚美装の工事の流れをご紹介します。</p>
     <p class="crumb rv dl3"><a href="index.html">トップ</a> ／ 工事の内容</p>
   </div>
 </section>
 
 <section class="sec" id="exterior">
-  <div class="wrap svc-block">
+  <div class="wrap svc-block" style="--c:var(--navy)">
     <div class="photo-col"><div class="reveal-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1000x10000:format=jpg/path/s12848955a32942dd/image/ied878e4d6bb92f57/version/1703959812/image.jpg" alt="外壁塗装の施工後" loading="lazy"></div></div>
     <div>
       <span class="en rv">EXTERIOR</span>
-      <h2 class="rv dl1">外壁塗装</h2>
+      <h2 class="rv dl1">外壁塗装<svg class="stroke" viewBox="0 0 150 16" aria-hidden="true"><path d="M5 10 C 40 3, 85 15, 145 6"/></svg></h2>
       <p class="sub rv dl2">工事の流れ(基本仕様)</p>
       <ol class="flow rv"><li><span class="n">1</span><div><h3>調査・補修</h3><p>亀裂や欠損などの有無を調査し、必要があれば補修します。</p></div></li><li><span class="n">2</span><div><h3>シーラー塗装(下塗り1回目)</h3><p>下地を固めて強化します。</p></div></li><li><span class="n">3</span><div><h3>アンダーフィーラー塗装(下塗り2回目)</h3><p>フィラー材を塗って凹凸のないなめらかな下地を作ることで、上塗りをきれいに仕上げることができます。モルタル壁や吸収性の高い壁材には欠かせない工程です。</p></div></li><li><span class="n">4</span><div><h3>上塗り 1回目</h3></div></li><li><span class="n">5</span><div><h3>上塗り 2回目</h3><p>2回塗り重ねることで、色ムラのない、長持ちする塗膜に仕上げます。</p></div></li></ol>
       <div class="note rv"><b>なぜシーラーを必ず塗るのか</b><br>外壁材や屋根材は、劣化すればするほど塗料を吸い込みやすくなります。シーラーを塗って吸収性を抑えると同時に、塗料の密着力も高まるため、大塚美装では必ず施工しています。</div>
     </div>
   </div>
 </section>
-
-<section class="sec paper" id="roof">
-  <div class="wrap svc-block rev">
+<section class="sec sky" id="roof">
+  <div class="wrap svc-block rev" style="--c:var(--sky-deep)">
     <div class="photo-col"><div class="reveal-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1000x10000:format=jpg/path/s12848955a32942dd/image/icabd369b2aa91e9f/version/1706538320/image.jpg" alt="屋根塗装の施工後" loading="lazy"></div></div>
     <div>
       <span class="en rv">ROOF</span>
-      <h2 class="rv dl1">屋根塗装</h2>
+      <h2 class="rv dl1">屋根塗装<svg class="stroke pk" viewBox="0 0 150 16" aria-hidden="true"><path d="M5 10 C 40 3, 85 15, 145 6"/></svg></h2>
       <p class="sub rv dl2">工事の流れ(コロニアルやセメント瓦などの場合)</p>
       <ol class="flow rv"><li><span class="n">1</span><div><h3>調査・補修</h3><p>亀裂や欠損などの有無を調査し、必要があれば補修します。</p></div></li><li><span class="n">2</span><div><h3>シーラー塗装(下塗り)</h3><p>下地の吸収性が高い場合は、2回塗る場合もあります。</p></div></li><li><span class="n">3</span><div><h3>上塗り 1回目</h3></div></li><li><span class="n">4</span><div><h3>上塗り 2回目</h3></div></li></ol>
     </div>
   </div>
 </section>
-
 <section class="sec" id="interior">
   <div class="wrap">
-    <div class="sec-head"><span class="en">INTERIOR</span><h2>内装塗装・ポイント塗装</h2><p>お住まいの中も、塗装で心地よく、楽しく。</p></div>
+    <div class="sec-head"><span class="en">INTERIOR</span><h2>内装塗装・ポイント塗装<svg class="strokepk" viewBox="0 0 150 16" aria-hidden="true"><path d="M5 10 C 40 3, 85 15, 145 6"/></svg></h2><p>お住まいの中も、塗装で心地よく、楽しく。</p></div>
     <div class="cards2">
-      <div class="card rv dl1"><h3>内装塗装</h3><ul><li>消臭・抗菌・抗ウイルスなどの機能性塗料</li><li>木枠・床・木製玄関ドア</li><li>古家のアク洗い</li></ul></div>
-      <div class="card rv dl2"><h3>ポイント塗装</h3><ul><li>クロスの上に珪藻土を塗り、一面だけ塗り替えるお洒落塗り</li><li>既製品のドアを黒板にする黒板塗装</li></ul></div>
+      <div class="card rv dl1" style="--c:var(--pink-deep)"><h3>内装塗装</h3><ul><li>消臭・抗菌・抗ウイルスなどの機能性塗料</li><li>木枠・床・木製玄関ドア</li><li>古家のアク洗い</li></ul></div>
+      <div class="card rv dl2" style="--c:var(--yellow)"><h3>ポイント塗装</h3><ul><li>クロスの上に珪藻土を塗り、一面だけ塗り替えるお洒落塗り</li><li>既製品のドアを黒板にする黒板塗装</li></ul></div>
     </div>
-    <div class="center"><a class="btn btn-navy" href="works.html">内装・ポイント塗装の事例を見る <span class="arw">→</span></a></div>
+    <div class="center" style="text-align:center;margin-top:50px"><a class="btn btn-navy" href="works.html">内装・ポイント塗装の事例を見る <span class="arw">→</span></a></div>
   </div>
 </section>
 </main>
 <section class="cta">
-  <div class="bg" aria-hidden="true"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s12848955a32942dd/image/i19a57ef3a99357ea/version/1703968827/image.jpg" alt="" loading="lazy"></div>
+  <span class="pk" aria-hidden="true"></span>
   <div class="wrap rv">
     <h2>塗装のことなら、<br><em>お気軽にご相談ください。</em></h2>
     <p>お見積もり・ご相談は無料です。豊富な知識と経験で、いつまでも安心して住むための最適な提案をいたします。</p>
@@ -114,6 +113,7 @@
     </div>
   </div>
 </section>
+<div class="colorbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <footer class="site">
   <div class="wrap">
     <div class="cols">
