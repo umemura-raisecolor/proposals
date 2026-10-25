@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>案2 SUMI｜テンプレート試作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Sans+JP:wght@400;500&display=swap">
+<style>
+/* 案2 SUMI:墨の黒×白×金。社名が浮かんでから写真に切り替わる。明朝の縦書きで雑誌のような重厚さ */
+:root{--bg:#0b0b0b;--ink:#f3efe6;--sub:#a49d90;--gold:#b89656;--line:rgba(184,150,86,.35);--min:"Shippori Mincho B1",serif;--en:"Cormorant Garamond",serif;--jp:"Noto Sans JP",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--jp)}
+.intro{position:fixed;inset:0;z-index:20;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;animation:out .9s ease 2.3s forwards}
+.intro b{font-family:var(--min);font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:.5em;opacity:0;animation:in 1.2s ease .2s forwards}
+.intro small{font-family:var(--en);font-style:italic;color:var(--gold);letter-spacing:.3em;opacity:0;animation:in 1.2s ease .6s forwards}
+@keyframes in{to{opacity:1}}@keyframes out{to{opacity:0;visibility:hidden}}
+header{position:absolute;z-index:5;left:0;right:0;top:0;display:flex;align-items:center;padding:28px max(20px,4vw)}
+header .logo{font-family:var(--min);font-weight:700;letter-spacing:.3em;font-size:20px}
+header nav{margin-left:auto;display:flex;gap:30px;font-family:var(--min);font-size:14px;letter-spacing:.2em}
+header nav a{color:var(--ink);text-decoration:none}
+.fv{position:relative;height:100svh;min-height:620px;overflow:hidden}
+.fv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% 35%;filter:grayscale(.55) contrast(1.08) brightness(.55) sepia(.12);animation:zoom 14s ease-out 2.3s both}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.fv::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,11,.2),rgba(11,11,11,.75))}
+.frame{position:absolute;inset:24px;border:1px solid var(--line);z-index:2;pointer-events:none}
+.vert{position:absolute;z-index:3;right:max(60px,10vw);top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:var(--min);font-weight:800;font-size:clamp(34px,4.2vw,64px);letter-spacing:.24em;line-height:1.6;margin:0}
+.vert em{font-style:normal;color:var(--gold)}
+.vert small{font-family:var(--min);font-weight:500;font-size:.32em;letter-spacing:.3em;color:var(--sub);margin-right:1.4em;display:inline-block}
+.vert span{display:inline-block;opacity:0;animation:in 1.4s ease forwards}
+.vert span:nth-child(1){animation-delay:2.8s}.vert span:nth-child(2){animation-delay:3.2s}.vert span:nth-child(3){animation-delay:3.7s}
+.left{position:absolute;z-index:3;left:max(40px,6vw);bottom:12vh}
+.left p{margin:0;font-family:var(--en);font-style:italic;font-size:clamp(22px,2.4vw,34px);color:var(--ink);letter-spacing:.06em}
+.left .gold{color:var(--gold);font-size:14px;letter-spacing:.4em;font-style:normal;margin-bottom:14px}
+.left a{display:inline-flex;align-items:center;gap:18px;margin-top:28px;color:var(--ink);text-decoration:none;font-family:var(--min);letter-spacing:.2em;border-bottom:1px solid var(--gold);padding-bottom:8px}
+.left a::after{content:"";width:40px;height:1px;background:var(--gold)}
+.sec{padding:120px max(20px,8vw);display:grid;grid-template-columns:auto 1fr;gap:70px;align-items:start;border-top:1px solid var(--line)}
+.sec .vh{writing-mode:vertical-rl;font-family:var(--min);font-weight:700;font-size:30px;letter-spacing:.3em;margin:0}
+.sec .vh small{font-family:var(--en);font-style:italic;color:var(--gold);font-size:16px;letter-spacing:.2em;margin-left:14px}
+.mag{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+.mag img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4) contrast(1.05)}
+.mag .big{grid-row:span 2;aspect-ratio:4/5}
+.mag figure{margin:0;position:relative}
+.mag figcaption{font-family:var(--min);font-size:13px;letter-spacing:.14em;color:var(--sub);margin-top:10px}
+@media (max-width:860px){header nav{display:none}.vert{right:28px;font-size:30px}.sec{grid-template-columns:1fr}.sec .vh{writing-mode:horizontal-tb}.mag{grid-template-columns:1fr}.mag .big{grid-row:auto}}
+@media (prefers-reduced-motion:reduce){.intro{display:none}.fv img,.vert span{animation:none;opacity:1}}
+</style></head><body>
+<div class="intro" aria-hidden="true"><b>トーシン</b><small>since — Chofu, Tokyo</small></div>
+<header><span class="logo">トーシン</span><nav><a href="#">私たちについて</a><a href="#">工事の内容</a><a href="#">施工実績</a><a href="#">お問い合わせ</a></nav></header>
+<section class="fv">
+  <img src="https://to-shin.tokyo/wp-content/uploads/2025/03/DSCN0027-scaled.jpg" alt="">
+  <span class="frame" aria-hidden="true"></span>
+  <p class="vert"><span>塗装の差は、</span><span><em>十六年後</em>に出る。</span><span><small>見えなくなる下地まで、一切手を抜かない</small></span></p>
+  <div class="left"><p class="gold">PAINTING ・ WATERPROOF</p><p>Painted to last.</p><a href="#">無料でお見積りを相談する</a></div>
+</section>
+<section class="sec"><h2 class="vh">施工実績<small>Works</small></h2>
+<div class="mag">
+  <figure class="big"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7684-scaled.jpg" alt=""><figcaption>調布市 佐須町 ― 外壁サイディング塗り替え</figcaption></figure>
+  <figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/4.jpg" alt=""><figcaption>北区 ― 塗装から十六年後</figcaption></figure>
+  <figure><img src="https://to-shin.tokyo/wp-content/uploads/2022/09/IMG_9191-scaled.jpg" alt=""><figcaption>桜上水 ― アパートの塗り替え</figcaption></figure>
+</div></section>
+</body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>案3 GALLERY｜テンプレート試作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500&display=swap">
+<style>
+/* 案3 GALLERY:白い余白に、施工写真と職人の手元を大きく並べる。言葉は少なく、写真で語る */
+:root{--bg:#f6f5f2;--ink:#1c1c1c;--sub:#6d6a64;--line:#d9d6cf;--accent:#3a5a4a;--en:"Jost",sans-serif;--ser:"Noto Serif JP",serif;--jp:"Noto Sans JP",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--jp)}
+header{display:flex;align-items:center;padding:26px max(20px,4vw)}
+header .logo{font-family:var(--en);font-weight:500;font-size:20px;letter-spacing:.3em}
+header nav{margin-left:auto;display:flex;gap:30px;font-family:var(--en);font-size:13px;letter-spacing:.24em}
+header nav a{color:var(--ink);text-decoration:none}
+header .cta{margin-left:30px;font-family:var(--en);font-size:13px;letter-spacing:.24em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px}
+.fv{position:relative;display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:calc(100svh - 90px);min-height:560px;padding:0 max(20px,4vw) 30px}
+.fv figure{margin:0;position:relative;overflow:hidden}
+.fv figure img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);opacity:0;animation:show 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.fv .a{grid-row:span 2}.fv .b img{animation-delay:.25s}.fv .c img{animation-delay:.5s}
+@keyframes show{to{transform:none;opacity:1}}
+.fv figcaption{position:absolute;left:14px;bottom:12px;font-family:var(--en);font-size:11px;letter-spacing:.24em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.copy{position:absolute;left:max(20px,4vw);bottom:30px;z-index:2;background:var(--bg);padding:30px 36px 32px 0;box-shadow:-40px 0 0 var(--bg);max-width:min(560px,80vw)}
+.copy h1{font-family:var(--ser);font-weight:700;font-size:clamp(26px,3vw,42px);line-height:1.6;letter-spacing:.08em;margin:0}
+.copy p{margin:12px 0 0;color:var(--sub);font-size:14.5px;line-height:2;letter-spacing:.06em}
+.copy a{display:inline-flex;gap:14px;align-items:center;margin-top:18px;color:var(--ink);text-decoration:none;font-family:var(--en);font-size:13px;letter-spacing:.24em}
+.copy a::after{content:"";width:46px;height:1px;background:var(--ink);transition:width .4s}
+.copy a:hover::after{width:70px}
+main{position:relative}
+.sec{padding:110px max(20px,8vw);display:grid;grid-template-columns:1fr 2fr;gap:60px}
+.sec h2{font-family:var(--en);font-weight:400;font-size:13px;letter-spacing:.3em;margin:0}
+.sec h2 b{display:block;font-family:var(--ser);font-weight:700;font-size:26px;letter-spacing:.1em;margin-top:12px}
+.sec p.lead{color:var(--sub);line-height:2.1;font-size:15px;margin:18px 0 0}
+.hands{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.hands figure{margin:0}
+.hands img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.hands figcaption{font-size:12.5px;color:var(--sub);margin-top:8px;letter-spacing:.06em}
+@media (max-width:860px){header nav{display:none}.fv{grid-template-columns:1fr;grid-template-rows:56vh 26vh;height:auto}.fv .a{grid-row:auto}.fv .c{display:none}.copy{position:relative;left:0;bottom:0;padding:24px 20px 10px;max-width:none}.sec{grid-template-columns:1fr}.hands{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){.fv figure img{animation:none;opacity:1;transform:none}}
+</style></head><body>
+<header><span class="logo">TO-SHIN</span><nav><a href="#">ABOUT</a><a href="#">SERVICE</a><a href="#">WORKS</a><a href="#">COMPANY</a></nav><a class="cta" href="#">CONTACT</a></header>
+<main>
+<section class="fv">
+  <figure class="a"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/DSCN0027-scaled.jpg" alt=""><figcaption>ON SITE — CHOFU</figcaption></figure>
+  <figure class="b"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7684-scaled.jpg" alt=""><figcaption>AFTER — SIDING</figcaption></figure>
+  <figure class="c"><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/4.jpg" alt=""><figcaption>16 YEARS LATER</figcaption></figure>
+  <div class="copy"><h1>塗装の差は、<br>十六年後に出る。</h1><p>見えなくなる下地まで、一切手を抜かない。<br>調布の、一級塗装技能士が率いる職人の会社です。</p><a href="#">CONTACT</a></div>
+</section>
+<section class="sec"><div><h2>CRAFTSMANSHIP<b>手元にこそ、仕事は出る</b></h2><p class="lead">古いシーリングの撤去、プライマー、充填、ヘラ押さえ。仕上がれば見えなくなる工程を、一つずつ丁寧に。</p></div>
+<div class="hands">
+  <figure><img src="https://to-shin.tokyo/wp-content/uploads/2016/12/2.jpg" alt=""><figcaption>古いシーリングを撤去</figcaption></figure>
+  <figure><img src="https://to-shin.tokyo/wp-content/uploads/2016/12/4.jpg" alt=""><figcaption>シーリング材を充填</figcaption></figure>
+  <figure><img src="https://to-shin.tokyo/wp-content/uploads/2016/12/5.jpg" alt=""><figcaption>ヘラで押さえる</figcaption></figure>
+</div></section>
+</main>
+</body></html>
