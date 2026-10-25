@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Oswald:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=21">
+<link rel="stylesheet" href="style.css?v=22">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "トーシン株式会社", "description": "東京都調布市の塗装・防水・雨漏り修理・マンション改修の会社。一級塗装技能士の代表が率いる職人の会社。", "telephone": "042-485-4147", "address": {"@type": "PostalAddress", "postalCode": "182-0036", "addressRegion": "東京都", "addressLocality": "調布市", "streetAddress": "飛田給3-25-33", "addressCountry": "JP"}, "founder": {"@type": "Person", "name": "畑農 維人"}, "areaServed": ["調布市", "東京都多摩地区", "東京都"]}</script>
 <style>
 /* ===== ファーストビュー:白地に写真パネル、写真にまたがる巨大な英字 ===== */
@@ -30,9 +30,9 @@
 .hl span:nth-child(2){animation-delay:.15s}.hl span:nth-child(3){animation-delay:.3s}
 @keyframes up{to{opacity:1;transform:none}}
 /* 左の白い列:縦書きの和文コピー */
-.vcopy{position:absolute;z-index:3;left:5vw;top:56px;writing-mode:vertical-rl;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(22px,2.1vw,34px);letter-spacing:.2em;line-height:1.7;color:#111820;margin:0;opacity:0;animation:fade 1.2s .6s forwards}
+.vcopy{position:absolute;z-index:3;left:5vw;top:48px;writing-mode:vertical-rl;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(20px,1.9vw,30px);letter-spacing:.14em;line-height:1.5;color:#111820;margin:0;opacity:0;animation:fade 1.2s .6s forwards}
 .vcopy em{font-style:normal;color:var(--green)}
-.vsub{position:absolute;z-index:3;left:calc(5vw + 4.4em);top:60px;writing-mode:vertical-rl;font-size:13px;letter-spacing:.3em;color:#5a6676;margin:0;opacity:0;animation:fade 1.2s .9s forwards}
+.vsub{position:absolute;z-index:3;left:calc(5vw + 7.4em);top:52px;writing-mode:vertical-rl;font-size:12.5px;letter-spacing:.2em;line-height:1.9;color:#5a6676;margin:0;opacity:0;animation:fade 1.2s .9s forwards}
 @keyframes fade{to{opacity:1}}
 .hero .cap{position:absolute;z-index:3;right:24px;top:22px;font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(17,24,32,.55);padding:6px 12px}
 .hero .cap small{font-family:var(--jp);letter-spacing:.06em;margin-left:8px}
@@ -162,8 +162,8 @@
 <section class="hero" aria-label="ご紹介">
   <div class="stripes" aria-hidden="true"></div>
   <div class="photo"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/DSCN0027-scaled.jpg" alt="外壁を塗装するトーシンの職人(調布市 佐須町の現場)"></div>
-  <p class="vcopy" aria-hidden="true">塗装の差は、<em>十六年後</em>に出る。</p>
-  <p class="vsub" aria-hidden="true">見えなくなる下地まで、一切手を抜かない</p>
+  <p class="vcopy" aria-hidden="true">塗装の差は、<br><em>十六年後</em>に出る。</p>
+  <p class="vsub" aria-hidden="true">見えなくなる下地まで、<br>一切手を抜かない</p>
   <p class="hl ink" aria-hidden="true"><span>Painted</span><span>to <em>last.</em></span><span>16 years on.</span></p>
   <p class="hl on" aria-hidden="true"><span>Painted</span><span>to <em>last.</em></span><span>16 years on.</span></p>
   <p class="cap" aria-hidden="true">ON SITE<small>調布市 佐須町の現場</small></p>
@@ -271,6 +271,27 @@
     </div>
   </div>
 </section>
+<script>
+(function(){
+  /* 縦書きのコピーが英字見出しにかからないよう、届くときは文字を小さくする */
+  var v = document.querySelector('.vcopy'), sub = document.querySelector('.vsub'), hl = document.querySelector('.hl.ink');
+  if(!v || !sub || !hl) return;
+  function fit(){
+    v.style.fontSize = ''; sub.style.fontSize = ''; sub.style.left = ''; v.style.visibility = sub.style.visibility = '';
+    if(getComputedStyle(v).display === 'none') return;
+    var limit = hl.getBoundingClientRect().top - 28, n = 0;
+    while(n < 40 && (v.getBoundingClientRect().bottom > limit || sub.getBoundingClientRect().bottom > limit)){
+      v.style.fontSize = Math.max(12, parseFloat(getComputedStyle(v).fontSize) - 1) + 'px';
+      sub.style.fontSize = Math.max(10, parseFloat(getComputedStyle(sub).fontSize) - .5) + 'px';
+      n++;
+    }
+    sub.style.left = (v.getBoundingClientRect().right - v.parentNode.getBoundingClientRect().left + 16) + 'px';
+    if(v.getBoundingClientRect().bottom > limit || sub.getBoundingClientRect().bottom > limit) v.style.visibility = sub.style.visibility = 'hidden';
+  }
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('load', fit); window.addEventListener('resize', fit); fit();
+})();
+</script>
 <footer class="site">
   <div class="wrap">
     <div class="cols">
@@ -282,7 +303,7 @@
 </footer>
 <div class="sp-bar"><a class="t" href="tel:0120416104"><small>通話無料</small>電話で相談</a><a class="m" href="contact.html"><small>かんたん入力</small>無料お見積り</a></div>
 <a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
-<script src="common.js?v=21"></script>
+<script src="common.js?v=22"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
