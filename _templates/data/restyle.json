@@ -1,0 +1,301 @@
+{
+ "id": "restyle",
+ "name": "株式会社Re-Style",
+ "short": "Re-Style",
+ "name_en": "Re-Style",
+ "logo": "",
+ "tel_free": "042-381-1763",
+ "tel": "",
+ "fax": "",
+ "postal": "184-0002",
+ "address": "東京都小金井市梶野町5-9-30",
+ "region": "東京都",
+ "city": "小金井市",
+ "street": "梶野町5-9-30",
+ "license": "",
+ "area": "小金井市を中心に、近隣地域",
+ "business": "外壁塗装・屋根塗装・防水工事、リフォーム工事(トイレ・給湯器の交換、タイル、内装工事など)",
+ "rep": {
+  "name": "",
+  "title": "代表",
+  "photo": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534512444/54251a92-3ef1-4b72-8075-83ecb642015d.jpg"
+ },
+ "seo": {
+  "title": "株式会社Re-Style｜小金井市の外壁塗装・屋根塗装・防水工事｜完全自社施工",
+  "desc": "東京都小金井市梶野町の株式会社Re-Style。外壁塗装・屋根塗装・防水工事の専門店です。下請けを使わない完全自社施工で、中間マージンなし。相見積もり歓迎、お見積もり無料。"
+ },
+ "hero": {
+  "fv": "fan",
+  "place_en": "KOGANEI, TOKYO",
+  "tagline_en": "EXTERIOR PAINTING",
+  "word": "Re-Style",
+  "eyebrow": "KOGANEI, TOKYO ・ EXTERIOR PAINTING",
+  "catch": [
+   "家の印象を、",
+   "{まるごと}塗り替える。"
+  ],
+  "catch_kanji": [
+   "家の印象を、",
+   "{まるごと}塗り替える。"
+  ],
+  "sub": "外壁・屋根・防水の専門店、Re-Styleです。下請けを使わない完全自社施工で、一件一件を自社の職人が仕上げます。",
+  "sub2": "",
+  "en_short": "Re-Style your home.",
+  "photo": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534510973/1a298651-6af7-43e2-b58d-1d718bae007d.jpg",
+  "photo_pos": "50% 50%",
+  "photo_caption": "",
+  "photos": [],
+  "fan_step": 9.5,
+  "fan": [
+   {
+    "c": [
+     "#f3efe6",
+     "#e9e1d0",
+     "#ddd0b6",
+     "#cdbb98"
+    ],
+    "label": "IVORY"
+   },
+   {
+    "img": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534510973/1a298651-6af7-43e2-b58d-1d718bae007d.jpg",
+    "pos": "40% 50%",
+    "label": "ROOF"
+   },
+   {
+    "c": [
+     "#e8d9cf",
+     "#d8bba8",
+     "#c49a80",
+     "#a8765b"
+    ],
+    "label": "TERRACOTTA"
+   },
+   {
+    "c": [
+     "#e4e6dc",
+     "#cfd4c0",
+     "#b1b99c",
+     "#8d9774"
+    ],
+    "label": "SAGE"
+   },
+   {
+    "img": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534511180/697d3049-2148-4fda-baab-fe6ffba57946.jpg",
+    "pos": "70% 50%",
+    "label": "WALL"
+   },
+   {
+    "c": [
+     "#dfe5ea",
+     "#c3ced8",
+     "#9fb0c0",
+     "#73879c"
+    ],
+    "label": "BLUE GRAY"
+   },
+   {
+    "img": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/540740182/a920c778-f00c-42cf-ba1e-7e9b690d4a83.jpg",
+    "pos": "55% 45%",
+    "label": "DETAIL"
+   },
+   {
+    "c": [
+     "#e6e3df",
+     "#c9c5bf",
+     "#9e9a94",
+     "#6e6a66"
+    ],
+    "label": "STONE"
+   },
+   {
+    "c": [
+     "#d9dee6",
+     "#a9b6c9",
+     "#6f85a3",
+     "#3c5274"
+    ],
+    "label": "NAVY"
+   },
+   {
+    "img": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/530455618/1ee3aa15-53fd-41ed-bca5-9cb74e49dab0.jpg",
+    "pos": "50% 50%",
+    "label": "COLOR"
+   },
+   {
+    "c": [
+     "#d6d2cb",
+     "#a7a29a",
+     "#6f6b66",
+     "#3d3b39"
+    ],
+    "label": "CHARCOAL"
+   }
+  ]
+ },
+ "badges": [
+  "お見積もり無料",
+  "相見積もり歓迎",
+  "小さな補修からご相談ください"
+ ],
+ "trust": [
+  [
+   "完全自社施工",
+   "下請けに任せず、自社の職人が責任をもって"
+  ],
+  [
+   "中間マージンなし",
+   "そのぶん、質のいい塗装をお安く"
+  ],
+  [
+   "外壁・屋根・防水",
+   "小さな補修から全面塗装まで"
+  ],
+  [
+   "小金井市梶野町",
+   "地域密着の塗装専門店"
+  ]
+ ],
+ "reasons_lead": "「丁寧な仕事を当たり前に」。それがRe-Styleの信念です。",
+ "reasons": [
+  [
+   "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534511180/697d3049-2148-4fda-baab-fe6ffba57946.jpg",
+   "下請けを使わない、完全自社施工",
+   "ご相談から施工まで、すべて自社の職人が責任をもって行います。時期によってはお待たせすることもありますが、一件一件に真心を込めて丁寧に仕上げます。"
+  ],
+  [
+   "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534510973/1a298651-6af7-43e2-b58d-1d718bae007d.jpg",
+   "中間マージンがないから、適正価格",
+   "下請け業者を通さないので、中間マージンが発生しません。そのぶん、お安く質のいい塗装をご提供できます。"
+  ],
+  [
+   "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/530455618/1ee3aa15-53fd-41ed-bca5-9cb74e49dab0.jpg",
+   "相見積もり、大歓迎です",
+   "お見積もりは2〜3社とることをおすすめしています。金額や工事内容を比べて、納得して選んでいただくのがいちばんです。お見積もりは無料です。"
+  ]
+ ],
+ "hands": [],
+ "signs": [
+  [
+   "汚れ・カビ・藻が目立つ",
+   "外壁の色がくすんだり、北側にカビや藻が出てきたら、塗膜が弱ってきたサインです。"
+  ],
+  [
+   "手に白い粉がつく",
+   "壁を触って白い粉がつく「チョーキング現象」は、塗り替えどきの代表的なサインです。"
+  ],
+  [
+   "ひび割れ(クラック)",
+   "外壁のひび割れは、雨水が入り込む入り口になります。早めの補修がおすすめです。"
+  ],
+  [
+   "塗膜がはがれている",
+   "塗膜がはがれたところから、外壁材そのものが傷みはじめます。"
+  ],
+  [
+   "鉄部の錆",
+   "手すりや雨戸などの鉄部に錆が出てきたら、塗装で守るタイミングです。"
+  ],
+  [
+   "目地シーリングのひび",
+   "サイディングのつなぎ目(シーリング)のひびや痩せも、雨漏りの原因になります。"
+  ]
+ ],
+ "services_lead": "外壁・屋根・防水から、暮らしまわりのリフォームまで。どんなことでもご相談ください。",
+ "services": [
+  {
+   "id": "paint",
+   "en": "PAINTING",
+   "t": "外壁・屋根塗装",
+   "short": "耐久性・防水性・断熱性まで考えて。",
+   "img": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534511180/697d3049-2148-4fda-baab-fe6ffba57946.jpg",
+   "text": "建物の状態をしっかり診断し、最適な塗料と施工方法をご提案します。見た目の美しさはもちろん、10年先も安心して暮らせる塗装を。",
+   "items": [
+    "外壁塗装(サイディングのクリヤー塗装も)",
+    "屋根塗装",
+    "雨戸・鉄部などの付帯部"
+   ]
+  },
+  {
+   "id": "waterproof",
+   "en": "WATERPROOF",
+   "t": "防水工事",
+   "short": "ベランダ・屋上・シーリングまで。",
+   "img": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534510973/1a298651-6af7-43e2-b58d-1d718bae007d.jpg",
+   "text": "雨水の入り口をふさいで、建物を長持ちさせます。",
+   "items": [
+    "ベランダ・屋上の防水",
+    "目地シーリングの打ち替え"
+   ]
+  },
+  {
+   "id": "reform",
+   "en": "REFORM",
+   "t": "リフォーム工事",
+   "short": "トイレ・給湯器・タイル・内装も。",
+   "img": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/540740182/a920c778-f00c-42cf-ba1e-7e9b690d4a83.jpg",
+   "text": "塗装工事以外のことも、どんなことでもご相談ください。",
+   "items": [
+    "トイレ・給湯器の交換",
+    "タイル・内装工事"
+   ]
+  }
+ ],
+ "message": {
+  "title": "丁寧な仕事を、当たり前に。",
+  "paras": [
+   "私たちは「丁寧な仕事を当たり前に」を信念に、地域の皆さまの大切な住まいを守る外壁塗装工事を行っております。",
+   "外壁塗装は、単なる色を塗る作業ではなく、住まいを長く安心して暮らせるようにするための大切な工事です。",
+   "お客様に「頼んでよかった」と思っていただけるよう、誠実に仕事と向き合ってまいります。"
+  ],
+  "vision": "丁寧な仕事を当たり前に"
+ },
+ "flow": [
+  [
+   "お問い合わせ",
+   "お電話かフォームから、お気軽にご連絡ください。"
+  ],
+  [
+   "現地調査・診断",
+   "建物の状態をしっかり診断します。"
+  ],
+  [
+   "ご提案・お見積もり",
+   "最適な塗料と施工方法をご提案します。相見積もりも歓迎です。"
+  ],
+  [
+   "施工・お引き渡し",
+   "自社の職人が、一件一件ていねいに仕上げます。"
+  ]
+ ],
+ "contact_kinds": [
+  "外壁・屋根塗装",
+  "防水工事",
+  "リフォーム",
+  "その他"
+ ],
+ "page_photos": {
+  "service": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534511180/697d3049-2148-4fda-baab-fe6ffba57946.jpg",
+  "works": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534510973/1a298651-6af7-43e2-b58d-1d718bae007d.jpg",
+  "company": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534512444/54251a92-3ef1-4b72-8075-83ecb642015d.jpg",
+  "contact": "https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,width=1600/image/534510973/1a298651-6af7-43e2-b58d-1d718bae007d.jpg"
+ },
+ "one_page": true,
+ "texts": {
+  "tel_label": "お電話",
+  "tel_label_long": "お電話でのご相談",
+  "tel_word": "TEL",
+  "hands_h": "自社の職人の、手しごと。",
+  "signs_h": "こんなサインが出たら、塗り替えどき",
+  "signs_lead": "ひとつでも当てはまったら、まずは無料の診断を。"
+ },
+ "colors": {
+  "gallery": {
+   "accent": "#c4502e",
+   "accent-on-photo": "#f2b49c",
+   "bg": "#fbfaf7",
+   "bg2": "#f3f1ec",
+   "cta-bg": "#1f2a33",
+   "foot-bg": "#171f26"
+  }
+ }
+}

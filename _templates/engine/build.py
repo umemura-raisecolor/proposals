@@ -120,6 +120,8 @@ class Site:
         acts = f'''<div class="acts"><a class="btn btn-main" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a><a class="tel-btn" href="tel:{digits(d['tel_free'])}"><small>{e(self.T('tel_label_long', '通話無料・お電話でのご相談'))}</small><b>{e(d['tel_free'])}</b></a></div>'''
         if h.get("fv") == "wall":
             return self.fv_wall(acts)
+        if h.get("fv") == "fan":
+            return self.fv_fan(acts)
         if self.skin == "streak":
             nums = "".join(f'<div><span class="count" data-to="{n}">{n}</span><small>{e(u)}</small><i>{e(l)}</i></div>' for n, u, l in d["facts"][:2])
             lines = "".join(f'<span><i>{em(x)}</i></span>' for x in h["catch"])
@@ -181,6 +183,37 @@ class Site:
   </div>
 </section>'''
 
+    def fv_fan(self, acts):
+        d, h = self.d, self.d["hero"]
+        blades = h["fan"]
+        n = len(blades)
+        bl = ""
+        for i, x in enumerate(blades):
+            ang = (i - (n - 1) / 2) * h.get("fan_step", 9)
+            if x.get("img"):
+                inner = f'<img src="{e(x["img"])}" alt="" style="object-position:{e(x.get("pos", "50% 50%"))}">'
+            else:
+                c = x["c"]
+                inner = "".join(f'<i style="background:{e(v)}"></i>' for v in c)
+            bl += f'<div class="blade{" ph" if x.get("img") else ""}" style="--a:{ang:.1f}deg;--i:{i}"><div class="chips">{inner}</div><span>{e(x.get("label", ""))}</span></div>'
+        lines = "".join(f'<span>{em(x)}</span>' for x in h["catch"])
+        return f'''<section class="fvf" aria-label="ご紹介">
+  <p class="fvf-word" aria-hidden="true">{e(h.get("word", d["name_en"]))}</p>
+  <div class="fvf-copy">
+    <p class="fvf-eye">{e(h["eyebrow"])}</p>
+    <h1>{lines}</h1>
+    <p class="fvf-sub">{e(h["sub"])}</p>
+    {acts}
+  </div>
+  <div class="fvf-fan" aria-hidden="true"><div class="fan-in">{bl}<span class="pin"></span></div></div>
+</section>'''
+
+    def signs(self):
+        sg = self.d.get("signs")
+        if not sg: return ""
+        items = "".join(f'<li class="rv dl{k % 3 + 1}"><span class="sg-no">{k+1:02d}</span><h3>{e(t)}</h3><p>{e(x)}</p></li>' for k, (t, x) in enumerate(sg))
+        return f'<section class="sec s-signs" id="signs"><div class="wrap">{self.sh("CHECK", self.T("signs_h", "塗り替えのサイン"), self.T("signs_lead", ""))}<ol class="signs">{items}</ol></div></section>'
+
     # ---------- セクション ----------
     def trust(self):
         items = "".join(f'<li class="rv dl{k}"><b>{e(a)}</b><small>{e(b)}</small></li>' for k, (a, b) in enumerate(self.d["trust"]))
@@ -225,11 +258,12 @@ class Site:
 
     def reasons(self):
         r = "".join(f'<article class="reason rv dl{k+1}"><div class="r-img reveal-img"><img src="{e(i)}" alt="" loading="lazy"></div><div class="bd"><h3>{e(t)}</h3><p>{e(x)}</p></div></article>' for k, (i, t, x) in enumerate(self.d["reasons"]))
-        hands = "".join(f'<figure class="rv dl{k+1}"><img src="{e(i)}" alt="{e(c)}" loading="lazy"><figcaption>{e(c)}</figcaption></figure>' for k, (i, c) in enumerate(self.d["hands"]))
+        hands = "".join(f'<figure class="rv dl{k+1}"><img src="{e(i)}" alt="{e(c)}" loading="lazy"><figcaption>{e(c)}</figcaption></figure>' for k, (i, c) in enumerate(self.d.get("hands", [])))
+        hands_html = (f'''  <div class="hands"><p class="hands-h rv">{e(self.T('hands_h', '手元にこそ、仕事は出る。'))}</p><div class="hands-row">{hands}</div></div>''') if hands else ""
         return f'''<section class="sec s-reasons"><div class="wrap">
   {self.sh("CRAFTSMANSHIP", "選ばれる理由", self.d['reasons_lead'])}
   <div class="reasons">{r}</div>
-  <div class="hands"><p class="hands-h rv">{e(self.T('hands_h', '手元にこそ、仕事は出る。'))}</p><div class="hands-row">{hands}</div></div>
+{hands_html}
 </div></section>'''
 
     def services(self):
@@ -334,8 +368,9 @@ def build(data_path, skin, out):
             price = f'<section class="sec s-price" id="price"><div class="wrap">{s.sh("PRICE", s.T("small_h", "料金"), s.T("small_lead", ""))}<div class="pgrid">{cards}</div><p class="note">{e(s.T("price_note", ""))}</p></div></section>'
         else:
           price = (f'<section class="sec s-small" id="price"><div class="wrap">{s.sh("PRICE", s.T("small_h", "料金"), s.T("small_lead", ""))}<div class="small">{small}</div></div></section>' if small else "")
-        html = (s.head(d["seo"]["title"], d["seo"]["desc"], "index.html") + "<main>" + s.fv() + s.trust() + s.works(more=False) + s.proof() + price +
-                s.reasons() + s.services() + s.message() + s.flow() + "</main>" + s.cta() + s.foot())
+        html = (s.head(d["seo"]["title"], d["seo"]["desc"], "index.html") + "<main>" + s.fv() + s.trust() +
+                (s.works(more=False) if d.get("works") else "") + (s.proof() if d.get("proof") else "") + price +
+                s.reasons() + s.signs() + s.services() + s.message() + s.flow() + "</main>" + s.cta() + s.foot())
         html = html.replace('<section class="sec s-works">', '<section class="sec s-works" id="works">', 1)
         html = html.replace('<section class="sec s-service">', '<section class="sec s-service" id="service">', 1)
         html = html.replace('<section class="sec s-message">', '<section class="sec s-message" id="company">', 1)
@@ -344,6 +379,8 @@ def build(data_path, skin, out):
         html = re.sub(r'<span class="s-more">.*?</span>', '', html)
         for pg, anc in (("service", "#service"), ("works", "#works"), ("company", "#company"), ("contact", "#contact")):
             html = re.sub(rf'href="{pg}\.html[^"]*"', f'href="{anc}"', html)
+        if not d.get("works"):
+            html = html.replace('href="#works"', 'href="#signs"' if d.get("signs") else 'href="#service"')
         open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(html)
     elif d.get("fv_only"):
         # 最初の画面だけの見本:他のページは作らず、リンクはすべて下の案内へ

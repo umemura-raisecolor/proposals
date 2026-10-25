@@ -400,3 +400,51 @@ footer.site .copy{border-top:1px solid rgba(128,128,128,.25);margin-top:36px;pad
 .s-price .note{margin-top:16px;font-size:12.5px;color:var(--sub)}
 @media (max-width:960px){.pgrid{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.pgrid{grid-template-columns:1fr}}
+
+/* ===== FV:色見本の扇がひらく(hero.fv = "fan")白基調 ===== */
+.fvf{position:relative;overflow:hidden;min-height:calc(100svh - 84px);max-height:960px;background:var(--bg);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;padding:0 max(24px,5vw)}
+.fvf-word{position:absolute;left:-1vw;bottom:-4vw;margin:0;font-family:var(--en);font-weight:700;font-size:clamp(120px,19vw,330px);line-height:.8;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--ink) 12%,transparent);white-space:nowrap;pointer-events:none;opacity:0;transform:translateX(-6%);animation:fvfWord 1.6s cubic-bezier(.2,.7,.2,1) .2s forwards}
+@keyframes fvfWord{to{opacity:1;transform:none}}
+.fvf-copy{position:relative;z-index:2;padding:40px 0 60px}
+.fvf-copy>*{opacity:0;transform:translateY(24px);animation:fvwUpIn .9s cubic-bezier(.2,.7,.2,1) forwards}
+.fvf-copy>:nth-child(1){animation-delay:.5s}.fvf-copy>:nth-child(2){animation-delay:.7s}.fvf-copy>:nth-child(3){animation-delay:1.5s}.fvf-copy>:nth-child(4){animation-delay:1.7s}
+.fvf-eye{margin:0;font-family:var(--en);font-size:12.5px;letter-spacing:.34em;color:var(--accent)}
+.fvf h1{margin:18px 0 0;font-family:var(--display);font-weight:700;font-size:clamp(34px,4.3vw,64px);line-height:1.38;letter-spacing:.04em;color:var(--ink)}
+.fvf h1 span{display:block}
+.fvf h1 em{all:unset;color:var(--accent);position:relative;display:inline-block}
+.fvf h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.16em;background:currentColor;opacity:.22;transform:scaleX(0);transform-origin:left;animation:fvfLine .9s cubic-bezier(.7,0,.2,1) 1.3s forwards}
+@keyframes fvfLine{to{transform:none}}
+.fvf-sub{margin:22px 0 0;max-width:30em;font-size:15.5px;line-height:2;color:var(--sub)}
+.fvf .acts{margin-top:30px}
+.fvf-fan{position:relative;z-index:1;height:min(78svh,740px);display:flex;align-items:flex-end;justify-content:center}
+.fan-in{position:relative;width:100%;height:100%}
+.blade{position:absolute;left:50%;bottom:4%;width:clamp(78px,7.6vw,128px);height:84%;margin-left:calc(clamp(78px,7.6vw,128px) / -2);transform-origin:50% calc(100% - 26px);transform:rotate(0deg) translateY(30px);opacity:0;border-radius:12px;background:#fff;box-shadow:0 18px 40px rgba(20,30,40,.16),0 2px 0 rgba(0,0,0,.04);padding:7px 7px 34px;animation:fvfOpen 1.5s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.35s + var(--i) * .07s)}
+@keyframes fvfOpen{0%{opacity:0;transform:rotate(0deg) translateY(40px)}25%{opacity:1}100%{opacity:1;transform:rotate(var(--a)) translateY(0)}}
+.blade .chips{height:100%;border-radius:7px;overflow:hidden;display:flex;flex-direction:column}
+.blade .chips i{flex:1;display:block}
+.blade.ph .chips img{width:100%;height:100%;object-fit:cover;display:block}
+.blade span{position:absolute;left:0;right:0;bottom:9px;text-align:center;font-family:var(--en);font-size:10px;letter-spacing:.14em;color:#6b6862;white-space:nowrap;overflow:hidden}
+.pin{position:absolute;left:50%;bottom:calc(4% + 14px);width:22px;height:22px;margin-left:-11px;border-radius:50%;background:#fff;border:5px solid var(--ink);z-index:40;box-shadow:0 2px 8px rgba(0,0,0,.25);opacity:0;animation:fadein .6s ease 1.6s forwards}
+.fan-in{animation:fvfSway 7s ease-in-out 2.4s infinite alternate;transform-origin:50% 96%}
+@keyframes fvfSway{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
+@media (max-width:900px){
+  .fvf{grid-template-columns:1fr;min-height:0;max-height:none;padding:0 22px}
+  .fvf-copy{padding:6px 0 34px;order:2}
+  .fvf-fan{order:1;height:44svh;min-height:300px;margin:0 -22px}
+  .blade{width:64px;margin-left:-32px;height:86%}
+  .fvf h1{font-size:30px}
+  .fvf .acts>*{width:100%}
+  .fvf-word{font-size:34vw;bottom:-6vw}
+}
+@media (prefers-reduced-motion:reduce){.fvf-word,.fvf-copy>*,.blade,.pin,.fan-in,.fvf h1 em::after{animation:none;opacity:1;transform:none}.blade{transform:rotate(var(--a))}}
+
+/* ===== 塗り替えのサイン(signs) ===== */
+.signs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.signs li{position:relative;padding:28px 26px 26px;background:var(--card);border:1px solid var(--line);transition:transform .35s,border-color .35s}
+.signs li:hover{transform:translateY(-5px);border-color:var(--accent)}
+.sg-no{display:inline-block;font-family:var(--en);font-size:30px;font-weight:600;line-height:1;color:var(--accent)}
+.signs h3{margin:12px 0 6px;font-family:var(--display);font-size:18px}
+.signs p{margin:0;font-size:14.5px;line-height:1.85;color:var(--sub)}
+@media (max-width:960px){.signs{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.signs{grid-template-columns:1fr}}
+@keyframes fadein{to{opacity:1}}
