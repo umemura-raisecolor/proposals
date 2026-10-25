@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>見出しの字体くらべ｜トーシン様デモ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&family=Shippori+Mincho+B1:wght@800&family=Noto+Serif+JP:wght@900&family=Zen+Old+Mincho:wght@900&family=Zen+Kaku+Gothic+New:wght@900&family=Murecho:wght@800&family=M+PLUS+1p:wght@800&family=Dela+Gothic+One&display=swap">
+<style>
+body{margin:0;background:#f3f5f8;color:#14202e;font-family:"Noto Sans JP",sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 20px 80px}
+h1{font-size:22px;margin:0 0 6px}
+.lead{color:#5a6676;margin:0 0 30px;font-size:15px}
+.item{background:#fff;border:1px solid #dce2ea;padding:26px 30px 28px;margin-bottom:18px}
+.lbl{display:flex;align-items:center;gap:12px;font-size:13px;color:#5a6676;margin-bottom:10px}
+.lbl b{background:#0c2340;color:#fff;font-size:14px;padding:2px 10px}
+.lbl .now{background:#1e9a68}
+.h{font-size:clamp(26px,4vw,46px);line-height:1.35;margin:0}
+.h em{font-style:normal;color:#1e9a68}
+.p{margin:14px 0 0;color:#5a6676;font-size:16px;line-height:1.9}
+.dark{background:#0c2340;color:#fff;padding:18px 22px;margin-top:16px}
+.dark .h{font-size:clamp(24px,3.4vw,38px)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>見出しの字体くらべ</h1>
+<p class="lead">トーシン様デモの見出しを、字体だけ変えて並べています。番号でお知らせください。下の濃紺の帯は、ファーストビューのような暗い背景に置いたときの見え方です。</p>
+<div id="list"></div>
+</div>
+<script>
+var F=[
+ ["A","Noto Sans JP","900","今の字体。太くて読みやすい、標準的なゴシック",true],
+ ["B","Shippori Mincho B1","800","ファーストビューと同じ太い明朝。格式と高級感"],
+ ["C","Zen Old Mincho","900","筆の名残がある、力強く伝統的な明朝"],
+ ["D","Noto Serif JP","900","すっきりした太い明朝。きちんとした法人らしさ"],
+ ["E","Zen Kaku Gothic New","900","角のある、引き締まったゴシック"],
+ ["F","Murecho","800","細身でシャープな、今っぽいゴシック"],
+ ["G","M PLUS 1p","800","やわらかめで親しみのあるゴシック"],
+ ["H","Dela Gothic One","400","とても太い、看板のようなインパクト"]
+];
+document.getElementById('list').innerHTML=F.map(function(f){
+  var st='font-family:"'+f[1]+'",sans-serif;font-weight:'+f[2];
+  return '<div class="item"><p class="lbl"><b'+(f[4]?' class="now"':'')+'>'+f[0]+'</b>'+f[1]+'｜'+f[3]+'</p>'+
+  '<h2 class="h" style=\''+st+'\'>建物の外まわりを、<em>まとめてお任せ</em></h2>'+
+  '<p class="p">塗装・防水・雨漏り修理から改修まで。いくつもの業者に頼まなくても、トーシン一社で完結します。</p>'+
+  '<div class="dark"><p class="h" style=\''+st+'\'>塗装の差は、16年後に出る。</p></div></div>';
+}).join('');
+</script>
+</body>
+</html>
