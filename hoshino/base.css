@@ -346,3 +346,8 @@ footer.site .copy{border-top:1px solid rgba(128,128,128,.25);margin-top:36px;pad
 .m-quote{aspect-ratio:4/5;display:flex;align-items:flex-start;padding:40px 30px 90px;background:var(--accent);color:var(--accent-ink)}
 .m-quote p{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.6;letter-spacing:.06em}
 .m-quote em{all:unset;border-bottom:3px solid currentColor}
+
+/* 最初の画面だけの見本(fv_only) */
+.fv-note{padding:70px 0 90px;text-align:center}
+.fv-note .en{margin:0 0 12px;font-family:var(--en);font-size:12px;letter-spacing:.34em;color:var(--accent)}
+.fv-note p:not(.en){margin:0 auto;max-width:640px;font-size:15px;line-height:2;color:var(--sub)}

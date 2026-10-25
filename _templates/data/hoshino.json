@@ -592,5 +592,6 @@
    "accent-ink": "#ffffff",
    "accent-on-photo": "#ffb37a"
   }
- }
+ },
+ "fv_only": true
 }

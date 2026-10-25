@@ -321,8 +321,19 @@ def build(data_path, skin, out):
     d = json.load(open(data_path, encoding="utf-8"))
     os.makedirs(out, exist_ok=True)
     s = Site(d, skin)
-    for name, fn in [("index.html", s.index), ("service.html", s.service), ("works.html", s.works_page), ("company.html", s.company), ("contact.html", s.contact)]:
-        open(os.path.join(out, name), "w", encoding="utf-8").write(fn())
+    if d.get("fv_only"):
+        # 最初の画面だけの見本:他のページは作らず、リンクはすべて下の案内へ
+        for name in ("service.html", "works.html", "company.html", "contact.html"):
+            fp = os.path.join(out, name)
+            if os.path.exists(fp): os.remove(fp)
+        note = d.get("fv_only_note", "このページは、最初の画面だけの見本です。施工事例・料金・会社案内などのページは、ご依頼いただいたあとに一緒にお作りします。")
+        html = s.head(d["seo"]["title"], d["seo"]["desc"], "index.html") + "<main>" + s.fv() + \
+            f'<section class="sec fv-note" id="more"><div class="wrap"><p class="en">SAMPLE</p><p>{e(note)}</p></div></section></main>' + s.foot()
+        html = re.sub(r'href="(?:service|works|company|contact)\.html[^"]*"', 'href="#more"', html)
+        open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(html)
+    else:
+        for name, fn in [("index.html", s.index), ("service.html", s.service), ("works.html", s.works_page), ("company.html", s.company), ("contact.html", s.contact)]:
+            open(os.path.join(out, name), "w", encoding="utf-8").write(fn())
     shutil.copy(os.path.join(HERE, "base.css"), os.path.join(out, "base.css"))
     shutil.copy(os.path.join(HERE, "skins", skin + ".css"), os.path.join(out, "skin.css"))
     shutil.copy(os.path.join(HERE, "common.js"), os.path.join(out, "common.js"))
