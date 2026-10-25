@@ -118,6 +118,8 @@ class Site:
     def fv(self):
         d, h = self.d, self.d["hero"]
         acts = f'''<div class="acts"><a class="btn btn-main" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a><a class="tel-btn" href="tel:{digits(d['tel_free'])}"><small>通話無料・お電話でのご相談</small><b>{e(d['tel_free'])}</b></a></div>'''
+        if h.get("fv") == "wall":
+            return self.fv_wall(acts)
         if self.skin == "streak":
             nums = "".join(f'<div><span class="count" data-to="{n}">{n}</span><small>{e(u)}</small><i>{e(l)}</i></div>' for n, u, l in d["facts"][:2])
             lines = "".join(f'<span><i>{em(x)}</i></span>' for x in h["catch"])
@@ -155,6 +157,28 @@ class Site:
         return f'''<section class="fv" aria-label="ご紹介">
   {figs}
   <div class="fv-copy"><h1>{cat}</h1><p>{e(h['sub'])}<br>{e(h['sub2'])}</p>{acts}</div>
+</section>'''
+
+    def fv_wall(self, acts):
+        d, h = self.d, self.d["hero"]
+        W = h["wall"]
+        cols = []
+        for c in range(5):
+            tiles = W[c::5] + W[(c + 2) % 5::5]
+            t = "".join(f'<figure><img src="{e(u)}" alt=""><figcaption>{e(cap)}</figcaption></figure>' for u, cap in tiles)
+            cols.append(f'<div class="col"><div class="track">{t}{t}</div></div>')
+        lines = "".join(f'<span>{em(x)}</span>' for x in h["catch"])
+        return f'''<section class="fvw" aria-label="ご紹介">
+  <div class="fvw-wall" aria-hidden="true">{"".join(cols)}</div>
+  <div class="fvw-paint"><span class="shape2" aria-hidden="true"></span><span class="shape" aria-hidden="true"></span>
+    <div class="fvw-in">
+      <p class="fvw-eye">{e(h["eyebrow"])}</p>
+      <p class="fvw-num"><span class="count" data-to="{h["big"]}" data-delay="500" data-dur="1900">{h["big"]}</span><span class="u"><b>{e(h["big_en"])}</b><small>{e(h["big_label"])}</small></span></p>
+      <h1>{lines}</h1>
+      <p class="fvw-sub">{e(h["sub"])}</p>
+      {acts}
+    </div>
+  </div>
 </section>'''
 
     # ---------- セクション ----------

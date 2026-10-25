@@ -29,14 +29,14 @@
   "place_en": "KOKUBUNJI, TOKYO",
   "tagline_en": "PAINTING ・ WATERPROOF ・ PLASTERING",
   "catch": [
-   "家族も、街も、",
-   "笑顔になる{色}を。"
+   "国立競技場も、大船観音も、",
+   "{まちの保育園}も。"
   ],
   "catch_kanji": [
    "家族も、街も、",
    "笑顔になる{色}を。"
   ],
-  "sub": "1951年創業、国分寺の塗装会社です。",
+  "sub": "1951年創業。国分寺の塗装会社、タナカ塗装です。",
   "sub2": "住まいから保育園、図書館、神社まで。自然塗料もご相談ください。",
   "en": [
    "Colors",
@@ -58,7 +58,94 @@
     "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f97f1a023551d4def3d.png",
     "HACHIMAN SHRINE"
    ]
-  ]
+  ],
+  "fv": "wall",
+  "wall": [
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5520f82b744e68439826a2.png",
+    "NATIONAL STADIUM"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55213d2eeb06007ad81d89.png",
+    "OFUNA KANNON"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f97f1a023551d4def3d.png",
+    "HACHIMAN SHRINE"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f511d59ed46586b15ab.png",
+    "TSUDA UNIVERSITY"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551d96f1a023551d4dee37.png",
+    "CITY TOWER KOKUBUNJI"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551e0df1a023551d4dee6f.png",
+    "NURSERY — KODAIRA"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f0d74a9aea43ccc64e2.png",
+    "TAMA LIBRARY"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55209c0f6d39d55f0aad3f.png",
+    "NURSERY — KOKUBUNJI"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5513fc6106e55d0afcc9bf.png",
+    "HOUSE — TAKANODAI"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551e0e2eeb06007ad81c50.png",
+    "NURSERY — NIGHT"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551fef0f6d39d55f0aacd4.png",
+    "SHRINE — AKISHIMA"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55177c2eeb06007ad81948.png",
+    "YOYOGI"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551e6df1a023551d4dee98.png",
+    "KINDERGARTEN — ARAKAWA"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5514b96106e55d0afcca1b.png",
+    "JAPANESE HOUSE"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f10e1a432b35ce22444.png",
+    "LIBRARY — INTERIOR"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5517b9e1a432b35ce22091.png",
+    "ESTACION"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551c82e1a432b35ce2233f.png",
+    "HEAD OFFICE — RENOVATION"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551382e1a432b35ce21e6f.png",
+    "KOMINKA — BEAMS"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55172b1d59ed46586b11b0.png",
+    "NAKANO"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551d3a1d59ed46586b14ad.png",
+    "COMMUNITY CENTER"
+   ]
+  ],
+  "eyebrow": "SINCE 1951 ・ KOKUBUNJI, TOKYO",
+  "big": 75,
+  "big_en": "YEARS",
+  "big_label": "年、街の色を塗ってきた。"
  },
  "facts": [
   [
