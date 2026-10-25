@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>大塚美装｜調布市の外壁塗装・屋根塗装｜東京・多摩・神奈川の塗装専門店</title>
+<meta name="description" content="東京都調布市柴崎の塗装専門店・大塚美装。一級塗装技能士の代表が、外壁塗装・屋根塗装・内装塗装・ポイント塗装を、妥協なき丁寧な仕事でお届けします。お見積もり・ご相談は無料です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Shippori+Mincho+B1:wght@700;800&display=swap">
+<link rel="stylesheet" href="common.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "大塚美装", "description": "東京・多摩・神奈川を中心に、大切な家屋を守る塗装専門店。外壁塗装・屋根塗装・内装塗装・ポイント塗装。", "address": {"@type": "PostalAddress", "addressCountry": "JP", "addressRegion": "東京都", "addressLocality": "調布市", "streetAddress": "柴崎2-15-7"}, "founder": {"@type": "Person", "name": "大塚 猛"}, "areaServed": ["東京23区", "東京都多摩地域", "神奈川県"], "image": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x10000:format=jpg/path/s12848955a32942dd/image/idaca75e6754dc879/version/1703958757/image.jpg"}</script>
+<style>
+/* ===== ヒーロー:写真がゆっくり切り替わる+すりガラス(ファーストビューの型) ===== */
+.hero{position:relative;overflow:hidden;background:var(--black);color:#fff;min-height:min(86vh,780px);display:flex;align-items:center}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+.slide.on{opacity:1}
+.slide.on img{animation:zoom 9s ease-out forwards}
+.ghost{z-index:0}
+.ghost .slide img{filter:grayscale(.6) blur(2px)}
+.ghost::after{content:"";position:absolute;inset:0;background:rgba(var(--shade),.8)}
+.photo{z-index:1;left:auto;width:54%;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%);overflow:hidden}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--shade),.35) 0%,rgba(var(--shade),0) 30%),linear-gradient(0deg,rgba(var(--shade),.45) 0%,rgba(var(--shade),0) 35%);pointer-events:none}
+.edge{position:absolute;z-index:1;top:0;bottom:0;right:0;width:54%;background:var(--accent);clip-path:polygon(calc(16% - 6px) 0,16% 0,0 100%,-6px 100%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:56px 110px}
+.glass{max-width:640px;padding:38px 44px 40px;background:rgba(var(--shade),.42);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,255,255,.18);border-left:4px solid var(--accent);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.since{display:flex;align-items:center;gap:14px;font-family:var(--display);font-weight:700;font-size:17px;color:var(--accent);letter-spacing:.12em;margin:0 0 22px}
+.since::before{content:"";width:40px;height:2px;background:var(--accent)}
+.hero h1{font-size:clamp(30px,4vw,52px);line-height:1.38;letter-spacing:.08em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero h1 .ln{display:block}
+.lead{margin:20px 0 0;font-size:19px;max-width:32em;color:#e2e2e2;line-height:1.9}
+.acts{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px}
+.rise{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.2s}.d2{animation-delay:.38s}.d3{animation-delay:.56s}.d4{animation-delay:.74s}.d5{animation-delay:.95s}.d6{animation-delay:1.15s}
+@keyframes rise{to{opacity:1;transform:none}}
+.slide-info{position:absolute;z-index:3;right:max(20px,calc((100vw - var(--w))/2 + 20px));bottom:34px;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.cap{margin:0;font-size:15px;line-height:1.5;padding:8px 16px;color:#fff;background:rgba(var(--shade),.4);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);transition:opacity .5s}
+.cap b{color:var(--accent);font-family:var(--display);margin-right:.6em}
+.bars{display:flex;gap:8px}
+.bars button{all:unset;cursor:pointer;width:56px;height:20px;display:flex;align-items:center}
+.bars button span{display:block;width:100%;height:3px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.bars button span i{position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left}
+.bars button.on span i{animation:fill 6.5s linear forwards}
+.bars button.done span i{transform:scaleX(1)}
+.bars button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@keyframes fill{to{transform:scaleX(1)}}
+.scroll{position:absolute;z-index:3;left:max(20px,calc((100vw - var(--w))/2 + 20px));bottom:30px;font-size:13px;letter-spacing:.3em;color:#cfcfcf;display:flex;align-items:center;gap:12px;margin:0}
+.scroll::after{content:"";width:60px;height:1px;background:rgba(255,255,255,.4);background-image:linear-gradient(90deg,var(--accent),var(--accent));background-size:30% 100%;background-repeat:no-repeat;animation:run 2.2s ease-in-out infinite}
+@keyframes run{from{background-position:-40% 0}to{background-position:140% 0}}
+.facts{background:var(--char);color:#fff;border-top:1px solid var(--line-dark)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-block:44px}
+.fact{text-align:center;padding:6px 10px;border-left:1px solid var(--line-dark)}
+.fact:first-child{border-left:0}
+.fact b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(64px,8vw,104px);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:0;margin-bottom:10px}
+.fact b .count{display:inline-block}
+.count.pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+.fact b small{font-size:.3em;margin-left:6px;color:#fff;font-weight:700}
+.fact > span{font-size:16px;color:#d0d0d0}
+
+/* ごあいさつ */
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.intro h2{font-size:clamp(28px,3.4vw,42px);letter-spacing:.08em;margin:10px 0 26px}
+.intro h2 em{font-style:normal;color:var(--accent)}
+.intro .en{font-family:var(--display);color:var(--accent);letter-spacing:.42em;font-size:15px;font-weight:700}
+.intro .photo-box{position:relative}
+.intro .photo-box::before{content:"";position:absolute;inset:26px -26px -26px 26px;border:1px solid var(--accent);z-index:-1}
+.intro .photo-box img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.intro .sign{margin-top:26px;font-family:var(--display);font-weight:700}
+
+/* 工事の内容カード */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.svc a{position:relative;display:block;text-decoration:none;color:#fff;background:var(--char);overflow:hidden;min-height:380px}
+.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.svc a:hover img{transform:scale(1.08);opacity:.4}
+.svc .in-card{position:absolute;inset:auto 0 0 0;padding:30px 28px;background:linear-gradient(0deg,rgba(var(--shade),.95),rgba(var(--shade),0))}
+.svc .tag{font-family:var(--display);color:var(--accent);letter-spacing:.3em;font-size:13px;font-weight:700}
+.svc h3{font-size:28px;letter-spacing:.1em;margin:4px 0 8px}
+.svc p{margin:0;font-size:16px;color:#d6d9e0;line-height:1.8}
+.svc .more{display:inline-block;margin-top:14px;font-size:15px;color:var(--accent);font-weight:700;transition:transform .3s}
+.svc a:hover .more{transform:translateX(6px)}
+.svc a::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--accent);transition:width .5s}
+.svc a:hover::after{width:100%}
+
+/* 選ばれる理由 */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line-dark)}
+.why div{padding:40px 34px;border-left:1px solid var(--line-dark)}
+.why div:first-child{border-left:0}
+.why h3{font-size:24px;letter-spacing:.08em;color:var(--accent);margin-bottom:14px}
+.why p{margin:0;color:#d6d9e0;font-size:17px}
+
+/* 施工事例ダイジェスト */
+.works3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.works3 .k{font-family:var(--display);color:var(--accent);font-size:14px;letter-spacing:.2em;font-weight:700;margin:18px 0 2px}
+.works3 h3{font-size:21px;letter-spacing:.06em}
+.center{text-align:center;margin-top:50px}
+
+/* 対応エリア */
+.area-box{display:grid;grid-template-columns:auto 1fr;gap:50px;align-items:center}
+.area-num{font-family:var(--display);font-weight:800;color:var(--accent);font-size:clamp(90px,11vw,140px);line-height:1}
+.area-num small{font-size:.22em;color:var(--ink);margin-left:8px}
+.area-box p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.chips span{border:1px solid var(--line);background:#fff;padding:4px 14px;font-size:15px}
+
+@media (max-width:960px){
+  .intro,.area-box{grid-template-columns:1fr;gap:44px}
+  .svc,.works3,.why{grid-template-columns:1fr}
+  .why div{border-left:0;border-top:1px solid var(--line-dark)}
+  .svc a{min-height:320px}
+}
+@media (max-width:860px){
+  .hero{min-height:auto;flex-direction:column;align-items:stretch}
+  .photo{position:relative;inset:auto;width:100%;height:240px;clip-path:polygon(0 0,100% 0,100% 100%,0 86%)}
+  .edge{display:none}
+  .hero .wrap{padding-block:0 120px;margin-top:-40px}
+  .glass{padding:30px 24px 32px}
+  .lead{font-size:17px}
+  .acts .btn{flex:1 1 100%;font-size:17px;padding:0 16px;white-space:nowrap}
+  .slide-info{left:20px;right:20px;align-items:flex-start;bottom:28px}
+  .scroll{display:none}
+}
+@media (max-width:720px){.facts .wrap{grid-template-columns:repeat(2,1fr);row-gap:32px;padding-block:36px}.fact b{font-size:64px}.fact:nth-child(3){border-left:0}}
+@media (prefers-reduced-motion:reduce){.slide.on img,.scroll::after{animation:none}.rise{animation:none;opacity:1;transform:none}.bars button.on span i{animation:none;transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="top-note"><div class="wrap">東京・多摩・神奈川の外壁塗装・屋根塗装・内装塗装｜調布市柴崎の塗装専門店</div></div>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="大塚美装 トップへ">
+      <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=200x10000:format=png/path/s12848955a32942dd/image/i973d3749f5ec3791/version/1703921001/image.png" alt="">
+      <span><b>大塚美装</b><small>OTSUKA BISOU</small></span>
+    </a>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー"><a href="index.html" aria-current="page">トップ</a><a href="service.html">工事の内容</a><a href="works.html">施工事例</a><a href="company.html">会社案内</a><a href="contact.html">お問い合わせ</a></nav>
+    <a class="head-cta" href="contact.html">無料お見積り・ご相談</a>
+    <button class="menu-btn" aria-label="メニュー" aria-controls="gnav" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="ご紹介">
+  <div class="slides ghost" aria-hidden="true"><div class="slide on"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s12848955a32942dd/image/ied878e4d6bb92f57/version/1703959812/image.jpg" alt=""></div><div class="slide"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s12848955a32942dd/image/i1d56eaca917883ac/version/1703959554/image.jpg" alt="" loading="lazy"></div><div class="slide"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s12848955a32942dd/image/icabd369b2aa91e9f/version/1706538320/image.jpg" alt="" loading="lazy"></div></div>
+  <div class="slides photo" aria-hidden="true"><div class="slide on"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s12848955a32942dd/image/ied878e4d6bb92f57/version/1703959812/image.jpg" alt=""></div><div class="slide"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s12848955a32942dd/image/i1d56eaca917883ac/version/1703959554/image.jpg" alt="" loading="lazy"></div><div class="slide"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s12848955a32942dd/image/icabd369b2aa91e9f/version/1706538320/image.jpg" alt="" loading="lazy"></div></div>
+  <div class="edge" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="glass">
+      <p class="since rise d1">調布市柴崎の塗装専門店</p>
+      <h1><span class="ln rise d2">大切なお住まいに、</span><span class="ln rise d3"><em>妥協なき</em></span><span class="ln rise d4">丁寧な仕事を。</span></h1>
+      <p class="lead rise d5">一級塗装技能士の代表が、外壁・屋根の塗り替えから、内装・ポイント塗装まで。大手にはない、お客さまのご要望に沿った施工をご提案します。</p>
+      <div class="acts rise d6">
+        <a class="btn btn-sun" href="contact.html">無料でお見積りを相談する</a>
+        <a class="btn btn-line" href="works.html">施工事例を見る</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide-info">
+    <p class="cap" id="cap"><b>施工事例</b>外壁塗装｜色のイメージを一新</p>
+    <div class="bars" role="group" aria-label="写真の切り替え" id="bars"><button class="on" aria-label="1枚目"><span><i></i></span></button><button aria-label="2枚目"><span><i></i></span></button><button aria-label="3枚目"><span><i></i></span></button></div>
+  </div>
+  <p class="scroll">SCROLL</p>
+</section>
+
+<div class="facts" aria-label="数字で見る大塚美装"><div class="wrap"><div class="fact"><b><span class="count" data-to="63">63</span><small>市区町村</small></b><span>東京・多摩・神奈川の対応エリア</span></div><div class="fact"><b><span class="count" data-to="1">1</span><small>級</small></b><span>塗装技能士の代表が施工</span></div><div class="fact"><b><span class="count" data-to="5">5</span><small>工程</small></b><span>外壁塗装の基本仕様</span></div><div class="fact"><b><span class="count" data-to="4">4</span><small>種</small></b><span>保有している資格</span></div></div></div>
+
+<section class="sec">
+  <div class="wrap intro">
+    <div class="rv rv-l">
+      <span class="en">GREETING</span>
+      <h2>塗り替えのプロとして、<br><em>地域のお客様の大満足</em>のために。</h2>
+      <p>大塚美装は、東京・多摩・神奈川を中心に、大切な家屋を守る塗装専門店です。</p>
+      <p>大手業者にはない、お客さまのご要望に沿った施工をご提案すること。そして、技術力・丁寧さ・心のこもった対応で、ご依頼いただいた一つひとつの仕事に取り組むこと。地域密着だからこそできる、高品質の塗装工事店であり続けます。</p>
+      <p class="sign">代表　大塚 猛</p>
+      <a class="btn btn-ghost" href="company.html" style="margin-top:20px">会社案内を見る <span class="arw">→</span></a>
+    </div>
+    <div class="photo-box rv rv-r"><div class="reveal-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1000x10000:format=jpg/path/s12848955a32942dd/image/i50a3fe3433194e27/version/1703921766/image.jpg" alt="大塚美装の施工の様子" loading="lazy"></div></div>
+  </div>
+</section>
+
+<section class="sec paper">
+  <div class="wrap">
+    <div class="sec-head"><span class="en">SERVICE</span><h2>工事の内容</h2><p>外壁・屋根の塗り替えから、お部屋の雰囲気を変える内装・ポイント塗装まで、塗装に関することならお任せください。</p></div>
+    <div class="svc"><a class="rv dl1" href="service.html#exterior"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s12848955a32942dd/image/ied878e4d6bb92f57/version/1703959812/image.jpg" alt="" loading="lazy"><div class="in-card"><span class="tag">EXTERIOR</span><h3>外壁塗装</h3><p>下塗りを2回重ねる5つの工程で、なめらかで長持ちする仕上がりに。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl2" href="service.html#roof"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s12848955a32942dd/image/icabd369b2aa91e9f/version/1706538320/image.jpg" alt="" loading="lazy"><div class="in-card"><span class="tag">ROOF</span><h3>屋根塗装</h3><p>コロニアルやセメント瓦も、調査・補修からていねいに塗り替えます。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl3" href="service.html#interior"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s12848955a32942dd/image/i36bf029f075ade62/version/1706537692/image.jpg" alt="" loading="lazy"><div class="in-card"><span class="tag">INTERIOR</span><h3>内装・ポイント塗装</h3><p>機能性塗料から、一面だけのお洒落塗り、黒板塗装まで。</p><span class="more">くわしく見る →</span></div></a></div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head"><span class="en">REASON</span><h2>大塚美装が選ばれる理由</h2></div>
+    <div class="why">
+      <div class="rv dl1"><h3>一級塗装技能士の技術</h3><p>国家資格の一級塗装技能士をはじめ、石綿含有建材調査者・足場組立作業主任者の資格を持つ代表が、責任を持って施工します。</p></div>
+      <div class="rv dl2"><h3>手を抜かない工程</h3><p>外壁は調査・補修から、下塗り2回・上塗り2回の基本仕様。見えなくなる下地にこそ、手間をかけます。</p></div>
+      <div class="rv dl3"><h3>ご要望に沿ったご提案</h3><p>色見本を一緒に見比べたり、濃い色の差し方を相談したり。施主様の「こうしたい」に、最後まで寄り添います。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="en">WORKS</span><h2>施工事例</h2><p>写真の上のつまみを左右に動かすと、施工前と施工後を見比べられます。</p></div>
+    <div class="works3"><div class="rv dl1"><div class="ba">
+      <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s12848955a32942dd/image/i1d56eaca917883ac/version/1703959554/image.jpg" alt="施工後:濃い色を効かせて、印象を一新" loading="lazy">
+      <img class="before" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s12848955a32942dd/image/ie705a15a275cbbbb/version/1703959520/image.jpg" alt="施工前:濃い色を効かせて、印象を一新" loading="lazy">
+      <span class="handle"></span><span class="lb b">BEFORE</span><span class="lb a">AFTER</span>
+      <input type="range" min="0" max="100" value="50" aria-label="施工前と施工後を見比べる">
+    </div><p class="k">外壁塗装</p><h3>濃い色を効かせて、印象を一新</h3></div><div class="rv dl2"><div class="ba">
+      <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s12848955a32942dd/image/if3853feade1a03f1/version/1703959732/image.jpg" alt="施工後:コケと亀裂のコロニアルを修復" loading="lazy">
+      <img class="before" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s12848955a32942dd/image/i1e198b623c625e93/version/1703959715/image.jpg" alt="施工前:コケと亀裂のコロニアルを修復" loading="lazy">
+      <span class="handle"></span><span class="lb b">BEFORE</span><span class="lb a">AFTER</span>
+      <input type="range" min="0" max="100" value="50" aria-label="施工前と施工後を見比べる">
+    </div><p class="k">屋根塗装</p><h3>コケと亀裂のコロニアルを修復</h3></div><div class="rv dl3"><div class="ba">
+      <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s12848955a32942dd/image/i36bf029f075ade62/version/1706537692/image.jpg" alt="施工後:白い壁の一面だけを、緑系に" loading="lazy">
+      <img class="before" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s12848955a32942dd/image/ie7c7419b278b18ad/version/1706928227/image.jpg" alt="施工前:白い壁の一面だけを、緑系に" loading="lazy">
+      <span class="handle"></span><span class="lb b">BEFORE</span><span class="lb a">AFTER</span>
+      <input type="range" min="0" max="100" value="50" aria-label="施工前と施工後を見比べる">
+    </div><p class="k">内壁塗装</p><h3>白い壁の一面だけを、緑系に</h3></div></div>
+    <div class="center"><a class="btn btn-navy" href="works.html">施工事例をすべて見る <span class="arw">→</span></a></div>
+  </div>
+</section>
+
+<section class="sec paper">
+  <div class="wrap area-box">
+    <div class="area-num rv"><span class="count" data-to="63">63</span><small>市区町村</small></div>
+    <div class="rv dl1">
+      <h2 style="font-size:clamp(24px,3vw,34px);letter-spacing:.08em;margin-bottom:14px">皆様のお住まいに、お伺いします。</h2>
+      <p>調布市を拠点に、東京23区・多摩地域・神奈川県の広い範囲で塗装工事を承っています。</p>
+      <div class="chips"><span>東京23区(全23区)</span><span>多摩地域(30市町村)</span><span>神奈川県(10市町村)</span></div>
+      <a class="btn btn-ghost" href="company.html#area" style="margin-top:28px">対応エリアを見る <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+</main>
+<section class="cta">
+  <div class="bg" aria-hidden="true"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s12848955a32942dd/image/i19a57ef3a99357ea/version/1703968827/image.jpg" alt="" loading="lazy"></div>
+  <div class="wrap rv">
+    <h2>塗装のことなら、<br><em>お気軽にご相談ください。</em></h2>
+    <p>お見積もり・ご相談は無料です。豊富な知識と経験で、いつまでも安心して住むための最適な提案をいたします。</p>
+    <div class="acts">
+      <a class="btn btn-sun" href="contact.html">無料でお見積りを相談する <span class="arw">→</span></a>
+      <a class="btn btn-line" href="works.html">施工事例を見る</a>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var caps = [["施工事例", "外壁塗装｜色のイメージを一新"], ["施工事例", "外壁塗装｜濃い色で印象を変える"], ["施工事例", "屋根塗装｜海を感じる色に"]];
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var layers = [document.querySelectorAll('.ghost .slide'), document.querySelectorAll('.photo .slide')];
+  var bars = document.querySelectorAll('#bars button'), cap = document.getElementById('cap');
+  var i = 0, timer;
+  function show(n){
+    layers.forEach(function(L){ L[i].classList.remove('on'); });
+    bars.forEach(function(x,k){ x.classList.remove('on','done'); if(k<n) x.classList.add('done'); });
+    i = n;
+    layers.forEach(function(L){ L[i].classList.add('on'); });
+    void bars[i].offsetWidth; bars[i].classList.add('on');
+    cap.style.opacity = 0;
+    setTimeout(function(){ cap.innerHTML = '<b>'+caps[i][0]+'</b>'+caps[i][1]; cap.style.opacity = 1; }, 300);
+  }
+  function start(){ clearInterval(timer); if(!reduce) timer = setInterval(function(){ show((i+1)%bars.length); }, 6500); }
+  bars.forEach(function(x,k){ x.addEventListener('click', function(){ show(k); start(); }); });
+  start();
+})();
+</script>
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div><b>大塚美装</b><p style="margin:12px 0 0">東京都調布市柴崎2-15-7<br>東京都知事許可(般-4)第155888号 塗装工事業</p></div>
+      <nav class="fnav" aria-label="フッターメニュー"><a href="index.html">トップ</a><a href="service.html">工事の内容</a><a href="works.html">施工事例</a><a href="company.html">会社案内</a><a href="contact.html">お問い合わせ</a></nav>
+    </div>
+    <p class="copy">© 2026 大塚美装 Otsukabiso, All Rights Reserved.</p>
+  </div>
+</footer>
+<a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
+<script src="common.js"></script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
