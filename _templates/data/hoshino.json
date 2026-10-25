@@ -32,7 +32,7 @@
   "eyebrow": "SINCE 2013 ・ KOGANEI, TOKYO",
   "big": 100,
   "big_en": "万円",
-  "big_label": "外壁・屋根・ベランダ防水、まるごと。",
+  "big_label": "外壁・屋根・ベランダ防水まるごと",
   "catch": [
    "小金井で生まれ育った職人が、",
    "{値段まで}ぜんぶ見せます。"
@@ -59,8 +59,32 @@
   ],
   "wall": [
    [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0369.jpeg",
+    "小金井市 アパート"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096583_0.jpg",
+    "小金井市貫井南 アパート"
+   ],
+   [
     "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/1.png",
     "三鷹市牟礼 125万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/2.png",
+    "府中市宮町"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/3.png",
+    "府中市若松町"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0497.jpeg",
+    "アパート 鉄骨階段"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0378.jpeg",
+    "小平市花小金井 80万円"
    ],
    [
     "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096580_0.jpg",
@@ -71,6 +95,18 @@
     "三鷹市下連雀 145万円"
    ],
    [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_1823.jpeg",
+    "小金井市東町 125万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916375_0.jpg",
+    "武蔵野市境町 95万円"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/05/S__2916371_0.jpg",
+    "武蔵野市吉祥寺南町 125万円"
+   ],
+   [
     "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0159-1.jpeg",
     "小金井市東町 135万円"
    ],
@@ -79,64 +115,28 @@
     "武蔵野市境南 125万円"
    ],
    [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/2.png",
-    "府中市宮町"
-   ],
-   [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916376_0.jpg",
-    "小金井市貫井北町 120万円"
-   ],
-   [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0378.jpeg",
-    "小平市花小金井 80万円"
-   ],
-   [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916375_0.jpg",
-    "武蔵野市境町 95万円"
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1479.jpg",
+    "三鷹市上連雀 125万円"
    ],
    [
     "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_1878.jpeg",
     "小金井市貫井南町 135万円"
    ],
    [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/3.png",
-    "府中市若松町"
-   ],
-   [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_1823.jpeg",
-    "小金井市東町 125万円"
-   ],
-   [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/05/S__2916371_0.jpg",
-    "武蔵野市吉祥寺南町 125万円"
-   ],
-   [
     "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916373_0.jpg",
     "武蔵野市西久保 125万円"
    ],
    [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1479.jpg",
-    "三鷹市上連雀 125万円"
-   ],
-   [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0369.jpeg",
-    "小金井市 アパート"
-   ],
-   [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096583_0.jpg",
-    "小金井市貫井南 アパート"
-   ],
-   [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0497.jpeg",
-    "アパート 鉄骨階段"
-   ],
-   [
-    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0158-1.jpeg",
-    "小金井市東町"
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916376_0.jpg",
+    "小金井市貫井北町 120万円"
    ],
    [
     "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1475.jpg",
     "三鷹市下連雀"
+   ],
+   [
+    "https://www.hoshino-tosou.com/wp-content/uploads/2025/07/IMG_0158-1.jpeg",
+    "小金井市東町"
    ]
   ]
  },
@@ -588,10 +588,12 @@
  },
  "colors": {
   "streak": {
-   "accent": "#ff6a14",
+   "accent": "#d9581c",
    "accent-ink": "#ffffff",
-   "accent-on-photo": "#ffb37a"
+   "accent-on-photo": "#f0a070",
+   "fvw-w": "min(780px,55vw)",
+   "fvw-num": "clamp(110px,11vw,190px)"
   }
  },
- "fv_only": true
+ "one_page": true
 }

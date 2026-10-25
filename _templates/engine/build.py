@@ -321,7 +321,25 @@ def build(data_path, skin, out):
     d = json.load(open(data_path, encoding="utf-8"))
     os.makedirs(out, exist_ok=True)
     s = Site(d, skin)
-    if d.get("fv_only"):
+    if d.get("one_page"):
+        # 1ページだけの見本:トップに全部の中身を入れ、メニューはページ内の見出しへ
+        for name in ("service.html", "works.html", "company.html", "contact.html"):
+            fp = os.path.join(out, name)
+            if os.path.exists(fp): os.remove(fp)
+        small = "".join(f'<figure class="rv"><img src="{e(i)}" alt="{e(t)}" loading="lazy"><figcaption><b>{e(t)}</b>{e(x)}</figcaption></figure>' for i, t, x in d.get("small", []))
+        price = (f'<section class="sec s-small" id="price"><div class="wrap">{s.sh("PRICE", s.T("small_h", "料金"), s.T("small_lead", ""))}<div class="small">{small}</div></div></section>' if small else "")
+        html = (s.head(d["seo"]["title"], d["seo"]["desc"], "index.html") + "<main>" + s.fv() + s.trust() + s.works(more=False) + s.proof() + price +
+                s.reasons() + s.services() + s.message() + s.flow() + "</main>" + s.cta() + s.foot())
+        html = html.replace('<section class="sec s-works">', '<section class="sec s-works" id="works">', 1)
+        html = html.replace('<section class="sec s-service">', '<section class="sec s-service" id="service">', 1)
+        html = html.replace('<section class="sec s-message">', '<section class="sec s-message" id="company">', 1)
+        html = html.replace('<section class="cta">', '<section class="cta" id="contact">', 1)
+        html = re.sub(r'<a class="btn btn-line" href="company\.html">.*?</a>', '', html)
+        html = re.sub(r'<span class="s-more">.*?</span>', '', html)
+        for pg, anc in (("service", "#service"), ("works", "#works"), ("company", "#company"), ("contact", "#contact")):
+            html = re.sub(rf'href="{pg}\.html[^"]*"', f'href="{anc}"', html)
+        open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(html)
+    elif d.get("fv_only"):
         # 最初の画面だけの見本:他のページは作らず、リンクはすべて下の案内へ
         for name in ("service.html", "works.html", "company.html", "contact.html"):
             fp = os.path.join(out, name)
