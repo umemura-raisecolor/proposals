@@ -5,275 +5,281 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>トーシン株式会社｜調布市の外壁塗装・防水工事・雨漏り修理｜東京・多摩地区</title>
-<meta name="description" content="東京都調布市飛田給のトーシン株式会社。一級塗装技能士の代表が率いる職人の会社です。外壁・屋根塗装、防水工事、雨漏り修理、マンション改修を、丁寧な下地処理で長持ちする仕上がりにします。">
+<meta name="description" content="東京都調布市飛田給のトーシン株式会社。一級塗装技能士の代表が率いる職人の会社です。外壁・屋根塗装、防水工事、雨漏り修理、マンション改修を、丁寧な下地処理で長持ちする仕上がりにします。お見積り無料。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="style.css?v=11">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "トーシン株式会社", "description": "東京都調布市の塗装・防水・雨漏り修理・マンション改修の会社。一級塗装技能士の代表が率いる職人の会社。", "telephone": "042-485-4147", "address": {"@type": "PostalAddress", "postalCode": "182-0036", "addressRegion": "東京都", "addressLocality": "調布市", "streetAddress": "飛田給3-25-33", "addressCountry": "JP"}, "founder": {"@type": "Person", "name": "畑農 維人"}, "areaServed": ["調布市", "東京都多摩地区", "東京都"]}</script>
 <style>
-/* ===== ファーストビュー:施工写真が全面で切り替わる+うすい色の膜 ===== */
-.hero{position:relative;overflow:hidden;color:#fff;min-height:min(88vh,800px);display:flex;align-items:center;background:var(--ink)}
-.slides{position:absolute;inset:0}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}
-.slide img{width:100%;height:100%;object-fit:cover}
-.slide.on{opacity:1}
-.slide.on img{animation:zoom 10s ease-out forwards}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(18,26,30,.82) 0%,rgba(18,26,30,.62) 42%,rgba(23,74,87,.25) 75%,rgba(23,74,87,.1) 100%)}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;z-index:1;background:linear-gradient(0deg,rgba(18,26,30,.6),transparent)}
-.hero .wrap{position:relative;z-index:2;width:100%;padding-block:80px 140px}
-.hero-text{max-width:640px}
-.since{display:flex;align-items:center;gap:14px;font-size:16px;letter-spacing:.14em;color:#d8e6e8;margin:0 0 24px;font-weight:500}
-.since::before{content:"";width:44px;height:2px;background:var(--sea-light)}
-.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.35;letter-spacing:.06em;font-weight:900}
-.hero h1 .ln{display:block}
-.hero h1 em{font-style:normal;color:var(--sea-light)}
-.lead{margin:24px 0 0;font-size:19px;line-height:1.95;color:#e6eceb;max-width:33em}
-.acts{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
-.rise{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
-.d1{animation-delay:.25s}.d2{animation-delay:.45s}.d3{animation-delay:.65s}.d4{animation-delay:.9s}.d5{animation-delay:1.1s}
-@keyframes rise{to{opacity:1;transform:none}}
-.hero-cap{position:absolute;z-index:2;right:max(20px,calc((100vw - var(--w))/2 + 20px));bottom:36px;width:min(340px,calc(100% - 40px));font-size:15px;line-height:1.6}
-.hero-cap b{display:block;font-family:var(--en);font-size:11px;letter-spacing:.26em;color:var(--sea-light)}
-.bars{display:flex;gap:6px;margin-top:12px}
-.bars button{all:unset;cursor:pointer;flex:1;height:16px;display:flex;align-items:center}
-.bars button i{display:block;width:100%;height:3px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
-.bars button i::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
-.bars button.on i::after{animation:fill 6.5s linear forwards}
-.bars button.done i::after{transform:scaleX(1)}
-.bars button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* ===== ファーストビュー:左に濃紺の面と力強いコピー、右に施工写真の切り替え ===== */
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,50%) 1fr;min-height:min(84vh,760px)}
+.hero-copy{position:relative;z-index:2;padding:70px 56px 60px max(28px,calc((100vw - 1320px)/2 + 20px));display:flex;flex-direction:column;justify-content:center}
+.hero-copy .kicker{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:#5fd3a2;letter-spacing:.1em;margin:0 0 22px}
+.hero-copy .kicker::before{content:"";width:28px;height:3px;background:#5fd3a2}
+.hero h1{font-size:clamp(36px,3.9vw,60px);line-height:1.28;letter-spacing:.01em}
+.hero h1 .ln{display:block;white-space:nowrap}
+.hero h1 em{font-style:normal;color:#fff;background:linear-gradient(transparent 70%,var(--green) 70%);padding:0 .06em}
+.hero .sub{margin:24px 0 0;font-size:17.5px;line-height:1.95;color:#d6deea}
+.hero .sub b{color:#fff}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .tel-btn{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
+.hero .tel-btn small{color:#c8d3e2}
+.badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin:28px 0 0;padding:0;list-style:none;font-size:14.5px;font-weight:700}
+.badges li{display:flex;align-items:center;gap:8px}
+.badges li::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.hero-photo{position:relative;overflow:hidden;min-height:420px}
+.hero-photo .sl{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.hero-photo .sl img{width:100%;height:100%;object-fit:cover}
+.hero-photo .sl.on{opacity:1}
+.hero-photo .sl.on img{animation:zoom 10s ease-out forwards}
+@keyframes zoom{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.hero-photo::before{content:"";position:absolute;left:0;top:0;bottom:0;width:120px;z-index:1;background:linear-gradient(90deg,var(--navy),rgba(12,35,64,0))}
+.thumbs{position:absolute;z-index:2;right:0;bottom:0;display:flex}
+.thumbs button{all:unset;box-sizing:border-box;cursor:pointer;position:relative;width:min(16vw,190px);background:rgba(12,35,64,.86);color:#fff;padding:14px 16px 16px;font-size:13px;line-height:1.5;border-left:1px solid rgba(255,255,255,.12)}
+.thumbs button b{display:block;font-size:11px;color:#5fd3a2;letter-spacing:.08em}
+.thumbs button i{position:absolute;left:0;right:0;top:0;height:3px;background:rgba(255,255,255,.15)}
+.thumbs button i::after{content:"";position:absolute;inset:0;background:var(--green);transform:scaleX(0);transform-origin:left}
+.thumbs button.on{background:var(--green-dk)}
+.thumbs button.on i::after{animation:fill 6.5s linear forwards}
+.thumbs button:focus-visible{outline:2px solid #fff;outline-offset:-4px}
 @keyframes fill{to{transform:scaleX(1)}}
+.rise{opacity:0;transform:translateY(20px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}.d4{animation-delay:.65s}.d5{animation-delay:.85s}.d6{animation-delay:1s}
+@keyframes rise{to{opacity:1;transform:none}}
 
-/* 数字の帯 */
-.facts{background:var(--sea);color:#fff}
-.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-block:42px}
-.fact{text-align:center;padding:4px 10px;border-left:1px solid rgba(255,255,255,.22)}
-.fact:first-child{border-left:0}
-.fact b{display:block;font-family:var(--en);font-weight:700;font-size:clamp(52px,6.4vw,84px);line-height:1;letter-spacing:0;margin-bottom:10px}
-.fact b small{font-family:var(--display);font-size:.28em;margin-left:6px}
-.fact span{font-size:15.5px;color:#d8e6e8;line-height:1.6;display:block}
+/* 信頼の帯 */
+.trust{background:#fff;border-bottom:1px solid var(--line)}
+.trust ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.trust li{display:flex;align-items:center;gap:16px;padding:28px 22px;border-left:1px solid var(--line)}
+.trust li:first-child{border-left:0}
+.trust .ic{flex:0 0 52px;height:52px;border-radius:50%;background:var(--green-lt);display:flex;align-items:center;justify-content:center}
+.trust .ic svg{width:26px;height:26px;stroke:var(--green-dk);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trust b{display:block;font-size:16px;line-height:1.45;color:var(--navy)}
+.trust small{display:block;font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:2px}
 
-/* ごあいさつ */
-.greet{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
-.greet .ph{position:relative;max-width:380px}
-.greet .ph::before{content:"";position:absolute;left:24px;top:24px;right:-24px;bottom:-24px;background:var(--stone);z-index:-1}
-.greet .ph img{width:100%;aspect-ratio:273/309;object-fit:cover}
-.greet .en{font-family:var(--en);color:var(--sea);letter-spacing:.3em;font-size:14px;font-weight:700}
-.greet h2{font-size:clamp(26px,3vw,38px);margin:10px 0 24px;letter-spacing:.04em}
-.greet .sign{font-family:var(--display);font-weight:700;margin-top:22px}
-.greet .sign small{color:var(--muted);margin-right:12px;font-weight:500}
+/* 16年後の根拠 */
+.proof-top{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;margin-bottom:54px}
+.big16{margin:0;display:flex;flex-direction:column;gap:18px;font-family:var(--en);font-weight:800;font-size:clamp(120px,15vw,210px);line-height:.85;color:#fff;letter-spacing:-.04em}
+.big16 .count{align-self:flex-start}
+.big16 small{font-family:var(--jp);font-weight:900;font-size:clamp(24px,2.6vw,34px);letter-spacing:.04em;line-height:1.3;color:#5fd3a2}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.proof article{background:var(--navy-2);border-top:4px solid var(--green)}
+.proof .two{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.proof figure{margin:0;position:relative}
+.proof img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.proof figcaption{position:absolute;left:0;bottom:0;font-size:11.5px;font-weight:700;padding:3px 9px;background:rgba(12,35,64,.85)}
+.proof figure:last-child figcaption{background:var(--green)}
+.proof .bd{padding:22px 22px 26px}
+.proof .yr{font-family:var(--en);font-weight:800;font-size:46px;line-height:1;color:#5fd3a2}
+.proof .yr small{font-family:var(--jp);font-size:16px;color:#fff;margin-left:4px;font-weight:700}
+.proof h3{font-size:18px;margin:10px 0 2px}
+.proof .when{font-size:13px;color:#9fb0c6;margin:0 0 10px}
+.proof p{margin:0;font-size:15px;line-height:1.85;color:#d6deea}
 
-/* 時間が証明する仕事 */
-.aged{display:grid;gap:34px}
-.aged-item{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center;background:#fff;padding:30px;border-left:6px solid var(--sea)}
-.aged-ph{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.aged-ph figure{margin:0;position:relative}
-.aged-ph img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.aged-ph figcaption{position:absolute;left:0;top:0;background:var(--ink);color:#fff;font-size:13px;padding:3px 10px;letter-spacing:.06em}
-.aged-ph figure:last-child figcaption{background:var(--sea)}
-.aged-tx .yr{font-family:var(--en);font-weight:700;color:var(--sea);font-size:56px;line-height:1}
-.aged-tx .yr small{font-family:var(--display);font-size:18px;margin-left:6px;color:var(--ink)}
-.aged-tx h3{font-size:22px;margin:10px 0 4px}
-.aged-tx .when{font-size:14px;color:var(--muted);margin:0 0 12px}
-.aged-tx p{margin:0}
-.aged-tx .spec{font-size:14px;color:var(--muted);margin-top:10px}
+/* こだわり */
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.reasons article{background:#fff;border:1px solid var(--line)}
+.reasons .ph{overflow:hidden}
+.reasons img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.reasons .bd{padding:26px 26px 30px;position:relative}
+.reasons .lbl{position:absolute;top:-22px;left:26px;background:var(--green);color:#fff;font-weight:700;font-size:13px;padding:6px 14px;letter-spacing:.06em}
+.reasons h3{font-size:21px;margin:8px 0 12px;color:var(--navy)}
+.reasons p{margin:0;font-size:15.5px;color:#3b4858;line-height:1.9}
 
 /* 工事の内容 */
-.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.svc a{display:block;text-decoration:none;background:#fff;border-top:4px solid var(--sea);box-shadow:0 10px 30px rgba(18,26,30,.07);transition:transform .4s,box-shadow .4s}
-.svc a:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(18,26,30,.14)}
-.svc .ph{overflow:hidden;aspect-ratio:4/3}
-.svc img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc a{position:relative;display:block;text-decoration:none;color:#fff;overflow:hidden;aspect-ratio:3/4}
+.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .svc a:hover img{transform:scale(1.07)}
-.svc .bd{padding:22px 22px 26px}
-.svc h3{font-size:21px;margin-bottom:6px}
-.svc p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.8}
-.svc .more{display:inline-block;margin-top:10px;font-size:15px;color:var(--sea);font-weight:700;transition:transform .3s}
-.svc a:hover .more{transform:translateX(6px)}
+.svc a::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(12,35,64,.95) 0%,rgba(12,35,64,.35) 55%,rgba(12,35,64,.05) 100%)}
+.svc .bd{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:22px}
+.svc .en2{font-family:var(--en);font-weight:800;font-size:11.5px;letter-spacing:.2em;color:#5fd3a2}
+.svc h3{font-size:22px;margin:4px 0 8px}
+.svc p{margin:0;font-size:14px;line-height:1.75;color:#dbe3ee}
+.svc .more{display:inline-flex;margin-top:12px;font-size:13.5px;font-weight:700;border-bottom:2px solid var(--green);padding-bottom:2px}
 
-/* 職人力 */
-.craft{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.18)}
-.craft div{padding:40px 32px;border-left:1px solid rgba(255,255,255,.18)}
-.craft div:first-child{border-left:0}
-.craft b{font-family:var(--en);color:var(--sea-light);font-size:13px;letter-spacing:.24em}
-.craft h3{font-size:22px;margin:8px 0 12px}
-.craft p{margin:0;color:#d3dcdb;font-size:16.5px}
-.quote{margin:50px auto 0;max-width:46em;text-align:center;font-family:var(--display);font-weight:700;font-size:clamp(20px,2.4vw,26px);line-height:1.8}
+/* 代表 */
+.rep{display:grid;grid-template-columns:380px 1fr;gap:70px;align-items:center}
+.rep .ph{position:relative}
+.rep .ph::before{content:"";position:absolute;left:-18px;top:-18px;width:60%;height:60%;background:var(--green);z-index:-1}
+.rep .ph img{width:100%;aspect-ratio:273/309;object-fit:cover}
+.rep .ph .name{position:absolute;left:0;right:0;bottom:0;background:rgba(12,35,64,.9);color:#fff;padding:12px 18px;font-size:14px;line-height:1.5}
+.rep .ph .name b{display:block;font-size:20px}
+.rep h2{font-size:clamp(26px,3.2vw,38px);margin:10px 0 20px;color:var(--navy)}
+.rep blockquote{margin:28px 0 0;padding:22px 26px;background:var(--bg);border-left:4px solid var(--green);font-weight:700;color:var(--navy)}
 
-/* 最近の施工 */
-.recent{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.recent a{text-decoration:none;display:block}
-.recent .ph{overflow:hidden;aspect-ratio:1/1}
-.recent img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.recent a:hover img{transform:scale(1.07)}
-.recent .k{font-size:13px;color:var(--sea);font-weight:700;margin:14px 0 0;letter-spacing:.06em}
-.recent h3{font-size:18px}
+/* ご依頼の流れ */
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:f}
+.flow li{position:relative;padding:30px 26px 32px;background:#fff;border:1px solid var(--line);margin-left:-1px;counter-increment:f}
+.flow li::before{content:"STEP " counter(f);display:block;font-family:var(--en);font-weight:800;font-size:12px;letter-spacing:.2em;color:var(--green)}
+.flow li::after{content:"";position:absolute;right:-12px;top:50%;width:22px;height:22px;background:#fff;border-top:1px solid var(--line);border-right:1px solid var(--line);transform:translateY(-50%) rotate(45deg);z-index:1}
+.flow li:last-child::after{display:none}
+.flow h3{font-size:19px;margin:6px 0 8px;color:var(--navy)}
+.flow p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.8}
 
-/* 雨漏りの帯 */
-.leak{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;box-shadow:0 10px 30px rgba(18,26,30,.07)}
-.leak .ph img{width:100%;height:100%;object-fit:cover;min-height:300px}
-.leak .tx{padding:46px 44px}
-.leak h2{font-size:clamp(24px,2.8vw,32px);margin:8px 0 16px}
-.leak .en{font-family:var(--en);color:var(--sea);letter-spacing:.3em;font-size:13px;font-weight:700}
-
-@media (max-width:1000px){.svc,.recent{grid-template-columns:repeat(2,1fr)}.craft{grid-template-columns:1fr}.craft div{border-left:0;border-top:1px solid rgba(255,255,255,.18)}}
-@media (max-width:860px){
-  .hero{min-height:auto}
-  .hero .wrap{padding-block:70px 150px}
-  .hero::before{background:rgba(18,26,30,.62)}
-  .lead{font-size:17px}
-  .acts .btn{flex:1 1 100%}
-  .greet,.aged-item,.leak{grid-template-columns:1fr;gap:34px}
-  .greet .ph{margin:0 auto}
-  .aged-item{padding:20px}
-  .leak .tx{padding:30px 22px}
+.center{text-align:center;margin-top:46px}
+@media (max-width:1100px){.trust ul{grid-template-columns:repeat(2,1fr)}.trust li:nth-child(3){border-left:0}.trust li:nth-child(n+3){border-top:1px solid var(--line)}.svc{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{order:-1;min-height:300px}
+  .hero-photo::before{display:none}
+  .hero-copy{padding:44px 20px 54px}
+  .hero h1 .ln{white-space:normal}
+  .thumbs button{width:33.33vw;padding:10px 10px 12px;font-size:12px}
+  .proof-top,.rep{grid-template-columns:1fr;gap:34px}
+  .proof,.reasons{grid-template-columns:1fr}
+  .rep .ph{max-width:340px;margin-left:18px}
+  .flow{grid-template-columns:1fr 1fr;gap:12px}.flow li{margin:0}.flow li::after{display:none}
 }
-@media (max-width:720px){.facts .wrap{grid-template-columns:repeat(2,1fr);row-gap:30px}.fact:nth-child(3){border-left:0}}
-@media (max-width:560px){.svc,.recent{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.slide.on img,.bars button.on i::after{animation:none}.rise{animation:none;opacity:1;transform:none}}
+@media (max-width:560px){.hero .acts>*{width:100%}.trust ul,.svc,.flow{grid-template-columns:1fr}.trust li{border-left:0!important;border-top:1px solid var(--line)}.trust li:first-child{border-top:0}}
+@media (prefers-reduced-motion:reduce){.hero-photo .sl.on img,.thumbs button.on i::after{animation:none}.rise{animation:none;opacity:1;transform:none}}
 </style>
-<link rel="stylesheet" href="premium.css?v=5">
 </head>
 <body>
-<div class="top-note"><div class="wrap"><span>東京・多摩地区の塗装・防水・雨漏り修理・マンション改修｜調布市飛田給</span></div></div>
+<div class="topbar"><div class="wrap"><span>東京・多摩地区の外壁塗装・屋根塗装・防水工事・雨漏り修理・マンション改修</span><span>調布市飛田給｜お見積り無料</span></div></div>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html"><img src="https://to-shin.tokyo/wp-content/uploads/2017/04/rogo-3.png" alt="トーシン株式会社 TO-SHIN" width="720" height="122"></a>
     <nav class="gnav" id="gnav" aria-label="メインメニュー"><a href="index.html" aria-current="page">トップ</a><a href="service.html">工事の内容</a><a href="works.html">施工実績</a><a href="company.html">会社案内</a><a href="contact.html">お問い合わせ</a></nav>
-    <a class="tel" href="tel:0120416104"><small>通話無料・ご相談はお気軽に</small><b>0120-416-104</b></a>
+    <a class="h-tel" href="tel:0120416104"><small>通話無料・お気軽にご相談ください</small><b>0120-416-104</b></a>
+    <a class="h-cta" href="contact.html">無料お見積り</a>
     <button class="menu-btn" aria-label="メニュー" aria-controls="gnav" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main>
 <section class="hero" aria-label="ご紹介">
-  <div class="slides" aria-hidden="true"><div class="slide on"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7684-scaled.jpg" alt=""></div><div class="slide"><img src="https://to-shin.tokyo/wp-content/uploads/2022/09/IMG_9191-scaled.jpg" alt="" loading="lazy"></div><div class="slide"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_8059-scaled.jpg" alt="" loading="lazy"></div></div>
-  <span class="frame" aria-hidden="true"></span>
-  <p class="vert" aria-hidden="true">東京都調布市飛田給</p>
-  <div class="wrap">
-    <div class="hero-text">
-      <p class="since rise d1">調布市から、東京・多摩地区へ</p>
-      <h1><span class="ln rise d2">お客様の財産を、</span><span class="ln rise d3"><em>外から守ります。</em></span></h1>
-      <p class="lead rise d4">一級塗装技能士の代表が率いる、塗装・防水の職人の会社です。見えなくなる下地にこそ手間をかけて、何年たっても違いがわかる仕上がりをお届けします。</p>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="kicker rise d1">調布市の塗装・防水・雨漏り修理</p>
+      <h1><span class="ln rise d2">塗装の差は、</span><span class="ln rise d3"><em>16年後</em>に出る。</span></h1>
+      <p class="sub rise d4">お客様の財産を、外から守ります。<b>一級塗装技能士の代表</b>が率いる職人の会社が、見えなくなる下地まで手を抜かずに仕上げます。</p>
       <div class="acts rise d5">
-        <a class="btn btn-main" href="contact.html"><span class="free">無料</span>お見積り・ご相談はこちら <span class="arw">→</span></a>
-        <a class="btn btn-line" href="works.html">施工実績を見る</a>
+        <a class="btn btn-green" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a>
+        <a class="tel-btn" href="tel:0120416104"><small>通話無料・お電話でのご相談</small><b>0120-416-104</b></a>
       </div>
+      <ul class="badges rise d6"><li>お見積り無料</li><li>現地調査のうえ正直にご提案</li><li>雨漏りのご相談も</li></ul>
+    </div>
+    <div class="hero-photo">
+      <div class="sl on"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7684-scaled.jpg" alt="調布市 佐須町 外壁(サイディング)塗り替え 施工後"></div><div class="sl"><img src="https://to-shin.tokyo/wp-content/uploads/2022/09/IMG_9191-scaled.jpg" alt="桜上水 アパートの塗り替え 施工後" loading="lazy"></div><div class="sl"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_8059-scaled.jpg" alt="稲城市 屋根カバー工法・外壁塗装 施工後" loading="lazy"></div>
+      <div class="thumbs" role="group" aria-label="施工写真の切り替え"><button class="on" aria-label="調布市 佐須町 外壁(サイディング)塗り替えの写真を表示"><i></i><b>調布市 佐須町</b>外壁(サイディング)塗り替え</button><button aria-label="桜上水 アパートの塗り替えの写真を表示"><i></i><b>桜上水</b>アパートの塗り替え</button><button aria-label="稲城市 屋根カバー工法・外壁塗装の写真を表示"><i></i><b>稲城市</b>屋根カバー工法・外壁塗装</button></div>
     </div>
   </div>
-  <div class="hero-cap"><b>WORKS</b><span id="cap">調布市 佐須町｜外壁(サイディング)塗り替え</span><div class="bars" role="group" aria-label="写真の切り替え"><button class="on" aria-label="1枚目の施工写真"><i></i></button><button aria-label="2枚目の施工写真"><i></i></button><button aria-label="3枚目の施工写真"><i></i></button></div></div>
 </section>
 
-<div class="facts" aria-label="数字で見るトーシン"><div class="wrap"><div class="fact rv dl0"><b><span class="count" data-to="16">16</span><small>年後</small></b><span>16年たっても剥がれ・ひび割れなし(北区 K様邸)</span></div><div class="fact rv dl1"><b><span class="count" data-to="11">11</span><small>年後</small></b><span>11年たっても屋根に剥がれ・錆なし(三鷹市 I様邸)</span></div><div class="fact rv dl2"><b><span class="count" data-to="1">1</span><small>級</small></b><span>一級塗装技能士の代表が責任を持ちます</span></div><div class="fact rv dl3"><b><span class="count" data-to="3">3</span><small>分野</small></b><span>塗装・防水・マンション改修</span></div></div></div>
+<section class="trust" aria-label="トーシンの信頼"><div class="wrap"><ul><li class="rv dl0"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg></span><span><b>一級塗装技能士の代表</b><small>国家資格を持つ代表が責任を持ちます</small></span></li><li class="rv dl1"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><span><b>東京都知事許可</b><small>塗装工事業(般-28)第146157号</small></span></li><li class="rv dl2"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg></span><span><b>塗装も防水も雨漏りも</b><small>建物の外まわりを一社でまとめて</small></span></li><li class="rv dl3"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>調布市飛田給の会社</b><small>東京・多摩地区を中心に対応</small></span></li></ul></div></section>
 
 <section class="sec">
-  <div class="wrap greet">
-    <div class="ph rv rv-l"><div class="reveal-img"><img src="https://to-shin.tokyo/wp-content/uploads/2022/11/0f319951ce5583cfdb768a1e009e2fb2.jpg" alt="代表取締役 畑農 維人" loading="lazy"></div></div>
-    <div class="rv rv-r">
-      <span class="en">MESSAGE</span>
-      <h2>塗装業界で、<br>一番信頼できる会社を。</h2>
-      <p>この想いを胸に、トーシン株式会社を立ち上げました。</p>
-      <p>仕上がりを決めるのは、資材でも、営業の話術でもなく、実際に施工する職人の腕です。だからこそ私たちは、職人一人ひとりが技量を発揮できる環境づくりを、何よりも大切にしています。塗装・塗り替え・防水・雨漏り・マンション改修のことなら、どうぞお気軽にご相談ください。</p>
-      <p class="sign"><small>代表取締役(一級塗装技能士)</small>畑農 維人</p>
-      <a class="btn btn-ghost" href="company.html" style="margin-top:18px">会社案内を見る <span class="arw">→</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="sec stone">
   <div class="wrap">
-    <div class="sec-head" data-bg="Proof"><span class="en">Proof</span><h2>時間が、仕事の丁寧さを証明します</h2><p>塗装は、塗った直後よりも、何年もたったときに差が出ます。トーシンが塗ったお住まいを、数年後にもう一度訪ねて撮影しました。</p></div>
-    <div class="aged"><article class="aged-item rv">
-  <div class="aged-ph"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/1.jpg" alt="北区 K様邸 お引き渡し時(2002年)" loading="lazy"><figcaption>お引き渡し時(2002年)</figcaption></figure><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/4.jpg" alt="北区 K様邸 16年後(2018年)" loading="lazy"><figcaption>16年後(2018年)</figcaption></figure></div>
-  <div class="aged-tx"><p class="yr"><span class="count" data-to="16">16</span><small>年後も</small></p><h3>北区 K様邸｜外壁塗装</h3><p class="when">2002年6月お引き渡し → 2018年7月撮影</p><p>16年たっても剥がれはなく、爆裂・ひび割れ・雨漏りもありません。下地補修をしっかり行ったことが、何よりの理由です。出窓まわりのアクセントの色も、色あせていません。</p><p class="spec">外壁:水性シリコン</p></div>
-</article><article class="aged-item rv">
-  <div class="aged-ph"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/7.jpg" alt="三鷹市 I様邸 11年後(2018年)" loading="lazy"><figcaption>11年後(2018年)</figcaption></figure><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/8.jpg" alt="三鷹市 I様邸 11年後(2018年)" loading="lazy"><figcaption>11年後(2018年)</figcaption></figure></div>
-  <div class="aged-tx"><p class="yr"><span class="count" data-to="11">11</span><small>年後も</small></p><h3>三鷹市 I様邸｜外壁・屋根塗装</h3><p class="when">2007年3月お引き渡し → 2018年7月撮影</p><p>サイディングもモルタルの部分も良好です。スレート屋根に剥がれはなく、板金部分にも錆が出ていません。</p><p class="spec">外壁:水性シリコン／屋根:弱溶剤シリコン</p></div>
-</article><article class="aged-item rv">
-  <div class="aged-ph"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/9.jpg" alt="横浜市 K様邸 塗り替え前" loading="lazy"><figcaption>塗り替え前</figcaption></figure><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/11.jpg" alt="横浜市 K様邸 5年後(2018年)" loading="lazy"><figcaption>5年後(2018年)</figcaption></figure></div>
-  <div class="aged-tx"><p class="yr"><span class="count" data-to="5">5</span><small>年後も</small></p><h3>横浜市 K様邸｜外壁・屋根・木部塗装</h3><p class="when">2013年5月お引き渡し → 2018年7月撮影</p><p>塗り替え前は、破風の木部の塗膜がなくなっていました。下地処理と下塗りを丁寧に行い、5年後も外壁・屋根ともにツヤがあり、破風板の剥がれや割れもありません。</p><p class="spec">外壁:水性シリコン／屋根:弱溶剤シリコン(遮熱)／木部:ウレタン</p></div>
+    <div class="sh-row"><div class="sh rv"><span class="en">WORKS</span><h2>最近の<em>施工実績</em></h2><p>施工前と施工後、工事の中身まで、同じ形でご覧いただけます。</p></div><a class="btn btn-outline rv" href="works.html">施工実績をすべて見る <span class="arw">→</span></a></div>
+    <div class="works"><article class="wcard rv dl1" id="w1">
+  <div class="pair"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7798.jpg" alt="稲城市 屋根カバー工法・外壁塗装 BEFORE" loading="lazy"><figcaption>BEFORE</figcaption></figure><figure class="af"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_8059-scaled.jpg" alt="稲城市 屋根カバー工法・外壁塗装 施工後" loading="lazy"><figcaption>AFTER</figcaption></figure></div>
+  <div class="bd"><span class="area">稲城市</span><h3>屋根カバー工法・外壁塗装</h3><dl><dt>工事内容</dt><dd>屋根カバー工法・棟換気の設置／外壁目地の打ち替え・塗装／基礎モルタルの補修／屋根裏の雨漏り対策</dd><dt>使用材料</dt><dd>外壁:溶剤系塗料(鮮やかな色の発色と耐候性のため)</dd><dt>ポイント</dt><dd>塗装でも10年前後はもつスレート屋根。次の改修まで見すえて、カバー工法をご提案しました</dd><dt>工期・費用</dt><dd>—</dd></dl><p class="note">※工期・費用は、正式制作時に実際の内容を記載します。</p></div>
+</article><article class="wcard rv dl2" id="w2">
+  <div class="pair"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2022/09/IMG_9098-scaled.jpg" alt="桜上水 アパートの塗り替え BEFORE" loading="lazy"><figcaption>BEFORE</figcaption></figure><figure class="af"><img src="https://to-shin.tokyo/wp-content/uploads/2022/09/IMG_9191-scaled.jpg" alt="桜上水 アパートの塗り替え 施工後" loading="lazy"><figcaption>AFTER</figcaption></figure></div>
+  <div class="bd"><span class="area">桜上水</span><h3>アパートの塗り替え</h3><dl><dt>工事内容</dt><dd>屋根(スレート)塗装／棟板金・樋・換気フード・物干しの交換／ベランダの柱の増設</dd><dt>使用材料</dt><dd>上塗り:日本ペイント パーフェクトトップ／棟板金:ガルバリウム鋼板</dd><dt>ポイント</dt><dd>棟の貫板は、長期の耐久性に疑問の多い樹脂製・金属製ではなく、杉・ヒノキの板を使用</dd><dt>工期・費用</dt><dd>—</dd></dl><p class="note">※工期・費用は、正式制作時に実際の内容を記載します。</p></div>
+</article><article class="wcard rv dl1" id="w3">
+  <div class="pair"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/DSCN0018-scaled.jpg" alt="調布市 佐須町 外壁(サイディング)の塗り替え 施工中" loading="lazy"><figcaption>施工中</figcaption></figure><figure class="af"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7684-scaled.jpg" alt="調布市 佐須町 外壁(サイディング)の塗り替え 施工後" loading="lazy"><figcaption>AFTER</figcaption></figure></div>
+  <div class="bd"><span class="area">調布市 佐須町</span><h3>外壁(サイディング)の塗り替え</h3><dl><dt>工事内容</dt><dd>高圧洗浄／破風板のジョイントシール／軒天井・破風板の塗装／外壁のクリヤー塗装／目地・サッシまわりのシーリング打ち替え</dd><dt>使用材料</dt><dd>外壁:クリヤー塗料(タイル調サイディングの柄を活かす)</dd><dt>ポイント</dt><dd>外壁が割れる原因になる三面接着を防ぐため、ボンドブレーカーを入れてから打ち替え</dd><dt>工期・費用</dt><dd>—</dd></dl><p class="note">※工期・費用は、正式制作時に実際の内容を記載します。</p></div>
+</article><article class="wcard rv dl2" id="w4">
+  <div class="pair"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2022/02/DSC_1993.jpg" alt="小金井市 ベランダの雨漏り修理 BEFORE" loading="lazy"><figcaption>BEFORE</figcaption></figure><figure class="af"><img src="https://to-shin.tokyo/wp-content/uploads/2022/02/IMG_8450-scaled.jpg" alt="小金井市 ベランダの雨漏り修理 施工後" loading="lazy"><figcaption>AFTER</figcaption></figure></div>
+  <div class="bd"><span class="area">小金井市</span><h3>ベランダの雨漏り修理</h3><dl><dt>工事内容</dt><dd>ステンレス製ドレンの撤去とFRP製ドレンへの交換／FRP防水(ガラスマット2層)／外側のシーリング充填／外壁の汚れ除去</dd><dt>原因</dt><dd>ドレンの板金の切り込みや重ね目から入った雨水</dd><dt>ポイント</dt><dd>水はけを悪くする段差が出ないよう、防水層ごと切り取って交換</dd><dt>工期・費用</dt><dd>—</dd></dl><p class="note">※工期・費用は、正式制作時に実際の内容を記載します。</p></div>
 </article></div>
   </div>
 </section>
 
+<section class="sec navy">
+  <div class="wrap">
+    <div class="proof-top">
+      <p class="big16 rv"><span class="count" data-to="16">16</span><small>年後も、剥がれない。</small></p>
+      <div class="sh rv"><span class="en">PROOF</span><h2>時間が、<em>仕事の丁寧さ</em>を証明します</h2><p>塗装は、塗った直後よりも、何年もたったときに差が出ます。トーシンが塗ったお住まいを、数年後にもう一度訪ねて撮影しました。</p></div>
+    </div>
+    <div class="proof"><article class="rv dl1"><div class="two"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/1.jpg" alt="北区 K様邸 お引き渡し時(2002年)" loading="lazy"><figcaption>お引き渡し時(2002年)</figcaption></figure><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/4.jpg" alt="北区 K様邸 16年後(2018年)" loading="lazy"><figcaption>16年後(2018年)</figcaption></figure></div>
+<div class="bd"><p class="yr"><span class="count" data-to="16">16</span><small>年後も</small></p><h3>北区 K様邸｜外壁塗装</h3><p class="when">2002年6月お引き渡し → 2018年7月撮影</p><p>16年たっても剥がれはなく、爆裂・ひび割れ・雨漏りもありません。下地補修をしっかり行ったことが、何よりの理由です。出窓まわりのアクセントの色も、色あせていません。</p></div></article><article class="rv dl2"><div class="two"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/7.jpg" alt="三鷹市 I様邸 11年後(2018年)" loading="lazy"><figcaption>11年後(2018年)</figcaption></figure><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/8.jpg" alt="三鷹市 I様邸 11年後(2018年)" loading="lazy"><figcaption>11年後(2018年)</figcaption></figure></div>
+<div class="bd"><p class="yr"><span class="count" data-to="11">11</span><small>年後も</small></p><h3>三鷹市 I様邸｜外壁・屋根塗装</h3><p class="when">2007年3月お引き渡し → 2018年7月撮影</p><p>サイディングもモルタルの部分も良好です。スレート屋根に剥がれはなく、板金部分にも錆が出ていません。</p></div></article><article class="rv dl3"><div class="two"><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/9.jpg" alt="横浜市 K様邸 塗り替え前" loading="lazy"><figcaption>塗り替え前</figcaption></figure><figure><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/11.jpg" alt="横浜市 K様邸 5年後(2018年)" loading="lazy"><figcaption>5年後(2018年)</figcaption></figure></div>
+<div class="bd"><p class="yr"><span class="count" data-to="5">5</span><small>年後も</small></p><h3>横浜市 K様邸｜外壁・屋根・木部塗装</h3><p class="when">2013年5月お引き渡し → 2018年7月撮影</p><p>塗り替え前は、破風の木部の塗膜がなくなっていました。下地処理と下塗りを丁寧に行い、5年後も外壁・屋根ともにツヤがあり、破風板の剥がれや割れもありません。</p></div></article></div>
+  </div>
+</section>
+
+<section class="sec bg">
+  <div class="wrap">
+    <div class="sh c rv"><span class="en">COMMITMENT</span><h2>トーシンが<em>選ばれる理由</em></h2><p>「真面目さが技術に、技術が丁寧な仕事に。」それがトーシンの考え方です。</p></div>
+    <div class="reasons"><article class="rv dl1"><div class="ph reveal-img"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/DSCN0027-scaled.jpg" alt="" loading="lazy"></div><div class="bd"><span class="lbl">こだわり 1</span><h3>仕上がりは、職人の腕で決まる</h3><p>どんなに良い塗料でも、塗るのは職人です。営業の話術ではなく、現場の腕で選ばれる会社であるために、職人が技量を発揮できる環境づくりを何より大切にしています。</p></div></article><article class="rv dl2"><div class="ph reveal-img"><img src="https://to-shin.tokyo/wp-content/uploads/2016/12/4.jpg" alt="" loading="lazy"></div><div class="bd"><span class="lbl">こだわり 2</span><h3>見えなくなる下地に、手間をかける</h3><p>ひび割れ・欠損の補修、古いシーリングの撤去と打ち替え、下塗り。仕上がってしまえば見えない工程こそ、塗装の寿命を左右します。</p></div></article><article class="rv dl3"><div class="ph reveal-img"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/12.jpg" alt="" loading="lazy"></div><div class="bd"><span class="lbl">こだわり 3</span><h3>塗装だけにこだわらない、正直な提案</h3><p>塗装で十分なところは塗装で。交換やカバー工法のほうが長い目でお得なところは、そうご提案します。建物の外まわりを知り尽くした会社だからできる判断です。</p></div></article></div>
+  </div>
+</section>
+
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head" data-bg="Service"><span class="en">Service</span><h2>工事の内容</h2><p>塗装・防水・雨漏り修理から、マンションの改修まで。建物を外から守る工事を、まとめてお任せいただけます。</p></div>
-    <div class="svc"><a class="rv dl1" href="service.html#paint"><div class="ph"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7684-scaled.jpg" alt="" loading="lazy"></div><div class="bd"><h3>外壁・屋根塗装</h3><p>下地補修から丁寧に。何年たっても剥がれない塗装を。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl2" href="service.html#waterproof"><div class="ph"><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/bousui.jpg" alt="" loading="lazy"></div><div class="bd"><h3>防水工事</h3><p>シーリング、ベランダ、廊下・階段、屋上まで。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl3" href="service.html#leak"><div class="ph"><img src="https://to-shin.tokyo/wp-content/uploads/2022/02/IMG_8450-scaled.jpg" alt="" loading="lazy"></div><div class="bd"><h3>雨漏り修理</h3><p>原因を突き止めて、根本から直します。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl4" href="service.html#renovation"><div class="ph"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_8057-scaled.jpg" alt="" loading="lazy"></div><div class="bd"><h3>改修・リフォーム</h3><p>屋根カバー工法、サッシ・樋の交換、マンション改修。</p><span class="more">くわしく見る →</span></div></a></div>
+    <div class="sh rv"><span class="en">SERVICE</span><h2>建物の外まわりを、<em>まとめてお任せ</em></h2><p>塗装・防水・雨漏り修理から改修まで。いくつもの業者に頼まなくても、トーシン一社で完結します。</p></div>
+    <div class="svc"><a class="rv dl1" href="service.html#paint"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7684-scaled.jpg" alt="" loading="lazy"><div class="bd"><span class="en2">PAINTING</span><h3>外壁・屋根塗装</h3><p>下地補修から丁寧に。何年たっても剥がれない塗装を。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl2" href="service.html#waterproof"><img src="https://to-shin.tokyo/wp-content/uploads/2018/10/bousui.jpg" alt="" loading="lazy"><div class="bd"><span class="en2">WATERPROOF</span><h3>防水工事</h3><p>シーリング、ベランダ、廊下・階段、屋上まで。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl3" href="service.html#leak"><img src="https://to-shin.tokyo/wp-content/uploads/2022/02/IMG_8450-scaled.jpg" alt="" loading="lazy"><div class="bd"><span class="en2">RAIN LEAK</span><h3>雨漏り修理</h3><p>水の入り口を突き止めて、根本から直します。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl4" href="service.html#renovation"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_8057-scaled.jpg" alt="" loading="lazy"><div class="bd"><span class="en2">RENOVATION</span><h3>改修・リフォーム</h3><p>屋根カバー工法、交換工事、マンション改修。</p><span class="more">くわしく見る →</span></div></a></div>
   </div>
 </section>
 
-<section class="sec dark">
-  <div class="wrap">
-    <div class="sec-head" data-bg="Craftsmanship"><span class="en">Craftsmanship</span><h2>トーシンはここが違う</h2></div>
-    <div class="craft">
-      <div class="rv dl1"><b>POINT 1</b><h3>仕上がりは、職人の腕で決まる</h3><p>どんなに良い塗料を使っても、施工するのは職人です。ホームページの謳い文句や営業の話術ではなく、現場の腕で選ばれる会社でありたいと考えています。</p></div>
-      <div class="rv dl2"><b>POINT 2</b><h3>腕をふるえる時間をつくる</h3><p>職人の技量を見極めて、その力に見合った時間をかける。そうすれば品質は自然に上がります。急がせる現場からは、良い仕事は生まれません。</p></div>
-      <div class="rv dl3"><b>POINT 3</b><h3>最終仕上げ業者としての責任</h3><p>塗装・防水は、建物の一番外側を仕上げる仕事です。そのプライドと責任を持ち続けて、一つひとつの現場に向き合います。</p></div>
+<section class="sec bg">
+  <div class="wrap rep">
+    <div class="ph rv"><div class="reveal-img"><img src="https://to-shin.tokyo/wp-content/uploads/2022/11/0f319951ce5583cfdb768a1e009e2fb2.jpg" alt="代表取締役 畑農 維人" loading="lazy"></div><p class="name">代表取締役・一級塗装技能士<b>畑農 維人</b></p></div>
+    <div class="rv dl1">
+      <div class="sh" style="margin-bottom:0"><span class="en">MESSAGE</span></div>
+      <h2>塗装業界で、一番信頼できる会社を。</h2>
+      <p>この想いで、トーシン株式会社を立ち上げました。仕上がりを決めるのは、資材でも営業の話術でもなく、実際に施工する職人の腕です。</p>
+      <p>最終仕上げ業者としてのプライドと責任を持って、一つひとつの現場に向き合っています。塗装・防水・雨漏り・マンション改修のことなら、どうぞお気軽にご相談ください。</p>
+      <blockquote>私たちと同じかそれ以上の塗装・防水工事会社に出会える確率は、1%以下だと自負しています。</blockquote>
+      <a class="btn btn-outline" href="company.html" style="margin-top:28px">会社案内を見る <span class="arw">→</span></a>
     </div>
-    <p class="quote rv">「真面目さが技術に、技術が丁寧な仕事に。」</p>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head" data-bg="Works"><span class="en">Works</span><h2>最近の施工</h2><p>調布市・稲城市・小金井市など、地元を中心に施工しています。</p></div>
-    <div class="recent"><a class="rv dl1" href="works.html#r0"><div class="ph"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7684-scaled.jpg" alt="調布市 佐須町 外壁(サイディング)塗り替え" loading="lazy"></div><p class="k">外壁(サイディング)塗り替え</p><h3>調布市 佐須町</h3></a><a class="rv dl2" href="works.html#r1"><div class="ph"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_8059-scaled.jpg" alt="稲城市 屋根カバー工法・外壁塗装" loading="lazy"></div><p class="k">屋根カバー工法・外壁塗装</p><h3>稲城市</h3></a><a class="rv dl3" href="works.html#r2"><div class="ph"><img src="https://to-shin.tokyo/wp-content/uploads/2022/09/IMG_9191-scaled.jpg" alt="桜上水 アパート塗り替え" loading="lazy"></div><p class="k">アパート塗り替え</p><h3>桜上水</h3></a><a class="rv dl4" href="works.html#r3"><div class="ph"><img src="https://to-shin.tokyo/wp-content/uploads/2022/02/IMG_8450-scaled.jpg" alt="小金井市 ベランダの雨漏り修理(FRP防水)" loading="lazy"></div><p class="k">ベランダの雨漏り修理(FRP防水)</p><h3>小金井市</h3></a></div>
-    <div class="center"><a class="btn btn-sea" href="works.html">施工実績をすべて見る <span class="arw">→</span></a></div>
-  </div>
-</section>
-
-<section class="sec stone">
-  <div class="wrap">
-    <div class="leak rv">
-      <div class="ph reveal-img"><img src="https://to-shin.tokyo/wp-content/uploads/2022/02/IMG_8452-scaled.jpg" alt="雨漏り修理の施工" loading="lazy"></div>
-      <div class="tx">
-        <span class="en">RAIN LEAK</span>
-        <h2>雨漏りでお困りの方へ</h2>
-        <p>雨漏りは、目に見える場所と原因の場所が違うことがほとんどです。ベランダの排水口、サッシまわり、外壁の目地、屋根の板金。防水と塗装の両方を知る職人が、原因を突き止めてから直します。</p>
-        <a class="btn btn-sea" href="service.html#leak" style="margin-top:14px">雨漏り修理について <span class="arw">→</span></a>
-      </div>
-    </div>
+    <div class="sh c rv"><span class="en">FLOW</span><h2>ご依頼の<em>流れ</em></h2><p>はじめての方にも安心していただけるよう、工事の前にしっかりご説明します。</p></div>
+    <ol class="flow">
+      <li class="rv dl1"><h3>お問い合わせ</h3><p>お電話かフォームから、お気軽にご連絡ください。</p></li>
+      <li class="rv dl2"><h3>現地調査</h3><p>亀裂や欠損、雨漏りの原因などを、職人の目で確かめます。</p></li>
+      <li class="rv dl3"><h3>ご提案・お見積り</h3><p>塗装・防水・交換など、建物に合った方法をご説明します。</p></li>
+      <li class="rv dl4"><h3>施工・お引き渡し</h3><p>下地処理から丁寧に施工し、仕上がりを一緒に確認します。</p></li>
+    </ol>
   </div>
 </section>
 </main>
 <section class="cta">
-  <div class="wrap rv">
-    <p class="en">CONTACT</p>
-    <h2>塗装・防水・雨漏りのご相談は、<br>トーシンへ。</h2>
-    <p>現地を見て、建物の状態とご予算に合った方法をご提案します。</p>
-    <div class="acts">
-      <a class="btn btn-main" href="contact.html"><span class="free">無料</span>お見積り・ご相談はこちら <span class="arw">→</span></a>
-      <a class="btn btn-line" href="tel:0120416104">0120-416-104</a>
+  <div class="wrap">
+    <div class="rv">
+      <span class="en">CONTACT</span>
+      <h2>まずは、建物の状態を<br>見せてください。</h2>
+      <p>現地を拝見して、塗装で良いのか、防水や交換が必要なのか、建物の状態とご予算に合った方法を正直にご提案します。お見積りは無料です。</p>
+    </div>
+    <div class="acts rv dl1">
+      <a class="btn btn-green" href="contact.html"><span class="tag">無料</span>お見積り・ご相談フォーム <span class="arw">→</span></a>
+      <a class="tel-btn" href="tel:0120416104"><small>通話無料・お電話でのご相談</small><b>0120-416-104</b></a>
     </div>
   </div>
 </section>
 <script>
 (function(){
-  var caps = ["調布市 佐須町｜外壁(サイディング)塗り替え", "桜上水｜アパート塗り替え", "稲城市｜屋根カバー工法・外壁塗装"];
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var sl = document.querySelectorAll('.slide'), bars = document.querySelectorAll('.bars button'), cap = document.getElementById('cap'), i = 0, timer;
+  var sl = document.querySelectorAll('.hero-photo .sl'), bt = document.querySelectorAll('.thumbs button'), i = 0, timer;
   function show(n){
-    sl[i].classList.remove('on'); i = n; sl[i].classList.add('on');
-    bars.forEach(function(b,k){ b.classList.remove('on','done'); if(k < i) b.classList.add('done'); });
-    void bars[i].offsetWidth; bars[i].classList.add('on');
-    cap.textContent = caps[i];
+    sl[i].classList.remove('on'); bt[i].classList.remove('on');
+    i = n; sl[i].classList.add('on'); void bt[i].offsetWidth; bt[i].classList.add('on');
   }
   function start(){ clearInterval(timer); timer = setInterval(function(){ show((i + 1) % sl.length); }, 6500); }
-  bars.forEach(function(b,k){ b.addEventListener('click', function(){ show(k); start(); }); });
+  bt.forEach(function(b,k){ b.addEventListener('click', function(){ show(k); start(); }); });
   start();
 })();
 </script>
 <footer class="site">
   <div class="wrap">
     <div class="cols">
-      <div><b>トーシン株式会社</b><p>〒182-0036 東京都調布市飛田給3-25-33<br>TEL 042-485-4147／FAX 042-485-4146<br>東京都知事許可(般-28)第146157号 塗装工事業</p></div>
+      <div><span class="logo"><img src="https://to-shin.tokyo/wp-content/uploads/2017/04/rogo-3.png" alt="トーシン株式会社"></span><p>〒182-0036 東京都調布市飛田給3-25-33<br>フリーダイヤル 0120-416-104／TEL 042-485-4147／FAX 042-485-4146<br>東京都知事許可(般-28)第146157号 塗装工事業</p></div>
       <nav class="fnav" aria-label="フッターメニュー"><a href="index.html">トップ</a><a href="service.html">工事の内容</a><a href="works.html">施工実績</a><a href="company.html">会社案内</a><a href="contact.html">お問い合わせ</a></nav>
     </div>
     <p class="copy">© 2026 トーシン株式会社 All Rights Reserved.</p>
   </div>
 </footer>
+<div class="sp-bar"><a class="t" href="tel:0120416104"><small>通話無料</small>電話で相談</a><a class="m" href="contact.html"><small>かんたん入力</small>無料お見積り</a></div>
 <a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
-<script src="common.js?v=5"></script>
+<script src="common.js?v=11"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
