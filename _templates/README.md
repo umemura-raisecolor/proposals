@@ -16,3 +16,13 @@
 ## 運用
 - 公開URL: https://umemura-raisecolor.github.io/proposals/<フォルダ名>/
 - 全ページ noindex。送信から2週間で削除。
+
+## レター・フォームの署名(必ず4行+HP)
+```
+合同会社ライズカラー 梅村恵美
+〒105-0013 東京都港区浜松町2-2-15-2
+TEL 080-4440-2010
+Mail umemura@raisecolor.net
+Web https://umemura-raisecolor.github.io/raisecolor/
+```
+※最後に必ず「今後このようなご案内がご不要でしたら、お手数ですがその旨ご返信ください。以後のご連絡は控えさせていただきます。」
