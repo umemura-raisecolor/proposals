@@ -8,43 +8,38 @@
 <meta name="description" content="東京都調布市飛田給のトーシン株式会社。一級塗装技能士の代表が率いる職人の会社です。外壁・屋根塗装、防水工事、雨漏り修理、マンション改修を、丁寧な下地処理で長持ちする仕上がりにします。お見積り無料。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=12">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "トーシン株式会社", "description": "東京都調布市の塗装・防水・雨漏り修理・マンション改修の会社。一級塗装技能士の代表が率いる職人の会社。", "telephone": "042-485-4147", "address": {"@type": "PostalAddress", "postalCode": "182-0036", "addressRegion": "東京都", "addressLocality": "調布市", "streetAddress": "飛田給3-25-33", "addressCountry": "JP"}, "founder": {"@type": "Person", "name": "畑農 維人"}, "areaServed": ["調布市", "東京都多摩地区", "東京都"]}</script>
 <style>
-/* ===== ファーストビュー:左に濃紺の面と力強いコピー、右に施工写真の切り替え ===== */
-.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:minmax(0,50%) 1fr;min-height:min(84vh,760px)}
-.hero-copy{position:relative;z-index:2;padding:70px 56px 60px max(28px,calc((100vw - 1320px)/2 + 20px));display:flex;flex-direction:column;justify-content:center}
-.hero-copy .kicker{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:#5fd3a2;letter-spacing:.1em;margin:0 0 22px}
-.hero-copy .kicker::before{content:"";width:28px;height:3px;background:#5fd3a2}
-.hero h1{font-size:clamp(36px,3.9vw,60px);line-height:1.28;letter-spacing:.01em}
+/* ===== ファーストビュー:職人さんの施工写真を全面に。太い明朝の大きなコピー ===== */
+.hero{position:relative;overflow:hidden;color:#fff;background:#08162a;min-height:min(90vh,840px);display:flex;align-items:center}
+.hero .bgimg{position:absolute;inset:0}
+.hero .bgimg img{width:100%;height:100%;object-fit:cover;object-position:80% 35%;animation:zoom 16s ease-out forwards}
+@keyframes zoom{from{transform:scale(1.03)}to{transform:scale(1.12)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,22,42,.92) 0%,rgba(8,22,42,.72) 34%,rgba(8,22,42,.25) 62%,rgba(8,22,42,.08) 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:35%;z-index:1;background:linear-gradient(0deg,rgba(8,22,42,.7),transparent)}
+.hero .wrap{position:relative;z-index:2;width:100%;max-width:1320px;padding-block:90px 150px}
+.hero-copy{max-width:680px}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:14px;font-weight:700;letter-spacing:.16em;color:#5fd3a2;margin:0 0 26px}
+.kicker::before{content:"";width:40px;height:1px;background:#5fd3a2}
+.hero h1{font-family:"Shippori Mincho B1","Yu Mincho",serif;font-weight:800;letter-spacing:.04em;line-height:1.15;font-size:clamp(46px,6vw,92px);text-shadow:0 4px 30px rgba(0,0,0,.35)}
 .hero h1 .ln{display:block;white-space:nowrap}
-.hero h1 em{font-style:normal;color:#fff;background:linear-gradient(transparent 70%,var(--green) 70%);padding:0 .06em}
-.hero .sub{margin:24px 0 0;font-size:17.5px;line-height:1.95;color:#d6deea}
-.hero .sub b{color:#fff}
-.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.hero .tel-btn{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
+.hero h1 .s{font-size:.62em;margin-bottom:.12em}
+.hero h1 .n{font-family:"Shippori Mincho B1",serif;font-variant-numeric:lining-nums;font-size:1.45em;line-height:1;letter-spacing:-.02em;vertical-align:-.04em}
+.hero .sub{font-size:clamp(19px,1.9vw,25px);font-weight:700;letter-spacing:.08em;margin:26px 0 0;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.4);display:inline-block}
+.hero .sub2{margin:16px 0 0;font-size:15.5px;letter-spacing:.12em;color:#d6deea}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero .tel-btn{background:rgba(8,22,42,.35);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .hero .tel-btn small{color:#c8d3e2}
-.badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin:28px 0 0;padding:0;list-style:none;font-size:14.5px;font-weight:700}
+.badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin:26px 0 0;padding:0;list-style:none;font-size:14.5px;font-weight:700}
 .badges li{display:flex;align-items:center;gap:8px}
 .badges li::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
-.hero-photo{position:relative;overflow:hidden;min-height:420px}
-.hero-photo .sl{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
-.hero-photo .sl img{width:100%;height:100%;object-fit:cover}
-.hero-photo .sl.on{opacity:1}
-.hero-photo .sl.on img{animation:zoom 10s ease-out forwards}
-@keyframes zoom{from{transform:scale(1.02)}to{transform:scale(1.12)}}
-.hero-photo::before{content:"";position:absolute;left:0;top:0;bottom:0;width:120px;z-index:1;background:linear-gradient(90deg,var(--navy),rgba(12,35,64,0))}
-.thumbs{position:absolute;z-index:2;right:0;bottom:0;display:flex}
-.thumbs button{all:unset;box-sizing:border-box;cursor:pointer;position:relative;width:min(16vw,190px);background:rgba(12,35,64,.86);color:#fff;padding:14px 16px 16px;font-size:13px;line-height:1.5;border-left:1px solid rgba(255,255,255,.12)}
-.thumbs button b{display:block;font-size:11px;color:#5fd3a2;letter-spacing:.08em}
-.thumbs button i{position:absolute;left:0;right:0;top:0;height:3px;background:rgba(255,255,255,.15)}
-.thumbs button i::after{content:"";position:absolute;inset:0;background:var(--green);transform:scaleX(0);transform-origin:left}
-.thumbs button.on{background:var(--green-dk)}
-.thumbs button.on i::after{animation:fill 6.5s linear forwards}
-.thumbs button:focus-visible{outline:2px solid #fff;outline-offset:-4px}
-@keyframes fill{to{transform:scaleX(1)}}
+.hero .bigen{position:absolute;z-index:1;left:0;right:0;bottom:-.16em;text-align:center;font-family:var(--en);font-weight:800;font-size:clamp(70px,12vw,200px);line-height:1;letter-spacing:.02em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.16);white-space:nowrap;pointer-events:none}
+.hero .photo-cap{position:absolute;z-index:2;right:max(20px,calc((100vw - 1320px)/2 + 20px));bottom:30px;font-size:12.5px;letter-spacing:.1em;color:rgba(255,255,255,.75)}
+.hero .scroll{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);font-family:var(--en);font-size:11px;letter-spacing:.3em;color:rgba(255,255,255,.75);display:flex;flex-direction:column;align-items:center;gap:8px}
+.hero .scroll::after{content:"";width:1px;height:44px;background:linear-gradient(#fff,transparent);animation:drip 2s ease-in-out infinite;transform-origin:top}
+@keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 .rise{opacity:0;transform:translateY(20px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
 .d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}.d4{animation-delay:.65s}.d5{animation-delay:.85s}.d6{animation-delay:1s}
 @keyframes rise{to{opacity:1;transform:none}}
@@ -122,19 +117,19 @@
 .center{text-align:center;margin-top:46px}
 @media (max-width:1100px){.trust ul{grid-template-columns:repeat(2,1fr)}.trust li:nth-child(3){border-left:0}.trust li:nth-child(n+3){border-top:1px solid var(--line)}.svc{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:960px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-photo{order:-1;min-height:300px}
-  .hero-photo::before{display:none}
-  .hero-copy{padding:44px 20px 54px}
+  .hero{min-height:auto}
+  .hero::before{background:linear-gradient(0deg,rgba(8,22,42,.92) 0%,rgba(8,22,42,.75) 55%,rgba(8,22,42,.35) 100%)}
+  .hero .bgimg img{object-position:88% 30%}
+  .hero .wrap{padding-block:200px 120px}
   .hero h1 .ln{white-space:normal}
-  .thumbs button{width:33.33vw;padding:10px 10px 12px;font-size:12px}
+  .hero .photo-cap,.hero .scroll{display:none}
   .proof-top,.rep{grid-template-columns:1fr;gap:34px}
   .proof,.reasons{grid-template-columns:1fr}
   .rep .ph{max-width:340px;margin-left:18px}
   .flow{grid-template-columns:1fr 1fr;gap:12px}.flow li{margin:0}.flow li::after{display:none}
 }
-@media (max-width:560px){.hero .acts>*{width:100%}.trust ul,.svc,.flow{grid-template-columns:1fr}.trust li{border-left:0!important;border-top:1px solid var(--line)}.trust li:first-child{border-top:0}}
-@media (prefers-reduced-motion:reduce){.hero-photo .sl.on img,.thumbs button.on i::after{animation:none}.rise{animation:none;opacity:1;transform:none}}
+@media (max-width:560px){.hero h1{font-size:38px}.hero h1 .ln{white-space:nowrap}.hero .sub{font-size:17px}.hero .acts>*{width:100%}.trust ul,.svc,.flow{grid-template-columns:1fr}.trust li{border-left:0!important;border-top:1px solid var(--line)}.trust li:first-child{border-top:0}}
+@media (prefers-reduced-motion:reduce){.hero .bgimg img,.hero .scroll::after{animation:none}.rise{animation:none;opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -150,22 +145,23 @@
 </header>
 <main>
 <section class="hero" aria-label="ご紹介">
-  <div class="hero-grid">
+  <div class="bgimg" aria-hidden="true"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/DSCN0027-scaled.jpg" alt=""></div>
+  <span class="bigen" aria-hidden="true">CRAFTSMANSHIP</span>
+  <div class="wrap">
     <div class="hero-copy">
       <p class="kicker rise d1">調布市の塗装・防水・雨漏り修理</p>
-      <h1><span class="ln rise d2">塗装の差は、</span><span class="ln rise d3"><em>16年後</em>に出る。</span></h1>
-      <p class="sub rise d4">お客様の財産を、外から守ります。<b>一級塗装技能士の代表</b>が率いる職人の会社が、見えなくなる下地まで手を抜かずに仕上げます。</p>
+      <h1><span class="ln s rise d2">塗装の差は、</span><span class="ln rise d3"><span class="n">16</span>年後に出る。</span></h1>
+      <p class="sub rise d4">見えなくなる下地まで、一切手を抜かない。</p>
+      <p class="sub2 rise d4">一級塗装技能士の代表が率いる、調布の職人の会社です。</p>
       <div class="acts rise d5">
         <a class="btn btn-green" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a>
         <a class="tel-btn" href="tel:0120416104"><small>通話無料・お電話でのご相談</small><b>0120-416-104</b></a>
       </div>
       <ul class="badges rise d6"><li>お見積り無料</li><li>現地調査のうえ正直にご提案</li><li>雨漏りのご相談も</li></ul>
     </div>
-    <div class="hero-photo">
-      <div class="sl on"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_7684-scaled.jpg" alt="調布市 佐須町 外壁(サイディング)塗り替え 施工後"></div><div class="sl"><img src="https://to-shin.tokyo/wp-content/uploads/2022/09/IMG_9191-scaled.jpg" alt="桜上水 アパートの塗り替え 施工後" loading="lazy"></div><div class="sl"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/IMG_8059-scaled.jpg" alt="稲城市 屋根カバー工法・外壁塗装 施工後" loading="lazy"></div>
-      <div class="thumbs" role="group" aria-label="施工写真の切り替え"><button class="on" aria-label="調布市 佐須町 外壁(サイディング)塗り替えの写真を表示"><i></i><b>調布市 佐須町</b>外壁(サイディング)塗り替え</button><button aria-label="桜上水 アパートの塗り替えの写真を表示"><i></i><b>桜上水</b>アパートの塗り替え</button><button aria-label="稲城市 屋根カバー工法・外壁塗装の写真を表示"><i></i><b>稲城市</b>屋根カバー工法・外壁塗装</button></div>
-    </div>
   </div>
+  <p class="photo-cap" aria-hidden="true">施工中の現場｜調布市 佐須町</p>
+  <p class="scroll" aria-hidden="true">SCROLL</p>
 </section>
 
 <section class="trust" aria-label="トーシンの信頼"><div class="wrap"><ul><li class="rv dl0"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg></span><span><b>一級塗装技能士の代表</b><small>国家資格を持つ代表が責任を持ちます</small></span></li><li class="rv dl1"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><span><b>東京都知事許可</b><small>塗装工事業(般-28)第146157号</small></span></li><li class="rv dl2"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg></span><span><b>塗装も防水も雨漏りも</b><small>建物の外まわりを一社でまとめて</small></span></li><li class="rv dl3"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>調布市飛田給の会社</b><small>東京・多摩地区を中心に対応</small></span></li></ul></div></section>
@@ -255,19 +251,6 @@
     </div>
   </div>
 </section>
-<script>
-(function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var sl = document.querySelectorAll('.hero-photo .sl'), bt = document.querySelectorAll('.thumbs button'), i = 0, timer;
-  function show(n){
-    sl[i].classList.remove('on'); bt[i].classList.remove('on');
-    i = n; sl[i].classList.add('on'); void bt[i].offsetWidth; bt[i].classList.add('on');
-  }
-  function start(){ clearInterval(timer); timer = setInterval(function(){ show((i + 1) % sl.length); }, 6500); }
-  bt.forEach(function(b,k){ b.addEventListener('click', function(){ show(k); start(); }); });
-  start();
-})();
-</script>
 <footer class="site">
   <div class="wrap">
     <div class="cols">
@@ -279,7 +262,7 @@
 </footer>
 <div class="sp-bar"><a class="t" href="tel:0120416104"><small>通話無料</small>電話で相談</a><a class="m" href="contact.html"><small>かんたん入力</small>無料お見積り</a></div>
 <a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
-<script src="common.js?v=11"></script>
+<script src="common.js?v=12"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
