@@ -8,38 +8,52 @@
 <meta name="description" content="東京都調布市飛田給のトーシン株式会社。一級塗装技能士の代表が率いる職人の会社です。外壁・屋根塗装、防水工事、雨漏り修理、マンション改修を、丁寧な下地処理で長持ちする仕上がりにします。お見積り無料。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Oswald:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=21">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "トーシン株式会社", "description": "東京都調布市の塗装・防水・雨漏り修理・マンション改修の会社。一級塗装技能士の代表が率いる職人の会社。", "telephone": "042-485-4147", "address": {"@type": "PostalAddress", "postalCode": "182-0036", "addressRegion": "東京都", "addressLocality": "調布市", "streetAddress": "飛田給3-25-33", "addressCountry": "JP"}, "founder": {"@type": "Person", "name": "畑農 維人"}, "areaServed": ["調布市", "東京都多摩地区", "東京都"]}</script>
 <style>
-/* ===== ファーストビュー:職人さんの施工写真を全面に。太い明朝の大きなコピー ===== */
-.hero{position:relative;overflow:hidden;color:#fff;background:#08162a;min-height:min(90vh,840px);display:flex;align-items:center}
-.hero .bgimg{position:absolute;inset:0}
-.hero .bgimg img{width:100%;height:100%;object-fit:cover;object-position:80% 35%;animation:zoom 16s ease-out forwards}
-@keyframes zoom{from{transform:scale(1.03)}to{transform:scale(1.12)}}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,22,42,.92) 0%,rgba(8,22,42,.72) 34%,rgba(8,22,42,.25) 62%,rgba(8,22,42,.08) 100%)}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:35%;z-index:1;background:linear-gradient(0deg,rgba(8,22,42,.7),transparent)}
-.hero .wrap{position:relative;z-index:2;width:100%;max-width:1320px;padding-block:90px 150px}
-.hero-copy{max-width:680px}
-.kicker{display:inline-flex;align-items:center;gap:12px;font-size:14px;font-weight:700;letter-spacing:.16em;color:#5fd3a2;margin:0 0 26px}
-.kicker::before{content:"";width:40px;height:1px;background:#5fd3a2}
-.hero h1{font-family:"Shippori Mincho B1","Yu Mincho",serif;font-weight:800;letter-spacing:.04em;line-height:1.15;font-size:clamp(46px,6vw,92px);text-shadow:0 4px 30px rgba(0,0,0,.35)}
-.hero h1 .ln{display:block;white-space:nowrap}
-.hero h1 .s{font-size:.62em;margin-bottom:.12em}
-.hero h1 .n{font-family:"Shippori Mincho B1",serif;font-variant-numeric:lining-nums;font-size:1.45em;line-height:1;letter-spacing:-.02em;vertical-align:-.04em}
-.hero .sub{font-size:clamp(19px,1.9vw,25px);font-weight:700;letter-spacing:.08em;margin:26px 0 0;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.4);display:inline-block}
-.hero .sub2{margin:16px 0 0;font-size:15.5px;letter-spacing:.12em;color:#d6deea}
-.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.hero .tel-btn{background:rgba(8,22,42,.35);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-.hero .tel-btn small{color:#c8d3e2}
-.badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin:26px 0 0;padding:0;list-style:none;font-size:14.5px;font-weight:700}
+/* ===== ファーストビュー:白地に写真パネル、写真にまたがる巨大な英字 ===== */
+.hero{position:relative;overflow:hidden;background:#fff;height:calc(100svh - var(--head-h,86px));min-height:640px;max-height:900px}
+.hero .stripes{position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 140px,#f1f3f5 140px 260px);opacity:.9}
+.hero .photo{position:absolute;left:24vw;right:0;top:0;bottom:0;overflow:hidden;background:#222}
+.hero .photo img{width:100%;height:100%;object-fit:cover;object-position:72% 32%;filter:saturate(.72) contrast(1.06);animation:zoom 18s ease-out forwards}
+@keyframes zoom{from{transform:scale(1.04)}to{transform:scale(1.12)}}
+.hero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,24,32,.05) 40%,rgba(17,24,32,.45) 100%)}
+/* 巨大な英字:白地では黒、写真の上では白(同じ文字を2枚重ねて切り分け) */
+.hl{position:absolute;left:5vw;bottom:.06em;margin:0;font-family:"Oswald",sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(64px,10.2vw,184px);line-height:.9;letter-spacing:-.005em;white-space:nowrap;pointer-events:none;z-index:2}
+.hl span{display:block}
+.hl em{font-style:normal;color:var(--green)}
+.hl.ink{color:#111820}
+.hl.on{color:#fff;clip-path:inset(0 0 0 19vw)}
+.hl.on em{color:#6fe3b4}
+.hl span{opacity:0;transform:translateY(40%);animation:up 1s cubic-bezier(.2,.7,.2,1) forwards}
+.hl span:nth-child(2){animation-delay:.15s}.hl span:nth-child(3){animation-delay:.3s}
+@keyframes up{to{opacity:1;transform:none}}
+/* 左の白い列:縦書きの和文コピー */
+.vcopy{position:absolute;z-index:3;left:5vw;top:56px;writing-mode:vertical-rl;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(22px,2.1vw,34px);letter-spacing:.2em;line-height:1.7;color:#111820;margin:0;opacity:0;animation:fade 1.2s .6s forwards}
+.vcopy em{font-style:normal;color:var(--green)}
+.vsub{position:absolute;z-index:3;left:calc(5vw + 4.4em);top:60px;writing-mode:vertical-rl;font-size:13px;letter-spacing:.3em;color:#5a6676;margin:0;opacity:0;animation:fade 1.2s .9s forwards}
+@keyframes fade{to{opacity:1}}
+.hero .cap{position:absolute;z-index:3;right:24px;top:22px;font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(17,24,32,.55);padding:6px 12px}
+.hero .cap small{font-family:var(--jp);letter-spacing:.06em;margin-left:8px}
+.hero .scroll{position:absolute;z-index:3;right:28px;bottom:28px;writing-mode:vertical-rl;font-family:"Oswald",sans-serif;letter-spacing:.3em;font-size:12px;color:#fff;display:flex;align-items:center;gap:10px}
+.hero .scroll::after{content:"";width:1px;height:60px;background:#fff;animation:drip 2s ease-in-out infinite;transform-origin:top}
+@keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* ファーストビュー直下:和文コピーと問い合わせ */
+.intro{background:#111820;color:#fff}
+.intro .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;padding-block:56px;max-width:1320px}
+.intro h1{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(28px,3.4vw,46px);line-height:1.35;letter-spacing:.04em}
+.intro h1 .n{font-size:1.35em;font-variant-numeric:lining-nums}
+.intro h1 em{font-style:normal;color:#6fe3b4}
+.intro p{margin:14px 0 0;color:#c9d1db}
+.intro .acts{display:grid;gap:12px}
+.intro .acts>*{width:100%}
+.intro .tel-btn{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);align-items:center}
+.intro .tel-btn small{color:#c9d1db}
+.badges{display:flex;flex-wrap:wrap;gap:8px 20px;margin:18px 0 0;padding:0;list-style:none;font-size:14px;font-weight:700}
 .badges li{display:flex;align-items:center;gap:8px}
 .badges li::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
-.hero .bigen{position:absolute;z-index:1;left:0;right:0;bottom:-.16em;text-align:center;font-family:var(--en);font-weight:800;font-size:clamp(70px,12vw,200px);line-height:1;letter-spacing:.02em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.16);white-space:nowrap;pointer-events:none}
-.hero .photo-cap{position:absolute;z-index:2;right:max(20px,calc((100vw - 1320px)/2 + 20px));bottom:30px;font-size:12.5px;letter-spacing:.1em;color:rgba(255,255,255,.75)}
-.hero .scroll{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);font-family:var(--en);font-size:11px;letter-spacing:.3em;color:rgba(255,255,255,.75);display:flex;flex-direction:column;align-items:center;gap:8px}
-.hero .scroll::after{content:"";width:1px;height:44px;background:linear-gradient(#fff,transparent);animation:drip 2s ease-in-out infinite;transform-origin:top}
-@keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 .rise{opacity:0;transform:translateY(20px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
 .d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}.d4{animation-delay:.65s}.d5{animation-delay:.85s}.d6{animation-delay:1s}
 @keyframes rise{to{opacity:1;transform:none}}
@@ -117,51 +131,57 @@
 .center{text-align:center;margin-top:46px}
 @media (max-width:1100px){.trust ul{grid-template-columns:repeat(2,1fr)}.trust li:nth-child(3){border-left:0}.trust li:nth-child(n+3){border-top:1px solid var(--line)}.svc{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:960px){
-  .hero{min-height:auto}
-  .hero::before{background:linear-gradient(0deg,rgba(8,22,42,.92) 0%,rgba(8,22,42,.75) 55%,rgba(8,22,42,.35) 100%)}
-  .hero .bgimg img{object-position:88% 30%}
-  .hero .wrap{padding-block:200px 120px}
-  .hero h1 .ln{white-space:normal}
-  .hero .photo-cap,.hero .scroll{display:none}
+  .hero{height:auto;min-height:0;max-height:none;padding-bottom:0}
+  .hero .photo{position:relative;left:0;height:62vh;min-height:380px}
+  .hl{font-size:14vw;left:20px;bottom:.08em}
+  .hl.on{clip-path:inset(0 0 -1em 0)}
+  .hl.ink{display:none}
+  .vcopy,.vsub{display:none}
+  .hero .scroll{display:none}
+  .intro .wrap{grid-template-columns:1fr;gap:28px;padding-block:44px}
   .proof-top,.rep{grid-template-columns:1fr;gap:34px}
   .proof,.reasons{grid-template-columns:1fr}
   .rep .ph{max-width:340px;margin-left:18px}
   .flow{grid-template-columns:1fr 1fr;gap:12px}.flow li{margin:0}.flow li::after{display:none}
 }
-@media (max-width:560px){.hero h1{font-size:38px}.hero h1 .ln{white-space:nowrap}.hero .sub{font-size:17px}.hero .acts>*{width:100%}.trust ul,.svc,.flow{grid-template-columns:1fr}.trust li{border-left:0!important;border-top:1px solid var(--line)}.trust li:first-child{border-top:0}}
-@media (prefers-reduced-motion:reduce){.hero .bgimg img,.hero .scroll::after{animation:none}.rise{animation:none;opacity:1;transform:none}}
+@media (max-width:560px){.trust ul,.svc,.flow{grid-template-columns:1fr}.trust li{border-left:0!important;border-top:1px solid var(--line)}.trust li:first-child{border-top:0}}
+@media (prefers-reduced-motion:reduce){.hero .photo img,.hero .scroll::after,.hl span,.vcopy,.vsub{animation:none;opacity:1;transform:none}.rise{animation:none;opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="wrap"><span>東京・多摩地区の外壁塗装・屋根塗装・防水工事・雨漏り修理・マンション改修</span><span>調布市飛田給｜お見積り無料</span></div></div>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html"><img src="https://to-shin.tokyo/wp-content/uploads/2017/04/rogo-3.png" alt="トーシン株式会社 TO-SHIN" width="720" height="122"></a>
-    <nav class="gnav" id="gnav" aria-label="メインメニュー"><a href="index.html" aria-current="page">トップ</a><a href="service.html">工事の内容</a><a href="works.html">施工実績</a><a href="company.html">会社案内</a><a href="contact.html">お問い合わせ</a></nav>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー"><a href="index.html" aria-current="page"><b>HOME</b><small>トップ</small></a><a href="service.html"><b>SERVICE</b><small>工事の内容</small></a><a href="works.html"><b>WORKS</b><small>施工実績</small></a><a href="company.html"><b>COMPANY</b><small>会社案内</small></a><a href="contact.html" class="only-sp"><b>CONTACT</b><small>お問い合わせ</small></a></nav>
     <a class="h-tel" href="tel:0120416104"><small>通話無料・お気軽にご相談ください</small><b>0120-416-104</b></a>
-    <a class="h-cta" href="contact.html">無料お見積り</a>
+    <a class="h-contact" href="contact.html"><b>CONTACT</b><small>無料お見積り</small></a>
     <button class="menu-btn" aria-label="メニュー" aria-controls="gnav" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main>
 <section class="hero" aria-label="ご紹介">
-  <div class="bgimg" aria-hidden="true"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/DSCN0027-scaled.jpg" alt=""></div>
-  <span class="bigen" aria-hidden="true">CRAFTSMANSHIP</span>
+  <div class="stripes" aria-hidden="true"></div>
+  <div class="photo"><img src="https://to-shin.tokyo/wp-content/uploads/2025/03/DSCN0027-scaled.jpg" alt="外壁を塗装するトーシンの職人(調布市 佐須町の現場)"></div>
+  <p class="vcopy" aria-hidden="true">塗装の差は、<em>十六年後</em>に出る。</p>
+  <p class="vsub" aria-hidden="true">見えなくなる下地まで、一切手を抜かない</p>
+  <p class="hl ink" aria-hidden="true"><span>Painted</span><span>to <em>last.</em></span><span>16 years on.</span></p>
+  <p class="hl on" aria-hidden="true"><span>Painted</span><span>to <em>last.</em></span><span>16 years on.</span></p>
+  <p class="cap" aria-hidden="true">ON SITE<small>調布市 佐須町の現場</small></p>
+  <p class="scroll" aria-hidden="true">SCROLL</p>
+</section>
+
+<section class="intro" aria-label="トーシンについて">
   <div class="wrap">
-    <div class="hero-copy">
-      <p class="kicker rise d1">調布市の塗装・防水・雨漏り修理</p>
-      <h1><span class="ln s rise d2">塗装の差は、</span><span class="ln rise d3"><span class="n">16</span>年後に出る。</span></h1>
-      <p class="sub rise d4">見えなくなる下地まで、一切手を抜かない。</p>
-      <p class="sub2 rise d4">一級塗装技能士の代表が率いる、調布の職人の会社です。</p>
-      <div class="acts rise d5">
-        <a class="btn btn-green" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a>
-        <a class="tel-btn" href="tel:0120416104"><small>通話無料・お電話でのご相談</small><b>0120-416-104</b></a>
-      </div>
-      <ul class="badges rise d6"><li>お見積り無料</li><li>現地調査のうえ正直にご提案</li><li>雨漏りのご相談も</li></ul>
+    <div class="rv">
+      <h1>塗装の差は、<em><span class="n">16</span>年後</em>に出る。</h1>
+      <p>お客様の財産を、外から守ります。一級塗装技能士の代表が率いる調布の職人の会社が、見えなくなる下地まで手を抜かずに仕上げます。</p>
+      <ul class="badges"><li>お見積り無料</li><li>現地調査のうえ正直にご提案</li><li>雨漏りのご相談も</li></ul>
+    </div>
+    <div class="acts rv dl1">
+      <a class="btn btn-green" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a>
+      <a class="tel-btn" href="tel:0120416104"><small>通話無料・お電話でのご相談</small><b>0120-416-104</b></a>
     </div>
   </div>
-  <p class="photo-cap" aria-hidden="true">施工中の現場｜調布市 佐須町</p>
-  <p class="scroll" aria-hidden="true">SCROLL</p>
 </section>
 
 <section class="trust" aria-label="トーシンの信頼"><div class="wrap"><ul><li class="rv dl0"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg></span><span><b>一級塗装技能士の代表</b><small>国家資格を持つ代表が責任を持ちます</small></span></li><li class="rv dl1"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><span><b>東京都知事許可</b><small>塗装工事業(般-28)第146157号</small></span></li><li class="rv dl2"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg></span><span><b>塗装も防水も雨漏りも</b><small>建物の外まわりを一社でまとめて</small></span></li><li class="rv dl3"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>調布市飛田給の会社</b><small>東京・多摩地区を中心に対応</small></span></li></ul></div></section>
@@ -262,7 +282,7 @@
 </footer>
 <div class="sp-bar"><a class="t" href="tel:0120416104"><small>通話無料</small>電話で相談</a><a class="m" href="contact.html"><small>かんたん入力</small>無料お見積り</a></div>
 <a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
-<script src="common.js?v=12"></script>
+<script src="common.js?v=21"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
