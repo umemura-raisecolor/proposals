@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
-<link rel="stylesheet" href="common.css?v=3">
+<link rel="stylesheet" href="common.css?v=4">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "大塚美装", "description": "東京・多摩・神奈川を中心に、大切な家屋を守る塗装専門店。外壁塗装・屋根塗装・内装塗装・ポイント塗装。", "address": {"@type": "PostalAddress", "addressCountry": "JP", "addressRegion": "東京都", "addressLocality": "調布市", "streetAddress": "柴崎2-15-7"}, "founder": {"@type": "Person", "name": "大塚 猛"}, "areaServed": ["東京23区", "東京都多摩地域", "神奈川県"], "image": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x10000:format=jpg/path/s12848955a32942dd/image/idaca75e6754dc879/version/1703958757/image.jpg"}</script>
 <style>
 .svc-block{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}
@@ -24,17 +24,17 @@
 .svc-block .sub{color:var(--muted);margin:14px 0 26px;font-size:16px}
 .flow{list-style:none;margin:0;padding:0;position:relative}
 .flow::before{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:3px;background:var(--line)}
-.flow::after{content:"";position:absolute;left:27px;top:28px;width:3px;height:0;background:linear-gradient(var(--navy),var(--sky-deep),var(--pink-deep),var(--yellow));transition:height 1.8s cubic-bezier(.2,.7,.2,1)}
+.flow::after{content:"";position:absolute;left:27px;top:28px;width:3px;height:0;background:linear-gradient(var(--navy),var(--cobalt),var(--yellow));transition:height 1.8s cubic-bezier(.2,.7,.2,1)}
 .flow.in::after{height:calc(100% - 56px)}
 .flow li{position:relative;display:grid;grid-template-columns:56px 1fr;gap:22px;padding-bottom:30px}
 .flow li:last-child{padding-bottom:0}
-.flow .n{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--en);font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center;transform:scale(.6);opacity:0;transition:transform .6s cubic-bezier(.3,1.6,.5,1),opacity .4s}
-.flow li:nth-child(2) .n{background:var(--sky-deep)}.flow li:nth-child(3) .n{background:var(--pink-deep)}.flow li:nth-child(4) .n{background:var(--yellow);color:var(--navy-ink)}.flow li:nth-child(5) .n{background:var(--navy)}
+.flow .n{position:relative;z-index:1;width:56px;height:56px;background:var(--navy);color:#fff;font-family:var(--en);font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center;transform:scale(.6);opacity:0;transition:transform .6s cubic-bezier(.3,1.6,.5,1),opacity .4s}
+.flow li:nth-child(even) .n{background:var(--cobalt)}.flow li:last-child .n{background:var(--yellow);color:var(--navy-ink)}
 .flow.in .n{transform:none;opacity:1}
 .flow li:nth-child(2) .n{transition-delay:.3s}.flow li:nth-child(3) .n{transition-delay:.6s}.flow li:nth-child(4) .n{transition-delay:.9s}.flow li:nth-child(5) .n{transition-delay:1.2s}
 .flow h3{font-size:21px;letter-spacing:.04em;padding-top:10px}
 .flow p{margin:6px 0 0;font-size:16.5px;color:var(--muted)}
-.note{margin-top:30px;padding:24px 28px;background:#fff8dc;border-left:6px solid var(--yellow);font-size:16.5px}
+.note{margin-top:30px;padding:24px 28px;background:var(--soft);border-left:6px solid var(--yellow);font-size:16.5px}
 .note b{font-family:var(--display)}
 .cards2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .card{background:#fff;padding:34px 32px;border-top:6px solid var(--c);box-shadow:0 10px 30px rgba(15,37,71,.08);transition:transform .4s,box-shadow .4s}
@@ -73,7 +73,7 @@
     <div class="photo-col"><div class="reveal-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1000x10000:format=jpg/path/s12848955a32942dd/image/ied878e4d6bb92f57/version/1703959812/image.jpg" alt="外壁塗装の施工後" loading="lazy"></div></div>
     <div>
       <span class="en rv">EXTERIOR</span>
-      <h2 class="rv dl1">外壁塗装<svg class="stroke" viewBox="0 0 150 16" aria-hidden="true"><path d="M5 10 C 40 3, 85 15, 145 6"/></svg></h2>
+      <h2 class="rv dl1">外壁塗装<svg class="stroke" viewBox="0 0 150 8" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4 H150"/></svg></h2>
       <p class="sub rv dl2">工事の流れ(基本仕様)</p>
       <ol class="flow rv"><li><span class="n">1</span><div><h3>調査・補修</h3><p>亀裂や欠損などの有無を調査し、必要があれば補修します。</p></div></li><li><span class="n">2</span><div><h3>シーラー塗装(下塗り1回目)</h3><p>下地を固めて強化します。</p></div></li><li><span class="n">3</span><div><h3>アンダーフィーラー塗装(下塗り2回目)</h3><p>フィラー材を塗って凹凸のないなめらかな下地を作ることで、上塗りをきれいに仕上げることができます。モルタル壁や吸収性の高い壁材には欠かせない工程です。</p></div></li><li><span class="n">4</span><div><h3>上塗り 1回目</h3></div></li><li><span class="n">5</span><div><h3>上塗り 2回目</h3><p>2回塗り重ねることで、色ムラのない、長持ちする塗膜に仕上げます。</p></div></li></ol>
       <div class="note rv"><b>なぜシーラーを必ず塗るのか</b><br>外壁材や屋根材は、劣化すればするほど塗料を吸い込みやすくなります。シーラーを塗って吸収性を抑えると同時に、塗料の密着力も高まるため、大塚美装では必ず施工しています。</div>
@@ -85,7 +85,7 @@
     <div class="photo-col"><div class="reveal-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1000x10000:format=jpg/path/s12848955a32942dd/image/icabd369b2aa91e9f/version/1706538320/image.jpg" alt="屋根塗装の施工後" loading="lazy"></div></div>
     <div>
       <span class="en rv">ROOF</span>
-      <h2 class="rv dl1">屋根塗装<svg class="stroke pk" viewBox="0 0 150 16" aria-hidden="true"><path d="M5 10 C 40 3, 85 15, 145 6"/></svg></h2>
+      <h2 class="rv dl1">屋根塗装<svg class="stroke pk" viewBox="0 0 150 8" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4 H150"/></svg></h2>
       <p class="sub rv dl2">工事の流れ(コロニアルやセメント瓦などの場合)</p>
       <ol class="flow rv"><li><span class="n">1</span><div><h3>調査・補修</h3><p>亀裂や欠損などの有無を調査し、必要があれば補修します。</p></div></li><li><span class="n">2</span><div><h3>シーラー塗装(下塗り)</h3><p>下地の吸収性が高い場合は、2回塗る場合もあります。</p></div></li><li><span class="n">3</span><div><h3>上塗り 1回目</h3></div></li><li><span class="n">4</span><div><h3>上塗り 2回目</h3></div></li></ol>
     </div>
@@ -93,7 +93,7 @@
 </section>
 <section class="sec" id="interior">
   <div class="wrap">
-    <div class="sec-head"><span class="en">INTERIOR</span><h2>内装塗装・ポイント塗装<svg class="strokepk" viewBox="0 0 150 16" aria-hidden="true"><path d="M5 10 C 40 3, 85 15, 145 6"/></svg></h2><p>お住まいの中も、塗装で心地よく、楽しく。</p></div>
+    <div class="sec-head"><span class="en">INTERIOR</span><h2>内装塗装・ポイント塗装<svg class="strokepk" viewBox="0 0 150 8" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4 H150"/></svg></h2><p>お住まいの中も、塗装で心地よく、楽しく。</p></div>
     <div class="cards2">
       <div class="card rv dl1" style="--c:var(--pink-deep)"><h3>内装塗装</h3><ul><li>消臭・抗菌・抗ウイルスなどの機能性塗料</li><li>木枠・床・木製玄関ドア</li><li>古家のアク洗い</li></ul></div>
       <div class="card rv dl2" style="--c:var(--yellow)"><h3>ポイント塗装</h3><ul><li>クロスの上に珪藻土を塗り、一面だけ塗り替えるお洒落塗り</li><li>既製品のドアを黒板にする黒板塗装</li></ul></div>
@@ -124,7 +124,7 @@
   </div>
 </footer>
 <a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
-<script src="common.js?v=3"></script>
+<script src="common.js?v=4"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

@@ -9,46 +9,46 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
-<link rel="stylesheet" href="common.css?v=3">
+<link rel="stylesheet" href="common.css?v=4">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "大塚美装", "description": "東京・多摩・神奈川を中心に、大切な家屋を守る塗装専門店。外壁塗装・屋根塗装・内装塗装・ポイント塗装。", "address": {"@type": "PostalAddress", "addressCountry": "JP", "addressRegion": "東京都", "addressLocality": "調布市", "streetAddress": "柴崎2-15-7"}, "founder": {"@type": "Person", "name": "大塚 猛"}, "areaServed": ["東京23区", "東京都多摩地域", "神奈川県"], "image": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x10000:format=jpg/path/s12848955a32942dd/image/idaca75e6754dc879/version/1703958757/image.jpg"}</script>
 <style>
 /* ===== ファーストビュー:ロゴ画像の「青地に色が斜めに入る」形をそのまま広げる ===== */
-.hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;min-height:min(84vh,760px);display:flex;align-items:center}
-.hero-art{position:absolute;top:0;right:0;bottom:0;width:56%;clip-path:polygon(20% 0,100% 0,100% 100%,0 100%);background:#eef0f3}
-.hero-art i{position:absolute;inset:0;transform-origin:56% 54%;transform:scale(0);animation:bloom 1.1s cubic-bezier(.2,.7,.2,1) forwards}
-.hero-art .t-l{background:#2f5f9e;clip-path:polygon(0 0,56% 54%,0 100%);animation-delay:.25s}
-.hero-art .t-r{background:var(--pink);clip-path:polygon(100% 0,100% 100%,56% 54%);animation-delay:.4s}
-.hero-art .t-b{background:var(--yellow);clip-path:polygon(0 100%,56% 54%,100% 100%);animation-delay:.55s}
-.hero-art .t-s{background:var(--sky);clip-path:polygon(56% 0,100% 0,56% 54%);animation-delay:.7s}
-.hero-art .dot{inset:auto;width:120px;height:120px;border-radius:50%;left:calc(56% - 60px);top:calc(54% - 60px);background:#fff;box-shadow:0 0 0 14px rgba(255,255,255,.35);animation-delay:.9s;transform-origin:center}
-@keyframes bloom{to{transform:none}}
-.stripe{position:absolute;top:0;bottom:0;right:0;pointer-events:none;animation:drop 1s cubic-bezier(.2,.7,.2,1) both}
-.stripe.w{width:56%;background:#fff;clip-path:polygon(calc(20% - 10px) 0,20% 0,0 100%,-10px 100%);animation-delay:.2s}
-.stripe.p{width:calc(56% + 26px);background:var(--pink);clip-path:polygon(calc(20% - 14px) 0,20% 0,0 100%,-14px 100%);animation-delay:.35s}
-.stripe.y{width:calc(56% + 60px);background:var(--yellow);clip-path:polygon(calc(20% - 18px) 0,20% 0,0 100%,-18px 100%);animation-delay:.5s}
-@keyframes drop{from{transform:translateY(-100%)}to{transform:none}}
-.hero .wrap{position:relative;z-index:2;width:100%;padding-block:70px 120px}
-.hero-text{max-width:600px}
-.since{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:16px;color:var(--navy-ink);background:var(--yellow);padding:4px 16px;letter-spacing:.08em;margin:0 0 26px}
-.hero h1{font-size:clamp(32px,4.4vw,58px);line-height:1.4;letter-spacing:.06em;font-weight:900}
+.hero{position:relative;overflow:hidden;background:var(--navy-ink);color:#fff;min-height:min(86vh,780px);display:flex;align-items:center}
+/* 右側に濃紺の面を斜めにカット */
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(112deg,transparent 0 57%,var(--navy) 57% 100%)}
+/* 背景に大きな白抜きの英字 */
+.bigword{position:absolute;left:-.04em;bottom:-.18em;font-family:var(--en);font-weight:800;font-size:clamp(120px,17vw,260px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.09);white-space:nowrap;pointer-events:none;letter-spacing:-.01em}
+/* 右側:塗料の色見本(色チップ)が上から順に降りてくる */
+.chart{position:absolute;top:-8%;bottom:-8%;right:max(60px,calc((100vw - var(--w))/2 + 80px));width:min(38vw,500px);display:flex;gap:16px;transform:skewX(-12deg)}
+.chart span{flex:1;position:relative;background:var(--c);transform:translateY(-115%);animation:drop .9s cubic-bezier(.2,.7,.2,1) forwards;box-shadow:0 24px 48px rgba(0,0,0,.4)}
+.chart span:nth-child(1){animation-delay:.15s}.chart span:nth-child(2){animation-delay:.3s}.chart span:nth-child(3){animation-delay:.45s}.chart span:nth-child(4){animation-delay:.6s}.chart span:nth-child(5){animation-delay:.75s}
+.chart span.nv{box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 24px 48px rgba(0,0,0,.4)}
+.chart b{position:absolute;left:0;right:0;top:16%;text-align:center;transform:skewX(12deg);font-family:var(--en);font-weight:700;font-size:11px;letter-spacing:.22em;color:var(--t)}
+@keyframes drop{to{transform:none}}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:80px 130px}
+.hero-text{max-width:620px}
+.badge{display:inline-flex;align-items:stretch;border:2px solid var(--yellow);margin:0 0 30px;font-size:15px;line-height:1.5}
+.badge b{background:var(--yellow);color:var(--navy-ink);padding:7px 14px;font-family:var(--display);font-weight:900;letter-spacing:.06em}
+.badge span{padding:7px 14px;font-weight:700;letter-spacing:.06em}
+.hero h1{font-size:clamp(36px,5vw,68px);line-height:1.32;letter-spacing:.02em;font-weight:900}
 .hero h1 .ln{display:block}
-.hero h1 em{font-style:normal;color:var(--yellow);position:relative;display:inline-block}
-.hero h1 em svg{position:absolute;left:-2%;bottom:-6px;width:104%;height:18px;overflow:visible}
-.hero h1 em path{fill:none;stroke:var(--pink);stroke-width:8;stroke-linecap:round;stroke-dasharray:320;stroke-dashoffset:320;animation:paint 1.1s 1.2s cubic-bezier(.6,0,.2,1) forwards}
-@keyframes paint{to{stroke-dashoffset:0}}
-.lead{margin:22px 0 0;font-size:19px;max-width:30em;color:#e3eaf5;line-height:1.9}
+.hero h1 .s{font-size:.56em;letter-spacing:.08em;margin-bottom:.2em}
+.hero h1 em{font-style:normal;color:var(--yellow);position:relative;display:inline-block;isolation:isolate}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.1em;height:.16em;background:var(--cobalt);z-index:-1;transform:scaleX(0);transform-origin:left;animation:bar .7s 1.2s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes bar{to{transform:none}}
+.lead{margin:24px 0 0;font-size:19px;max-width:30em;color:#d9e1ee;line-height:1.9;padding-left:18px;border-left:3px solid var(--cobalt)}
 .acts{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px}
 .rise{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
 .d1{animation-delay:.3s}.d2{animation-delay:.48s}.d3{animation-delay:.66s}.d4{animation-delay:.84s}.d5{animation-delay:1.05s}.d6{animation-delay:1.25s}
 @keyframes rise{to{opacity:1;transform:none}}
 
 /* 右下:施工事例の写真が切り替わるカード */
-.works-card{text-decoration:none;position:absolute;z-index:3;right:max(20px,calc((100vw - var(--w))/2 + 20px));bottom:34px;width:300px;background:#fff;color:var(--ink);box-shadow:0 20px 40px rgba(0,0,0,.28);opacity:0;animation:rise .9s 1.5s cubic-bezier(.2,.7,.2,1) forwards}
+.works-card{text-decoration:none;position:absolute;z-index:3;right:max(20px,calc((100vw - var(--w))/2 + 20px));bottom:34px;width:300px;background:#fff;border-top:6px solid var(--yellow);color:var(--ink);box-shadow:0 20px 40px rgba(0,0,0,.28);opacity:0;animation:rise .9s 1.5s cubic-bezier(.2,.7,.2,1) forwards}
 .works-card .ph{position:relative;aspect-ratio:16/10;overflow:hidden}
 .works-card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s}
 .works-card .ph img.on{opacity:1}
 .works-card .tx{padding:12px 16px 14px;font-size:14px;line-height:1.6}
-.works-card .tx b{display:block;font-family:var(--en);font-size:11px;letter-spacing:.24em;color:var(--pink-deep)}
+.works-card .tx b{display:block;font-family:var(--en);font-size:11px;letter-spacing:.24em;color:var(--cobalt)}
 .works-card .bars{display:flex;gap:6px;margin-top:10px}
 .works-card .bars i{flex:1;height:3px;background:var(--line);position:relative;overflow:hidden}
 .works-card .bars i::after{content:"";position:absolute;inset:0;background:var(--navy);transform:scaleX(0);transform-origin:left}
@@ -57,12 +57,12 @@
 @keyframes fill{to{transform:scaleX(1)}}
 
 /* 数字の帯 */
-.facts{background:#fff;border-bottom:1px solid var(--line)}
+.facts{background:#fff;border-bottom:8px solid var(--yellow)}
 .facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-block:46px}
 .fact{text-align:center;padding:6px 10px;border-left:1px solid var(--line)}
 .fact:first-child{border-left:0}
-.fact b{display:block;font-family:var(--en);font-weight:700;font-size:clamp(60px,7.4vw,96px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:0;margin-bottom:12px}
-.fact:nth-child(1) b{color:var(--navy)}.fact:nth-child(2) b{color:var(--sky-deep)}.fact:nth-child(3) b{color:var(--pink-deep)}.fact:nth-child(4) b{color:var(--yellow-deep)}
+.fact b{display:block;font-family:var(--en);font-weight:800;font-size:clamp(60px,7.4vw,96px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:0;margin-bottom:12px}
+.fact b{color:var(--navy)}.fact:nth-child(even) b{color:var(--cobalt)}
 .fact b .count{display:inline-block}
 .count.pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
 @keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
@@ -72,11 +72,11 @@
 /* ごあいさつ */
 .intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .intro h2{font-size:clamp(28px,3.2vw,40px);letter-spacing:.04em;margin:12px 0 26px}
-.intro h2 em{font-style:normal;color:var(--navy);background:linear-gradient(transparent 62%,var(--pink) 62%)}
+.intro h2 em{font-style:normal;color:var(--navy);background:linear-gradient(transparent 66%,var(--yellow) 66%)}
 .intro .en{font-family:var(--en);color:var(--navy);letter-spacing:.32em;font-size:14px;font-weight:700}
 .intro .photo-box{position:relative}
 .intro .photo-box::before{content:"";position:absolute;right:-24px;bottom:-24px;width:70%;height:70%;background:var(--yellow);z-index:-1}
-.intro .photo-box::after{content:"";position:absolute;left:-24px;top:-24px;width:40%;height:40%;background:var(--pink);z-index:-1}
+.intro .photo-box::after{content:"";position:absolute;left:-24px;top:-24px;width:40%;height:40%;background:var(--navy-ink);z-index:-1}
 .intro .photo-box img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .intro .sign{margin-top:26px;font-family:var(--display);font-weight:700}
 
@@ -103,7 +103,7 @@
 
 /* 施工事例ダイジェスト */
 .works3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.works3 .k{display:inline-block;font-family:var(--display);color:var(--navy-ink);background:var(--pink);font-size:14px;letter-spacing:.1em;font-weight:700;margin:18px 0 6px;padding:0 10px}
+.works3 .k{display:inline-block;font-family:var(--display);color:var(--yellow);background:var(--navy-ink);font-size:14px;letter-spacing:.1em;font-weight:700;margin:18px 0 6px;padding:0 10px}
 .works3 h3{font-size:21px;letter-spacing:.04em}
 .center{text-align:center;margin-top:50px}
 
@@ -121,15 +121,16 @@
 }
 @media (max-width:860px){
   .hero{min-height:auto;flex-direction:column;align-items:stretch}
-  .hero-art{position:relative;width:100%;height:200px;clip-path:polygon(0 0,100% 0,100% 82%,0 100%)}
-  .stripe{display:none}
+  .hero::before{display:none}
+  .chart{position:relative;inset:auto;top:auto;bottom:auto;right:auto;width:auto;height:190px;margin:-20px 34px 0;gap:10px}
+  .bigword{font-size:110px}
   .hero .wrap{padding-block:30px 60px}
   .lead{font-size:17px}
   .acts .btn{flex:1 1 100%;font-size:17px;padding:0 16px;white-space:nowrap}
   .works-card{position:relative;right:auto;bottom:auto;width:auto;margin:0 20px 40px}
 }
 @media (max-width:720px){.facts .wrap{grid-template-columns:repeat(2,1fr);row-gap:32px;padding-block:36px}.fact b{font-size:60px}.fact:nth-child(3){border-left:0}}
-@media (prefers-reduced-motion:reduce){.hero-art i{animation:none;transform:none}.stripe,.hero h1 em path,.works-card .bars i.on::after{animation:none}.hero h1 em path{stroke-dashoffset:0}.rise,.works-card{animation:none;opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.chart span,.hero h1 em::after{animation:none;transform:none}.hero h1 em path,.works-card .bars i.on::after{animation:none}.hero h1 em path{stroke-dashoffset:0}.rise,.works-card{animation:none;opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -145,12 +146,18 @@
 
 <main>
 <section class="hero" aria-label="ご紹介">
-  <div class="hero-art" aria-hidden="true"><i class="t-l"></i><i class="t-r"></i><i class="t-b"></i><i class="t-s"></i><i class="dot"></i></div>
-  <span class="stripe y" aria-hidden="true"></span><span class="stripe p" aria-hidden="true"></span><span class="stripe w" aria-hidden="true"></span>
+  <span class="bigword" aria-hidden="true">PAINTING</span>
+  <div class="chart" aria-hidden="true">
+    <span style="--c:#fff;--t:var(--navy-ink)"><b>WHITE</b></span>
+    <span style="--c:var(--yellow);--t:var(--navy-ink)"><b>YELLOW</b></span>
+    <span style="--c:var(--cobalt);--t:#fff"><b>COBALT</b></span>
+    <span style="--c:var(--steel);--t:#fff"><b>STEEL</b></span>
+    <span class="nv" style="--c:var(--navy-ink);--t:#fff"><b>NAVY</b></span>
+  </div>
   <div class="wrap">
     <div class="hero-text">
-      <p class="since rise d1">調布市柴崎の塗装専門店</p>
-      <h1><span class="ln rise d2">大切なお住まいに、</span><span class="ln rise d3"><em>妥協なき<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12 C 80 2, 180 18, 296 6"/></svg></em></span><span class="ln rise d4">丁寧な仕事を。</span></h1>
+      <p class="badge rise d1"><b>一級塗装技能士</b><span>調布市柴崎の塗装専門店</span></p>
+      <h1><span class="ln s rise d2">大切なお住まいに、</span><span class="ln rise d3"><em>妥協なき</em></span><span class="ln rise d4">丁寧な仕事を。</span></h1>
       <p class="lead rise d5">一級塗装技能士の代表が、外壁・屋根の塗り替えから、内装・ポイント塗装まで。大手にはない、お客さまのご要望に沿った施工をご提案します。</p>
       <div class="acts rise d6">
         <a class="btn btn-sun" href="contact.html">無料でお見積りを相談する</a>
@@ -182,25 +189,25 @@
 
 <section class="sec soft">
   <div class="wrap">
-    <div class="sec-head"><span class="en">SERVICE</span><h2>工事の内容<svg class="stroke" viewBox="0 0 150 16" aria-hidden="true"><path d="M5 10 C 40 3, 85 15, 145 6"/></svg></h2><p>外壁・屋根の塗り替えから、お部屋の雰囲気を変える内装・ポイント塗装まで、塗装に関することならお任せください。</p></div>
-    <div class="svc"><a class="rv dl1" href="service.html#exterior" style="--c:var(--navy)"><div class="ph"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s12848955a32942dd/image/ied878e4d6bb92f57/version/1703959812/image.jpg" alt="" loading="lazy"></div><div class="bd"><span class="tag">EXTERIOR</span><h3>外壁塗装</h3><p>下塗りを2回重ねる5つの工程で、なめらかで長持ちする仕上がりに。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl2" href="service.html#roof" style="--c:var(--sky-deep)"><div class="ph"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s12848955a32942dd/image/icabd369b2aa91e9f/version/1706538320/image.jpg" alt="" loading="lazy"></div><div class="bd"><span class="tag">ROOF</span><h3>屋根塗装</h3><p>コロニアルやセメント瓦も、調査・補修からていねいに塗り替えます。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl3" href="service.html#interior" style="--c:var(--pink-deep)"><div class="ph"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s12848955a32942dd/image/i36bf029f075ade62/version/1706537692/image.jpg" alt="" loading="lazy"></div><div class="bd"><span class="tag">INTERIOR</span><h3>内装・ポイント塗装</h3><p>機能性塗料から、一面だけのお洒落塗り、黒板塗装まで。</p><span class="more">くわしく見る →</span></div></a></div>
+    <div class="sec-head"><span class="en">SERVICE</span><h2>工事の内容<svg class="stroke" viewBox="0 0 150 8" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4 H150"/></svg></h2><p>外壁・屋根の塗り替えから、お部屋の雰囲気を変える内装・ポイント塗装まで、塗装に関することならお任せください。</p></div>
+    <div class="svc"><a class="rv dl1" href="service.html#exterior" style="--c:var(--navy)"><div class="ph"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s12848955a32942dd/image/ied878e4d6bb92f57/version/1703959812/image.jpg" alt="" loading="lazy"></div><div class="bd"><span class="tag">EXTERIOR</span><h3>外壁塗装</h3><p>下塗りを2回重ねる5つの工程で、なめらかで長持ちする仕上がりに。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl2" href="service.html#roof" style="--c:var(--cobalt)"><div class="ph"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s12848955a32942dd/image/icabd369b2aa91e9f/version/1706538320/image.jpg" alt="" loading="lazy"></div><div class="bd"><span class="tag">ROOF</span><h3>屋根塗装</h3><p>コロニアルやセメント瓦も、調査・補修からていねいに塗り替えます。</p><span class="more">くわしく見る →</span></div></a><a class="rv dl3" href="service.html#interior" style="--c:var(--yellow)"><div class="ph"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s12848955a32942dd/image/i36bf029f075ade62/version/1706537692/image.jpg" alt="" loading="lazy"></div><div class="bd"><span class="tag">INTERIOR</span><h3>内装・ポイント塗装</h3><p>機能性塗料から、一面だけのお洒落塗り、黒板塗装まで。</p><span class="more">くわしく見る →</span></div></a></div>
   </div>
 </section>
 
 <section class="sec dark">
   <div class="wrap">
-    <div class="sec-head"><span class="en">REASON</span><h2>大塚美装が選ばれる理由<svg class="strokepk" viewBox="0 0 150 16" aria-hidden="true"><path d="M5 10 C 40 3, 85 15, 145 6"/></svg></h2></div>
+    <div class="sec-head"><span class="en">REASON</span><h2>大塚美装が選ばれる理由<svg class="strokepk" viewBox="0 0 150 8" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4 H150"/></svg></h2></div>
     <div class="why">
       <div class="rv dl1" style="--c:var(--yellow)"><h3>一級塗装技能士の技術</h3><p>国家資格の一級塗装技能士をはじめ、石綿含有建材調査者・足場組立作業主任者の資格を持つ代表が、責任を持って施工します。</p></div>
-      <div class="rv dl2" style="--c:var(--pink)"><h3>手を抜かない工程</h3><p>外壁は調査・補修から、下塗り2回・上塗り2回の基本仕様。見えなくなる下地にこそ、手間をかけます。</p></div>
-      <div class="rv dl3" style="--c:var(--sky)"><h3>ご要望に沿ったご提案</h3><p>色見本を一緒に見比べたり、濃い色の差し方を相談したり。施主様の「こうしたい」に、最後まで寄り添います。</p></div>
+      <div class="rv dl2" style="--c:var(--cobalt)"><h3>手を抜かない工程</h3><p>外壁は調査・補修から、下塗り2回・上塗り2回の基本仕様。見えなくなる下地にこそ、手間をかけます。</p></div>
+      <div class="rv dl3" style="--c:var(--steel)"><h3>ご要望に沿ったご提案</h3><p>色見本を一緒に見比べたり、濃い色の差し方を相談したり。施主様の「こうしたい」に、最後まで寄り添います。</p></div>
     </div>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><span class="en">WORKS</span><h2>施工事例<svg class="strokepk" viewBox="0 0 150 16" aria-hidden="true"><path d="M5 10 C 40 3, 85 15, 145 6"/></svg></h2><p>写真の上のつまみを左右に動かすと、施工前と施工後を見比べられます。</p></div>
+    <div class="sec-head"><span class="en">WORKS</span><h2>施工事例<svg class="strokepk" viewBox="0 0 150 8" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4 H150"/></svg></h2><p>写真の上のつまみを左右に動かすと、施工前と施工後を見比べられます。</p></div>
     <div class="works3"><div class="rv dl1"><div class="ba">
       <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s12848955a32942dd/image/i1d56eaca917883ac/version/1703959554/image.jpg" alt="施工後:濃い色を効かせて、印象を一新" loading="lazy">
       <img class="before" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s12848955a32942dd/image/ie705a15a275cbbbb/version/1703959520/image.jpg" alt="施工前:濃い色を効かせて、印象を一新" loading="lazy">
@@ -227,7 +234,7 @@
     <div class="rv dl1">
       <h2 style="font-size:clamp(24px,3vw,34px);letter-spacing:.04em;margin-bottom:14px">皆様のお住まいに、お伺いします。</h2>
       <p>調布市を拠点に、東京23区・多摩地域・神奈川県の広い範囲で塗装工事を承っています。</p>
-      <div class="chips"><span style="--c:var(--navy)">東京23区(全23区)</span><span style="--c:var(--sky-deep)">多摩地域(30市町村)</span><span style="--c:var(--yellow)">神奈川県(10市町村)</span></div>
+      <div class="chips"><span style="--c:var(--navy)">東京23区(全23区)</span><span style="--c:var(--cobalt)">多摩地域(30市町村)</span><span style="--c:var(--yellow)">神奈川県(10市町村)</span></div>
       <a class="btn btn-ghost" href="company.html#area" style="margin-top:28px">対応エリアを見る <span class="arw">→</span></a>
     </div>
   </div>
@@ -270,7 +277,7 @@
   </div>
 </footer>
 <a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
-<script src="common.js?v=3"></script>
+<script src="common.js?v=4"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

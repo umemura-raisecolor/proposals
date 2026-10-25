@@ -1,10 +1,12 @@
 /* 大塚美装 ご提案デモ 共通スタイル
    配色は大塚美装さんのロゴ画像(青・黄・ピンク・白の塗り分けと刷毛)から */
 :root{
-  --navy:#1d4680;--navy-deep:#122f59;--navy-ink:#0f2547;
-  --yellow:#ecc84a;--yellow-hover:#f4d86e;--yellow-deep:#b8901a;
-  --pink:#f2c6cd;--pink-deep:#c96b7b;--sky:#d6e5f3;--sky-deep:#4f7fb8;
-  --white:#fff;--soft:#f5f7fa;--ink:#1c2433;--muted:#5a6272;--line:#dfe3ea;
+  /* はっきりした色だけを使う:濃紺・コバルト・鉄色・黄色・白 */
+  --navy:#0f2f66;--navy-deep:#0a2148;--navy-ink:#061529;
+  --cobalt:#1f57b8;--steel:#8794a8;
+  --yellow:#ffc400;--yellow-hover:#ffd43b;--yellow-deep:#a87f00;
+  --pink:#1f57b8;--pink-deep:#1f57b8;--sky:#e6ebf2;--sky-deep:#1f57b8;
+  --white:#fff;--soft:#f2f4f7;--ink:#121a28;--muted:#4f596a;--line:#d5dbe4;
   --display:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
   --body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
   --en:"Montserrat","Zen Kaku Gothic New",sans-serif;
@@ -16,14 +18,14 @@ body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);f
 img{max-width:100%;display:block}
 a{color:inherit}
 .wrap{max-width:var(--w);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;word-break:auto-phrase;line-height:1.5}
+h1,h2,h3{font-family:var(--display);font-weight:900;margin:0;word-break:auto-phrase;line-height:1.5}
 
 /* 4色の細い帯(塗料缶の色) */
-.colorbar{display:flex;height:6px}
+.colorbar{display:flex;height:8px}
 .colorbar i{flex:1}
-.colorbar i:nth-child(1){background:var(--navy)}
-.colorbar i:nth-child(2){background:var(--sky)}
-.colorbar i:nth-child(3){background:var(--pink)}
+.colorbar i:nth-child(1){background:var(--navy-ink)}
+.colorbar i:nth-child(2){background:var(--cobalt)}
+.colorbar i:nth-child(3){background:var(--steel)}
 .colorbar i:nth-child(4){background:var(--yellow)}
 
 /* ===== ヘッダー ===== */
@@ -33,9 +35,9 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .brand{display:flex;align-items:center;text-decoration:none}
 .brand img{height:50px;width:auto}
 nav.gnav{display:flex;gap:30px;font-size:16px;white-space:nowrap}
-nav.gnav a{text-decoration:none;font-family:var(--display);font-weight:700;padding-block:4px;background:linear-gradient(90deg,var(--navy) 0 25%,var(--sky-deep) 25% 50%,var(--pink-deep) 50% 75%,var(--yellow) 75%) left bottom/0 3px no-repeat;transition:background-size .4s}
-nav.gnav a:hover,nav.gnav a[aria-current]{background-size:100% 3px}
-.head-cta{position:relative;overflow:hidden;display:inline-flex;align-items:center;min-height:50px;padding:0 24px;background:var(--navy);color:#fff;text-decoration:none;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.06em;white-space:nowrap}
+nav.gnav a{text-decoration:none;font-family:var(--display);font-weight:700;padding-block:4px;background:linear-gradient(var(--yellow),var(--yellow)) left bottom/0 4px no-repeat;transition:background-size .4s}
+nav.gnav a:hover,nav.gnav a[aria-current]{background-size:100% 4px}
+.head-cta{position:relative;overflow:hidden;display:inline-flex;align-items:center;min-height:50px;padding:0 24px;background:var(--navy-ink);border-bottom:4px solid var(--yellow);color:#fff;text-decoration:none;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.06em;white-space:nowrap}
 .head-cta:hover{background:var(--navy-deep)}
 .menu-btn{display:none;all:unset;cursor:pointer;width:46px;height:46px;position:relative}
 .menu-btn span{position:absolute;left:10px;right:10px;height:2px;background:var(--ink);transition:transform .3s,opacity .3s}
@@ -75,15 +77,15 @@ nav.gnav a:hover,nav.gnav a[aria-current]{background-size:100% 3px}
 .sec{padding-block:110px;position:relative}
 .sec.soft{background:var(--soft)}
 .sec.sky{background:var(--sky)}
-.sec.pink{background:#fbe9ec}
-.sec.dark{background:var(--navy);color:#fff}
+.sec.pink{background:var(--soft)}
+.sec.dark{background:var(--navy-ink);color:#fff}
 .sec-head{text-align:center;margin-bottom:60px}
 .sec-head .en{display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-size:14px;letter-spacing:.32em;color:var(--navy);font-weight:700;margin-bottom:10px}
 .sec.dark .sec-head .en{color:var(--yellow)}
-.sec-head .en::before{content:"";width:18px;height:18px;background:conic-gradient(var(--navy) 0 25%,var(--pink) 0 50%,var(--yellow) 0 75%,var(--sky) 0);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.sec-head .en::before{content:"";width:28px;height:4px;background:var(--yellow)}
 .sec-head h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:.06em;position:relative;display:inline-block;padding-bottom:18px}
-.stroke{position:absolute;left:50%;bottom:0;width:150px;height:16px;transform:translateX(-50%);overflow:visible}
-.stroke path{fill:none;stroke:var(--yellow);stroke-width:9;stroke-linecap:round;stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset 1.2s .3s cubic-bezier(.6,0,.2,1)}
+.stroke{position:absolute;left:50%;bottom:0;width:90px;height:8px;transform:translateX(-50%);overflow:visible}
+.stroke path{fill:none;stroke:var(--yellow);stroke-width:16;stroke-linecap:butt;stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset 1.2s .3s cubic-bezier(.6,0,.2,1)}
 .sec-head.in .stroke path,.rv.in .stroke path{stroke-dashoffset:0}
 .stroke.pk path{stroke:var(--pink-deep)}
 .stroke.sk path{stroke:var(--sky-deep)}
@@ -92,7 +94,7 @@ nav.gnav a:hover,nav.gnav a[aria-current]{background-size:100% 3px}
 @media (max-width:720px){.sec{padding-block:76px}.sec-head{margin-bottom:40px}}
 
 /* ===== 下層ページの見出し帯(色の三角形が斜めに入る) ===== */
-.page-hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding-block:96px 100px}
+.page-hero{position:relative;overflow:hidden;background:var(--navy-ink);color:#fff;padding-block:96px 100px}
 .page-hero .bg{position:absolute;inset:0 0 0 auto;width:48%;clip-path:polygon(22% 0,100% 0,100% 100%,0 100%)}
 .page-hero .bg img{width:100%;height:100%;object-fit:cover;animation:zoom 14s ease-out forwards}
 .page-hero .tri{position:absolute;pointer-events:none}
@@ -130,17 +132,17 @@ nav.gnav a:hover,nav.gnav a[aria-current]{background-size:100% 3px}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .ba .before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
 .ba .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;background:#fff;transform:translateX(-1.5px);pointer-events:none}
-.ba .handle::after{content:"◀ ▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--yellow);color:var(--navy-ink);font-size:12px;letter-spacing:.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3);border:3px solid #fff}
+.ba .handle::after{content:"◀ ▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;background:var(--yellow);color:var(--navy-ink);font-size:12px;letter-spacing:.1em;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3);border:3px solid #fff}
 .ba .lb{position:absolute;top:14px;font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.18em;padding:4px 12px;color:#fff;background:var(--navy);pointer-events:none}
-.ba .lb.b{left:14px}.ba .lb.a{right:14px;background:var(--pink);color:var(--navy-ink)}
+.ba .lb.b{left:14px}.ba .lb.a{right:14px;background:var(--yellow);color:var(--navy-ink)}
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
 .ba.hint .handle{animation:hint 2.4s ease-in-out 1}
 @keyframes hint{0%,100%{left:50%}30%{left:30%}65%{left:70%}}
 
 /* ===== お問い合わせ帯 ===== */
-.cta{position:relative;overflow:hidden;background:var(--navy);color:#fff;text-align:center;padding-block:110px}
+.cta{position:relative;overflow:hidden;background:var(--navy-ink);color:#fff;text-align:center;padding-block:110px}
 .cta::before,.cta::after{content:"";position:absolute;pointer-events:none}
-.cta::before{left:0;top:0;width:min(34vw,380px);height:100%;background:var(--sky);opacity:.16;clip-path:polygon(0 0,100% 0,0 100%)}
+.cta::before{left:0;top:0;width:min(34vw,380px);height:100%;background:var(--cobalt);opacity:.35;clip-path:polygon(0 0,100% 0,0 100%)}
 .cta::after{right:0;bottom:0;width:min(30vw,340px);height:70%;background:var(--yellow);clip-path:polygon(100% 0,100% 100%,0 100%)}
 .cta .pk{position:absolute;right:0;top:0;width:min(20vw,220px);height:45%;background:var(--pink);clip-path:polygon(0 0,100% 0,100% 100%)}
 .cta .wrap{position:relative;z-index:1}
