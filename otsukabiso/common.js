@@ -55,12 +55,17 @@
     var run = function(el){
       var to = +el.dataset.to, t0 = null, dur = 1600;
       if(reduce || isNaN(to)) return;
+      // 最終の数字の幅を先に確保して、数字が変わっても周りが動かないようにする
+      el.style.display = 'inline-block';
+      el.style.textAlign = 'right';
+      el.style.fontVariantNumeric = 'tabular-nums';
+      el.style.minWidth = el.getBoundingClientRect().width + 'px';
       el.textContent = 0;
       (function step(t){
         if(!t0) t0 = t;
         var p = Math.min((t - t0) / dur, 1);
         el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
-        if(p < 1) requestAnimationFrame(step); else el.classList.add('pop');
+        if(p < 1) requestAnimationFrame(step);
       })(performance.now());
     };
     if('IntersectionObserver' in window){
