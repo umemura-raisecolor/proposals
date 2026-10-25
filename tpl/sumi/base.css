@@ -127,11 +127,13 @@ nav.gnav .sp-only{display:none}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .two figure{margin:0;position:relative}
 .two img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:var(--photo-filter)}
+.two.one{grid-template-columns:1fr}.two.one img{aspect-ratio:16/10}
 .two figcaption{position:absolute;left:0;bottom:0;font-size:11px;font-weight:700;padding:3px 8px;background:var(--ink);color:var(--bg)}
 .two figure:last-child figcaption{background:var(--accent);color:var(--accent-ink)}
 .pitem .bd{padding:20px 22px 26px}
 .yr{margin:0;font-family:var(--en);font-size:46px;line-height:1;color:var(--accent)}
 .yr small{font-family:var(--body);font-size:15px;color:var(--ink);margin-left:4px;font-weight:700}
+.yr small:only-child{margin:0;color:var(--accent);font-family:var(--en);font-size:13px;letter-spacing:.22em}
 .pitem h3{font-family:var(--display);font-size:17px;margin:10px 0 2px}
 .pitem .when{font-size:12.5px;color:var(--sub);margin:0 0 8px}
 .pitem p{font-size:14.5px;line-height:1.85;margin:0}

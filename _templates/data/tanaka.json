@@ -1,0 +1,540 @@
+{
+ "id": "tanaka",
+ "name": "タナカ塗装株式会社",
+ "short": "タナカ塗装",
+ "name_en": "TANAKA PAINTING",
+ "logo": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d6871b30f9d2ae51a30f50d.png",
+ "tel_free": "0120-3744-16",
+ "tel": "042-321-1197",
+ "fax": "042-323-0952",
+ "postal": "185-0023",
+ "address": "東京都国分寺市西元町2-9-13",
+ "region": "東京都",
+ "city": "国分寺市",
+ "street": "西元町2-9-13",
+ "license": "東京都知事許可 第3824号(塗装・防水・左官)",
+ "area": "国分寺市を拠点に、東京都内・近県",
+ "business": "塗装工事・防水工事・左官工事(個人住宅、集合住宅、公共施設・社寺、特殊塗装、自然塗料の販売)",
+ "rep": {
+  "name": "田中 将太郎",
+  "title": "第4代目 代表取締役",
+  "photo": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d54f3ec6106e55d0afcb742.jpg"
+ },
+ "seo": {
+  "title": "タナカ塗装株式会社｜国分寺市の外壁塗装・防水・左官｜1951年創業",
+  "desc": "東京都国分寺市のタナカ塗装株式会社。1951年創業、従業員46名。個人住宅の塗り替えから、マンション・ビル、公共施設・社寺、打ち放しや木目調などの特殊塗装、防水・左官工事まで。自然塗料TanaColorも取り扱っています。"
+ },
+ "hero": {
+  "kicker": "国分寺市の塗装・防水・左官",
+  "place_en": "KOKUBUNJI, TOKYO",
+  "tagline_en": "PAINTING ・ WATERPROOF ・ PLASTERING",
+  "catch": [
+   "75年、",
+   "{街の色}を塗ってきた。"
+  ],
+  "catch_kanji": [
+   "七十五年、",
+   "{街の色}を塗る。"
+  ],
+  "sub": "住まいから、大学、神社まで。",
+  "sub2": "1951年創業。国分寺の塗装会社、タナカ塗装です。",
+  "en": [
+   "Colors",
+   "of the {town}",
+   "since 1951."
+  ],
+  "en_short": "Since 1951.",
+  "photo": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f511d59ed46586b15ab.png",
+  "photo_pos": "50% 45%",
+  "photo_alt": "タナカ塗装が改修を手がけた津田塾大学 本館",
+  "photo_caption": "津田塾大学 本館(100周年記念改修)",
+  "photo_caption_en": "TSUDA UNIVERSITY",
+  "photos": [
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f97f1a023551d4def3d.png",
+    "HACHIMAN SHRINE"
+   ],
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551e0e2eeb06007ad81c50.png",
+    "NURSERY — NIGHT"
+   ]
+  ]
+ },
+ "facts": [
+  [
+   75,
+   "年",
+   "1951年の創業から"
+  ],
+  [
+   46,
+   "名",
+   "自社の施工体制"
+  ],
+  [
+   3,
+   "業種",
+   "塗装・防水・左官の許可"
+  ],
+  [
+   4,
+   "代目",
+   "代表が受け継ぐ技術"
+  ]
+ ],
+ "badges": [
+  "お見積り無料",
+  "個人住宅から公共施設まで",
+  "自然塗料のご相談も"
+ ],
+ "trust": [
+  [
+   "創業1951年・4代目",
+   "75年、国分寺で塗装一筋"
+  ],
+  [
+   "東京都知事許可 第3824号",
+   "塗装・防水・左官の3業種"
+  ],
+  [
+   "従業員46名",
+   "住宅から公共施設まで自社で施工"
+  ],
+  [
+   "日本塗装工業会 会員",
+   "東京都塗装工業協同組合 加盟"
+  ]
+ ],
+ "works": [
+  {
+   "area": "東京都小平市",
+   "area_en": "KODAIRA",
+   "t": "保育園 新築工事(内外装)",
+   "b": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551e0df1a023551d4dee6f.png",
+   "lb": "昼",
+   "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551e0e2eeb06007ad81c50.png",
+   "la": "夜",
+   "rows": [
+    [
+     "工事内容",
+     "保育園の内装・外装の塗装工事"
+    ],
+    [
+     "ポイント",
+     "昼と夜で、表情の変わる外観。照明が入ったときの見え方まで考えて仕上げました"
+    ]
+   ]
+  },
+  {
+   "area": "東京都立多摩図書館",
+   "area_en": "KOKUBUNJI",
+   "t": "図書館 新築工事(内外装)",
+   "b": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f0d74a9aea43ccc64e2.png",
+   "lb": "外観",
+   "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f10e1a432b35ce22444.png",
+   "la": "館内",
+   "rows": [
+    [
+     "工事内容",
+     "内部:壁・天井・鋼製ドア・木製棚の塗装／外装:化粧打ち放しコンクリートの塗装"
+    ],
+    [
+     "ポイント",
+     "2017年1月にオープンした都立図書館。内外装の塗装を当社で担当しました"
+    ]
+   ]
+  },
+  {
+   "area": "馬場製作所 社屋",
+   "area_en": "RENOVATION",
+   "t": "社屋の大規模改修工事",
+   "b": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551c82e1a432b35ce2233f.png",
+   "lb": "外観",
+   "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551c8774a9aea43ccc63d4.png",
+   "la": "エントランス",
+   "rows": [
+    [
+     "工事内容",
+     "屋上防水／外壁のシーリング・塗装／タイルの張り替え"
+    ],
+    [
+     "ポイント",
+     "エントランスは、メインの壁と柱にあえて別のタイルを使い、高級感を演出しました"
+    ]
+   ]
+  },
+  {
+   "area": "K様邸",
+   "area_en": "KOMINKA",
+   "t": "古民家の内部リフォーム",
+   "b": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551382e1a432b35ce21e6f.png",
+   "lb": "梁",
+   "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551399e1a432b35ce21e77.png",
+   "la": "天井",
+   "rows": [
+    [
+     "工事内容",
+     "古民家の内部リフォーム(天井・梁の仕上げ)"
+    ],
+    [
+     "使用材料",
+     "蜜蝋(3回すり込み)"
+    ],
+    [
+     "ポイント",
+     "築100年をこえる建物。梁の風合いを生かしてほしいというご要望に、自然素材でお応えしました"
+    ]
+   ]
+  },
+  {
+   "area": "国分寺市 鷹の台",
+   "area_en": "TAKANODAI",
+   "t": "戸建ての外壁・屋根リフォーム",
+   "b": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5513fc6106e55d0afcc9bf.png",
+   "lb": "外観",
+   "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5513fe2eeb06007ad8179e.png",
+   "la": "外壁",
+   "rows": [
+    [
+     "工事内容",
+     "外壁・屋根の塗装"
+    ],
+    [
+     "使用材料",
+     "外壁:TOTO ハイドロテクトカラーコートECO-EX(光触媒)／屋根:日本ペイント サーモアイSI(遮熱シリコン)"
+    ],
+    [
+     "ポイント",
+     "光触媒の塗装で、きれいな外壁が長く続きます"
+    ]
+   ]
+  },
+  {
+   "area": "K様邸",
+   "area_en": "JAPANESE STYLE",
+   "t": "和風住宅の塗り替え",
+   "b": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5514b96106e55d0afcca1b.png",
+   "lb": "外観",
+   "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5514bbf1a023551d4de9ad.png",
+   "la": "木製扉",
+   "rows": [
+    [
+     "工事内容",
+     "外壁の塗装／木製の駐車場扉の洗浄・漂白・コーティング"
+    ],
+    [
+     "使用材料",
+     "外壁:エスケー化研 ソフトサーフSG 艶消し"
+    ],
+    [
+     "ポイント",
+     "和風の外観の質感を残すため、艶消しの塗料を選びました"
+    ]
+   ]
+  },
+  {
+   "area": "代々木公園",
+   "area_en": "YOYOGI",
+   "t": "マンション新築工事(内外装)",
+   "b": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55177c2eeb06007ad81948.png",
+   "lb": "外観",
+   "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55177d2b744e68439821ab.png",
+   "la": "詳細",
+   "rows": [
+    [
+     "工事内容",
+     "ラグジュアリーマンションの内装・外装仕上げ"
+    ],
+    [
+     "ポイント",
+     "設計が内外ともにこだわり抜いた建物。仕上げの精度が問われる現場です"
+    ]
+   ]
+  },
+  {
+   "area": "中野区",
+   "area_en": "NAKANO",
+   "t": "デザイナーズマンション新築工事",
+   "b": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55172b1d59ed46586b11b0.png",
+   "lb": "外観",
+   "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5517361d59ed46586b11b3.png",
+   "la": "詳細",
+   "rows": [
+    [
+     "工事内容",
+     "外壁・内壁の化粧打ち放しパターン／クリヤーコーティング"
+    ],
+    [
+     "ポイント",
+     "打ち放しコンクリートの風合いを、塗装の技術で表現しています"
+    ]
+   ]
+  }
+ ],
+ "works_note": "※掲載写真は、タナカ塗装様の現在のホームページから使用しています。",
+ "proof": {
+  "en": "LANDMARK",
+  "big": 75,
+  "big_label": "年、この街の建物を塗ってきた。",
+  "title": "大切な建物を、任されてきました",
+  "lead": "国の施設、大学、神社、駅前のタワー。長く大切にされる建物ほど、確かな技術が求められます。",
+  "items": [
+   {
+    "t": "国立競技場",
+    "k": "門・外柵の塗り替え",
+    "tag": "LANDMARK 01",
+    "when": "東京都新宿区",
+    "text": "古い塗膜をすべて撤去してから、塗り直しました。見えなくなる下地の処理こそ、仕上がりと持ちを左右します。",
+    "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5520f82b744e68439826a2.png",
+    "la": "門・外柵"
+   },
+   {
+    "t": "大船観音",
+    "k": "化粧替え工事",
+    "tag": "LANDMARK 02",
+    "when": "神奈川県鎌倉市",
+    "text": "多くの人が手を合わせる観音様の化粧替えを担当しました。信仰の対象だからこそ、ひと塗りに気を配ります。",
+    "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55213d2eeb06007ad81d89.png",
+    "la": "大船観音"
+   },
+   {
+    "t": "本町・南町八幡神社",
+    "k": "新築工事",
+    "tag": "LANDMARK 03",
+    "when": "東京都国分寺市",
+    "text": "当社の氏神様でもある神社の新築工事です。地元の会社として、この街の大切な場所に携われることを誇りに思っています。",
+    "a": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f97f1a023551d4def3d.png",
+    "la": "八幡神社"
+   }
+  ]
+ },
+ "reasons_lead": "フリーダイヤルは「ミナヨシイロ」。住む人にも、街にも、未来にも良い色を。",
+ "reasons": [
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5e2a8b0b4912a6d148c1a74a.jpg",
+   "塗装・防水・左官を、ひとつの会社で",
+   "建設業許可は塗装・防水・左官の3業種。従業員46名の施工体制で、外壁の塗り替えから屋上の防水、左官の仕上げまで、まとめてお任せいただけます。"
+  ],
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551382e1a432b35ce21e6f.png",
+   "古いものの良さを、生かす技術",
+   "築100年をこえる古民家の梁には蜜蝋を3回すり込み、築200年の住宅の古材は洗浄でよみがえらせる。打ち放しや木目調の特殊塗装も、自社の技術です。"
+  ],
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55209c0f6d39d55f0aad3f.png",
+   "家族の健康を考えた、自然塗料",
+   "オリジナルの自然塗料「TanaColor(タナカラー)」に加え、ドイツのナツーアハウス、フランスのセニデコの代理店も。小さなお子さまのいるお住まいや保育園にも安心です。"
+  ]
+ ],
+ "hands": [
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550fad0f6d39d55f0aa452.jpg",
+   "施工前:焦茶色の天井"
+  ],
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550fb061749d4d7181315d.jpg",
+   "2回の洗浄を経て"
+  ],
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550fb32eeb06007ad81585.jpg",
+   "まるで新築のように"
+  ]
+ ],
+ "services_lead": "戸建ての塗り替えから、マンション・ビル、公共施設・社寺、特殊塗装まで。",
+ "services": [
+  {
+   "id": "house",
+   "en": "HOUSE",
+   "t": "個人住宅の塗り替え",
+   "short": "外壁・屋根から、木部、古民家の内装まで。",
+   "img": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5513fc6106e55d0afcc9bf.png",
+   "text": "ひび割れの補修から、色選び、塗料選びまで。和風の家には艶消しの塗料、長くきれいを保ちたい家には光触媒の塗装など、お住まいに合わせてご提案します。",
+   "items": [
+    "外壁:ひび割れ(クラック)を埋めてから塗装",
+    "屋根:遮熱塗料で夏の暑さ対策も",
+    "木部:木製の扉や門の洗浄・漂白・コーティング",
+    "古民家:梁や天井を蜜蝋・柿渋など自然素材で仕上げ"
+   ]
+  },
+  {
+   "id": "building",
+   "en": "BUILDING",
+   "t": "マンション・ビルの改修・新築",
+   "short": "都営住宅から、デザイナーズマンション、駅前のタワーまで。",
+   "img": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55177c2eeb06007ad81948.png",
+   "text": "外壁や軒天井の吹付、共用部の塗装・防水、外壁のもろくなった部分の補修。雨だれや白華(白い粉)、ひび割れなど、建物の状態に合わせて施工します。",
+   "items": [
+    "外壁・軒天井の吹付塗装",
+    "共用部の塗装・防水",
+    "鉄部のフッ素樹脂塗装",
+    "社屋の大規模改修(防水・シーリング・タイル張り替え)"
+   ]
+  },
+  {
+   "id": "public",
+   "en": "PUBLIC & SHRINE",
+   "t": "公共施設・社寺",
+   "short": "図書館、保育園、大学、神社、国立競技場。",
+   "img": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f97f1a023551d4def3d.png",
+   "text": "図書館、保育園・幼稚園、公民館、消防署、大学、神社。地域の人が毎日使う建物、長く大切にされる建物を、数多く手がけてきました。",
+   "items": [
+    "保育園・幼稚園、図書館、公民館の新築・改修",
+    "大学・駅ビル・立体駐車場",
+    "神社の新築・塗り替え、大船観音の化粧替え",
+    "小学校の屋上ヘリサイン(災害時の目印)の設置"
+   ]
+  },
+  {
+   "id": "special",
+   "en": "SPECIAL",
+   "t": "特殊塗装・防水・左官",
+   "short": "打ち放し、木目調、ジョリパット、自然塗料。",
+   "img": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5e2a8c863ec2bb22078668a6.jpg",
+   "text": "打ち放しコンクリートの色を建物全体でそろえる化粧工法(グラデーション工法)や、コンクリート・ボード・鉄にもできる木目調塗装など、塗るだけではない技術があります。",
+   "items": [
+    "コンクリート打ち放しの化粧塗装(新築・改修)",
+    "木目調塗装(全面・ワンポイント)",
+    "ジョリパットなど左官の意匠仕上げ",
+    "自然塗料 TanaColor／ナツーアハウス／セニデコ"
+   ]
+  }
+ ],
+ "steps": [
+  [
+   "古材洗浄の流れ(築約200年の住宅)",
+   [
+    [
+     "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550fad0f6d39d55f0aa452.jpg",
+     "施工前:焦茶色の天井"
+    ],
+    [
+     "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550f0e1d59ed46586b0d5b.jpg",
+     "ホコリを取り"
+    ],
+    [
+     "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550fb061749d4d7181315d.jpg",
+     "2回の洗浄を経て"
+    ],
+    [
+     "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550fb32eeb06007ad81585.jpg",
+     "まるで新築のように"
+    ]
+   ]
+  ]
+ ],
+ "small": [
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550dd46106e55d0afcc624.jpg",
+   "打ち放し(新築)",
+   "建物全面の色を合わせてパターンを施工"
+  ],
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550dd66106e55d0afcc625.jpg",
+   "打ち放し(改修)",
+   "カビや汚れの目立つ壁を、元の姿に"
+  ],
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550ea01d59ed46586b0cfa.jpg",
+   "木目調塗装",
+   "コンクリート・ボード・鉄にも"
+  ],
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d550ea1f1a023551d4de611.jpg",
+   "木目調塗装",
+   "全面にも、ワンポイントにも"
+  ],
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d55105df1a023551d4de6dc.jpg",
+   "蜜蝋仕上げ",
+   "撥水・防汚、木の腐れやひび割れを防ぐ"
+  ],
+  [
+   "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5e2a8a61eecdd74e33ef19a9.jpg",
+   "ジョリパット",
+   "意匠性の高い左官仕上げ"
+  ]
+ ],
+ "message": {
+  "title": "いつまでも家族が笑顔でいられる住環境の創造へ",
+  "paras": [
+   "1951年の創業以来、培ってきた技術と、職人一人ひとりのこだわりは、私たち社員の誇りです。",
+   "気候の変化や自然災害が増えるいま、安全で快適な住まいをつくることは、持続可能な社会への貢献でもあると考えています。",
+   "人と自然が共生し、未来に負の遺産を残さない社会へ。自然塗料の取り扱いも、その想いから始まりました。"
+  ],
+  "vision": "いつまでも家族が笑顔でいられる住環境の創造"
+ },
+ "flow": [
+  [
+   "お問い合わせ",
+   "フリーダイヤルかフォームから、お気軽にご連絡ください。"
+  ],
+  [
+   "現地調査",
+   "建物の状態を確かめ、ご要望をうかがいます。"
+  ],
+  [
+   "ご提案・お見積り",
+   "塗料や工法、色まで、建物に合った方法をご説明します。"
+  ],
+  [
+   "施工・お引き渡し",
+   "自社の施工体制で丁寧に仕上げ、一緒に確認します。"
+  ]
+ ],
+ "recruit": {
+  "title": "現場管理を募集しています",
+  "img": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551d96f1a023551d4dee37.png",
+  "text": "住宅から駅前のタワー、公共施設まで。75年続く会社で、街に残る仕事を一緒にしませんか。現場管理(正社員)を募集しています。詳しくはお気軽にお問い合わせください。"
+ },
+ "contact_kinds": [
+  "戸建ての塗り替え",
+  "マンション・ビルの改修",
+  "防水・左官・特殊塗装",
+  "自然塗料について",
+  "その他"
+ ],
+ "page_photos": {
+  "service": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551d96f1a023551d4dee37.png",
+  "works": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551e0e2eeb06007ad81c50.png",
+  "company": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f97f1a023551d4def3d.png",
+  "contact": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5513fc6106e55d0afcc9bf.png"
+ },
+ "profile_extra": [
+  [
+   "創業",
+   "1951年(昭和26年)4月"
+  ],
+  [
+   "設立",
+   "1967年(昭和42年)2月22日"
+  ],
+  [
+   "資本金",
+   "1,000万円"
+  ],
+  [
+   "従業員",
+   "46名"
+  ],
+  [
+   "加入団体",
+   "一般社団法人 日本塗装工業会／東京都塗装工業協同組合"
+  ],
+  [
+   "取扱い自然塗料",
+   "TanaColor(タナカラー)／Naturhaus ナツーアハウス(ドイツ)・Senideco セニデコ(フランス)代理店"
+  ]
+ ],
+ "texts": {
+  "works_cost_row": false,
+  "works_lead": "住まいから公共施設まで。工事の中身と合わせてご紹介します。",
+  "works_page_lead": "個人住宅、マンション・ビル、公共施設・社寺。75年のあいだに任されてきた仕事の一部です。",
+  "works_desc": "個人住宅、マンション・ビル、公共施設・社寺、特殊塗装の仕事をご紹介します。",
+  "hands_h": "古い木が、よみがえる。",
+  "small_h": "特殊塗装・左官の技術",
+  "small_lead": "打ち放しコンクリートの再生、木目調塗装、蜜蝋仕上げ、ジョリパット。塗るだけではない仕事です。",
+  "service_kw": "外壁塗装、マンション・ビル改修、公共施設・社寺、特殊塗装・防水・左官",
+  "form_ph": "例:築20年の戸建てです。外壁の色あせが気になり、自然塗料も検討しています。"
+ },
+ "colors": {}
+}

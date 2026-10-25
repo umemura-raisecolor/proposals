@@ -112,6 +112,9 @@ class Site:
 '''
 
     # ---------- ファーストビュー(型ごと) ----------
+    def T(self, k, default):
+        return self.d.get("texts", {}).get(k, default)
+
     def fv(self):
         d, h = self.d, self.d["hero"]
         acts = f'''<div class="acts"><a class="btn btn-main" href="contact.html"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a><a class="tel-btn" href="tel:{digits(d['tel_free'])}"><small>通話無料・お電話でのご相談</small><b>{e(d['tel_free'])}</b></a></div>'''
@@ -119,7 +122,7 @@ class Site:
             nums = "".join(f'<div><span class="count" data-to="{n}">{n}</span><small>{e(u)}</small><i>{e(l)}</i></div>' for n, u, l in d["facts"][:2])
             lines = "".join(f'<span><i>{em(x)}</i></span>' for x in h["catch"])
             return f'''<section class="fv" aria-label="ご紹介">
-  <div class="fv-photo"><img src="{e(h['photo'])}" alt="{e(d['short'])}の職人(現場の写真)" style="object-position:{e(h['photo_pos'])}"></div>
+  <div class="fv-photo"><img src="{e(h['photo'])}" alt="{e(h.get('photo_alt', d['short'] + 'の現場'))}" style="object-position:{e(h['photo_pos'])}"></div>
   <div class="fv-streak" aria-hidden="true"></div>
   <p class="fv-tag" aria-hidden="true">{e(h['tagline_en'])}</p>
   <div class="fv-nums" aria-hidden="true">{nums}</div>
@@ -134,7 +137,7 @@ class Site:
             v = "".join(f'<span>{em(x)}</span>' for x in h["catch_kanji"])
             return f'''<div class="intro" aria-hidden="true"><b>{e(d['short'])}</b><small>{e(h['place_en'].title())}</small></div>
 <section class="fv" aria-label="ご紹介">
-  <img class="fv-bg" src="{e(h['photo'])}" alt="{e(d['short'])}の職人(現場の写真)" style="object-position:{e(h['photo_pos'])}">
+  <img class="fv-bg" src="{e(h['photo'])}" alt="{e(h.get('photo_alt', d['short'] + 'の現場'))}" style="object-position:{e(h['photo_pos'])}">
   <span class="fv-frame" aria-hidden="true"></span>
   <h1 class="fv-vert">{v}<span class="s">{e(h['sub'])}</span></h1>
   <div class="fv-left">
@@ -146,7 +149,7 @@ class Site:
   <p class="fv-cap" aria-hidden="true">{e(h['photo_caption'])}</p>
 </section>'''
         # gallery
-        figs = f'<figure class="a"><img src="{e(h["photo"])}" alt="{e(d["short"])}の職人(現場の写真)" style="object-position:{e(h["photo_pos"])}"><figcaption>ON SITE — {e(h["place_en"].split(",")[0])}</figcaption></figure>'
+        figs = f'<figure class="a"><img src="{e(h["photo"])}" alt="{e(h.get("photo_alt", d["short"] + "の現場"))}" style="object-position:{e(h["photo_pos"])}"><figcaption>{e(h.get("photo_caption_en", "ON SITE — " + h["place_en"].split(",")[0]))}</figcaption></figure>'
         figs += "".join(f'<figure class="{c}"><img src="{e(p)}" alt=""><figcaption>{e(cap)}</figcaption></figure>' for c, (p, cap) in zip("bc", h["photos"]))
         cat = "<br>".join(em(x) for x in h["catch_kanji"])
         return f'''<section class="fv" aria-label="ご紹介">
@@ -162,26 +165,37 @@ class Site:
 
     def wcard(self, w, k=0):
         rows = "".join(f"<dt>{e(a)}</dt><dd>{e(b)}</dd>" for a, b in w["rows"])
+        cost = "<dt>工期・費用</dt><dd>—</dd>" if self.T("works_cost_row", True) else ""
+        la = w.get("la", "AFTER")
         return f'''<article class="wcard rv dl{k % 2 + 1}">
-  <div class="pair"><figure><img src="{e(w['b'])}" alt="{e(w['area'])} {e(w['t'])} {e(w['lb'])}" loading="lazy"><figcaption>{e(w['lb'])}</figcaption></figure><figure class="af"><img src="{e(w['a'])}" alt="{e(w['area'])} {e(w['t'])} 施工後" loading="lazy"><figcaption>AFTER</figcaption></figure></div>
-  <div class="bd"><p class="area"><span>{e(w['area_en'])}</span>{e(w['area'])}</p><h3>{e(w['t'])}</h3><dl>{rows}<dt>工期・費用</dt><dd>—</dd></dl></div>
+  <div class="pair"><figure><img src="{e(w['b'])}" alt="{e(w['area'])} {e(w['t'])} {e(w['lb'])}" loading="lazy"><figcaption>{e(w['lb'])}</figcaption></figure><figure class="af"><img src="{e(w['a'])}" alt="{e(w['area'])} {e(w['t'])} {e(la)}" loading="lazy"><figcaption>{e(la)}</figcaption></figure></div>
+  <div class="bd"><p class="area"><span>{e(w['area_en'])}</span>{e(w['area'])}</p><h3>{e(w['t'])}</h3><dl>{rows}{cost}</dl></div>
 </article>'''
 
     def works(self, n=None, more=True):
         ws = self.d["works"][:n] if n else self.d["works"]
         btn = '<p class="more rv"><a class="btn btn-line" href="works.html">施工実績をすべて見る <span class="arw">→</span></a></p>' if more else ""
         return f'''<section class="sec s-works"><div class="wrap">
-  {self.sh("WORKS", "施工実績", "施工前と施工後、工事の中身まで。同じ形で見比べていただけます。")}
+  {self.sh("WORKS", "施工実績", self.T("works_lead", "施工前と施工後、工事の中身まで。同じ形で見比べていただけます。"))}
   <div class="works">{"".join(self.wcard(w, k) for k, w in enumerate(ws))}</div>
   <p class="note">{e(self.d['works_note'])}</p>{btn}
 </div></section>'''
 
     def proof(self):
         p = self.d["proof"]
-        items = "".join(f'''<article class="pitem rv dl{k+1}"><div class="two"><figure><img src="{e(x['a'])}" alt="{e(x['t'])} {e(x['la'])}" loading="lazy"><figcaption>{e(x['la'])}</figcaption></figure><figure><img src="{e(x['b'])}" alt="{e(x['t'])} {e(x['lb'])}" loading="lazy"><figcaption>{e(x['lb'])}</figcaption></figure></div>
-<div class="bd"><p class="yr"><span class="count" data-to="{x['y']}">{x['y']}</span><small>年後も</small></p><h3>{e(x['t'])}｜{e(x['k'])}</h3><p class="when">{e(x['when'])}</p><p>{e(x['text'])}</p></div></article>''' for k, x in enumerate(p["items"]))
+        def figs(x):
+            f = f'<figure><img src="{e(x["a"])}" alt="{e(x["t"])} {e(x.get("la",""))}" loading="lazy"><figcaption>{e(x.get("la",""))}</figcaption></figure>'
+            if x.get("b"):
+                f += f'<figure><img src="{e(x["b"])}" alt="{e(x["t"])} {e(x.get("lb",""))}" loading="lazy"><figcaption>{e(x.get("lb",""))}</figcaption></figure>'
+            return f'<div class="two{"" if x.get("b") else " one"}">{f}</div>'
+        def yr(x):
+            if "y" in x:
+                return f'<p class="yr"><span class="count" data-to="{x["y"]}">{x["y"]}</span><small>{e(x.get("ysuf", "年後も"))}</small></p>'
+            return f'<p class="yr"><small>{e(x.get("tag", ""))}</small></p>'
+        items = "".join(f'''<article class="pitem rv dl{k+1}">{figs(x)}
+<div class="bd">{yr(x)}<h3>{e(x['t'])}｜{e(x['k'])}</h3><p class="when">{e(x['when'])}</p><p>{e(x['text'])}</p></div></article>''' for k, x in enumerate(p["items"]))
         return f'''<section class="sec s-proof"><div class="wrap">
-  <div class="proof-top"><p class="big rv"><span class="count" data-to="{p['big']}">{p['big']}</span><small>{e(p['big_label'])}</small></p>{self.sh("PROOF", p['title'], p['lead'])}</div>
+  <div class="proof-top"><p class="big rv"><span class="count" data-to="{p['big']}">{p['big']}</span><small>{e(p['big_label'])}</small></p>{self.sh(p.get('en', 'PROOF'), p['title'], p['lead'])}</div>
   <div class="proof">{items}</div>
 </div></section>'''
 
@@ -191,7 +205,7 @@ class Site:
         return f'''<section class="sec s-reasons"><div class="wrap">
   {self.sh("CRAFTSMANSHIP", "選ばれる理由", self.d['reasons_lead'])}
   <div class="reasons">{r}</div>
-  <div class="hands"><p class="hands-h rv">手元にこそ、仕事は出る。</p><div class="hands-row">{hands}</div></div>
+  <div class="hands"><p class="hands-h rv">{e(self.T('hands_h', '手元にこそ、仕事は出る。'))}</p><div class="hands-row">{hands}</div></div>
 </div></section>'''
 
     def services(self):
@@ -234,27 +248,27 @@ class Site:
 </div></section>'''
         steps = "".join(f'<div class="wrap"><h3 class="sub-h rv">{e(t)}</h3><div class="steps">' + "".join(f'<figure class="rv"><img src="{e(i)}" alt="{e(c)}" loading="lazy"><figcaption><span>{n+1}</span>{e(c)}</figcaption></figure>' for n, (i, c) in enumerate(L)) + "</div></div>" for t, L in d.get("steps", []))
         small = "".join(f'<figure class="rv"><img src="{e(i)}" alt="{e(t)}" loading="lazy"><figcaption><b>{e(t)}</b>{e(x)}</figcaption></figure>' for i, t, x in d.get("small", []))
-        return (self.head(f"工事の内容｜外壁・屋根塗装、防水工事、雨漏り修理、改修｜{d['name']}", f"{d['name']}の工事の内容。外壁・屋根塗装、防水工事、雨漏り修理、改修工事をご紹介します。", "service.html") +
+        return (self.head(f"工事の内容｜{self.T('service_kw', '外壁・屋根塗装、防水工事、雨漏り修理、改修')}｜{d['name']}", f"{d['name']}の工事の内容。{self.T('service_kw', '外壁・屋根塗装、防水工事、雨漏り修理、改修')}をご紹介します。", "service.html") +
                 "<main>" + self.page_hero("SERVICE", "工事の内容", d["services_lead"], d["page_photos"]["service"]) + blocks +
                 (f'<section class="sec s-steps">{steps}</section>' if steps else "") +
-                (f'<section class="sec s-small"><div class="wrap">{self.sh("SMALL WORKS", "小さな塗装も、お任せください", "玄関扉1枚、カウンター1台から。暮らしの中の「ちょっと直したい」にもお応えします。")}<div class="small">{small}</div></div></section>' if small else "") +
+                (f'<section class="sec s-small"><div class="wrap">{self.sh("SMALL WORKS", self.T('small_h', '小さな塗装も、お任せください'), self.T('small_lead', '玄関扉1枚、カウンター1台から。暮らしの中の「ちょっと直したい」にもお応えします。'))}<div class="small">{small}</div></div></section>' if small else "") +
                 "</main>" + self.cta() + self.foot())
 
     def works_page(self):
         d = self.d
-        return (self.head(f"施工実績｜{d['name']}", f"{d['name']}の施工実績。施工前・施工後と工事内容、塗装から年数がたったお住まいの様子をご紹介します。", "works.html") +
-                "<main>" + self.page_hero("WORKS", "施工実績", "施工前と施工後、工事の中身、そして何年もたったあとの様子までご覧いただけます。", d["page_photos"]["works"]) +
+        return (self.head(f"施工実績｜{d['name']}", f"{d['name']}の施工実績。" + self.T('works_desc', '施工前・施工後と工事内容、塗装から年数がたったお住まいの様子をご紹介します。'), "works.html") +
+                "<main>" + self.page_hero("WORKS", "施工実績", self.T('works_page_lead', '施工前と施工後、工事の中身、そして何年もたったあとの様子までご覧いただけます。'), d["page_photos"]["works"]) +
                 self.works(more=False) + self.proof() + "</main>" + self.cta() + self.foot())
 
     def company(self):
         d = self.d
         rows = [("会社名", d["name"]), ("代表者", f"{d['rep']['title']} {d['rep']['name']}"), ("所在地", f"〒{d['postal']} {d['address']}"),
                 ("電話", f"フリーダイヤル {d['tel_free']}<br>TEL {d['tel']}" + (f"／FAX {d['fax']}" if d.get("fax") else "")), ("事業内容", d["business"]),
-                ("建設業許可", d["license"]), ("対応エリア", d["area"])]
+                ("建設業許可", d["license"]), ("対応エリア", d["area"])] + [tuple(x) for x in d.get("profile_extra", [])]
         tbl = "".join(f"<tr><th>{e(a)}</th><td>{b if '<br>' in b else e(b)}</td></tr>" for a, b in rows)
         q = "https://maps.google.com/maps?q=" + __import__("urllib.parse").parse.quote(d["address"]) + "&z=15&output=embed"
         rec = d.get("recruit")
-        recruit = f'''<section class="sec s-recruit"><div class="wrap blk"><div class="b-img reveal-img rv"><img src="{e(rec['img'])}" alt="" loading="lazy"></div><div class="b-tx rv dl1"><p class="en">RECRUIT</p><h2>職人を募集しています</h2><p>{e(rec['text'])}</p><a class="btn btn-line" href="contact.html">募集について問い合わせる <span class="arw">→</span></a></div></div></section>''' if rec else ""
+        recruit = f'''<section class="sec s-recruit"><div class="wrap blk"><div class="b-img reveal-img rv"><img src="{e(rec['img'])}" alt="" loading="lazy"></div><div class="b-tx rv dl1"><p class="en">RECRUIT</p><h2>{e(rec.get('title', '職人を募集しています'))}</h2><p>{e(rec['text'])}</p><a class="btn btn-line" href="contact.html">募集について問い合わせる <span class="arw">→</span></a></div></div></section>''' if rec else ""
         return (self.head(f"会社案内｜{d['name']}", f"{d['name']}の会社案内。代表あいさつ、会社概要、所在地をご紹介します。", "company.html") +
                 "<main>" + self.page_hero("COMPANY", "会社案内", d["message"]["title"], d["page_photos"]["company"]) + self.message(full=True) +
                 f'<section class="sec s-profile"><div class="wrap">{self.sh("PROFILE", "会社概要")}<table class="info rv">{tbl}</table><div class="map rv"><iframe title="{e(d["name"])}の地図" loading="lazy" src="{q}"></iframe></div></div></section>' +
@@ -273,7 +287,7 @@ class Site:
     <div class="row"><label class="t" for="nm">お名前 <span class="req">必須</span></label><input type="text" id="nm" autocomplete="name"></div>
     <div class="row"><label class="t" for="em">メールアドレス <span class="req">必須</span></label><input type="email" id="em" autocomplete="email"></div>
     <div class="row"><label class="t" for="tl">お電話番号</label><input type="tel" id="tl" autocomplete="tel"></div>
-    <div class="row"><label class="t" for="ms">ご相談内容</label><textarea id="ms" placeholder="例:築15年の戸建てです。ベランダの下の天井にシミが出ています。"></textarea></div>
+    <div class="row"><label class="t" for="ms">ご相談内容</label><textarea id="ms" placeholder="{e(self.T('form_ph', '例:築15年の戸建てです。ベランダの下の天井にシミが出ています。'))}"></textarea></div>
     <div class="send"><button class="btn btn-main" type="submit"><span class="tag">無料</span>この内容で送信する <span class="arw">→</span></button></div>
     <p class="done" id="done" role="status" hidden>こちらはご提案用の見本ページのため、送信はされません。<br>実際のサイトでは、このまま{e(d['short'])}様のメールに届く形にいたします。</p>
   </form>
