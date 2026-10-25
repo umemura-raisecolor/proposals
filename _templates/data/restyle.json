@@ -297,5 +297,6 @@
    "cta-bg": "#1f2a33",
    "foot-bg": "#171f26"
   }
- }
+ },
+ "btn_fx": true
 }

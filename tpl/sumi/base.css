@@ -448,3 +448,35 @@ footer.site .copy{border-top:1px solid rgba(128,128,128,.25);margin-top:36px;pad
 @media (max-width:960px){.signs{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.signs{grid-template-columns:1fr}}
 @keyframes fadein{to{opacity:1}}
+@media (min-width:961px){.svcs:has(> :nth-child(3):last-child){grid-template-columns:repeat(3,1fr)}}
+
+/* ===== ボタンのアニメーション(btn_fx) ===== */
+.fx-btn .btn,.fx-btn .tel-btn{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .3s,color .35s,background-size .45s cubic-bezier(.7,0,.2,1)}
+.fx-btn .btn:active,.fx-btn .tel-btn:active{transform:scale(.97)}
+/* メインボタン:色が左から塗られる+光が走る+矢印がちょんちょん動く */
+.fx-btn .btn-main{background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 0/0% 100%,var(--btn-bg,var(--ink));color:#fff;box-shadow:0 10px 24px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+.sk-sumi.fx-btn .btn-main,.sk-streak.fx-btn .btn-main{--btn-bg:var(--accent);background-image:linear-gradient(color-mix(in srgb,var(--accent) 80%,#000),color-mix(in srgb,var(--accent) 80%,#000))}
+.fx-btn .btn-main:hover{background-size:100% 100%;transform:translateY(-3px);box-shadow:0 18px 30px -12px color-mix(in srgb,var(--accent) 80%,transparent);filter:none}
+.fx-btn .btn-main::after{display:block;animation:shine 3.6s ease-in-out 1.8s infinite}
+.fx-btn .btn-main .tag{transition:transform .3s}
+.fx-btn .btn-main:hover .tag{transform:rotate(-6deg) scale(1.08)}
+.fx-btn .btn .arw{display:inline-block;animation:arwNudge 2.4s ease-in-out 2s infinite}
+@keyframes arwNudge{0%,60%,100%{transform:none}70%{transform:translateX(7px)}80%{transform:none}90%{transform:translateX(4px)}}
+/* 最初の画面のメインボタン:波紋がひろがって目を引く */
+.fx-btn .fvf .btn-main,.fx-btn .fvw .btn-main,.fx-btn .fv .btn-main{animation:btnPulse 2.8s ease-out 2.4s infinite}
+@keyframes btnPulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 55%,transparent)}70%{box-shadow:0 0 0 16px color-mix(in srgb,var(--accent) 0%,transparent)}100%{box-shadow:0 0 0 0 transparent}}
+/* 電話・枠線ボタン:中が左から塗りつぶされる */
+.fx-btn .tel-btn,.fx-btn .btn-line{background:linear-gradient(var(--ink),var(--ink)) no-repeat 0 0/0% 100%}
+.fx-btn .tel-btn:hover,.fx-btn .btn-line:hover{background-size:100% 100%;color:var(--bg);transform:translateY(-3px)}
+.fx-btn .tel-btn:hover small{opacity:.9}
+.fx-btn .tel-btn b{display:inline-block}
+.fx-btn .tel-btn:hover b{animation:telRing .5s ease-in-out}
+@keyframes telRing{0%,100%{transform:none}25%{transform:translateX(-2px) rotate(-1.5deg)}75%{transform:translateX(2px) rotate(1.5deg)}}
+/* ヘッダーのCONTACT・スマホ下のボタンにも光 */
+.fx-btn .h-contact,.fx-btn .sp-bar .m{position:relative;overflow:hidden}
+.fx-btn .h-contact::after,.fx-btn .sp-bar .m::after{content:"";position:absolute;top:0;left:-80%;width:45%;height:100%;background:linear-gradient(110deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:shine 4.2s ease-in-out 3s infinite;pointer-events:none}
+.fx-btn .h-contact{transition:background .3s}
+.fx-btn .h-contact:hover{background:var(--accent)}
+.fx-btn .h-contact b{transition:letter-spacing .35s}
+.fx-btn .h-contact:hover b{letter-spacing:.24em}
+@media (prefers-reduced-motion:reduce){.fx-btn .btn-main::after,.fx-btn .btn .arw,.fx-btn .btn-main,.fx-btn .h-contact::after,.fx-btn .sp-bar .m::after{animation:none}}

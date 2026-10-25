@@ -42,7 +42,7 @@ class Site:
         colors = "".join(f"--{k}:{v};" for k, v in d.get("colors", {}).get(self.skin, {}).items())
         logo = f'<img src="{e(d["logo"])}" alt="{e(d["name"])}">' if d.get("logo") and self.skin == "gallery" else f'<span class="lt">{e(d["name_en"] if self.skin != "sumi" else d["short"])}</span>'
         return f'''<!DOCTYPE html>
-<html lang="ja" class="sk-{self.skin}">
+<html lang="ja" class="sk-{self.skin}{' fx-btn' if d.get('btn_fx') else ''}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
