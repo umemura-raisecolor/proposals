@@ -327,7 +327,13 @@ def build(data_path, skin, out):
             fp = os.path.join(out, name)
             if os.path.exists(fp): os.remove(fp)
         small = "".join(f'<figure class="rv"><img src="{e(i)}" alt="{e(t)}" loading="lazy"><figcaption><b>{e(t)}</b>{e(x)}</figcaption></figure>' for i, t, x in d.get("small", []))
-        price = (f'<section class="sec s-small" id="price"><div class="wrap">{s.sh("PRICE", s.T("small_h", "料金"), s.T("small_lead", ""))}<div class="small">{small}</div></div></section>' if small else "")
+        if d.get("prices"):
+            cards = "".join(f'''<article class="pcard rv dl{k % 3 + 1}{' hot' if x.get('hot') else ''}"><div class="p-img"><img src="{e(x['img'])}" alt="{e(x['t'])}" loading="lazy">{f'<span class="p-tag">{e(x["tag"])}</span>' if x.get('tag') else ''}</div>
+<div class="p-bd"><h3>{e(x['t'])}</h3><p class="p-yen"><b>{e(x['price'])}</b><small>{e(x.get('unit', '円'))}</small></p><p class="p-note">{e(x.get('note', ''))}</p></div></article>''' for k, x in enumerate(d["prices"]))
+            small = ""
+            price = f'<section class="sec s-price" id="price"><div class="wrap">{s.sh("PRICE", s.T("small_h", "料金"), s.T("small_lead", ""))}<div class="pgrid">{cards}</div><p class="note">{e(s.T("price_note", ""))}</p></div></section>'
+        else:
+          price = (f'<section class="sec s-small" id="price"><div class="wrap">{s.sh("PRICE", s.T("small_h", "料金"), s.T("small_lead", ""))}<div class="small">{small}</div></div></section>' if small else "")
         html = (s.head(d["seo"]["title"], d["seo"]["desc"], "index.html") + "<main>" + s.fv() + s.trust() + s.works(more=False) + s.proof() + price +
                 s.reasons() + s.services() + s.message() + s.flow() + "</main>" + s.cta() + s.foot())
         html = html.replace('<section class="sec s-works">', '<section class="sec s-works" id="works">', 1)

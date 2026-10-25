@@ -582,9 +582,10 @@
   "works_desc": "金額とお客様の声つきでご紹介します。",
   "hands_h": "見えないところも、写真で残す。",
   "small_h": "料金を、はじめから公開しています",
-  "small_lead": "WEB限定のプランです。詳しい条件は、現地調査のうえでご案内します。",
+  "small_lead": "WEB限定のプランです。見積もりをとる前から、だいたいの金額がわかります。",
   "service_kw": "外壁・屋根塗装、アパート・マンション塗装、防水・シーリング工事、足場お引越しプラン",
-  "form_ph": "例:築15年の戸建てです。外壁の色あせが気になります。近所で工事中の看板を見ました。"
+  "form_ph": "例:築15年の戸建てです。外壁の色あせが気になります。近所で工事中の看板を見ました。",
+  "price_note": "※金額は、今のホームページに掲載されている金額です。詳しい条件は現地調査のうえでご案内します。"
  },
  "colors": {
   "streak": {
@@ -595,5 +596,52 @@
    "fvw-num": "clamp(110px,11vw,190px)"
   }
  },
- "one_page": true
+ "one_page": true,
+ "prices": [
+  {
+   "t": "外壁塗装",
+   "price": "598,000",
+   "note": "高圧洗浄・下地処理・3回塗りまで",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096580_0.jpg",
+   "tag": "WEB限定"
+  },
+  {
+   "t": "屋根塗装",
+   "price": "378,000",
+   "note": "遮熱塗料のご提案も",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_1479.jpg",
+   "tag": "WEB限定"
+  },
+  {
+   "t": "ベランダ防水",
+   "price": "75,000",
+   "note": "ウレタン塗膜防水",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/IMG_0678-1.jpg",
+   "tag": "WEB限定"
+  },
+  {
+   "t": "外壁・屋根・ベランダ防水セット",
+   "price": "1,000,000",
+   "note": "税込・25坪目安。いちばん人気のまるごとプラン",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2026/06/1.png",
+   "tag": "WEB限定・おすすめ",
+   "hot": true
+  },
+  {
+   "t": "アパート・マンション",
+   "price": "1,400,000",
+   "unit": "円〜",
+   "note": "シリコンプラン・6戸規模の目安",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__3096583_0.jpg",
+   "tag": "オーナー様向け"
+  },
+  {
+   "t": "足場お引越しプラン",
+   "price": "0",
+   "unit": "円〜",
+   "note": "近くの現場の足場を使って、足場代が無料〜大幅割引に",
+   "img": "https://www.hoshino-tosou.com/wp-content/uploads/2025/08/S__2916375_0.jpg",
+   "tag": "ご近所限定"
+  }
+ ]
 }

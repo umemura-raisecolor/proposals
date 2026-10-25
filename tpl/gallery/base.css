@@ -379,3 +379,24 @@ footer.site .copy{border-top:1px solid rgba(128,128,128,.25);margin-top:36px;pad
   .flow{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){.flow::after{width:100%}.f-big{opacity:.9;transform:none}}
+
+/* ===== 料金表(prices) ===== */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pcard{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .35s ease,border-color .35s ease}
+.pcard:hover{transform:translateY(-6px);border-color:var(--accent)}
+.p-img{position:relative;overflow:hidden;aspect-ratio:16/9}
+.p-img img{width:100%;height:100%;object-fit:cover;filter:var(--photo-filter);transition:transform .8s ease}
+.pcard:hover .p-img img{transform:scale(1.06)}
+.p-tag{position:absolute;left:0;top:0;padding:5px 12px;font-size:11.5px;font-weight:700;letter-spacing:.1em;background:var(--accent);color:var(--accent-ink)}
+.p-bd{padding:20px 22px 24px}
+.pcard h3{margin:0;font-family:var(--display);font-size:16px}
+.p-yen{margin:8px 0 6px;line-height:1;color:var(--accent)}
+.p-yen b{font-family:var(--en);font-weight:600;font-size:clamp(36px,3.4vw,50px);letter-spacing:.01em}
+.p-yen small{margin-left:4px;font-size:15px;font-weight:700;color:var(--ink)}
+.p-note{margin:0;font-size:13px;line-height:1.75;color:var(--sub)}
+.pcard.hot{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pcard.hot .p-yen,.pcard.hot .p-yen small,.pcard.hot .p-note{color:var(--accent-ink)}
+.pcard.hot .p-tag{background:var(--ink);color:var(--bg)}
+.s-price .note{margin-top:16px;font-size:12.5px;color:var(--sub)}
+@media (max-width:960px){.pgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.pgrid{grid-template-columns:1fr}}
