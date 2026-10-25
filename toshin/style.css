@@ -25,6 +25,7 @@ header.site{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);-w
 header.site.scrolled{box-shadow:0 8px 24px rgba(28,36,39,.08)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:54px;width:auto}
 .brand .mark{width:46px;height:46px;background:var(--sea);color:#fff;font-family:var(--en);font-weight:700;font-size:24px;display:flex;align-items:center;justify-content:center}
 .brand b{display:block;font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:.1em;line-height:1.25;white-space:nowrap}
 .brand small{display:block;font-family:var(--en);font-size:11px;letter-spacing:.28em;color:var(--muted);line-height:1.4}
@@ -46,7 +47,7 @@ nav.gnav a:hover,nav.gnav a[aria-current]{background-size:100% 2px}
   .menu-open nav.gnav{opacity:1;transform:none;pointer-events:auto}
   .menu-btn{display:block}
 }
-@media (max-width:720px){.tel{display:none}.brand b{font-size:18px}.brand .mark{width:40px;height:40px}}
+@media (max-width:720px){.tel{display:none}.brand img{height:40px}}
 
 /* ボタン(斜めの光) */
 .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 32px;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.06em;text-decoration:none;border:0;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
