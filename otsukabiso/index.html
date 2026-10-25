@@ -9,24 +9,39 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
-<link rel="stylesheet" href="common.css?v=5">
+<link rel="stylesheet" href="common.css?v=6">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "大塚美装", "description": "東京・多摩・神奈川を中心に、大切な家屋を守る塗装専門店。外壁塗装・屋根塗装・内装塗装・ポイント塗装。", "address": {"@type": "PostalAddress", "addressCountry": "JP", "addressRegion": "東京都", "addressLocality": "調布市", "streetAddress": "柴崎2-15-7"}, "founder": {"@type": "Person", "name": "大塚 猛"}, "areaServed": ["東京23区", "東京都多摩地域", "神奈川県"], "image": "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x10000:format=jpg/path/s12848955a32942dd/image/idaca75e6754dc879/version/1703958757/image.jpg"}</script>
 <style>
 /* ===== ファーストビュー:ロゴ画像の「青地に色が斜めに入る」形をそのまま広げる ===== */
 .hero{position:relative;overflow:hidden;background:var(--navy-ink);color:#fff;min-height:min(86vh,780px);display:flex;align-items:center}
 /* 右側に濃紺の面を斜めにカット */
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(112deg,transparent 0 57%,var(--navy) 57% 100%)}
+/* 右側:施工事例の写真が背景で切り替わる(左端は色チップと同じ角度で斜めにカット) */
+.hero-photo{position:absolute;top:0;bottom:0;right:0;width:40%;clip-path:polygon(170px 0,100% 0,100% 100%,0 100%);background:var(--navy)}
+.hero-photo .sl{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.hero-photo .sl img{width:100%;height:100%;object-fit:cover}
+.hero-photo .sl.on{opacity:1}
+.hero-photo .sl.on img{animation:zoom 9s ease-out forwards}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,21,41,.5) 0%,rgba(6,21,41,0) 35%),linear-gradient(0deg,rgba(6,21,41,.75) 0%,rgba(6,21,41,0) 38%);pointer-events:none}
+.hero-cap{position:absolute;z-index:2;right:max(20px,calc((100vw - var(--w))/2 + 20px));bottom:34px;width:300px;color:#fff;font-size:15px;line-height:1.6}
+.hero-cap b{display:block;font-family:var(--en);font-size:11px;letter-spacing:.24em;color:var(--yellow)}
+.hero-cap .bars{display:flex;gap:6px;margin-top:12px}
+.hero-cap .bars button{all:unset;cursor:pointer;flex:1;height:16px;display:flex;align-items:center}
+.hero-cap .bars button i{display:block;width:100%;height:3px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.hero-cap .bars button i::after{content:"";position:absolute;inset:0;background:var(--yellow);transform:scaleX(0);transform-origin:left}
+.hero-cap .bars button.on i::after{animation:fill 6s linear forwards}
+.hero-cap .bars button.done i::after{transform:scaleX(1)}
+.hero-cap .bars button:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+@keyframes fill{to{transform:scaleX(1)}}
 /* 背景に大きな白抜きの英字 */
 .bigword{position:absolute;left:-.04em;bottom:-.18em;font-family:var(--en);font-weight:800;font-size:clamp(120px,17vw,260px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.09);white-space:nowrap;pointer-events:none;letter-spacing:-.01em}
 /* 右側:塗料の色見本(色チップ)が上から順に降りてくる */
-.chart{position:absolute;top:-8%;bottom:-8%;right:max(60px,calc((100vw - var(--w))/2 + 80px));width:min(38vw,500px);display:flex;gap:16px;transform:skewX(-12deg)}
+.chart{position:absolute;z-index:1;top:-8%;bottom:-8%;right:calc(40% - 30px);width:min(14vw,190px);display:flex;gap:10px;transform:skewX(-12deg)}
 .chart span{flex:1;position:relative;background:var(--c);transform:translateY(-115%);animation:drop .9s cubic-bezier(.2,.7,.2,1) forwards;box-shadow:0 24px 48px rgba(0,0,0,.4)}
 .chart span:nth-child(1){animation-delay:.15s}.chart span:nth-child(2){animation-delay:.3s}.chart span:nth-child(3){animation-delay:.45s}.chart span:nth-child(4){animation-delay:.6s}.chart span:nth-child(5){animation-delay:.75s}
 .chart span.nv{box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 24px 48px rgba(0,0,0,.4)}
-.chart b{position:absolute;left:0;right:0;top:16%;text-align:center;transform:skewX(12deg);font-family:var(--en);font-weight:700;font-size:11px;letter-spacing:.22em;color:var(--t)}
 @keyframes drop{to{transform:none}}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-block:80px 130px}
-.hero-text{max-width:620px}
+.hero-text{max-width:min(560px,40vw)}
 .badge{display:inline-flex;align-items:stretch;border:2px solid var(--yellow);margin:0 0 30px;font-size:15px;line-height:1.5}
 .badge b{background:var(--yellow);color:var(--navy-ink);padding:7px 14px;font-family:var(--display);font-weight:900;letter-spacing:.06em}
 .badge span{padding:7px 14px;font-weight:700;letter-spacing:.06em}
@@ -43,17 +58,7 @@
 @keyframes rise{to{opacity:1;transform:none}}
 
 /* 右下:施工事例の写真が切り替わるカード */
-.works-card{text-decoration:none;position:absolute;z-index:3;right:max(20px,calc((100vw - var(--w))/2 + 20px));bottom:34px;width:300px;background:#fff;border-top:6px solid var(--yellow);color:var(--ink);box-shadow:0 20px 40px rgba(0,0,0,.28);opacity:0;animation:rise .9s 1.5s cubic-bezier(.2,.7,.2,1) forwards}
-.works-card .ph{position:relative;aspect-ratio:16/10;overflow:hidden}
-.works-card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s}
-.works-card .ph img.on{opacity:1}
-.works-card .tx{padding:12px 16px 14px;font-size:14px;line-height:1.6}
-.works-card .tx b{display:block;font-family:var(--en);font-size:11px;letter-spacing:.24em;color:var(--cobalt)}
-.works-card .bars{display:flex;gap:6px;margin-top:10px}
-.works-card .bars i{flex:1;height:3px;background:var(--line);position:relative;overflow:hidden}
-.works-card .bars i::after{content:"";position:absolute;inset:0;background:var(--navy);transform:scaleX(0);transform-origin:left}
-.works-card .bars i.on::after{animation:fill 5s linear forwards}
-.works-card .bars i.done::after{transform:scaleX(1)}
+
 @keyframes fill{to{transform:scaleX(1)}}
 
 /* 数字の帯 */
@@ -121,16 +126,17 @@
 }
 @media (max-width:860px){
   .hero{min-height:auto;flex-direction:column;align-items:stretch}
-  .hero::before{display:none}
-  .chart{position:relative;inset:auto;top:auto;bottom:auto;right:auto;width:auto;height:190px;margin:-20px 34px 0;gap:10px}
+  .hero-photo{position:relative;width:100%;height:280px;clip-path:polygon(0 0,100% 0,100% 86%,0 100%)}
+  .hero-cap{right:20px;left:20px;bottom:44px;width:auto}
+  .chart{display:none}
+  .hero-text{max-width:none}
   .bigword{font-size:110px}
   .hero .wrap{padding-block:30px 60px}
   .lead{font-size:17px}
   .acts .btn{flex:1 1 100%;font-size:17px;padding:0 16px;white-space:nowrap}
-  .works-card{position:relative;right:auto;bottom:auto;width:auto;margin:0 20px 40px}
 }
 @media (max-width:720px){.facts .wrap{grid-template-columns:repeat(2,1fr);row-gap:32px;padding-block:36px}.fact b{font-size:60px}.fact:nth-child(3){border-left:0}}
-@media (prefers-reduced-motion:reduce){.chart span,.hero h1 em::after{animation:none;transform:none}.hero h1 em path,.works-card .bars i.on::after{animation:none}.hero h1 em path{stroke-dashoffset:0}.rise,.works-card{animation:none;opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.chart span,.hero h1 em::after{animation:none;transform:none}.hero-photo .sl.on img,.hero-cap .bars button.on i::after{animation:none}.hero h1 em path{stroke-dashoffset:0}.rise{animation:none;opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -147,12 +153,16 @@
 <main>
 <section class="hero" aria-label="ご紹介">
   <span class="bigword" aria-hidden="true">PAINTING</span>
+  <div class="hero-photo">
+    <div class="sl on"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1400x10000:format=jpg/path/s12848955a32942dd/image/ied878e4d6bb92f57/version/1703959812/image.jpg" alt=""></div><div class="sl"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1400x10000:format=jpg/path/s12848955a32942dd/image/icabd369b2aa91e9f/version/1706538320/image.jpg" alt="" loading="lazy"></div><div class="sl"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1400x10000:format=jpg/path/s12848955a32942dd/image/i36bf029f075ade62/version/1706537692/image.jpg" alt="" loading="lazy"></div>
+    <div class="hero-cap"><b>WORKS</b><span id="wcap">外壁塗装｜色のイメージを一新</span><div class="bars" role="group" aria-label="写真の切り替え"><button class="on" aria-label="1枚目の施工事例"><i></i></button><button aria-label="2枚目の施工事例"><i></i></button><button aria-label="3枚目の施工事例"><i></i></button></div></div>
+  </div>
   <div class="chart" aria-hidden="true">
-    <span style="--c:#fff;--t:var(--navy-ink)"><b>WHITE</b></span>
-    <span style="--c:var(--yellow);--t:var(--navy-ink)"><b>YELLOW</b></span>
-    <span style="--c:var(--cobalt);--t:#fff"><b>COBALT</b></span>
-    <span style="--c:var(--steel);--t:#fff"><b>STEEL</b></span>
-    <span class="nv" style="--c:var(--navy-ink);--t:#fff"><b>NAVY</b></span>
+    <span style="--c:#fff;--t:var(--navy-ink)"></span>
+    <span style="--c:var(--yellow);--t:var(--navy-ink)"></span>
+    <span style="--c:var(--cobalt);--t:#fff"></span>
+    <span style="--c:var(--steel);--t:#fff"></span>
+    <span class="nv" style="--c:var(--navy-ink);--t:#fff"></span>
   </div>
   <div class="wrap">
     <div class="hero-text">
@@ -165,10 +175,6 @@
       </div>
     </div>
   </div>
-  <a class="works-card" href="works.html" aria-label="施工事例を見る">
-    <div class="ph"><img class="on" src="https://image.jimcdn.com/app/cms/image/transf/dimension=700x10000:format=jpg/path/s12848955a32942dd/image/ied878e4d6bb92f57/version/1703959812/image.jpg" alt=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=700x10000:format=jpg/path/s12848955a32942dd/image/icabd369b2aa91e9f/version/1706538320/image.jpg" alt=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=700x10000:format=jpg/path/s12848955a32942dd/image/i36bf029f075ade62/version/1706537692/image.jpg" alt=""></div>
-    <div class="tx"><b>WORKS</b><span id="wcap">外壁塗装｜色のイメージを一新</span><div class="bars"><i class="on"></i><i></i><i></i></div></div>
-  </a>
 </section>
 
 <div class="facts" aria-label="数字で見る大塚美装"><div class="wrap"><div class="fact rv dl0"><b><span class="count" data-to="63">63</span><small>市区町村</small></b><span>東京・多摩・神奈川の対応エリア</span></div><div class="fact rv dl1"><b><span class="count" data-to="1">1</span><small>級</small></b><span>塗装技能士の代表が施工</span></div><div class="fact rv dl2"><b><span class="count" data-to="5">5</span><small>工程</small></b><span>外壁塗装の基本仕様</span></div><div class="fact rv dl3"><b><span class="count" data-to="4">4</span><small>種</small></b><span>保有している資格</span></div></div></div>
@@ -255,15 +261,18 @@
 (function(){
   var caps = ["外壁塗装｜色のイメージを一新", "屋根塗装｜海を感じる色に", "内壁塗装｜一面だけ緑系に"];
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var ims = document.querySelectorAll('.works-card .ph img'), bars = document.querySelectorAll('.works-card .bars i'), cap = document.getElementById('wcap'), i = 0;
-  setInterval(function(){
-    ims[i].classList.remove('on');
-    i = (i + 1) % ims.length;
-    ims[i].classList.add('on');
+  var sl = document.querySelectorAll('.hero-photo .sl'), bars = document.querySelectorAll('.hero-cap .bars button'), cap = document.getElementById('wcap'), i = 0, timer;
+  function show(n){
+    sl[i].classList.remove('on');
+    i = n;
+    sl[i].classList.add('on');
     bars.forEach(function(b,k){ b.classList.remove('on','done'); if(k < i) b.classList.add('done'); });
     void bars[i].offsetWidth; bars[i].classList.add('on');
     cap.textContent = caps[i];
-  }, 5000);
+  }
+  function start(){ clearInterval(timer); timer = setInterval(function(){ show((i + 1) % sl.length); }, 6000); }
+  bars.forEach(function(b,k){ b.addEventListener('click', function(){ show(k); start(); }); });
+  start();
 })();
 </script>
 <div class="colorbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -277,7 +286,7 @@
   </div>
 </footer>
 <a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
-<script src="common.js?v=5"></script>
+<script src="common.js?v=6"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
