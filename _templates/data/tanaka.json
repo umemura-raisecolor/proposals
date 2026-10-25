@@ -29,34 +29,34 @@
   "place_en": "KOKUBUNJI, TOKYO",
   "tagline_en": "PAINTING ・ WATERPROOF ・ PLASTERING",
   "catch": [
-   "75年、",
-   "{街の色}を塗ってきた。"
+   "家族も、街も、",
+   "笑顔になる{色}を。"
   ],
   "catch_kanji": [
-   "七十五年、",
-   "{街の色}を塗る。"
+   "家族も、街も、",
+   "笑顔になる{色}を。"
   ],
-  "sub": "住まいから、大学、神社まで。",
-  "sub2": "1951年創業。国分寺の塗装会社、タナカ塗装です。",
+  "sub": "1951年創業、国分寺の塗装会社です。",
+  "sub2": "住まいから保育園、図書館、神社まで。自然塗料もご相談ください。",
   "en": [
    "Colors",
    "of the {town}",
    "since 1951."
   ],
   "en_short": "Since 1951.",
-  "photo": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f511d59ed46586b15ab.png",
-  "photo_pos": "50% 45%",
-  "photo_alt": "タナカ塗装が改修を手がけた津田塾大学 本館",
+  "photo": "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551e0df1a023551d4dee6f.png",
+  "photo_pos": "50% 55%",
+  "photo_alt": "タナカ塗装が手がけた小平市の保育園",
   "photo_caption": "津田塾大学 本館(100周年記念改修)",
-  "photo_caption_en": "TSUDA UNIVERSITY",
+  "photo_caption_en": "NURSERY — KODAIRA",
   "photos": [
+   [
+    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d5513fc6106e55d0afcc9bf.png",
+    "HOUSE — TAKANODAI"
+   ],
    [
     "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551f97f1a023551d4def3d.png",
     "HACHIMAN SHRINE"
-   ],
-   [
-    "https://www.tanaka-painting.co.jp/library/5d36ca70457fb4722f9f16ff/5d551e0e2eeb06007ad81c50.png",
-    "NURSERY — NIGHT"
    ]
   ]
  },
@@ -536,5 +536,15 @@
   "service_kw": "外壁塗装、マンション・ビル改修、公共施設・社寺、特殊塗装・防水・左官",
   "form_ph": "例:築20年の戸建てです。外壁の色あせが気になり、自然塗料も検討しています。"
  },
- "colors": {}
+ "colors": {
+  "gallery": {
+   "accent": "#1b78bd",
+   "accent-on-photo": "#9ad6f7",
+   "cta-bg": "#1b5f94",
+   "cta-ink": "#ffffff",
+   "foot-bg": "#16212b",
+   "bg": "#f7f8f6",
+   "bg2": "#eef3f6"
+  }
+ }
 }

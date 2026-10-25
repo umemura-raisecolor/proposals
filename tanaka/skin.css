@@ -1,86 +1,60 @@
-/* ===== 型2 SUMI:墨の黒×生成り×金。社名が浮かんでから写真へ。明朝の縦書きで、雑誌のような重厚さ ===== */
+/* ===== 型3 GALLERY:白い余白に写真を大きく。言葉は少なく、職人の手元で丁寧さを見せる ===== */
 :root{
-  --bg:#0c0c0b;--bg2:#141412;--card:#161614;--ink:#f1ece2;--sub:#a39c8e;--line:rgba(184,150,86,.28);
-  --accent:#b89656;--accent-ink:#0c0c0b;--head-bg:rgba(12,12,11,.94);--head-ink:#f1ece2;--menu-bg:#0c0c0b;--menu-ink:#f1ece2;
-  --hero-bg:#0c0c0b;--hero-ink:#f1ece2;--ph-overlay:linear-gradient(90deg,rgba(12,12,11,.9),rgba(12,12,11,.55));
-  --cta-bg:#141412;--cta-ink:#f1ece2;--foot-bg:#080807;--foot-ink:#cfc8bb;
-  --photo-filter:grayscale(.5) sepia(.12) contrast(1.06) brightness(.9);--map-filter:grayscale(1) invert(.88) sepia(.2);
-  --display:"Shippori Mincho B1","Yu Mincho",serif;--body:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;--en:"Cormorant Garamond",serif;
-  --w:1180px;--wipe:#0c0c0b;--sec-pad:140px;
+  --bg:#f6f5f2;--bg2:#efede8;--card:#ffffff;--ink:#1c1c1b;--sub:#6b6862;--line:#dcd9d2;
+  --accent:#2f5d4e;--accent-ink:#ffffff;--accent-on-photo:#9fd3bf;--head-bg:rgba(246,245,242,.96);--head-ink:#1c1c1b;--menu-bg:#1c1c1b;--menu-ink:#f6f5f2;
+  --hero-bg:#1c1c1b;--hero-ink:#fff;--ph-overlay:linear-gradient(90deg,rgba(20,20,20,.7),rgba(20,20,20,.2));
+  --cta-bg:#1c1c1b;--cta-ink:#f6f5f2;--foot-bg:#121211;--foot-ink:#cfccc5;
+  --photo-filter:none;
+  --display:"Noto Serif JP","Yu Mincho",serif;--body:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;--en:"Jost","Helvetica Neue",sans-serif;
+  --w:1200px;--wipe:#f6f5f2;--sec-pad:130px;
 }
-body{color-scheme:dark;letter-spacing:.06em}
-h1,h2,h3{font-weight:700;letter-spacing:.12em}
-.brand .lt{font-weight:700;letter-spacing:.4em}
-nav.gnav a b{font-family:var(--display);font-weight:500;font-size:14px;letter-spacing:.2em}
-nav.gnav a small{display:none}
-@media (max-width:1150px){nav.gnav a small{display:inline}}
-.h-tel b{font-family:var(--en);font-size:24px}
-.h-contact{background:transparent;color:var(--ink);box-shadow:inset 1px 0 0 var(--line)}
-.h-contact b{font-family:var(--en);font-style:italic;font-weight:500;font-size:21px;letter-spacing:.14em}
-.h-contact small{color:var(--accent)}
-.h-contact:hover{background:var(--accent);color:var(--accent-ink);filter:none}
-.h-contact:hover small{color:var(--accent-ink)}
-/* 見出し:小さな金の英字(斜体)+明朝 */
-.sh .en,.ph-hero .en,.cta .en,.m-tx .en,.b-tx .en{font-family:var(--en);font-style:italic;font-weight:500;font-size:20px;letter-spacing:.2em;color:var(--accent)}
-.sh h2{font-size:clamp(26px,3.2vw,40px);margin-top:8px}
-.sh h2::after{content:"";display:block;width:60px;height:1px;background:var(--accent);margin-top:22px}
-.sh.c h2::after{margin-inline:auto}
-.ph-hero h1{letter-spacing:.24em}
-/* 金の細い線で区切る */
-.wcard,.pitem,.flow li,form.cf,.tel-box a{border-color:var(--line)}
-.pair figcaption,.two figcaption{font-family:var(--en);font-style:italic;letter-spacing:.16em}
-.btn{font-family:var(--display);font-weight:600;letter-spacing:.16em}
-.btn-main{background:var(--accent);color:var(--accent-ink)}
-.btn-line{box-shadow:inset 0 0 0 1px var(--accent);color:var(--ink)}
-.btn-line:hover{background:var(--accent);color:var(--accent-ink)}
-.tel-btn b,.tel-box b,.yr,.big,.f-no{font-family:var(--en)}
-.big{font-weight:500}
-.big small{letter-spacing:.2em}
-/* 実績は雑誌のように:写真を大きく */
-.s-works .works{gap:44px 36px}
-.wcard{background:transparent;border:0}
-.wcard .bd{padding:22px 0 0}
-.wcard dl{border-top-color:var(--line)}
-/* 理由:写真に金のずらし線 */
-.r-img{outline:1px solid var(--line);outline-offset:10px}
-.reason .bd{padding-top:26px}
-/* 代表:明朝で、金の枠 */
-.m-img::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid var(--accent);z-index:-1}
-.m-name{background:rgba(12,12,11,.85);color:var(--ink);letter-spacing:.2em}
-.vision{border-color:var(--line);letter-spacing:.3em}
-.vision small{font-style:italic}
-table.info{border-top-color:var(--accent)}
-table.info th{background:var(--bg2);font-family:var(--display);letter-spacing:.14em}
-.chk li{background:var(--bg2)}
-.chk li::before{content:"―";color:var(--accent)}
+h1,h2,h3{font-weight:600;letter-spacing:.08em}
+nav.gnav a b{font-size:13px;letter-spacing:.26em}
+.h-tel b{font-size:20px}
+.h-contact{background:var(--ink);color:#fff}
+.h-contact b{font-size:15px;letter-spacing:.26em}
+/* 見出し:小さな英字ラベル+明朝 */
+.sh .en,.ph-hero .en,.cta .en,.m-tx .en,.b-tx .en{font-family:var(--en);font-size:12.5px;letter-spacing:.34em;color:var(--sub);text-transform:uppercase}
+.cta .en{color:var(--accent-on-photo)}
+.sh h2{font-size:clamp(24px,2.8vw,34px);margin-top:10px}
+.sh{display:grid;grid-template-columns:240px 1fr;gap:10px 40px;max-width:none;align-items:start}
+.sh .en{grid-row:span 2;padding-top:12px;border-top:1px solid var(--ink)}
+.sh .lead{margin:0}
+.sh.c{display:block;text-align:center}
+@media (max-width:860px){.sh{grid-template-columns:1fr}.sh .en{grid-row:auto;border:0;padding:0}}
+.btn{font-weight:500;letter-spacing:.14em}
+.btn-main{background:var(--ink);color:#fff}
+.btn-main .tag{background:#fff;color:var(--ink)}
+.btn-main:hover{background:var(--accent);filter:none}
+.btn-main::after{display:none}
+.big{color:var(--ink);font-family:var(--en);font-weight:400}
+.big small{color:var(--accent)}
+.yr{font-weight:400}
+.pair figcaption,.two figcaption{font-family:var(--en);letter-spacing:.2em;font-weight:500}
+.wcard{border:0;background:transparent}
+.wcard .bd{padding:20px 0 0}
+.pitem{border:0;background:var(--card)}
+.m-name{background:var(--card);color:var(--ink);border-top:2px solid var(--ink)}
+.s-proof,.s-flow{background:var(--bg2)}
+.flow li{background:var(--card);border:0}
+.chk li{background:var(--card)}
 .s-blk.alt{background:var(--bg2)}
-.svc::before{background:linear-gradient(0deg,rgba(12,12,11,.9),rgba(12,12,11,.1) 65%)}
-.svc b{letter-spacing:.14em}
-/* ヘッダー:トップでは写真の上に透明で重ねる */
-header.site.over{position:fixed;left:0;right:0;background:transparent}
-header.site.over.scrolled{background:var(--head-bg)}
+table.info th{background:transparent}
+.svc::before{background:linear-gradient(0deg,rgba(15,15,15,.75),rgba(15,15,15,0) 60%)}
+.hands-h{font-weight:600}
 
-/* ===== ファーストビュー ===== */
-.intro{position:fixed;inset:0;z-index:90;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;animation:inout 2.9s ease forwards;pointer-events:none}
-.intro b{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,46px);letter-spacing:.5em;padding-left:.5em;opacity:0;animation:fadein 1.1s ease .2s forwards}
-.intro small{font-family:var(--en);font-style:italic;color:var(--accent);letter-spacing:.3em;opacity:0;animation:fadein 1.1s ease .6s forwards}
-@keyframes fadein{to{opacity:1}}
-@keyframes inout{0%,72%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
-.fv{position:relative;height:100svh;min-height:640px;overflow:hidden;background:var(--bg)}
-.fv-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.55) sepia(.12) contrast(1.08) brightness(.55);animation:fvzoom 14s ease-out 2.2s both}
-@keyframes fvzoom{from{transform:scale(1.12)}to{transform:scale(1)}}
-.fv::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,12,11,.55),rgba(12,12,11,.15) 50%,rgba(12,12,11,.7))}
-.fv-frame{position:absolute;inset:24px;z-index:2;border:1px solid var(--line);pointer-events:none}
-.fv-vert{position:absolute;z-index:3;right:max(70px,10vw);top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:var(--display);font-weight:800;font-size:clamp(34px,4.2vw,64px);letter-spacing:.24em;line-height:1.6;margin:0}
-.fv-vert span{display:inline-block;opacity:0;animation:fadein 1.4s ease forwards}
-.fv-vert span:nth-child(1){animation-delay:2.7s}.fv-vert span:nth-child(2){animation-delay:3.1s}.fv-vert span:nth-child(3){animation-delay:3.6s}
-.fv-vert .s{font-weight:500;font-size:.3em;letter-spacing:.3em;color:var(--sub);margin-right:1.6em}
-.fv-left{position:absolute;z-index:3;left:max(48px,6vw);bottom:11vh;max-width:min(560px,60vw)}
-.fv-tag{margin:0 0 14px;font-family:var(--en);color:var(--accent);font-size:14px;letter-spacing:.36em}
-.fv-en{margin:0;font-family:var(--en);font-style:italic;font-size:clamp(30px,3.6vw,52px);line-height:1.1;letter-spacing:.04em}
-.fv-sub2{margin:14px 0 0;color:#d8d2c6;font-size:15px}
-.fv .acts{margin-top:26px}
-.fv .tel-btn{box-shadow:inset 0 0 0 1px var(--line);color:var(--ink)}
-.fv-cap{position:absolute;z-index:3;right:48px;bottom:40px;margin:0;font-family:var(--display);font-size:12px;letter-spacing:.2em;color:var(--sub)}
-@media (max-width:900px){.fv-vert{right:26px;font-size:26px;top:30%}.fv-vert .s{display:none}.fv-left{left:34px;right:34px;bottom:9vh;max-width:none}.fv-cap{display:none}.fv .acts>*{width:100%}}
-@media (prefers-reduced-motion:reduce){.intro{display:none}.fv-bg,.fv-vert span{animation:none;opacity:1}}
+/* ===== ファーストビュー:写真3枚のギャラリー+白い紙のコピー ===== */
+.fv{position:relative;display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:calc(100svh - 84px);min-height:580px;max-height:900px;padding:0 max(20px,4vw) 28px}
+.fv figure{margin:0;position:relative;overflow:hidden}
+.fv figure img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);opacity:0;animation:fvshow 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.fv .a{grid-row:span 2}.fv .b img{animation-delay:.25s}.fv .c img{animation-delay:.5s}
+@keyframes fvshow{to{transform:none;opacity:1}}
+.fv figcaption{position:absolute;left:14px;bottom:12px;font-family:var(--en);font-size:11px;letter-spacing:.26em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.fv-copy{position:absolute;z-index:2;left:max(20px,4vw);bottom:28px;background:var(--bg);padding:34px 40px 34px 0;max-width:min(600px,82vw);box-shadow:-40px 0 0 var(--bg)}
+.fv-copy h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.2vw,46px);line-height:1.55;letter-spacing:.1em}
+.fv-copy h1 em{color:var(--accent)}
+.fv-copy p{margin:12px 0 0;color:var(--sub);font-size:15px;line-height:2}
+.fv-copy .acts{margin-top:22px}
+.fv-copy .tel-btn{color:var(--ink)}
+@media (max-width:860px){.fv{grid-template-columns:1fr;grid-template-rows:46vh;height:auto;max-height:none;padding-bottom:0}.fv .a{grid-row:auto}.fv .b,.fv .c{display:none}.fv-copy{position:relative;left:0;bottom:0;padding:26px 0 10px;max-width:none;box-shadow:none}.fv-copy .acts>*{width:100%}}
+@media (prefers-reduced-motion:reduce){.fv figure img{animation:none;opacity:1;transform:none}}

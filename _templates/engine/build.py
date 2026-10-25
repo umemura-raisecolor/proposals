@@ -19,7 +19,7 @@ FONTS = {
 }
 NAV = [("index.html", "HOME", "トップ"), ("service.html", "SERVICE", "工事の内容"), ("works.html", "WORKS", "施工実績"),
        ("company.html", "COMPANY", "会社案内"), ("contact.html", "CONTACT", "お問い合わせ")]
-V = "?v=1"
+V = "?v=" + __import__("time").strftime("%m%d%H%M")
 
 def e(s): return html.escape(str(s), quote=True)
 def em(s):
