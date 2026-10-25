@@ -24,7 +24,7 @@
   }
 
   // スクロールでふわっと表示
-  var targets = document.querySelectorAll('.rv,.reveal-img,.sec-head,.ba');
+  var targets = document.querySelectorAll('.rv,.reveal-img,.sec-head,.ba,.flow');
   if('IntersectionObserver' in window && !reduce){
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){

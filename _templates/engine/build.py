@@ -249,7 +249,7 @@ class Site:
 </div>{f'<div class="wrap"><p class="vision rv"><small>OUR VISION</small>{e(m["vision"])}</p></div>' if full else ""}</section>'''
 
     def flow(self):
-        f = "".join(f'<li class="rv dl{k+1}"><span class="f-no">STEP {k+1}</span><h3>{e(t)}</h3><p>{e(x)}</p></li>' for k, (t, x) in enumerate(self.d["flow"]))
+        f = "".join(f'<li class="rv dl{k+1}"><span class="f-big" aria-hidden="true">{k+1:02d}</span><span class="f-no">STEP {k+1}</span><h3>{e(t)}</h3><p>{e(x)}</p></li>' for k, (t, x) in enumerate(self.d["flow"]))
         return f'<section class="sec s-flow"><div class="wrap">{self.sh("FLOW", "ご依頼の流れ", "はじめての方にも安心していただけるよう、工事の前にしっかりご説明します。")}<ol class="flow">{f}</ol></div></section>'
 
     # ---------- ページ ----------

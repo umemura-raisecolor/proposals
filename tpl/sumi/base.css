@@ -353,3 +353,29 @@ footer.site .copy{border-top:1px solid rgba(128,128,128,.25);margin-top:36px;pad
 .fv-note p:not(.en){margin:0 auto;max-width:640px;font-size:15px;line-height:2;color:var(--sub)}
 
 @media (min-width:821px){.fvw-num .u small{white-space:nowrap}}
+
+/* ===== ご依頼の流れ:線が左から伸びて、STEPの点が順に灯る ===== */
+.flow{position:relative;padding-top:40px}
+.flow::before,.flow::after{content:"";position:absolute;left:0;top:10px;height:2px;background:var(--line)}
+.flow::before{right:0}
+.flow::after{width:0;background:var(--accent);transition:width 2s cubic-bezier(.65,0,.25,1) .15s}
+.flow.in::after{width:100%}
+.flow li{position:relative;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease,opacity .8s,translate .8s}
+.flow li::before{content:"";position:absolute;top:-37px;left:22px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--line);transition:background .4s,border-color .4s,box-shadow .4s,transform .4s}
+.flow.in li::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 22%,transparent);transform:scale(1.15)}
+.flow.in li:nth-child(1)::before{transition-delay:.35s}.flow.in li:nth-child(2)::before{transition-delay:.85s}.flow.in li:nth-child(3)::before{transition-delay:1.35s}.flow.in li:nth-child(4)::before{transition-delay:1.85s}
+.f-big{position:absolute;right:14px;bottom:2px;font-family:var(--en);font-weight:700;font-size:74px;line-height:1;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--accent) 60%,transparent);opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.flow.in .f-big{opacity:.5;transform:none}
+.flow.in li:nth-child(1) .f-big{transition-delay:.4s}.flow.in li:nth-child(2) .f-big{transition-delay:.9s}.flow.in li:nth-child(3) .f-big{transition-delay:1.4s}.flow.in li:nth-child(4) .f-big{transition-delay:1.9s}
+.flow li>*:not(.f-big){position:relative}
+.flow li:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 14px 30px rgba(0,0,0,.18)}
+@media (max-width:960px){
+  .flow{padding:0 0 0 34px}
+  .flow::before,.flow::after{left:9px;top:0;width:2px;height:auto;right:auto}
+  .flow::before{bottom:0}
+  .flow::after{height:0;transition:height 2s cubic-bezier(.65,0,.25,1) .15s}
+  .flow.in::after{width:2px;height:100%}
+  .flow li::before{top:30px;left:-32px}
+  .flow{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.flow::after{width:100%}.f-big{opacity:.9;transform:none}}
