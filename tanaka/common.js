@@ -67,6 +67,8 @@
         el.textContent = Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3)));
         if(p < 1) requestAnimationFrame(step);
       }); }, +(el.dataset.delay || 0));
+      // 描画が止まっている環境でも、最後は必ず目標の数字にする
+      setTimeout(function(){ el.textContent = to; }, +(el.dataset.delay || 0) + dur + 150);
     };
     if('IntersectionObserver' in window){
       var co = new IntersectionObserver(function(es){

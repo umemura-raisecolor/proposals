@@ -53,20 +53,22 @@
   var counts = document.querySelectorAll('.count');
   if(counts.length){
     var run = function(el){
-      var to = +el.dataset.to, t0 = null, dur = 1600;
+      var to = +el.dataset.to, from = +(el.dataset.from || 0), t0 = null, dur = +(el.dataset.dur || 1600);
       if(reduce || isNaN(to)) return;
       // 最終の数字の幅を先に確保して、数字が変わっても周りが動かないようにする
       el.style.display = 'inline-block';
       el.style.textAlign = 'right';
       el.style.fontVariantNumeric = 'tabular-nums';
       el.style.minWidth = el.getBoundingClientRect().width + 'px';
-      el.textContent = 0;
-      (function step(t){
+      el.textContent = from;
+      setTimeout(function(){ requestAnimationFrame(function step(t){
         if(!t0) t0 = t;
         var p = Math.min((t - t0) / dur, 1);
-        el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        el.textContent = Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3)));
         if(p < 1) requestAnimationFrame(step);
-      })(performance.now());
+      }); }, +(el.dataset.delay || 0));
+      // 描画が止まっている環境でも、最後は必ず目標の数字にする
+      setTimeout(function(){ el.textContent = to; }, +(el.dataset.delay || 0) + dur + 150);
     };
     if('IntersectionObserver' in window){
       var co = new IntersectionObserver(function(es){
