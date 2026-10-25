@@ -480,3 +480,40 @@ footer.site .copy{border-top:1px solid rgba(128,128,128,.25);margin-top:36px;pad
 .fx-btn .h-contact b{transition:letter-spacing .35s}
 .fx-btn .h-contact:hover b{letter-spacing:.24em}
 @media (prefers-reduced-motion:reduce){.fx-btn .btn-main::after,.fx-btn .btn .arw,.fx-btn .btn-main,.fx-btn .h-contact::after,.fx-btn .sp-bar .m::after{animation:none}}
+
+/* ===== FV:看板職人が文字を描く(hero.fv = "letter")白い壁 ===== */
+.fvl{position:relative;overflow:hidden;min-height:calc(100svh - 84px);max-height:980px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:3vw;padding:0 max(24px,5vw);
+  background:radial-gradient(circle at 20% 30%,rgba(0,0,0,.025) 0 1px,transparent 1.5px) 0 0/7px 7px,radial-gradient(circle at 70% 60%,rgba(0,0,0,.02) 0 1px,transparent 1.5px) 0 0/11px 11px,linear-gradient(180deg,#fdfcfa,#f4f2ee)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.fvl-copy{position:relative;z-index:2;padding:40px 0 60px}
+.fvl-eye{margin:0 0 6px;font-family:var(--en);font-size:12.5px;letter-spacing:.34em;color:var(--accent);opacity:0;animation:fadein .8s ease .2s forwards}
+.fvl-h{margin:0}
+.fvl-h svg{display:block;width:100%;height:auto;overflow:visible}
+.fvl .lt{font-family:var(--letter-font,"Dela Gothic One"),var(--display);font-size:1em;fill:transparent;stroke:var(--ink);stroke-width:1.6px;stroke-linejoin:round;stroke-dasharray:1400;stroke-dashoffset:1400;
+  animation:ltDraw 2.4s cubic-bezier(.5,0,.3,1) forwards,ltFill .7s ease forwards;animation-delay:calc(.35s + var(--k) * .9s),calc(2.1s + var(--k) * .9s)}
+.fvl .lt.ac{stroke:var(--accent)}
+@keyframes ltDraw{to{stroke-dashoffset:0}}
+@keyframes ltFill{to{fill:var(--ink);stroke-width:0}}
+.fvl .lt.ac{animation-name:ltDraw,ltFillAc}
+@keyframes ltFillAc{to{fill:var(--accent);stroke-width:0}}
+.fvl .brush{fill:none;stroke:var(--accent);stroke-width:12;stroke-linecap:round;opacity:.9;stroke-dasharray:1400;stroke-dashoffset:1400;animation:ltDraw 1s cubic-bezier(.7,0,.2,1) forwards;animation-delay:calc(2.4s + var(--lines,1) * .9s)}
+.fvl-sub{margin:26px 0 0;max-width:32em;font-size:15.5px;line-height:2;color:var(--sub);opacity:0;transform:translateY(16px);animation:fvwUpIn .9s ease forwards;animation-delay:3.2s}
+.fvl .acts{margin-top:28px;opacity:0;transform:translateY(16px);animation:fvwUpIn .9s ease forwards;animation-delay:3.4s}
+.fvl-cards{position:relative;height:min(74svh,700px)}
+.lcard{position:absolute;margin:0;width:62%;padding:10px 10px 36px;background:#fff;box-shadow:0 22px 40px rgba(20,20,20,.18);opacity:0;animation:lcIn 1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(1s + var(--k) * .45s)}
+.lcard img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.lcard figcaption{position:absolute;left:12px;right:12px;bottom:10px;font-size:11.5px;letter-spacing:.06em;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lcard:nth-child(1){left:2%;top:4%;--r:-6deg}
+.lcard:nth-child(2){right:0;top:30%;--r:5deg}
+.lcard:nth-child(3){left:10%;top:58%;--r:-2deg}
+@keyframes lcIn{from{opacity:0;transform:translateY(-40px) rotate(calc(var(--r) * 3)) scale(1.06)}to{opacity:1;transform:rotate(var(--r))}}
+.lcard{transition:transform .4s ease,z-index 0s}
+.lcard:hover{z-index:5;transform:rotate(0) scale(1.04)!important}
+@media (max-width:900px){
+  .fvl{grid-template-columns:1fr;min-height:0;max-height:none;padding:0 22px;gap:0}
+  .fvl-copy{padding:30px 0 10px}
+  .fvl-cards{height:340px;margin:0 -6px 30px}
+  .lcard{width:58%}
+  .fvl .acts>*{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.fvl .lt,.fvl .brush,.fvl-eye,.fvl-sub,.fvl .acts,.lcard{animation:none;opacity:1;transform:none;stroke-dashoffset:0}.fvl .lt{fill:var(--ink)}.fvl .lt.ac{fill:var(--accent)}}

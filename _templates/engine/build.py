@@ -51,7 +51,7 @@ class Site:
 <meta name="description" content="{e(desc)}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{FONTS[self.skin]}&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{FONTS[self.skin]}{"&" + d["extra_font"] if d.get("extra_font") else ""}&display=swap">
 <link rel="stylesheet" href="base.css{V}">
 <link rel="stylesheet" href="skin.css{V}">
 {f"<style>:root{{{colors}}}</style>" if colors else ""}
@@ -122,6 +122,8 @@ class Site:
             return self.fv_wall(acts)
         if h.get("fv") == "fan":
             return self.fv_fan(acts)
+        if h.get("fv") == "letter":
+            return self.fv_letter(acts)
         if self.skin == "streak":
             nums = "".join(f'<div><span class="count" data-to="{n}">{n}</span><small>{e(u)}</small><i>{e(l)}</i></div>' for n, u, l in d["facts"][:2])
             lines = "".join(f'<span><i>{em(x)}</i></span>' for x in h["catch"])
@@ -208,6 +210,27 @@ class Site:
   <div class="fvf-fan" aria-hidden="true"><div class="fan-in">{bl}<span class="pin"></span></div></div>
 </section>'''
 
+    def fv_letter(self, acts):
+        d, h = self.d, self.d["hero"]
+        L = h["letter"]
+        fs = h.get("letter_size", 150)
+        lh = int(fs * 1.22)
+        H = lh * len(L) + 40
+        texts = ""
+        for k, line in enumerate(L):
+            cls = " ac" if k == h.get("letter_accent_line", len(L) - 1) else ""
+            texts += f'<text class="lt{cls}" x="6" y="{lh * (k + 1) - int(fs * .18)}" style="--k:{k}">{e(line)}</text>'
+        cards = "".join(f'<figure class="lcard" style="--k:{k}"><img src="{e(u)}" alt="{e(cap)}"><figcaption>{e(cap)}</figcaption></figure>' for k, (u, cap) in enumerate(h.get("cards", [])))
+        return f'''<section class="fvl" aria-label="ご紹介">
+  <div class="fvl-copy">
+    <p class="fvl-eye">{e(h["eyebrow"])}</p>
+    <h1 class="fvl-h"><span class="sr">{e("".join(L))}</span><svg viewBox="0 0 {int(fs * h.get("letter_cols", 6.3))} {H}" aria-hidden="true" style="font-size:{fs}px;--lines:{len(L)}">{texts}<path class="brush" d="M10 {H - 14} C {fs * 2} {H - 34}, {fs * 4} {H - 2}, {int(fs * h.get("letter_cols", 6.3)) - 20} {H - 22}"/></svg></h1>
+    <p class="fvl-sub">{e(h["sub"])}</p>
+    {acts}
+  </div>
+  <div class="fvl-cards" aria-hidden="true">{cards}</div>
+</section>'''
+
     def signs(self):
         sg = self.d.get("signs")
         if not sg: return ""
@@ -235,7 +258,7 @@ class Site:
         return f'''<section class="sec s-works"><div class="wrap">
   {self.sh("WORKS", "施工実績", self.T("works_lead", "施工前と施工後、工事の中身まで。同じ形で見比べていただけます。"))}
   <div class="works">{"".join(self.wcard(w, k) for k, w in enumerate(ws))}</div>
-  <p class="note">{e(self.d['works_note'])}</p>{btn}
+  <p class="note">{e(self.d.get('works_note', ''))}</p>{btn}
 </div></section>'''
 
     def proof(self):

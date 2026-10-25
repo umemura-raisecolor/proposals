@@ -1,0 +1,60 @@
+/* ===== 型3 GALLERY:白い余白に写真を大きく。言葉は少なく、職人の手元で丁寧さを見せる ===== */
+:root{
+  --bg:#f6f5f2;--bg2:#efede8;--card:#ffffff;--ink:#1c1c1b;--sub:#6b6862;--line:#dcd9d2;
+  --accent:#2f5d4e;--accent-ink:#ffffff;--accent-on-photo:#9fd3bf;--head-bg:rgba(246,245,242,.96);--head-ink:#1c1c1b;--menu-bg:#1c1c1b;--menu-ink:#f6f5f2;
+  --hero-bg:#1c1c1b;--hero-ink:#fff;--ph-overlay:linear-gradient(90deg,rgba(20,20,20,.7),rgba(20,20,20,.2));
+  --cta-bg:#1c1c1b;--cta-ink:#f6f5f2;--foot-bg:#121211;--foot-ink:#cfccc5;
+  --photo-filter:none;
+  --display:"Noto Serif JP","Yu Mincho",serif;--body:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;--en:"Jost","Helvetica Neue",sans-serif;
+  --w:1200px;--wipe:#f6f5f2;--sec-pad:130px;
+}
+h1,h2,h3{font-weight:600;letter-spacing:.08em}
+nav.gnav a b{font-size:13px;letter-spacing:.26em}
+.h-tel b{font-size:20px}
+.h-contact{background:var(--ink);color:#fff}
+.h-contact b{font-size:15px;letter-spacing:.26em}
+/* 見出し:小さな英字ラベル+明朝 */
+.sh .en,.ph-hero .en,.cta .en,.m-tx .en,.b-tx .en{font-family:var(--en);font-size:12.5px;letter-spacing:.34em;color:var(--sub);text-transform:uppercase}
+.cta .en{color:var(--accent-on-photo)}
+.sh h2{font-size:clamp(24px,2.8vw,34px);margin-top:10px}
+.sh{display:grid;grid-template-columns:240px 1fr;gap:10px 40px;max-width:none;align-items:start}
+.sh .en{grid-row:span 2;padding-top:12px;border-top:1px solid var(--ink)}
+.sh .lead{margin:0}
+.sh.c{display:block;text-align:center}
+@media (max-width:860px){.sh{grid-template-columns:1fr}.sh .en{grid-row:auto;border:0;padding:0}}
+.btn{font-weight:500;letter-spacing:.14em}
+.btn-main{background:var(--ink);color:#fff}
+.btn-main .tag{background:#fff;color:var(--ink)}
+.btn-main:hover{background:var(--accent);filter:none}
+.btn-main::after{display:none}
+.big{color:var(--ink);font-family:var(--en);font-weight:400}
+.big small{color:var(--accent)}
+.yr{font-weight:400}
+.pair figcaption,.two figcaption{font-family:var(--en);letter-spacing:.2em;font-weight:500}
+.wcard{border:0;background:transparent}
+.wcard .bd{padding:20px 0 0}
+.pitem{border:0;background:var(--card)}
+.m-name{background:var(--card);color:var(--ink);border-top:2px solid var(--ink)}
+.s-proof,.s-flow{background:var(--bg2)}
+.flow li{background:var(--card);border:0}
+.chk li{background:var(--card)}
+.s-blk.alt{background:var(--bg2)}
+table.info th{background:transparent}
+.svc::before{background:linear-gradient(0deg,rgba(15,15,15,.75),rgba(15,15,15,0) 60%)}
+.hands-h{font-weight:600}
+
+/* ===== ファーストビュー:写真3枚のギャラリー+白い紙のコピー ===== */
+.fv{position:relative;display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:calc(100svh - 84px);min-height:580px;max-height:900px;padding:0 max(20px,4vw) 28px}
+.fv figure{margin:0;position:relative;overflow:hidden}
+.fv figure img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);opacity:0;animation:fvshow 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.fv .a{grid-row:span 2}.fv .b img{animation-delay:.25s}.fv .c img{animation-delay:.5s}
+@keyframes fvshow{to{transform:none;opacity:1}}
+.fv figcaption{position:absolute;left:14px;bottom:12px;font-family:var(--en);font-size:11px;letter-spacing:.26em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.fv-copy{position:absolute;z-index:2;left:max(20px,4vw);bottom:28px;background:var(--bg);padding:34px 40px 34px 0;max-width:min(600px,82vw);box-shadow:-40px 0 0 var(--bg)}
+.fv-copy h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.2vw,46px);line-height:1.55;letter-spacing:.1em}
+.fv-copy h1 em{color:var(--accent)}
+.fv-copy p{margin:12px 0 0;color:var(--sub);font-size:15px;line-height:2}
+.fv-copy .acts{margin-top:22px}
+.fv-copy .tel-btn{color:var(--ink)}
+@media (max-width:860px){.fv{grid-template-columns:1fr;grid-template-rows:46vh;height:auto;max-height:none;padding-bottom:0}.fv .a{grid-row:auto}.fv .b,.fv .c{display:none}.fv-copy{position:relative;left:0;bottom:0;padding:26px 0 10px;max-width:none;box-shadow:none}.fv-copy .acts>*{width:100%}}
+@media (prefers-reduced-motion:reduce){.fv figure img{animation:none;opacity:1;transform:none}}
