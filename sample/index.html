@@ -162,7 +162,7 @@ html{scroll-behavior:smooth} section[id]{scroll-margin-top:80px}
 <script src="common.js?v=10260500"></script>
 <script>
 (function(){
-  var GAS_URL = ''; // Apps Script のウェブアプリURL(…/exec)
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbyVOoWKknoyFsi8tA_uPkdrqLWeCd30p7Y2o92dob5pgNq1wuqIl3TqMvksgooyM1465Q/exec'; // Apps Script のウェブアプリURL(…/exec)
   var $ = function(id){return document.getElementById(id);};
   var form = $('cf'), err = $('err'), btn = $('sendbtn'), btnHTML = btn.innerHTML, photo = null;
   var ref = (new URLSearchParams(location.search).get('r') || '').replace(/[^\w\-]/g,'').slice(0,20);
