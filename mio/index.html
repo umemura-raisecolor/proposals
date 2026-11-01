@@ -282,6 +282,62 @@ footer a{color:#f0c7d6}
   .pf-arch{left:-10px}
 }
 
+
+/* ===== final: gorgeous ===== */
+.final{text-align:left;color:#fff;background:radial-gradient(ellipse at 30% 40%,#4b3a86 0%,#2c2350 55%,#1c1636 100%);padding:130px 0 120px}
+.final .wrap{position:relative;z-index:3}
+.aurora{position:absolute;inset:-20%;z-index:0;pointer-events:none;filter:blur(60px);opacity:.75}
+.aurora i{position:absolute;border-radius:50%}
+.aurora .a1{width:55%;height:55%;left:5%;top:15%;background:radial-gradient(circle,#c98bb0 0%,transparent 65%);animation:drift1 18s ease-in-out infinite alternate}
+.aurora .a2{width:50%;height:50%;right:5%;top:5%;background:radial-gradient(circle,#7b62c4 0%,transparent 65%);animation:drift2 22s ease-in-out infinite alternate}
+.aurora .a3{width:45%;height:45%;left:35%;bottom:0;background:radial-gradient(circle,#e8b48f 0%,transparent 65%);opacity:.6;animation:drift1 26s ease-in-out infinite alternate-reverse}
+@keyframes drift1{to{transform:translate(12%,-8%) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-14%,10%) scale(1.1)}}
+.dust{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.dust i{position:absolute;top:-10px;width:3px;height:3px;border-radius:50%;background:#f6dca8;box-shadow:0 0 8px 2px rgba(246,220,168,.8);opacity:0;animation:fall linear infinite}
+@keyframes fall{0%{opacity:0;transform:translate(0,0)}10%{opacity:1}90%{opacity:.8}100%{opacity:0;transform:translate(-60px,110vh)}}
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1080px}
+.final-visual{position:relative;width:100%;max-width:440px;aspect-ratio:1;margin:0 auto}
+.fv-ring{position:absolute;inset:0;width:100%;height:100%}
+.fv-ring.r1{animation:spin 70s linear infinite}
+.fv-ring.r2{inset:6%;width:88%;height:88%;animation:spinR 45s linear infinite}
+.halo{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(255,222,170,.55) 0%,rgba(255,222,170,0) 70%);animation:breathe2 6s ease-in-out infinite}
+@keyframes breathe2{0%,100%{transform:scale(.95);opacity:.7}50%{transform:scale(1.12);opacity:1}}
+.final-photo{position:absolute;inset:22%;border-radius:50%;overflow:hidden;border:3px solid #e8c88f;box-shadow:0 0 0 8px rgba(232,200,143,.15),0 24px 60px rgba(10,5,30,.55);z-index:3}
+.final-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.fan{position:absolute;left:50%;top:50%;width:0;height:0;z-index:2}
+.fc{position:absolute;width:96px;height:160px;left:-48px;top:-80px;transform-origin:50% 150%;opacity:0;transition:transform 1.6s cubic-bezier(.2,.8,.2,1),opacity 1s ease;filter:drop-shadow(0 12px 22px rgba(0,0,0,.35))}
+.fc svg{width:100%;height:100%}
+.final-visual.on .fc{opacity:1}
+.final-visual.on .fc.k1{transform:translate(-150px,-40px) rotate(-24deg);transition-delay:.3s}
+.final-visual.on .fc.k2{transform:translate(0,-170px) rotate(0deg);transition-delay:.55s}
+.final-visual.on .fc.k3{transform:translate(150px,-40px) rotate(24deg);transition-delay:.8s}
+.final-visual.on .fc{animation:cardBob 7s ease-in-out 2.4s infinite}
+@keyframes cardBob{50%{margin-top:-8px}}
+.final-name{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);z-index:4;background:linear-gradient(135deg,#f6dca8,#d6a967);color:#3a2d55;padding:8px 26px;border-radius:30px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;white-space:nowrap;box-shadow:0 10px 24px rgba(0,0,0,.3);text-align:center;line-height:1.4}
+.final-name b{font-family:"Shippori Mincho",serif;font-style:normal;font-size:19px;margin-right:10px;letter-spacing:.1em}
+.final-text .en{text-align:left;color:#f3dcae}
+.final-text h2{text-align:left;font-size:clamp(28px,3.6vw,42px);margin-bottom:28px;background:linear-gradient(120deg,#fff 0%,#fff 40%,#f6dca8 50%,#fff 60%,#fff 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:goldSweep 6s ease-in-out infinite}
+@keyframes goldSweep{0%{background-position:120% 0}60%,100%{background-position:-30% 0}}
+.final-text h2::after{color:#e8c88f;text-align:left;-webkit-text-fill-color:#e8c88f}
+.final-text p{margin:0 0 36px;max-width:none;line-height:2.1;opacity:.92}
+.final .btns{justify-content:flex-start}
+.btn-gold{background:linear-gradient(135deg,#f6dca8,#d6a967 55%,#b8864a);color:#3a2d55;box-shadow:0 12px 30px rgba(214,169,103,.45)}
+.final-note{font-size:13px;margin-top:22px!important;opacity:.75;letter-spacing:.06em}
+@media (max-width:820px){
+  .final{text-align:center;padding:100px 0 110px}
+  .final-grid{grid-template-columns:1fr;gap:40px}
+  .final-visual{max-width:300px}
+  .fc{width:64px;height:107px;left:-32px;top:-54px}
+  .final-visual.on .fc.k1{transform:translate(-100px,-26px) rotate(-24deg)}
+  .final-visual.on .fc.k2{transform:translate(0,-112px)}
+  .final-visual.on .fc.k3{transform:translate(100px,-26px) rotate(24deg)}
+  .final-text .en,.final-text h2{text-align:center}
+  .final-text h2::after{text-align:center}
+  .final .btns{justify-content:center}
+  .final-text p{font-size:16px}
+}
+
 /* fixed cta */
 .fixed-cta{display:none}
 
@@ -624,15 +680,29 @@ footer a{color:#f0c7d6}
 
 <!-- FINAL -->
 <section class="final" id="line">
+  <div class="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
   <div class="stars" id="stars3"></div>
-  <div class="wrap" style="position:relative;z-index:2">
-    <div class="final-face reveal"><img src="img/mio.jpg" alt="鑑定士 澪" loading="lazy" width="900" height="1200"></div>
-    <span class="en reveal" style="color:#fff">Message</span>
-    <h2 class="reveal">ひとりで抱えなくて、<br>大丈夫ですよ</h2>
-    <p class="reveal">話すことで、少しずつ心がほどけていきます。<br>あなたからのご連絡を、お待ちしています。</p>
-    <div class="btns reveal">
-      <a href="#reserve" class="btn btn-rose">鑑定を予約する</a>
-      <a href="#line" class="btn btn-line">LINEで相談する</a>
+  <div class="dust" id="dust" aria-hidden="true"></div>
+  <div class="wrap final-grid">
+    <div class="final-visual reveal" aria-hidden="false">
+      <svg class="fv-ring r1" viewBox="0 0 400 400" aria-hidden="true"><defs><path id="ring1" d="M200 200m-182 0a182 182 0 1 1 364 0a182 182 0 1 1-364 0"/></defs>
+        <circle cx="200" cy="200" r="196" fill="none" stroke="#e8c88f" stroke-opacity=".7"/><circle cx="200" cy="200" r="168" fill="none" stroke="#e8c88f" stroke-opacity=".45"/>
+        <text font-size="15" fill="#f3dcae" letter-spacing="4" font-family="Cormorant Garamond,serif"><textPath href="#ring1" textLength="1130" lengthAdjust="spacing">♈︎ ♉︎ ♊︎ ♋︎ ♌︎ ♍︎ ♎︎ ♏︎ ♐︎ ♑︎ ♒︎ ♓︎ ✦ TAROT &amp; ASTROLOGY ✦ MIO ✦</textPath></text></svg>
+      <svg class="fv-ring r2" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="150" fill="none" stroke="#e8c88f" stroke-opacity=".55" stroke-dasharray="2 9"/><g fill="#f3dcae"><circle cx="200" cy="50" r="4"/><circle cx="350" cy="200" r="3"/><circle cx="200" cy="350" r="4"/><circle cx="50" cy="200" r="3"/></g></svg>
+      <div class="fan"><div class="fc k1"><svg viewBox="0 0 120 200"><defs><linearGradient id="gk1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2d6b"/><stop offset="1" stop-color="#7a4f8f"/></linearGradient></defs><rect x="2" y="2" width="116" height="196" rx="10" fill="url(#gk1)" stroke="#e8c88f" stroke-width="2"/><rect x="10" y="10" width="100" height="180" rx="6" fill="none" stroke="#e8c88f" stroke-opacity=".6"/><circle cx="58" cy="98" r="28" fill="#f3dcae"/><circle cx="70" cy="90" r="24" fill="url(#gk1)"/><text x="60" y="176" text-anchor="middle" fill="#f3dcae" font-size="10" font-family="Cormorant Garamond,serif" letter-spacing="2">THE MOON</text></svg></div><div class="fc k2"><svg viewBox="0 0 120 200"><defs><linearGradient id="gk2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2d6b"/><stop offset="1" stop-color="#7a4f8f"/></linearGradient></defs><rect x="2" y="2" width="116" height="196" rx="10" fill="url(#gk2)" stroke="#e8c88f" stroke-width="2"/><rect x="10" y="10" width="100" height="180" rx="6" fill="none" stroke="#e8c88f" stroke-opacity=".6"/><path d="M60 62l9 26h27l-22 16 9 26-23-16-23 16 9-26-22-16h27z" fill="#f3dcae"/><text x="60" y="176" text-anchor="middle" fill="#f3dcae" font-size="10" font-family="Cormorant Garamond,serif" letter-spacing="2">THE STAR</text></svg></div><div class="fc k3"><svg viewBox="0 0 120 200"><defs><linearGradient id="gk3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2d6b"/><stop offset="1" stop-color="#7a4f8f"/></linearGradient></defs><rect x="2" y="2" width="116" height="196" rx="10" fill="url(#gk3)" stroke="#e8c88f" stroke-width="2"/><rect x="10" y="10" width="100" height="180" rx="6" fill="none" stroke="#e8c88f" stroke-opacity=".6"/><circle cx="60" cy="98" r="18" fill="#f3dcae"/><g stroke="#f3dcae" stroke-width="2"><path d="M60 64v-10M60 142v-10M26 98h-10M104 98h-10M36 74l-7-7M91 129l-7-7M84 74l7-7M29 129l7-7"/></g><text x="60" y="176" text-anchor="middle" fill="#f3dcae" font-size="10" font-family="Cormorant Garamond,serif" letter-spacing="2">THE SUN</text></svg></div></div>
+      <div class="halo"></div>
+      <div class="final-photo"><img src="img/mio.jpg" alt="鑑定士 澪" loading="lazy" width="900" height="1200"></div>
+      <p class="final-name"><b>澪</b>Tarot reader &amp; Astrologer</p>
+    </div>
+    <div class="final-text">
+      <span class="en reveal">Message</span>
+      <h2 class="reveal">ひとりで抱えなくて、<br>大丈夫ですよ</h2>
+      <p class="reveal">話すことで、少しずつ心がほどけていきます。<br>今日のあなたに必要なカードを、<br>一緒にめくってみませんか。</p>
+      <div class="btns reveal">
+        <a href="#reserve" class="btn btn-gold">鑑定を予約する</a>
+        <a href="#line" class="btn btn-line">LINEで相談する</a>
+      </div>
+      <p class="final-note reveal">24時間受付 ／ ご予約後すぐに確認メールが届きます</p>
     </div>
   </div>
 </section>
@@ -672,6 +742,7 @@ footer a{color:#f0c7d6}
       el.appendChild(s);
     }
   }
+  (function(){var d=document.getElementById('dust');if(!d)return;for(var i=0;i<28;i++){var e=document.createElement('i');e.style.left=(Math.random()*110)+'%';e.style.animationDuration=(9+Math.random()*10)+'s';e.style.animationDelay=(-Math.random()*18)+'s';var z=(Math.random()*2.5+1.5);e.style.width=z+'px';e.style.height=z+'px';d.appendChild(e);}})();
   sprinkle('stars',70); sprinkle('stars2',40); sprinkle('stars3',40);
 
 
