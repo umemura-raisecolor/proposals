@@ -74,6 +74,7 @@ function doPost(e) {
   try {
     const d = JSON.parse((e && e.postData && e.postData.contents) || '{}');
     if (d.website) return json_({ ok: true }); // ロボット対策(見えない欄に入力があれば無視)
+    if (d.type === 'view') { logView_(d); return json_({ ok: true }); } // 閲覧ログ(動画・見本ページ)
 
     const v = validate_(d);
     if (v.error) return json_({ ok: false, error: v.error });
@@ -222,4 +223,21 @@ function validate_(d) {
 
 function json_(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+
+/** 閲覧ログ:動画や見本ページが開かれた・再生されたことを記録(番号と日時だけ。個人情報は取らない) */
+function logView_(d) {
+  const ss = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty('SHEET_ID'));
+  let sh = ss.getSheetByName('閲覧ログ');
+  if (!sh) {
+    sh = ss.insertSheet('閲覧ログ');
+    sh.getRange(1, 1, 1, 4).setValues([['日時', '番号', 'どこを見たか', '何をしたか']])
+      .setFontWeight('bold').setBackground('#1b5f94').setFontColor('#ffffff');
+    sh.setFrozenRows(1); sh.setColumnWidth(1, 150); sh.setColumnWidth(3, 120); sh.setColumnWidth(4, 140);
+  }
+  const ref = String(d.ref || '').replace(/[^\w\-]/g, '').slice(0, 20) || '直接';
+  const where = { video: '動画', page: '見本ページ' }[d.where] || 'その他';
+  const ev = { open: '開いた', play: '再生した', half: '半分まで見た', ended: '最後まで見た' }[d.ev] || '開いた';
+  sh.appendRow([new Date(), ref, where, ev]);
+  sh.getRange(sh.getLastRow(), 1).setNumberFormat('yyyy/MM/dd HH:mm');
 }

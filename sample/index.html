@@ -167,6 +167,7 @@ html{scroll-behavior:smooth} section[id]{scroll-margin-top:80px}
   var $ = function(id){return document.getElementById(id);};
   var form = $('cf'), err = $('err'), btn = $('sendbtn'), btnHTML = btn.innerHTML, photo = null;
   var ref = (new URLSearchParams(location.search).get('r') || '').replace(/[^\w\-]/g,'').slice(0,20);
+  if(ref && GAS_URL){ try{ fetch(GAS_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'view',ref:ref,where:'page',ev:'open'})}); }catch(e){} }
 
   // 希望日:明日〜60日後
   var pad = function(n){return ('0'+n).slice(-2);};

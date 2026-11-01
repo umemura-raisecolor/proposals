@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>30秒でわかる 問い合わせ自動受付|合同会社ライズカラー</title>
+<style>
+:root{--ink:#12263f;--sub:#5c6b7a;--blue:#1b78bd;--bg:#f3f8fd}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;background:linear-gradient(165deg,#fff 0%,#f1f7fd 50%,#e6f1fb 100%);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 16px 40px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--blue)}
+h1{font-size:clamp(22px,5.6vw,30px);line-height:1.45;text-align:center;margin:8px 0 18px}
+h1 span{background:linear-gradient(transparent 60%,#ffe066 60%,#ffe066 92%,transparent 92%);padding:0 2px}
+.player{width:100%;max-width:400px;border-radius:22px;overflow:hidden;box-shadow:0 22px 50px rgba(20,60,110,.22);background:#000}
+video{display:block;width:100%;height:auto}
+.note{font-size:13px;color:var(--sub);margin-top:12px;text-align:center}
+.btn{display:block;width:100%;max-width:400px;margin-top:22px;text-align:center;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:17px 20px;border-radius:40px;box-shadow:0 10px 24px rgba(27,120,189,.3)}
+.btn small{display:block;font-size:12px;font-weight:500;opacity:.85;margin-top:2px}
+.co{margin-top:26px;font-size:13px;color:var(--sub);text-align:center;line-height:1.7}
+.co b{color:var(--ink);font-size:14px}
+</style>
+</head>
+<body>
+<p class="eyebrow">塗装店のための 問い合わせ自動受付</p>
+<h1>お客様の入口は、<br><span>ホームページ</span>です。</h1>
+<div class="player"><video id="v" src="demo.mp4" poster="poster.jpg" controls playsinline preload="metadata"></video></div>
+<p class="note">▶ を押すと再生します(音が出ます・約30秒)</p>
+<a class="btn" id="try" href="./">実際に試せる見本ページへ<small>ご自身のスマホから、送信まで試せます</small></a>
+<p class="co"><b>合同会社ライズカラー</b><br>代表 梅村 恵美|TEL 080-4440-2010<br>umemura@raisecolor.net</p>
+<script>
+(function(){
+  var GAS='https://script.google.com/macros/s/AKfycbyVOoWKknoyFsi8tA_uPkdrqLWeCd30p7Y2o92dob5pgNq1wuqIl3TqMvksgooyM1465Q/exec';
+  var ref=(new URLSearchParams(location.search).get('r')||'').replace(/[^\w\-]/g,'').slice(0,20);
+  if(ref){ document.getElementById('try').href='./?r='+encodeURIComponent(ref); }
+  var sent={};
+  function log(ev){ if(!ref||sent[ev]) return; sent[ev]=1;
+    try{ fetch(GAS,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'view',ref:ref,where:'video',ev:ev})}); }catch(e){} }
+  log('open');
+  var v=document.getElementById('v');
+  v.addEventListener('play',function(){log('play');});
+  v.addEventListener('timeupdate',function(){ if(v.duration && v.currentTime>=v.duration/2) log('half'); });
+  v.addEventListener('ended',function(){log('ended');});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
