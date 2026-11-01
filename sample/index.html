@@ -14,7 +14,48 @@
 <style>:root{--accent:#1b78bd;--accent-on-photo:#9ad6f7;--cta-bg:#1b5f94;--cta-ink:#ffffff;--foot-bg:#16212b;--bg:#f7f8f6;--bg2:#eef3f6;}
 html{scroll-behavior:smooth} section[id]{scroll-margin-top:80px}
 .brand .lt{font-family:"Noto Serif JP",serif;font-weight:700;letter-spacing:.08em}
-.demo-note{font-size:13px;color:var(--sub);text-align:center;margin-top:18px}</style>
+.demo-note{font-size:13px;color:var(--sub);text-align:center;margin-top:18px}
+.demo-try{max-width:860px;margin:0 auto 22px;padding:22px 26px;background:#fff;border:2px solid var(--accent);border-radius:4px}
+.demo-try .dt-h{font-weight:700;font-size:18px;color:var(--accent);margin:0 0 8px}
+.demo-try p{margin:0 0 6px;line-height:1.9}
+.demo-try b{display:inline-block;background:var(--bg2);padding:0 6px;margin:2px 0}
+.demo-try .dt-s{font-size:13px;color:var(--sub);margin:8px 0 0}
+.row select{width:100%;font:inherit;padding:14px 16px;border:1px solid var(--line);background:var(--bg);color:var(--ink);appearance:auto}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.opt{font-size:11.5px;padding:1px 8px;border:1px solid var(--line);color:var(--sub);font-weight:500}
+.photo{display:block;cursor:pointer}
+.photo input{position:absolute;opacity:0;width:1px;height:1px}
+.ph-box{display:flex;align-items:center;justify-content:center;gap:12px;min-height:110px;border:1.5px dashed var(--line);background:var(--bg);color:var(--sub);padding:12px;text-align:center}
+.photo input:focus-visible+.ph-box{outline:2px solid var(--accent)}
+.ph-plus{font-size:28px;color:var(--accent);line-height:1}
+.ph-box img{max-height:150px;max-width:60%;object-fit:cover}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.err{margin:18px 0 0;padding:14px 18px;border-left:4px solid #c0392b;background:#fdf0ee;color:#8e2b20;font-weight:700}
+#sendbtn[disabled]{opacity:.6;pointer-events:none}
+.demo-result{max-width:980px;margin:40px auto 0;outline:none}
+.dr-ok{font-size:clamp(18px,2.2vw,22px);font-weight:700;text-align:center;margin:0 0 26px;color:var(--accent)}
+.dr-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dr-card{min-width:0;background:#fff;border:1px solid var(--line);padding:24px;opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.demo-result.show .dr-card{opacity:1;transform:none}
+.demo-result.show .dr-card:nth-child(2){transition-delay:.35s}.demo-result.show .dr-card:nth-child(3){transition-delay:.7s}.demo-result.show .dr-card:nth-child(4){transition-delay:1.05s}
+.dr-no{font-family:var(--en);font-size:13px;letter-spacing:.2em;color:var(--accent);margin:0}
+.dr-card h3{font-size:18px;margin:4px 0 8px;letter-spacing:.04em}
+.dr-tx{font-size:14.5px;line-height:1.8;margin:0 0 14px;color:var(--ink)}
+.dr-tx small{color:var(--sub)}
+.dr-sheet{font-size:12.5px;border:1px solid #c9d3da;overflow-x:auto}
+.dr-sheet .r{display:grid;grid-template-columns:42px 1.2fr 1fr 1.3fr 66px;min-width:420px}
+.dr-sheet .r span{padding:8px 8px;border-right:1px solid #e1e6ea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dr-sheet .h{background:#1b5f94;color:#fff;font-weight:700}
+.dr-sheet .r:not(.h){background:#eef6fc}
+.dr-sheet .st{color:#b4540a;font-weight:700}
+.dr-cal{display:flex;gap:14px;align-items:stretch}
+.dr-cal .day{flex:0 0 74px;text-align:center;border:1px solid var(--line);padding:8px 0;display:flex;flex-direction:column;justify-content:center}
+.dr-cal .day b{font-size:30px;line-height:1.1;font-family:var(--en)}
+.dr-cal .day small{color:var(--sub);font-size:12px}
+.dr-cal .ev{flex:1;background:#1b78bd;color:#fff;padding:12px 14px;border-radius:4px;display:flex;flex-direction:column;justify-content:center}
+.dr-cal .ev b{font-size:16px}
+.dr-foot{text-align:center;margin:26px 0 0;font-weight:700}
+@media (max-width:720px){.two-col,.dr-grid{grid-template-columns:1fr}.demo-try{padding:18px}.dr-card{padding:20px 16px}.dr-sheet .r{grid-template-columns:40px 1fr 1.3fr 58px;min-width:0}.dr-sheet .r span:nth-child(2){display:none}.dr-sheet .r span{padding:8px 6px}}</style>
 </head>
 <body>
 <header class="site over">
@@ -76,16 +117,37 @@ html{scroll-behavior:smooth} section[id]{scroll-margin-top:80px}
     </div>
   </div>
 </section><section class="sec s-contact"><div class="wrap">
-  <header class="sh rv"><p class="en">FORM</p><h2>お見積り・ご相談フォーム</h2><p class="lead">24時間受付。2営業日以内にご連絡いたします。</p></header>
+  <header class="sh rv"><p class="en">FORM</p><h2>無料診断・お見積りのお申し込み</h2><p class="lead">24時間受付。写真を送っていただくと、状態を見てからご連絡できます。</p></header>
+  <div class="demo-try rv">
+    <p class="dt-h">このフォームは、実際に動きます</p>
+    <p>送信すると、その場で <b>①問い合わせ台帳への記録</b> <b>②カレンダーへの現地調査の登録</b> <b>③お客様への自動返信メール</b> が動きます。ご自身のメールアドレスで、ぜひお試しください。お名前はテスト用のもので大丈夫です。</p>
+    <p class="dt-s">※見本のため、通知は合同会社ライズカラーに届きます。いただいた内容は動作確認以外には使いません。</p>
+  </div>
   <form class="cf rv" id="cf" novalidate>
-    <div class="row"><span class="t">ご相談の内容</span><div class="radios"><label><input type="radio" name="kind" checked> 外壁塗装</label><label><input type="radio" name="kind"> 屋根塗装・補修</label><label><input type="radio" name="kind"> 防水工事</label><label><input type="radio" name="kind"> その他</label></div></div>
-    <div class="row"><label class="t" for="nm">お名前 <span class="req">必須</span></label><input type="text" id="nm" autocomplete="name"></div>
-    <div class="row"><label class="t" for="em">メールアドレス <span class="req">必須</span></label><input type="email" id="em" autocomplete="email"></div>
-    <div class="row"><label class="t" for="tl">お電話番号</label><input type="tel" id="tl" autocomplete="tel"></div>
-    <div class="row"><label class="t" for="ms">ご相談内容</label><textarea id="ms" placeholder="例:築15年の戸建てです。外壁の色あせが気になっています。"></textarea></div>
-    <div class="send"><button class="btn btn-main" type="submit"><span class="tag">無料</span>この内容で送信する <span class="arw">→</span></button></div>
-    <p class="done" id="done" role="status" hidden>こちらは見本ページのため、送信はされません。<br>実際のサイトでは、このまま貴社のメールに届く形にいたします。</p>
+    <div class="row"><span class="t">ご相談の内容</span><div class="radios"><label><input type="radio" name="kind" value="外壁塗装" checked> 外壁塗装</label><label><input type="radio" name="kind" value="屋根塗装・補修"> 屋根塗装・補修</label><label><input type="radio" name="kind" value="防水工事"> 防水工事</label><label><input type="radio" name="kind" value="その他"> その他</label></div></div>
+    <div class="row"><label class="t" for="nm">お名前 <span class="req">必須</span></label><input type="text" id="nm" autocomplete="name" maxlength="40" required></div>
+    <div class="row"><label class="t" for="em">メールアドレス <span class="req">必須</span></label><input type="email" id="em" autocomplete="email" maxlength="120" required></div>
+    <div class="row"><label class="t" for="tl">お電話番号</label><input type="tel" id="tl" autocomplete="tel" maxlength="20"></div>
+    <div class="row two-col"><div><label class="t" for="dt">現地調査のご希望日 <span class="req">必須</span></label><input type="date" id="dt" required></div><div><label class="t" for="sl">ご希望の時間帯 <span class="req">必須</span></label><select id="sl" required><option value="">選んでください</option><option>9:00〜10:00</option><option>10:30〜11:30</option><option>13:00〜14:00</option><option>14:30〜15:30</option><option>16:00〜17:00</option></select></div></div>
+    <div class="row"><label class="t" for="ph">気になる箇所の写真 <span class="opt">任意</span></label><label class="photo" for="ph"><input type="file" id="ph" accept="image/*"><span class="ph-box" id="phbox"><span class="ph-plus">＋</span><span>タップして写真を選ぶ(1枚)</span></span></label></div>
+    <div class="row"><label class="t" for="ms">ご相談内容</label><textarea id="ms" maxlength="1000" placeholder="例:築15年の戸建てです。外壁の色あせが気になっています。"></textarea></div>
+    <div class="hp" aria-hidden="true"><label>空欄のままにしてください<input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="send"><button class="btn btn-main" type="submit" id="sendbtn"><span class="tag">無料</span>この内容で申し込む <span class="arw">→</span></button></div>
+    <p class="err" id="err" role="alert" hidden></p>
   </form>
+
+  <div class="demo-result" id="result" hidden tabindex="-1">
+    <p class="dr-ok">送信しました。いま、裏側でこれだけのことが自動で動きました。</p>
+    <div class="dr-grid">
+      <article class="dr-card"><p class="dr-no">01</p><h3>問い合わせ台帳に記録</h3><p class="dr-tx">スプレッドシートの一覧表に、1行追加されました。親方はスマホで、いつでも一覧を見られます。</p>
+        <div class="dr-sheet" role="table" aria-label="台帳に記録された内容"><div class="r h" role="row"><span>No.</span><span>受付</span><span>お名前</span><span>現地調査</span><span>状況</span></div><div class="r" role="row"><span id="r-no"></span><span id="r-at"></span><span id="r-nm"></span><span id="r-dt"></span><span class="st">未対応</span></div></div></article>
+      <article class="dr-card"><p class="dr-no">02</p><h3>カレンダーに現地調査を登録</h3><p class="dr-tx">ご希望の日時が、Googleカレンダーに予定として入りました。電話や内容のメモも予定の中に入っています。</p>
+        <div class="dr-cal"><div class="day"><small id="c-m"></small><b id="c-d"></b><small id="c-w"></small></div><div class="ev"><small id="c-t"></small><b id="c-n"></b></div></div></article>
+      <article class="dr-card"><p class="dr-no">03</p><h3>お客様に自動返信メール</h3><p class="dr-tx" id="m-tx"></p></article>
+      <article class="dr-card"><p class="dr-no">04</p><h3>親方のスマホに通知</h3><p class="dr-tx">新しい問い合わせが入ったことを、すぐにメールでお知らせします。現場にいても、取りこぼしません。<br><small>(見本では、ライズカラーに通知が届いています)</small></p></article>
+    </div>
+    <p class="dr-foot">現場作業中でも、お客様は24時間申し込めて、親方の手元には一覧と予定が自動でそろいます。</p>
+  </div>
 </div></section><footer class="site">
   <div class="wrap">
     <div class="cols">
@@ -98,7 +160,79 @@ html{scroll-behavior:smooth} section[id]{scroll-margin-top:80px}
 <div class="sp-bar"><a class="t" href="tel:0120000000"><small>通話無料</small>電話で相談</a><a class="m" href="#cf"><small>かんたん入力</small>無料お見積り</a></div>
 <a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
 <script src="common.js?v=10260500"></script>
-<script>document.getElementById('cf').addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('done').hidden=false;});</script>
+<script>
+(function(){
+  var GAS_URL = ''; // Apps Script のウェブアプリURL(…/exec)
+  var $ = function(id){return document.getElementById(id);};
+  var form = $('cf'), err = $('err'), btn = $('sendbtn'), btnHTML = btn.innerHTML, photo = null;
+  var ref = (new URLSearchParams(location.search).get('r') || '').replace(/[^\w\-]/g,'').slice(0,20);
+
+  // 希望日:明日〜60日後
+  var pad = function(n){return ('0'+n).slice(-2);};
+  var ymd = function(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());};
+  var t = new Date(); t.setDate(t.getDate()+1); $('dt').min = ymd(t);
+  var m = new Date(); m.setDate(m.getDate()+60); $('dt').max = ymd(m);
+
+  // 写真:スマホの大きな写真を縮小してから送る
+  $('ph').addEventListener('change', function(){
+    var f = this.files && this.files[0]; photo = null;
+    if(!f){ return; }
+    var img = new Image(), url = URL.createObjectURL(f);
+    img.onload = function(){
+      var s = Math.min(1, 1280/Math.max(img.width,img.height));
+      var c = document.createElement('canvas'); c.width = Math.round(img.width*s); c.height = Math.round(img.height*s);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      var data = c.toDataURL('image/jpeg',0.82);
+      photo = {type:'image/jpeg', data:data.split(',')[1]};
+      $('phbox').innerHTML = '<img src="'+data+'" alt="選んだ写真"><span>写真を変える</span>';
+      URL.revokeObjectURL(url);
+    };
+    img.onerror = function(){ showErr('この写真は読み込めませんでした。別の写真をお選びください。'); };
+    img.src = url;
+  });
+
+  function showErr(msg){ err.textContent = msg; err.hidden = false; }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault(); err.hidden = true;
+    var data = {
+      kind: (form.querySelector('input[name=kind]:checked')||{}).value,
+      name: $('nm').value.trim(), email: $('em').value.trim(), phone: $('tl').value.trim(),
+      date: $('dt').value, slot: $('sl').value, message: $('ms').value.trim(),
+      website: $('website').value, ref: ref, photo: photo
+    };
+    if(!data.name){ return showErr('お名前を入力してください。'); }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){ return showErr('メールアドレスをご確認ください。'); }
+    if(!data.date){ return showErr('現地調査のご希望日を選んでください。'); }
+    if(!data.slot){ return showErr('ご希望の時間帯を選んでください。'); }
+    if(!GAS_URL){ return showErr('ただいま準備中です。'); }
+
+    btn.disabled = true; btn.textContent = '送信しています…';
+    fetch(GAS_URL, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(data)})
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if(!res.ok){ throw new Error(res.error || '送信できませんでした。'); }
+        var d = new Date(res.date+'T00:00:00');
+        $('r-no').textContent = res.no; $('r-at').textContent = res.receivedAt;
+        $('r-nm').textContent = res.name+' 様'; $('r-dt').textContent = res.dateLabel+' '+res.slot.split('〜')[0];
+        $('c-m').textContent = (d.getMonth()+1)+'月'; $('c-d').textContent = d.getDate();
+        $('c-w').textContent = '日月火水木金土'.charAt(d.getDay())+'曜日';
+        $('c-t').textContent = res.slot; $('c-n').textContent = '現地調査 '+res.name+'様';
+        $('m-tx').textContent = res.autoReply
+          ? '入力いただいたメールアドレスに、受付完了のメールをお送りしました。受信箱をご確認ください(迷惑メールに入ることもあります)。'
+          : '本日は自動返信の上限に達したため、メールは送られていません。実際のサイトでは、毎回お客様に届きます。';
+        form.hidden = true; document.querySelector('.demo-try').hidden = true;
+        var box = $('result'); box.hidden = false;
+        requestAnimationFrame(function(){ box.classList.add('show'); });
+        box.focus({preventScroll:true}); box.scrollIntoView({behavior:'smooth', block:'start'});
+      })
+      .catch(function(e){
+        showErr(e && e.message && e.message.indexOf('JSON') < 0 ? e.message : '送信できませんでした。電波の良いところで、もう一度お試しください。');
+        btn.disabled = false; btn.innerHTML = btnHTML;
+      });
+  });
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
