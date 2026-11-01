@@ -209,6 +209,19 @@ footer a{color:#f0c7d6}
 .modal-box .btn{padding:14px 28px;font-size:16px}
 
 .sp-only{display:none}
+
+/* faces */
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.portrait::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.profile .portrait-wrap{position:relative}
+.reader{display:inline-flex;align-items:center;gap:14px;margin-top:34px;padding:8px 22px 8px 8px;border-radius:60px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);opacity:0;animation:fadein 2s ease 3.4s forwards;text-align:left}
+.reader img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid rgba(255,255,255,.85)}
+.reader p{font-size:13px;line-height:1.6;letter-spacing:.06em;opacity:.9}
+.reader b{display:block;font-family:"Shippori Mincho",serif;font-size:17px;font-weight:600;letter-spacing:.12em}
+.final-face{width:120px;height:120px;margin:0 auto 22px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.85);box-shadow:0 14px 40px rgba(40,20,70,.35)}
+.final-face img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.hero .meta{margin-top:22px}
+
 /* fixed cta */
 .fixed-cta{display:none}
 
@@ -331,6 +344,7 @@ footer a{color:#f0c7d6}
       <a href="#reserve" class="btn btn-rose">鑑定を予約する</a>
       <a href="#line" class="btn btn-ghost">LINEで相談する</a>
     </div>
+    <div class="reader"><img src="img/mio.jpg" alt="" width="900" height="1200"><p><b>鑑定士 澪(みお)</b>タロット・西洋占星術</p></div>
     <p class="meta">対面(東京・吉祥寺) ／ オンライン ／ メール鑑定</p>
   </div>
   <div class="scroll">scroll</div>
@@ -354,16 +368,7 @@ footer a{color:#f0c7d6}
 <!-- PROFILE -->
 <section class="profile">
   <div class="wrap profile-grid">
-    <div class="portrait reveal" aria-label="プロフィール写真の位置">
-      <svg viewBox="0 0 320 400" aria-hidden="true">
-        <defs><radialGradient id="g1" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
-        <circle cx="160" cy="170" r="150" fill="url(#g1)"/>
-        <circle cx="160" cy="150" r="54" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="1.5"/>
-        <path d="M70 330c10-62 46-100 90-100s80 38 90 100" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="1.5"/>
-        <g fill="#fff"><circle cx="60" cy="70" r="2"/><circle cx="262" cy="96" r="2.5"/><circle cx="240" cy="40" r="1.6"/><circle cx="88" cy="250" r="1.8"/><circle cx="270" cy="250" r="2"/></g>
-      </svg>
-      <p class="ph-note">ここにご本人のお写真が入ります</p>
-    </div>
+    <div class="portrait reveal"><img src="img/mio.jpg" alt="タロット・星読み鑑定士 澪のプロフィール写真" loading="lazy" width="900" height="1200"></div>
     <div>
       <span class="en reveal" style="text-align:left">About me</span>
       <p class="profile-name reveal">澪<small>Mio</small></p>
@@ -545,6 +550,7 @@ footer a{color:#f0c7d6}
 <section class="final" id="line">
   <div class="stars" id="stars3"></div>
   <div class="wrap" style="position:relative;z-index:2">
+    <div class="final-face reveal"><img src="img/mio.jpg" alt="鑑定士 澪" loading="lazy" width="900" height="1200"></div>
     <span class="en reveal" style="color:#fff">Message</span>
     <h2 class="reveal">ひとりで抱えなくて、<br>大丈夫ですよ</h2>
     <p class="reveal">話すことで、少しずつ心がほどけていきます。<br>あなたからのご連絡を、お待ちしています。</p>
