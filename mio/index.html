@@ -216,6 +216,50 @@ footer a{color:#f0c7d6}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 1.6s ease, transform 1.6s ease}
 .reveal.on{opacity:1;transform:none}
 
+
+/* ===== first view: horoscope wheel, tarot cards, constellations ===== */
+.moon{display:none}
+.fv-art{position:absolute;inset:0;pointer-events:none;z-index:1}
+.wheel{position:absolute;left:50%;top:50%;width:min(96vmin,820px);aspect-ratio:1;transform:translate(-50%,-50%);opacity:0;animation:wheelIn 3.5s ease 1s forwards}
+.wheel svg{width:100%;height:100%;animation:spin 240s linear infinite;filter:drop-shadow(0 0 10px rgba(255,226,200,.25))}
+.wheel .inner{transform-origin:400px 400px;animation:spinR 160s linear infinite}
+@keyframes wheelIn{to{opacity:.85}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinR{to{transform:rotate(-360deg)}}
+.wheel-glow{position:absolute;left:50%;top:50%;width:min(60vmin,520px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,226,214,.22) 0%,rgba(255,226,214,0) 70%);animation:breathe 10s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(.92)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}}
+.wheel .pulse{animation:pulse 9s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
+.tcard{position:absolute;width:clamp(70px,9vw,118px);aspect-ratio:3/5;opacity:0;animation:cardFloat 18s ease-in-out infinite}
+.tcard svg{width:100%;height:100%}
+.tcard.c1{left:7%;top:24%;--r:-12deg;animation-delay:2.5s}
+.tcard.c2{right:8%;top:16%;--r:10deg;animation-delay:8.5s}
+.tcard.c3{left:13%;bottom:12%;--r:8deg;animation-delay:14.5s}
+.tcard.c4{right:12%;bottom:14%;--r:-8deg;animation-delay:5.5s}
+@keyframes cardFloat{
+  0%{opacity:0;transform:translateY(24px) rotate(var(--r)) scale(.94);filter:blur(4px)}
+  12%{opacity:.85;transform:translateY(0) rotate(var(--r)) scale(1);filter:blur(0)}
+  30%{opacity:.85;transform:translateY(-10px) rotate(calc(var(--r) + 3deg)) scale(1)}
+  42%{opacity:0;transform:translateY(-24px) rotate(var(--r)) scale(.96);filter:blur(4px)}
+  100%{opacity:0}}
+.constel{position:absolute;opacity:0;animation:constel 16s ease-in-out infinite}
+.constel path{fill:none;stroke:rgba(255,244,230,.75);stroke-width:1;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 16s ease-in-out infinite;animation-delay:inherit}
+.constel circle{fill:#fff}
+.constel.k1{left:22%;top:12%;width:180px;animation-delay:4s}
+.constel.k2{right:22%;bottom:22%;width:160px;animation-delay:11s}
+@keyframes constel{0%,100%{opacity:0}10%,45%{opacity:1}60%{opacity:0}}
+@keyframes draw{0%{stroke-dashoffset:400}35%,100%{stroke-dashoffset:0}}
+.shoot{position:absolute;top:14%;left:62%;width:140px;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff);transform:rotate(-28deg);opacity:0;animation:shoot 13s ease-in 6s infinite}
+@keyframes shoot{0%{opacity:0;transform:translate(0,0) rotate(-28deg)}2%{opacity:1}7%{opacity:0;transform:translate(-260px,140px) rotate(-28deg)}100%{opacity:0}}
+.hero-inner::before{content:"";position:absolute;inset:-40px -60px;z-index:-1;background:radial-gradient(ellipse at center,rgba(44,35,80,.45) 0%,rgba(44,35,80,0) 70%);pointer-events:none}
+@media (max-width:820px){
+  .wheel{width:132vmin;top:46%}
+  .tcard{width:62px}
+  .tcard.c1{left:3%;top:20%}.tcard.c2{right:4%;top:12%}
+  .tcard.c3{left:5%;bottom:9%}.tcard.c4{right:5%;bottom:10%}
+  .constel.k1{width:110px;left:8%;top:9%}.constel.k2{width:100px;right:6%;bottom:30%}
+}
+
 @media (max-width:820px){
   body{font-size:17px}
   section{padding:84px 0}
@@ -268,6 +312,17 @@ footer a{color:#f0c7d6}
 <section class="hero" id="top">
   <div class="stars" id="stars"></div>
   <div class="moon"></div>
+  <div class="fv-art" aria-hidden="true">
+    <div class="wheel-glow"></div>
+    <div class="wheel"><svg id="wheel" viewBox="0 0 800 800"></svg></div>
+    <div class="tcard c1"><svg viewBox="0 0 120 200"><rect x="4" y="4" width="112" height="192" rx="10" fill="rgba(255,255,255,.08)" stroke="rgba(255,240,224,.85)" stroke-width="1.5"/><rect x="12" y="12" width="96" height="176" rx="6" fill="none" stroke="rgba(255,240,224,.5)"/><path d="M70 72a26 26 0 1 0 0 56a20 20 0 1 1 0-56z" fill="rgba(255,240,224,.9)"/><text x="60" y="170" text-anchor="middle" fill="rgba(255,240,224,.85)" font-size="11" font-family="Cormorant Garamond,serif" letter-spacing="2">THE MOON</text></svg></div>
+    <div class="tcard c2"><svg viewBox="0 0 120 200"><rect x="4" y="4" width="112" height="192" rx="10" fill="rgba(255,255,255,.08)" stroke="rgba(255,240,224,.85)" stroke-width="1.5"/><rect x="12" y="12" width="96" height="176" rx="6" fill="none" stroke="rgba(255,240,224,.5)"/><path d="M60 64l8 24h25l-20 15 8 24-21-15-21 15 8-24-20-15h25z" fill="rgba(255,240,224,.9)"/><text x="60" y="170" text-anchor="middle" fill="rgba(255,240,224,.85)" font-size="11" font-family="Cormorant Garamond,serif" letter-spacing="2">THE STAR</text></svg></div>
+    <div class="tcard c3"><svg viewBox="0 0 120 200"><rect x="4" y="4" width="112" height="192" rx="10" fill="rgba(255,255,255,.08)" stroke="rgba(255,240,224,.85)" stroke-width="1.5"/><rect x="12" y="12" width="96" height="176" rx="6" fill="none" stroke="rgba(255,240,224,.5)"/><circle cx="60" cy="98" r="18" fill="rgba(255,240,224,.9)"/><g stroke="rgba(255,240,224,.85)" stroke-width="2"><path d="M60 64v-10M60 142v-10M26 98h-10M104 98h-10M36 74l-7-7M91 129l-7-7M84 74l7-7M29 129l7-7"/></g><text x="60" y="170" text-anchor="middle" fill="rgba(255,240,224,.85)" font-size="11" font-family="Cormorant Garamond,serif" letter-spacing="2">THE SUN</text></svg></div>
+    <div class="tcard c4"><svg viewBox="0 0 120 200"><rect x="4" y="4" width="112" height="192" rx="10" fill="rgba(255,255,255,.08)" stroke="rgba(255,240,224,.85)" stroke-width="1.5"/><rect x="12" y="12" width="96" height="176" rx="6" fill="none" stroke="rgba(255,240,224,.5)"/><circle cx="60" cy="98" r="30" fill="none" stroke="rgba(255,240,224,.85)" stroke-width="1.5"/><circle cx="60" cy="98" r="20" fill="none" stroke="rgba(255,240,224,.6)"/><path d="M60 68v60M30 98h60M39 77l42 42M81 77l-42 42" stroke="rgba(255,240,224,.6)"/><text x="60" y="170" text-anchor="middle" fill="rgba(255,240,224,.85)" font-size="9.5" font-family="Cormorant Garamond,serif" letter-spacing="1.5">WHEEL OF FORTUNE</text></svg></div>
+    <svg class="constel k1" viewBox="0 0 180 110"><path d="M10 80L48 52L86 64L120 22L168 34"/><circle cx="10" cy="80" r="2.4"/><circle cx="48" cy="52" r="2"/><circle cx="86" cy="64" r="2.4"/><circle cx="120" cy="22" r="2.8"/><circle cx="168" cy="34" r="2"/></svg>
+    <svg class="constel k2" viewBox="0 0 160 120"><path d="M8 20L44 46L40 92L92 104L132 70L150 24"/><circle cx="8" cy="20" r="2"/><circle cx="44" cy="46" r="2.6"/><circle cx="40" cy="92" r="2"/><circle cx="92" cy="104" r="2.4"/><circle cx="132" cy="70" r="2"/><circle cx="150" cy="24" r="2.8"/></svg>
+    <div class="shoot"></div>
+  </div>
   <div class="hero-inner">
     <p class="lead-en">— a quiet light for your heart —</p>
     <h1 id="heroTitle">迷いの夜に、<br>そっと灯りをともす時間を</h1>
@@ -536,6 +591,37 @@ footer a{color:#f0c7d6}
     }
   }
   sprinkle('stars',70); sprinkle('stars2',40); sprinkle('stars3',40);
+
+
+  // horoscope wheel
+  (function(){
+    var w=document.getElementById('wheel'); if(!w) return;
+    var C=400, ns='http://www.w3.org/2000/svg', col='rgba(255,240,224,';
+    function el(t,a){var e=document.createElementNS(ns,t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+    function pt(r,deg){var a=(deg-90)*Math.PI/180;return [C+r*Math.cos(a),C+r*Math.sin(a)];}
+    var g=el('g',{});
+    [392,380,330,300,236,150].forEach(function(r,i){ g.appendChild(el('circle',{cx:C,cy:C,r:r,fill:'none',stroke:col+(i<2?'.55)':'.4)'),'stroke-width':i==1?1.4:0.9})); });
+    for(var d=0;d<360;d+=2){ var len=d%10===0?14:(d%5===0?9:5); var a=pt(380,d),b=pt(380-len,d);
+      g.appendChild(el('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:col+'.5)','stroke-width':d%10===0?1.1:.6})); }
+    var signs=['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+    for(var i=0;i<12;i++){
+      var a1=pt(330,i*30),b1=pt(236,i*30);
+      g.appendChild(el('line',{x1:a1[0],y1:a1[1],x2:b1[0],y2:b1[1],stroke:col+'.45)','stroke-width':.9}));
+      var p=pt(315,i*30+15), t=el('text',{x:p[0],y:p[1]+9,'text-anchor':'middle',fill:col+'.85)','font-size':28,'font-family':'"Segoe UI Symbol","Apple Symbols","Noto Sans Symbols 2",serif'});
+      t.textContent=signs[i]+'︎'; g.appendChild(t);
+      var q=pt(268,i*30+15); g.appendChild(el('circle',{cx:q[0],cy:q[1],r:2.6,fill:col+'.75)'}));
+    }
+    w.appendChild(g);
+    var inner=el('g',{'class':'inner'});
+    var tri=function(off){var s='';for(var k=0;k<3;k++){var q=pt(150,off+k*120);s+=(k?'L':'M')+q[0]+' '+q[1];}return s+'Z';};
+    inner.appendChild(el('path',{d:tri(0),fill:'none',stroke:col+'.55)','stroke-width':1}));
+    inner.appendChild(el('path',{d:tri(60),fill:'none',stroke:col+'.55)','stroke-width':1}));
+    [[40,200],[95,160],[175,215],[250,120],[310,190]].forEach(function(x){var a=pt(x[1],x[0]),b=pt(x[1]>150?x[1]-50:x[1]+60,x[0]+140);
+      inner.appendChild(el('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:col+'.35)','stroke-width':.8}));
+      inner.appendChild(el('circle',{cx:a[0],cy:a[1],r:4,fill:col+'.9)','class':'pulse'}));});
+    inner.appendChild(el('circle',{cx:C,cy:C,r:74,fill:'none',stroke:col+'.5)','stroke-width':1,'stroke-dasharray':'2 6'}));
+    w.appendChild(inner);
+  })();
 
   // hero title: unfold one character at a time (slow)
   var h=document.getElementById('heroTitle');
