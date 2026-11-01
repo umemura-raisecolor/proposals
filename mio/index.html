@@ -222,6 +222,65 @@ footer a{color:#f0c7d6}
 .final-face img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
 .hero .meta{margin-top:22px}
 
+
+/* ===== profile: decorated ===== */
+.profile{position:relative;overflow:hidden;background:
+  radial-gradient(ellipse 60% 50% at 15% 30%,rgba(233,183,198,.35),transparent 70%),
+  radial-gradient(ellipse 55% 50% at 90% 80%,rgba(207,194,234,.45),transparent 70%),
+  linear-gradient(180deg,#fbf7f9 0%,#f6eef5 100%)}
+.profile .wrap{position:relative;z-index:2}
+.pf-deco{position:absolute;inset:0;pointer-events:none;z-index:0}
+.pf-blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.55}
+.pf-blob.b1{width:340px;height:340px;left:-80px;top:40px;background:#f3c9d7}
+.pf-blob.b2{width:300px;height:300px;right:-60px;bottom:-40px;background:#d9cdf1}
+.pf-blob.b3{width:200px;height:200px;left:38%;top:-60px;background:#f7e3c6;opacity:.5}
+.pf-wheel{position:absolute;right:-140px;top:50%;width:620px;transform:translateY(-50%)}
+.pf-word{position:absolute;left:4%;bottom:-40px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(140px,20vw,260px);line-height:1;color:rgba(212,138,163,.10);letter-spacing:.02em}
+.pf-moons{position:absolute;left:50%;top:44px;transform:translateX(-50%);display:flex;gap:22px;align-items:center}
+.pf-moons i{display:block;width:14px;height:14px;border-radius:50%;border:1px solid rgba(201,164,106,.8)}
+.pf-moons .m1{box-shadow:inset 5px 0 0 0 rgba(201,164,106,.8)}
+.pf-moons .m2{box-shadow:inset 8px 0 0 0 rgba(201,164,106,.8)}
+.pf-moons .m3{background:rgba(201,164,106,.85);width:18px;height:18px}
+.pf-moons .m4{box-shadow:inset -8px 0 0 0 rgba(201,164,106,.8)}
+.pf-moons .m5{box-shadow:inset -5px 0 0 0 rgba(201,164,106,.8)}
+.sp{position:absolute;color:var(--gold);opacity:.7}
+.sp.s1{left:8%;top:22%;font-size:20px}.sp.s2{left:30%;bottom:16%;font-size:16px}.sp.s3{right:30%;top:18%;font-size:14px}
+.sp.s4{right:6%;top:40%;font-size:22px}.sp.s5{left:44%;top:60%;font-size:12px;opacity:.5}
+.portrait-wrap{position:relative;padding:18px}
+.portrait-wrap .portrait{position:relative;z-index:2}
+.pf-frame{position:absolute;inset:0 -18px -18px 18px;border:1.5px solid var(--gold);border-radius:190px 190px 30px 30px;opacity:.75;z-index:1}
+.pf-arch{position:absolute;left:-26px;top:40px;width:60%;height:70%;border-radius:200px 200px 0 0;background:linear-gradient(170deg,#e9d4f0,#f6dbe3);z-index:0}
+.pf-badge{position:absolute;right:-30px;top:30px;width:118px;height:118px;border-radius:50%;background:rgba(255,255,255,.95);box-shadow:0 12px 28px rgba(120,80,130,.18);z-index:3;display:flex;align-items:center;justify-content:center}
+.pf-badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 40s linear infinite}
+.pf-badge b{font-size:32px;color:var(--rose);font-weight:400}
+.pf-caption{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);z-index:3;background:#fff;padding:8px 22px;border-radius:30px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:var(--rose);letter-spacing:.1em;white-space:nowrap;box-shadow:0 10px 24px rgba(120,80,130,.12)}
+.pf-sign{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:44px;color:var(--rose);text-align:right;line-height:1;margin-top:10px!important;transform:rotate(-6deg)}
+.profile-name{font-size:42px}
+.profile-name::after{content:"";display:block;width:64px;height:2px;margin-top:10px;background:linear-gradient(90deg,var(--gold),transparent)}
+.stat{position:relative;overflow:hidden;background:linear-gradient(160deg,#fff 0%,#fdf4f8 100%);border:1px solid #f0dfe8}
+.stat::before{content:"✦";position:absolute;top:8px;right:12px;font-size:12px;color:var(--gold);opacity:.8}
+.stat::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:40%;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--lav2),var(--rose2))}
+.stat .n{background:linear-gradient(135deg,#c27393,#9b86c4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .n small{-webkit-text-fill-color:var(--ink)}
+@media (max-width:820px){
+  .pf-wheel{width:420px;right:-200px;top:30%}
+  .pf-word{font-size:120px;bottom:-20px}
+  .portrait-wrap{width:100%;max-width:300px;margin:0 auto}
+  .pf-badge{width:92px;height:92px;right:-16px;top:16px}
+  .pf-badge b{font-size:26px}
+  .pf-moons{top:28px;gap:16px}
+  .pf-sign{font-size:36px}
+  .profile-name{font-size:36px;text-align:center}
+  .profile-name::after{margin:10px auto 0}
+  .stats{gap:8px}
+  .stat{padding:18px 4px}
+  .stat .n{font-size:30px}
+  .stat .n small{font-size:13px}
+  .portrait-wrap{margin-bottom:10px}
+  .profile .en{text-align:center!important}
+  .pf-arch{left:-10px}
+}
+
 /* fixed cta */
 .fixed-cta{display:none}
 
@@ -367,16 +426,33 @@ footer a{color:#f0c7d6}
 
 <!-- PROFILE -->
 <section class="profile">
+  <div class="pf-deco" aria-hidden="true">
+    <div class="pf-blob b1"></div><div class="pf-blob b2"></div><div class="pf-blob b3"></div>
+    <svg class="pf-wheel" viewBox="0 0 600 600"><g fill="none" stroke="#b79acb" stroke-opacity=".38">
+      <circle cx="300" cy="300" r="290"/><circle cx="300" cy="300" r="270"/><circle cx="300" cy="300" r="210"/><circle cx="300" cy="300" r="120" stroke-dasharray="3 7"/>
+      <path d="M300 10V90M300 510V590M10 300H90M510 300H590M95 95L152 152M448 448L505 505M505 95L448 152M152 448L95 505"/>
+      <path d="M300 90L482 405H118Z M300 510L118 195H482Z" stroke-opacity=".28"/></g></svg>
+    <p class="pf-word">Mio</p>
+    <div class="pf-moons"><i class="m1"></i><i class="m2"></i><i class="m3"></i><i class="m4"></i><i class="m5"></i></div>
+    <span class="sp s1">✦</span><span class="sp s2">✧</span><span class="sp s3">✦</span><span class="sp s4">✧</span><span class="sp s5">✦</span>
+  </div>
   <div class="wrap profile-grid">
-    <div class="portrait reveal"><img src="img/mio.jpg" alt="タロット・星読み鑑定士 澪のプロフィール写真" loading="lazy" width="900" height="1200"></div>
+    <div class="portrait-wrap reveal">
+      <div class="pf-frame"></div>
+      <div class="pf-arch"></div>
+      <div class="portrait"><img src="img/mio.jpg" alt="タロット・星読み鑑定士 澪のプロフィール写真" loading="lazy" width="900" height="1200"></div>
+      <div class="pf-badge"><svg viewBox="0 0 120 120"><defs><path id="cir" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text font-size="11" fill="#8c6a3e" font-family="Cormorant Garamond,serif"><textPath href="#cir" textLength="272" lengthAdjust="spacing">TAROT ✦ ASTROLOGY ✦ MIO ✦ </textPath></text></svg><b>☾</b></div>
+      <p class="pf-caption">Tarot reader &amp; Astrologer</p>
+    </div>
     <div>
       <span class="en reveal" style="text-align:left">About me</span>
       <p class="profile-name reveal">澪<small>Mio</small></p>
       <p class="profile-role reveal">タロット・西洋占星術 鑑定士</p>
       <p class="reveal">はじめまして、澪(みお)です。会社員として働いていた30代のころ、仕事も恋愛もうまくいかず、眠れない夜にタロットと出会いました。</p>
       <p class="reveal">カードは未来を決めつけるものではなく、自分の本当の気持ちに気づかせてくれる鏡。そう感じてから学びを重ね、今は「話してよかった」と思える時間をお届けすることを大切にしています。</p>
+      <p class="pf-sign reveal">Mio</p>
       <div class="stats reveal">
-        <div class="stat"><div class="n"><span class="cu" data-to="3000">0</span><small>件+</small></div><div class="l">鑑定実績</div></div>
+        <div class="stat"><div class="n"><span class="cu" data-to="3000">0</span><small>件</small></div><div class="l">鑑定実績</div></div>
         <div class="stat"><div class="n"><span class="cu" data-to="12">0</span><small>年</small></div><div class="l">占い歴</div></div>
         <div class="stat"><div class="n"><span class="cu" data-to="72">0</span><small>%</small></div><div class="l">リピート率</div></div>
       </div>
