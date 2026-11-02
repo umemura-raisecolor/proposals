@@ -820,6 +820,71 @@ footer a{color:#d8bf94}
 /* new portrait: face sits right of center */
 .portrait img{object-position:62% 18%}
 .tc-img img{object-position:64% 16%}
+
+/* ===== light sections: quiet motion ===== */
+.worries,.menu,.voice-sec,.flow,.faq,.backstage{position:relative;overflow:hidden}
+.worries>.wrap,.menu>.wrap,.voice-sec>.wrap,.flow>.wrap,.faq>.wrap,.backstage>.wrap{position:relative;z-index:2}
+.lt-dust{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.lt-dust i{position:absolute;bottom:-10px;border-radius:50%;background:#c9a46a;box-shadow:0 0 8px 2px rgba(201,164,106,.45);opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{opacity:0;transform:translate(0,0)}15%{opacity:.75}85%{opacity:.45}100%{opacity:0;transform:translate(var(--dx,30px),-110vh)}}
+.lt-glint{position:absolute;color:#b89a68;pointer-events:none;z-index:1;animation:glint 5s ease-in-out infinite}
+@keyframes glint{0%,100%{opacity:.15;transform:scale(.7) rotate(0)}50%{opacity:.9;transform:scale(1.15) rotate(45deg)}}
+
+/* section heading line grows */
+h2.reveal::after{transform:scaleX(0);transition:transform 1.4s cubic-bezier(.2,.8,.2,1) .5s}
+h2.reveal.on::after{transform:scaleX(1)}
+
+/* worries: celestial rings + glow */
+.worries{background:
+  radial-gradient(ellipse 40% 45% at 8% 20%,rgba(212,178,173,.28),transparent 70%),
+  radial-gradient(ellipse 40% 45% at 92% 85%,rgba(201,186,200,.35),transparent 70%),
+  #fbf8f3}
+.w-ring{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+.w-ring.r1{width:520px;height:520px;left:-260px;top:40px;border:1px solid rgba(184,154,104,.28);animation:spin 120s linear infinite}
+.w-ring.r1::before{content:"";position:absolute;inset:34px;border-radius:50%;border:1px dashed rgba(184,154,104,.3)}
+.w-ring.r1::after{content:"✦";position:absolute;top:-9px;left:calc(50% - 7px);color:#b89a68;font-size:14px}
+.w-ring.r2{width:440px;height:440px;right:-220px;bottom:-60px;border:1px solid rgba(137,117,143,.25);animation:spinR 150s linear infinite}
+.w-ring.r2::before{content:"";position:absolute;inset:50px;border-radius:50%;border:1px dotted rgba(137,117,143,.35)}
+.w-ring.r2::after{content:"☾";position:absolute;bottom:-12px;left:calc(50% - 8px);color:#a97883;font-size:18px}
+.w-moon{position:absolute;right:8%;top:70px;width:70px;height:70px;border-radius:50%;pointer-events:none;z-index:1;
+  box-shadow:inset -14px 6px 0 0 rgba(201,164,106,.55);animation:moonFloat 9s ease-in-out infinite}
+@keyframes moonFloat{0%,100%{transform:translateY(0) rotate(-8deg);opacity:.6}50%{transform:translateY(-14px) rotate(4deg);opacity:1}}
+
+/* worry items: stagger, gold sweep, twinkling star */
+.worry-list li{transition:opacity 1.2s ease,transform 1.2s ease,background .6s}
+.worry-list li:nth-child(2){transition-delay:.15s}
+.worry-list li:nth-child(3){transition-delay:.3s}
+.worry-list li:nth-child(4){transition-delay:.45s}
+.worry-list li::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;
+  background:linear-gradient(90deg,transparent,#b89a68,transparent);transform:scaleX(0);transform-origin:left;transition:transform 1.6s ease .6s}
+.worry-list li.on::after{transform:scaleX(1)}
+.worry-list li::before{display:inline-block;transition:transform .8s ease,color .6s;animation:twinkle2 4s ease-in-out infinite}
+.worry-list li:nth-child(2)::before{animation-delay:1s}
+.worry-list li:nth-child(3)::before{animation-delay:2s}
+.worry-list li:nth-child(4)::before{animation-delay:3s}
+@keyframes twinkle2{0%,100%{opacity:.5;text-shadow:none}50%{opacity:1;text-shadow:0 0 10px rgba(201,164,106,.8)}}
+.worry-list li:hover{background:rgba(233,220,205,.35)}
+.worry-list li:hover::before{transform:rotate(180deg) scale(1.2);color:#a97883}
+
+/* bridge: soft blur-in, highlight sweeps */
+.bridge.reveal{filter:blur(6px);transition:opacity 1.8s ease,transform 1.8s ease,filter 1.8s ease}
+.bridge.reveal.on{filter:none}
+.bridge em{background-size:0% 100%;background-repeat:no-repeat;transition:background-size 1.8s ease 1.2s;
+  background-image:linear-gradient(transparent 70%,rgba(188,157,126,.35) 70%)}
+.bridge.on em{background-size:100% 100%}
+
+/* cards elsewhere: stagger in */
+.menu-card.reveal:nth-child(2),.voice.reveal:nth-child(2),.bs.reveal:nth-child(2){transition-delay:.15s}
+.menu-card.reveal:nth-child(3),.voice.reveal:nth-child(3),.bs.reveal:nth-child(3){transition-delay:.3s}
+.flow-item .no{transition:transform .8s ease,box-shadow .8s ease}
+.flow-item.on .no{animation:noPop 1.2s ease}
+@keyframes noPop{0%{transform:scale(.6);box-shadow:0 0 0 0 rgba(184,154,104,.5)}60%{transform:scale(1.08);box-shadow:0 0 0 12px rgba(184,154,104,0)}100%{transform:none}}
+
+@media (max-width:820px){
+  .w-ring.r1{width:340px;height:340px;left:-200px}
+  .w-ring.r2{width:300px;height:300px;right:-170px}
+  .w-moon{width:46px;height:46px;top:40px;right:6%}
+}
 </style>
 </head>
 <body>
@@ -863,6 +928,7 @@ footer a{color:#d8bf94}
 
 <!-- WORRIES -->
 <section class="worries">
+  <div class="w-ring r1" aria-hidden="true"></div><div class="w-ring r2" aria-hidden="true"></div><div class="w-moon" aria-hidden="true"></div>
   <div class="wrap">
     <span class="en reveal">Your heart</span>
     <h2 class="reveal">こんな気持ちを、<br>ひとりで抱えていませんか</h2>
@@ -1212,6 +1278,21 @@ footer a{color:#d8bf94}
       io.unobserve(e.target);} });
   },{threshold:.18});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  // light sections: rising gold dust + glints
+  document.querySelectorAll('.worries,.menu,.voice-sec,.flow,.faq,.backstage').forEach(function(sec,si){
+    var d=document.createElement('div'); d.className='lt-dust'; d.setAttribute('aria-hidden','true');
+    var n=sec.classList.contains('worries')?22:12;
+    for(var i=0;i<n;i++){var e=document.createElement('i');var z=Math.random()*3+2;
+      e.style.width=z+'px';e.style.height=z+'px';e.style.left=(Math.random()*100)+'%';
+      e.style.setProperty('--dx',(Math.random()*80-40)+'px');
+      e.style.animationDuration=(14+Math.random()*12)+'s';e.style.animationDelay=(-Math.random()*24)+'s';d.appendChild(e);}
+    var g=sec.classList.contains('worries')?7:3;
+    for(var k=0;k<g;k++){var t=document.createElement('span');t.className='lt-glint';t.textContent=Math.random()<.5?'✦':'✧';
+      t.style.left=(4+Math.random()*92)+'%';t.style.top=(6+Math.random()*86)+'%';t.style.fontSize=(10+Math.random()*12)+'px';
+      t.style.animationDelay=(Math.random()*5)+'s';t.style.animationDuration=(4+Math.random()*4)+'s';d.appendChild(t);}
+    sec.insertBefore(d,sec.firstChild);
+  });
 
   // form demo
   var f=document.getElementById('rf'), modal=document.getElementById('modal');
