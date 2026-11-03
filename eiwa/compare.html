@@ -23,9 +23,18 @@ main{max-width:1240px;margin:0 auto;padding:28px 16px 40px}
 .frame iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0}
 .panel a.open{display:block;padding:12px 18px;font-size:15px;color:var(--ink);font-weight:700;text-decoration:none;border-top:1px solid var(--line)}
 .panel a.open:hover{background:#f7f8fa}
-.note{margin:26px 0 0;background:#fff;border-left:4px solid var(--accent);padding:18px 20px;font-size:16px}
-.note b{display:block;margin-bottom:6px}
-.note ul{margin:0;padding-left:1.2em}
+.feat{margin:32px 0 0;background:var(--ink);color:#fff;border-radius:8px;padding:40px 28px 36px;text-align:center}
+.feat-en{margin:0;letter-spacing:.2em;font-size:13px;color:var(--accent);font-weight:700}
+.feat h2{margin:8px 0 28px;font-size:clamp(22px,3.6vw,32px);line-height:1.5}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
+.card{background:#fff;color:var(--ink);border-radius:6px;padding:24px 22px;border-top:5px solid var(--accent)}
+.card .no{display:block;font-size:34px;font-weight:800;color:var(--accent);line-height:1}
+.card b{display:block;font-size:20px;margin:12px 0 8px}
+.card p{margin:0;font-size:16px;color:#3b4456}
+.feat-btn{display:inline-block;margin-top:28px;background:var(--accent);color:var(--ink);font-weight:800;font-size:18px;padding:16px 34px;border-radius:40px;text-decoration:none;transition:transform .2s}
+.feat-btn:hover{transform:translateY(-2px)}
+.sp{display:none}
+@media (max-width:820px){.cards{grid-template-columns:1fr}.feat{padding:32px 16px 28px}.sp{display:inline}}
 footer{text-align:center;font-size:13px;color:var(--sub);padding:0 16px 30px}
 @media (max-width:820px){.grid{grid-template-columns:1fr}}
 </style>
@@ -49,14 +58,16 @@ footer{text-align:center;font-size:13px;color:var(--sub);padding:0 16px 30px}
       <a class="open" href="./" target="_blank" rel="noopener">ご提案のホームページを開く(フォームも試せます) →</a>
     </section>
   </div>
-  <div class="note">
-    <b>新しいホームページでできること</b>
-    <ul>
-      <li>お客様のお申し込みを24時間受け付け、すぐに自動で受付メールを返信</li>
-      <li>お申し込み内容を一覧表に自動で記録し、スマホにお知らせ</li>
-      <li>現地調査の希望日をGoogleカレンダーに自動で登録</li>
-    </ul>
-  </div>
+  <section class="feat">
+    <p class="feat-en">WHAT'S NEW</p>
+    <h2>現場に出ている間も、<br class="sp">お問い合わせを取りこぼしません</h2>
+    <div class="cards">
+      <div class="card"><span class="no">01</span><b>24時間受付・自動返信</b><p>夜や休日のお申し込みにも、すぐに受付メールが届きます。お客様が他社へ流れません。</p></div>
+      <div class="card"><span class="no">02</span><b>一覧表に記録・スマホに通知</b><p>お申し込みの内容が自動で一覧表にたまり、親方のスマホにすぐお知らせします。</p></div>
+      <div class="card"><span class="no">03</span><b>カレンダーに自動登録</b><p>現地調査の希望日が、Googleカレンダーにそのまま入ります。</p></div>
+    </div>
+    <a class="feat-btn" href="./#contact" target="_blank" rel="noopener">実際にお申し込みを試してみる →</a>
+  </section>
 </main>
 <footer>合同会社ライズカラー 梅村恵美</footer>
 <script>
