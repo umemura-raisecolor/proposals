@@ -1,0 +1,147 @@
+[
+ {
+  "slug": "amano",
+  "code": "B130",
+  "name": "有限会社アマノ塗装店",
+  "short": "アマノ塗装店",
+  "site": "https://amanotosou.net/",
+  "city": "笛吹市",
+  "pref": "山梨県",
+  "address": "〒406-0034 山梨県笛吹市石和町唐柏141-2",
+  "tel": "0120-516-113",
+  "area": "甲府市・笛吹市を中心に、山梨県全域",
+  "fv": {
+   "eye": "FUEFUKI, YAMANASHI ・ LOCAL PAINTING COMPANY",
+   "num": 5000,
+   "en": "HOMES",
+   "small": "件以上、山梨の家を塗ってきた。",
+   "sub": "施工実績5,000件超。甲府市・笛吹市の外壁塗装専門店、アマノ塗装店です。"
+  },
+  "trust": [
+   [
+    "施工実績 5,000件超",
+    "戸建て住宅だけで"
+   ],
+   [
+    "創業 平成3年",
+    "山梨で塗装一筋"
+   ],
+   [
+    "山梨県知事許可",
+    "資格も多数保有"
+   ],
+   [
+    "雨漏り・外壁の無料診断",
+    "まずは状態をお調べします"
+   ]
+  ],
+  "badge": "外壁・雨漏りの無料診断",
+  "reason3": "山梨の地域密着店として、お客様一人ひとりと向き合い、満足のいく高品質な塗装をお届けします。",
+  "message": "平成3年の創業以来、山梨の家を塗らせていただき、戸建て住宅だけで5,000件を超えました。",
+  "rep_title": "代表",
+  "rep_name": "天野 雅章",
+  "founded_row": "<tr><th>創業</th><td>平成3年</td></tr>",
+  "photos": [
+   "https://amanotosou.net/cms/wp-content/uploads/2026/11/A1-720x540.jpg",
+   "https://amanotosou.net/cms/wp-content/uploads/2026/08/0aeee317a8d2b64e7b2462db7cc5bdde-720x540.jpg",
+   "https://amanotosou.net/cms/wp-content/uploads/2026/05/A1-1-300x235.jpg",
+   "https://amanotosou.net/cms/wp-content/uploads/2026/03/d15b8ebd04fa91d536b75e06134e18b4-300x196.jpg"
+  ]
+ },
+ {
+  "slug": "artrepain",
+  "code": "B134",
+  "name": "株式会社アートリペイン",
+  "short": "アートリペイン",
+  "site": "https://www.artrepain.co.jp/",
+  "city": "豊橋市",
+  "pref": "愛知県",
+  "address": "愛知県豊橋市船町65",
+  "tel": "0120-14-3016",
+  "area": "豊橋市・豊川市を中心に、東三河エリア",
+  "fv": {
+   "eye": "TOYOHASHI, AICHI ・ LOCAL PAINTING COMPANY",
+   "num": 4000,
+   "en": "HOMES",
+   "small": "棟、豊橋の家を塗ってきた。",
+   "sub": "創業25年・4,000棟。豊橋市の外壁塗装専門店、アートリペインです。"
+  },
+  "trust": [
+   [
+    "創業25年",
+    "豊橋・豊川で"
+   ],
+   [
+    "施工実績 4,000棟",
+    "戸建てからハウスメーカー住宅まで"
+   ],
+   [
+    "丁寧な下地処理",
+    "10年後もキレイが続く"
+   ],
+   [
+    "国家資格保有者が施工",
+    "信頼の技術"
+   ]
+  ],
+  "badge": "ハウスメーカー住宅にも対応",
+  "reason3": "国家資格をもつ職人が、仕上がりを左右する下地処理にこだわって施工します。同じ塗料でも長持ちする塗装で、10年先もキレイが続きます。",
+  "message": "豊橋で25年、4,000棟の住まいを塗らせていただいてきました。",
+  "rep_title": "代表",
+  "rep_name": "石塚 善規",
+  "photos": [
+   "https://www.artrepain.co.jp/_p/acre/10440/images/pc/41460fbf.JPEG",
+   "https://www.artrepain.co.jp/_p/acre/10440/images/pc/647e87ad.JPEG",
+   "https://www.artrepain.co.jp/_p/acre/10440/images/pc/60dd2057.JPEG",
+   "https://www.artrepain.co.jp/_p/acre/10440/images/pc/e1606b30.JPEG"
+  ]
+ },
+ {
+  "slug": "yoshida",
+  "code": "B138",
+  "name": "株式会社吉田塗装店",
+  "short": "吉田塗装店",
+  "site": "https://11160.com/",
+  "city": "豊川市",
+  "pref": "愛知県",
+  "address": "〒442-0884 愛知県豊川市光明町1丁目6-1",
+  "tel": "0120-939-747",
+  "area": "豊川市・豊橋市・新城市を中心に、東三河エリア",
+  "fv": {
+   "eye": "TOYOKAWA, AICHI ・ SINCE 1955",
+   "num": 70,
+   "en": "YEARS",
+   "small": "年、豊川の家を塗ってきた。",
+   "sub": "地域密着70年。豊川市の外壁塗装・塗替え専門店、吉田塗装店です。"
+  },
+  "trust": [
+   [
+    "地域密着70年",
+    "豊川市で毎年150棟前後"
+   ],
+   [
+    "国家資格保有者 8名",
+    "自社職人が施工"
+   ],
+   [
+    "クチコミ評価 4.8",
+    "118件のお声"
+   ],
+   [
+    "戸建てから工場まで",
+    "アパートの塗装も"
+   ]
+  ],
+  "badge": "適正価格の塗替え専門店",
+  "reason3": "国家資格をもつ自社職人と協力業者で施工します。適正価格で、安心してお任せいただける塗替えリフォーム専門店です。",
+  "message": "豊川で70年以上、毎年150棟前後の外壁・屋根工事を続けてきました。",
+  "rep_title": "",
+  "rep_name": "吉田塗装店",
+  "photos": [
+   "https://11160.com/wp-content/uploads/2026/09/tomita_hitoshi_a.jpg",
+   "https://11160.com/wp-content/uploads/2026/09/asano_tomoyuki_a.jpg",
+   "https://11160.com/wp-content/uploads/2026/11/ikeda_hiroo_a.jpg",
+   "https://11160.com/wp-content/uploads/2026/10/mitui_hiroyuki_a-scaled.jpg"
+  ]
+ }
+]

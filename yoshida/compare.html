@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>吉田塗装店様 ご提案</title>
+<style>
+:root{--ink:#14213d;--sub:#5b6577;--line:#dde2ea;--bg:#f4f6f9;--accent:#c9a24a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7}
+header{background:var(--ink);color:#fff;padding:28px 16px 30px;text-align:center}
+header small{display:block;letter-spacing:.18em;font-size:12px;color:var(--accent)}
+header h1{margin:6px 0 0;font-size:clamp(20px,3.4vw,28px);font-weight:700}
+header p{margin:8px 0 0;font-size:15px;color:#cfd6e3}
+main{max-width:1240px;margin:0 auto;padding:28px 16px 40px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.panel h2{margin:0;padding:14px 18px;font-size:17px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.panel h2 span{font-size:12px;font-weight:700;padding:3px 10px;border-radius:3px;background:#e8ebf0;color:var(--sub)}
+.panel.new h2 span{background:var(--ink);color:#fff}
+.frame{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#eee}
+.frame iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0}
+.panel a.open{display:block;padding:12px 18px;font-size:15px;color:var(--ink);font-weight:700;text-decoration:none;border-top:1px solid var(--line)}
+.panel a.open:hover{background:#f7f8fa}
+.feat{margin:32px 0 0;background:var(--ink);color:#fff;border-radius:8px;padding:40px 28px 36px;text-align:center}
+.feat-en{margin:0;letter-spacing:.2em;font-size:13px;color:var(--accent);font-weight:700}
+.feat h2{margin:8px 0 28px;font-size:clamp(22px,3.6vw,32px);line-height:1.5}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
+.card{background:#fff;color:var(--ink);border-radius:6px;padding:24px 22px;border-top:5px solid var(--accent)}
+.card .no{display:block;font-size:34px;font-weight:800;color:var(--accent);line-height:1}
+.card b{display:block;font-size:20px;margin:12px 0 8px}
+.card p{margin:0;font-size:16px;color:#3b4456}
+.feat-btn{display:inline-block;margin-top:28px;background:var(--accent);color:var(--ink);font-weight:800;font-size:18px;padding:16px 34px;border-radius:40px;text-decoration:none;transition:transform .2s}
+.feat-btn:hover{transform:translateY(-2px)}
+.sp{display:none}
+@media (max-width:820px){.cards{grid-template-columns:1fr}.feat{padding:32px 16px 28px}.sp{display:inline}}
+footer{text-align:center;font-size:13px;color:var(--sub);padding:0 16px 30px}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <small>FIRST VIEW</small>
+  <h1>吉田塗装店様 ホームページのご提案</h1>
+  <p>今のホームページと、ご提案のホームページを並べました。</p>
+</header>
+<main>
+  <div class="grid">
+    <section class="panel">
+      <h2><span>現在</span>今のホームページ</h2>
+      <div class="frame"><iframe src="https://11160.com/" title="今のホームページ" loading="lazy" tabindex="-1"></iframe></div>
+      <a class="open" href="https://11160.com/" target="_blank" rel="noopener">今のホームページを開く →</a>
+    </section>
+    <section class="panel new">
+      <h2><span>ご提案</span>新しいホームページ</h2>
+      <div class="frame"><iframe src="./" title="ご提案のホームページ" loading="lazy"></iframe></div>
+      <a class="open" data-demo href="./" target="_blank" rel="noopener">ご提案のホームページを開く(フォームも試せます) →</a>
+    </section>
+  </div>
+  <section class="feat">
+    <p class="feat-en">WHAT'S NEW</p>
+    <h2>現場に出ている間も、<br class="sp">お問い合わせを取りこぼしません</h2>
+    <div class="cards">
+      <div class="card"><span class="no">01</span><b>24時間受付・自動返信</b><p>夜や休日のお申し込みにも、すぐに受付メールが届きます。お客様が他社へ流れません。</p></div>
+      <div class="card"><span class="no">02</span><b>一覧表に記録・スマホに通知</b><p>お申し込みの内容が自動で一覧表にたまり、親方のスマホにすぐお知らせします。</p></div>
+      <div class="card"><span class="no">03</span><b>カレンダーに自動登録</b><p>現地調査の希望日が、Googleカレンダーにそのまま入ります。</p></div>
+    </div>
+    <a class="feat-btn" data-demo href="./#contact" target="_blank" rel="noopener">実際にお申し込みを試してみる →</a>
+  </section>
+</main>
+<footer>合同会社ライズカラー 梅村恵美</footer>
+<script>
+(function(){
+  function fit(){document.querySelectorAll('.frame').forEach(function(f){var s=f.clientWidth/1280;var i=f.querySelector('iframe');i.style.transform='scale('+s+')';});}
+  fit();window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+(function(){
+  var GAS_URL='https://script.google.com/macros/s/AKfycbyVOoWKknoyFsi8tA_uPkdrqLWeCd30p7Y2o92dob5pgNq1wuqIl3TqMvksgooyM1465Q/exec';
+  var ref=(new URLSearchParams(location.search).get('r')||'').replace(/[^\w\-]/g,'').slice(0,20);
+  if(ref){
+    try{fetch(GAS_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'view',ref:ref,where:'compare',ev:'open'})});}catch(e){}
+    document.querySelectorAll('a[data-demo]').forEach(function(a){var h=a.getAttribute('href');var i=h.indexOf('#');a.href=(i<0?h:h.slice(0,i))+'?r='+ref+(i<0?'':h.slice(i));});
+  }
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
