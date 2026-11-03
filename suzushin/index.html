@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja" class="sk-gallery">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>スズシン塗装店｜外壁塗装・屋根塗装・防水工事｜地域密着の塗装会社</title>
+<meta name="description" content="スズシン塗装店は、豊川市を中心に外壁塗装・屋根塗装・防水工事を行う地域密着の塗装会社です。自社職人による丁寧な施工で、お見積りは無料です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="base.css?v=10260500">
+<link rel="stylesheet" href="skin.css?v=10260500">
+<style>:root{--accent:#1b78bd;--accent-on-photo:#9ad6f7;--cta-bg:#1b5f94;--cta-ink:#ffffff;--foot-bg:#16212b;--bg:#f7f8f6;--bg2:#eef3f6;}
+html{scroll-behavior:smooth} section[id]{scroll-margin-top:80px}
+.brand .lt{font-family:"Noto Serif JP",serif;font-weight:700;letter-spacing:.08em}
+.demo-note{font-size:13px;color:var(--sub);text-align:center;margin-top:18px}
+.demo-try{max-width:860px;margin:0 auto 22px;padding:22px 26px;background:#fff;border:2px solid var(--accent);border-radius:4px}
+.demo-try .dt-h{font-weight:700;font-size:18px;color:var(--accent);margin:0 0 8px}
+.demo-try p{margin:0 0 6px;line-height:1.9}
+.demo-try b{display:inline-block;background:var(--bg2);padding:0 6px;margin:2px 0}
+.demo-try .dt-s{font-size:13px;color:var(--sub);margin:8px 0 0}
+.row select{width:100%;font:inherit;padding:14px 16px;border:1px solid var(--line);background:var(--bg);color:var(--ink);appearance:auto}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.opt{font-size:11.5px;padding:1px 8px;border:1px solid var(--line);color:var(--sub);font-weight:500}
+.photo{display:block;cursor:pointer}
+.photo input{position:absolute;opacity:0;width:1px;height:1px}
+.ph-box{display:flex;align-items:center;justify-content:center;gap:12px;min-height:110px;border:1.5px dashed var(--line);background:var(--bg);color:var(--sub);padding:12px;text-align:center}
+.photo input:focus-visible+.ph-box{outline:2px solid var(--accent)}
+.ph-plus{font-size:28px;color:var(--accent);line-height:1}
+.ph-box img{max-height:150px;max-width:60%;object-fit:cover}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.err{margin:18px 0 0;padding:14px 18px;border-left:4px solid #c0392b;background:#fdf0ee;color:#8e2b20;font-weight:700}
+#sendbtn[disabled]{opacity:.6;pointer-events:none}
+#sendbtn{white-space:nowrap;letter-spacing:.06em}#sendbtn .tag{white-space:nowrap;writing-mode:horizontal-tb}
+.demo-result{max-width:980px;margin:40px auto 0;outline:none}
+.dr-ok{font-size:clamp(18px,2.2vw,22px);font-weight:700;text-align:center;margin:0 0 26px;color:var(--accent)}
+.dr-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dr-card{min-width:0;background:#fff;border:1px solid var(--line);padding:24px;opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.demo-result.show .dr-card{opacity:1;transform:none}
+.demo-result.show .dr-card:nth-child(2){transition-delay:.35s}.demo-result.show .dr-card:nth-child(3){transition-delay:.7s}.demo-result.show .dr-card:nth-child(4){transition-delay:1.05s}
+.dr-no{font-family:var(--en);font-size:13px;letter-spacing:.2em;color:var(--accent);margin:0}
+.dr-card h3{font-size:18px;margin:4px 0 8px;letter-spacing:.04em}
+.dr-tx{font-size:14.5px;line-height:1.8;margin:0 0 14px;color:var(--ink)}
+.dr-tx small{color:var(--sub)}
+.dr-sheet{font-size:12.5px;border:1px solid #c9d3da;overflow-x:auto}
+.dr-sheet .r{display:grid;grid-template-columns:42px 1.2fr 1fr 1.3fr 66px;min-width:420px}
+.dr-sheet .r span{padding:8px 8px;border-right:1px solid #e1e6ea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dr-sheet .h{background:#1b5f94;color:#fff;font-weight:700}
+.dr-sheet .r:not(.h){background:#eef6fc}
+.dr-sheet .st{color:#b4540a;font-weight:700}
+.dr-cal{display:flex;gap:14px;align-items:stretch}
+.dr-cal .day{flex:0 0 74px;text-align:center;border:1px solid var(--line);padding:8px 0;display:flex;flex-direction:column;justify-content:center}
+.dr-cal .day b{font-size:30px;line-height:1.1;font-family:var(--en)}
+.dr-cal .day small{color:var(--sub);font-size:12px}
+.dr-cal .ev{flex:1;background:#1b78bd;color:#fff;padding:12px 14px;border-radius:4px;display:flex;flex-direction:column;justify-content:center}
+.dr-cal .ev b{font-size:16px}
+.dr-foot{text-align:center;margin:26px 0 0;font-weight:700}
+@media (max-width:720px){.two-col,.dr-grid{grid-template-columns:1fr}.demo-try{padding:18px}.dr-card{padding:20px 16px}.dr-sheet .r{grid-template-columns:40px 1fr 1.3fr 58px;min-width:0}.dr-sheet .r span:nth-child(2){display:none}.dr-sheet .r span{padding:8px 6px}}</style>
+</head>
+<body>
+<header class="site over">
+  <a class="brand" href="#top" aria-label="スズシン塗装店 トップへ"><span class="lt">スズシン塗装店</span></a>
+  <nav class="gnav" id="gnav" aria-label="メインメニュー"><a href="#works"><b>WORKS</b><small>施工実績</small></a><a href="#reasons"><b>REASON</b><small>選ばれる理由</small></a><a href="#service"><b>SERVICE</b><small>工事の内容</small></a><a href="#company"><b>COMPANY</b><small>会社案内</small></a><a href="#contact" class="sp-only"><b>CONTACT</b><small>お問い合わせ</small></a></nav>
+  <a class="h-tel" href="tel:0533746545"><small>お電話</small><b>0533-74-6545</b></a>
+  <a class="h-contact" href="#contact"><b>CONTACT</b><small>無料お見積り</small></a>
+  <button class="menu-btn" aria-label="メニュー" aria-controls="gnav" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<main id="top"><section class="fvw" aria-label="ご紹介">
+  <div class="fvw-wall" aria-hidden="true"><div class="col"><div class="track"><figure><img src="https://suzushin-toso.com/wp-content/uploads/2020/12/mainimg-1.jpg" alt=""><figcaption>HOUSE — REPAINT</figcaption></figure><figure><img src="../sample/img/waterproof.jpg" alt=""><figcaption>ROOF — WATERPROOF</figcaption></figure><figure><img src="../sample/img/house2.jpg" alt=""><figcaption>HOUSE — BEIGE</figcaption></figure><figure><img src="../sample/img/brush.jpg" alt=""><figcaption>DETAIL — BRUSH</figcaption></figure><figure><img src="../sample/img/house3.jpg" alt=""><figcaption>HOUSE — SAGE GREEN</figcaption></figure><figure><img src="../sample/img/check.jpg" alt=""><figcaption>INSPECTION</figcaption></figure><figure><img src="../sample/img/house4.jpg" alt=""><figcaption>HOUSE — WHITE</figcaption></figure><figure><img src="../sample/img/color.jpg" alt=""><figcaption>COLOR SELECT</figcaption></figure><figure><img src="https://suzushin-toso.com/wp-content/uploads/2020/12/mainimg-1.jpg" alt=""><figcaption>HOUSE — REPAINT</figcaption></figure><figure><img src="../sample/img/waterproof.jpg" alt=""><figcaption>ROOF — WATERPROOF</figcaption></figure><figure><img src="../sample/img/house2.jpg" alt=""><figcaption>HOUSE — BEIGE</figcaption></figure><figure><img src="../sample/img/brush.jpg" alt=""><figcaption>DETAIL — BRUSH</figcaption></figure><figure><img src="../sample/img/house3.jpg" alt=""><figcaption>HOUSE — SAGE GREEN</figcaption></figure><figure><img src="../sample/img/check.jpg" alt=""><figcaption>INSPECTION</figcaption></figure><figure><img src="../sample/img/house4.jpg" alt=""><figcaption>HOUSE — WHITE</figcaption></figure><figure><img src="../sample/img/color.jpg" alt=""><figcaption>COLOR SELECT</figcaption></figure></div></div><div class="col"><div class="track"><figure><img src="../sample/img/brush.jpg" alt=""><figcaption>DETAIL — BRUSH</figcaption></figure><figure><img src="../sample/img/house3.jpg" alt=""><figcaption>HOUSE — SAGE GREEN</figcaption></figure><figure><img src="../sample/img/check.jpg" alt=""><figcaption>INSPECTION</figcaption></figure><figure><img src="../sample/img/house4.jpg" alt=""><figcaption>HOUSE — WHITE</figcaption></figure><figure><img src="../sample/img/color.jpg" alt=""><figcaption>COLOR SELECT</figcaption></figure><figure><img src="../sample/img/waterproof2.jpg" alt=""><figcaption>BALCONY — WATERPROOF</figcaption></figure><figure><img src="../sample/img/hero.jpg" alt=""><figcaption>CRAFTSMAN</figcaption></figure><figure><img src="../sample/img/house1-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure><figure><img src="../sample/img/brush.jpg" alt=""><figcaption>DETAIL — BRUSH</figcaption></figure><figure><img src="../sample/img/house3.jpg" alt=""><figcaption>HOUSE — SAGE GREEN</figcaption></figure><figure><img src="../sample/img/check.jpg" alt=""><figcaption>INSPECTION</figcaption></figure><figure><img src="../sample/img/house4.jpg" alt=""><figcaption>HOUSE — WHITE</figcaption></figure><figure><img src="../sample/img/color.jpg" alt=""><figcaption>COLOR SELECT</figcaption></figure><figure><img src="../sample/img/waterproof2.jpg" alt=""><figcaption>BALCONY — WATERPROOF</figcaption></figure><figure><img src="../sample/img/hero.jpg" alt=""><figcaption>CRAFTSMAN</figcaption></figure><figure><img src="../sample/img/house1-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure></div></div><div class="col"><div class="track"><figure><img src="../sample/img/house4.jpg" alt=""><figcaption>HOUSE — WHITE</figcaption></figure><figure><img src="../sample/img/color.jpg" alt=""><figcaption>COLOR SELECT</figcaption></figure><figure><img src="../sample/img/waterproof2.jpg" alt=""><figcaption>BALCONY — WATERPROOF</figcaption></figure><figure><img src="../sample/img/hero.jpg" alt=""><figcaption>CRAFTSMAN</figcaption></figure><figure><img src="../sample/img/house1-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure><figure><img src="../sample/img/house3-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure><figure><img src="https://suzushin-toso.com/wp-content/uploads/2020/12/mainimg-1.jpg" alt=""><figcaption>HOUSE — REPAINT</figcaption></figure><figure><img src="../sample/img/waterproof.jpg" alt=""><figcaption>ROOF — WATERPROOF</figcaption></figure><figure><img src="../sample/img/house4.jpg" alt=""><figcaption>HOUSE — WHITE</figcaption></figure><figure><img src="../sample/img/color.jpg" alt=""><figcaption>COLOR SELECT</figcaption></figure><figure><img src="../sample/img/waterproof2.jpg" alt=""><figcaption>BALCONY — WATERPROOF</figcaption></figure><figure><img src="../sample/img/hero.jpg" alt=""><figcaption>CRAFTSMAN</figcaption></figure><figure><img src="../sample/img/house1-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure><figure><img src="../sample/img/house3-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure><figure><img src="https://suzushin-toso.com/wp-content/uploads/2020/12/mainimg-1.jpg" alt=""><figcaption>HOUSE — REPAINT</figcaption></figure><figure><img src="../sample/img/waterproof.jpg" alt=""><figcaption>ROOF — WATERPROOF</figcaption></figure></div></div><div class="col"><div class="track"><figure><img src="../sample/img/hero.jpg" alt=""><figcaption>CRAFTSMAN</figcaption></figure><figure><img src="../sample/img/house1-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure><figure><img src="../sample/img/house3-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure><figure><img src="https://suzushin-toso.com/wp-content/uploads/2020/12/mainimg-1.jpg" alt=""><figcaption>HOUSE — REPAINT</figcaption></figure><figure><img src="../sample/img/waterproof.jpg" alt=""><figcaption>ROOF — WATERPROOF</figcaption></figure><figure><img src="../sample/img/house2.jpg" alt=""><figcaption>HOUSE — BEIGE</figcaption></figure><figure><img src="../sample/img/brush.jpg" alt=""><figcaption>DETAIL — BRUSH</figcaption></figure><figure><img src="../sample/img/house3.jpg" alt=""><figcaption>HOUSE — SAGE GREEN</figcaption></figure><figure><img src="../sample/img/hero.jpg" alt=""><figcaption>CRAFTSMAN</figcaption></figure><figure><img src="../sample/img/house1-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure><figure><img src="../sample/img/house3-before.jpg" alt=""><figcaption>BEFORE</figcaption></figure><figure><img src="https://suzushin-toso.com/wp-content/uploads/2020/12/mainimg-1.jpg" alt=""><figcaption>HOUSE — REPAINT</figcaption></figure><figure><img src="../sample/img/waterproof.jpg" alt=""><figcaption>ROOF — WATERPROOF</figcaption></figure><figure><img src="../sample/img/house2.jpg" alt=""><figcaption>HOUSE — BEIGE</figcaption></figure><figure><img src="../sample/img/brush.jpg" alt=""><figcaption>DETAIL — BRUSH</figcaption></figure><figure><img src="../sample/img/house3.jpg" alt=""><figcaption>HOUSE — SAGE GREEN</figcaption></figure></div></div><div class="col"><div class="track"><figure><img src="../sample/img/waterproof.jpg" alt=""><figcaption>ROOF — WATERPROOF</figcaption></figure><figure><img src="../sample/img/house2.jpg" alt=""><figcaption>HOUSE — BEIGE</figcaption></figure><figure><img src="../sample/img/brush.jpg" alt=""><figcaption>DETAIL — BRUSH</figcaption></figure><figure><img src="../sample/img/house3.jpg" alt=""><figcaption>HOUSE — SAGE GREEN</figcaption></figure><figure><img src="../sample/img/check.jpg" alt=""><figcaption>INSPECTION</figcaption></figure><figure><img src="../sample/img/house4.jpg" alt=""><figcaption>HOUSE — WHITE</figcaption></figure><figure><img src="../sample/img/color.jpg" alt=""><figcaption>COLOR SELECT</figcaption></figure><figure><img src="../sample/img/waterproof2.jpg" alt=""><figcaption>BALCONY — WATERPROOF</figcaption></figure><figure><img src="../sample/img/waterproof.jpg" alt=""><figcaption>ROOF — WATERPROOF</figcaption></figure><figure><img src="../sample/img/house2.jpg" alt=""><figcaption>HOUSE — BEIGE</figcaption></figure><figure><img src="../sample/img/brush.jpg" alt=""><figcaption>DETAIL — BRUSH</figcaption></figure><figure><img src="../sample/img/house3.jpg" alt=""><figcaption>HOUSE — SAGE GREEN</figcaption></figure><figure><img src="../sample/img/check.jpg" alt=""><figcaption>INSPECTION</figcaption></figure><figure><img src="../sample/img/house4.jpg" alt=""><figcaption>HOUSE — WHITE</figcaption></figure><figure><img src="../sample/img/color.jpg" alt=""><figcaption>COLOR SELECT</figcaption></figure><figure><img src="../sample/img/waterproof2.jpg" alt=""><figcaption>BALCONY — WATERPROOF</figcaption></figure></div></div></div>
+  <div class="fvw-paint"><span class="shape2" aria-hidden="true"></span><span class="shape" aria-hidden="true"></span>
+    <div class="fvw-in">
+      <p class="fvw-eye">TOYOKAWA, AICHI ・ LOCAL PAINTING COMPANY</p>
+      <p class="fvw-num"><span class="count" data-to="5" data-delay="500" data-dur="1900">5</span><span class="u"><b>CITIES</b><small>市を中心に、東三河全域をまわっています。</small></span></p>
+      <h1><span>色あせも、ひび割れも、</span><span><em>雨もれの不安</em>も。</span></h1>
+      <p class="fvw-sub">東三河の塗り替えなら、スズシン塗装店です。</p>
+      <div class="acts"><a class="btn btn-main" href="#contact"><span class="tag">無料</span>お見積り・ご相談 <span class="arw">→</span></a><a class="tel-btn" href="tel:0533746545"><small>お電話でのご相談</small><b>0533-74-6545</b></a></div>
+    </div>
+  </div>
+</section><section class="trust" aria-label="信頼の理由"><div class="wrap"><ul class="trust-list"><li class="rv dl0"><b>LINEで簡単見積もり</b><small>写真と建坪を送るだけ</small></li><li class="rv dl1"><b>職人が手作業で施工</b><small>自社品質に徹底的にこだわり</small></li><li class="rv dl2"><b>大型物件から個人宅まで</b><small>幅広く対応</small></li><li class="rv dl3"><b>東三河全域に対応</b><small>豊川市を中心に</small></li></ul><ul class="badges"><li>お見積り・現地調査 無料</li><li>LINEで簡単見積もり</li><li>しつこい営業はいたしません</li></ul></div></section><section class="sec s-works" id="works"><div class="wrap">
+  <header class="sh rv"><p class="en">WORKS</p><h2>施工実績</h2><p class="lead">施工前と施工後を、工事の中身と合わせてご紹介します。</p></header>
+  <div class="works"><article class="wcard rv dl1">
+  <div class="pair"><figure><img src="../sample/img/house1-before.jpg" alt="戸建て 外壁・屋根塗装 施工前" loading="lazy"><figcaption>施工前</figcaption></figure><figure class="af"><img src="https://suzushin-toso.com/wp-content/uploads/2020/12/mainimg-1.jpg" alt="戸建て 外壁・屋根塗装 施工後" loading="lazy"><figcaption>施工後</figcaption></figure></div>
+  <div class="bd"><p class="area"><span>HOUSE</span>豊川市 S様邸</p><h3>戸建て 外壁・屋根塗装</h3><dl><dt>工事内容</dt><dd>外壁・屋根の塗り替え、付帯部塗装</dd><dt>塗料</dt><dd>ラジカル制御形シリコン</dd><dt>ポイント</dt><dd>色あせたグレーから、引き締まったネイビーに。玄関まわりは木目を生かして、メリハリのある外観にしました</dd></dl></div>
+</article><article class="wcard rv dl2">
+  <div class="pair"><figure><img src="../sample/img/house2-before.jpg" alt="戸建て 外壁塗装(2色塗り分け) 施工前" loading="lazy"><figcaption>施工前</figcaption></figure><figure class="af"><img src="../sample/img/house2.jpg" alt="戸建て 外壁塗装(2色塗り分け) 施工後" loading="lazy"><figcaption>施工後</figcaption></figure></div>
+  <div class="bd"><p class="area"><span>HOUSE</span>豊川市 K様邸</p><h3>戸建て 外壁塗装(2色塗り分け)</h3><dl><dt>工事内容</dt><dd>外壁塗装、シーリング打ち替え</dd><dt>塗料</dt><dd>フッ素塗料</dd><dt>ポイント</dt><dd>1階のタイル調はそのままに、2階を明るいアイボリーへ。築年数を感じさせない仕上がりです</dd></dl></div>
+</article><article class="wcard rv dl1">
+  <div class="pair"><figure><img src="../sample/img/house3-before.jpg" alt="戸建て 外壁塗装・ひび割れ補修 施工前" loading="lazy"><figcaption>施工前</figcaption></figure><figure class="af"><img src="../sample/img/house3.jpg" alt="戸建て 外壁塗装・ひび割れ補修 施工後" loading="lazy"><figcaption>施工後</figcaption></figure></div>
+  <div class="bd"><p class="area"><span>HOUSE</span>豊川市 M様邸</p><h3>戸建て 外壁塗装・ひび割れ補修</h3><dl><dt>工事内容</dt><dd>ひび割れ補修、外壁塗装</dd><dt>塗料</dt><dd>無機ハイブリッド塗料</dd><dt>ポイント</dt><dd>やわらかなセージグリーンに。周りの植栽ともなじむ色を、見本板で一緒に選びました</dd></dl></div>
+</article><article class="wcard rv dl2">
+  <div class="pair"><figure><img src="../sample/img/waterproof.jpg" alt="屋上・ベランダ 防水工事 施工中" loading="lazy"><figcaption>施工中</figcaption></figure><figure class="af"><img src="../sample/img/waterproof2.jpg" alt="屋上・ベランダ 防水工事 仕上がり" loading="lazy"><figcaption>仕上がり</figcaption></figure></div>
+  <div class="bd"><p class="area"><span>WATERPROOF</span>豊川市 マンション</p><h3>屋上・ベランダ 防水工事</h3><dl><dt>工事内容</dt><dd>ウレタン塗膜防水(通気緩衝工法)</dd><dt>ポイント</dt><dd>雨もれの原因になりやすい立ち上がりや排水口まわりも、下地から丁寧に処理しています</dd></dl></div>
+</article></div>
+  <p class="note">※こちらはスズシン塗装店様へのご提案用の見本ページです。施工写真は、スズシン塗装店様の現在のホームページから使用しています。お客様の声などの文章はイメージで、実際は貴社の内容に差し替えます。</p>
+</div></section><section class="sec s-proof"><div class="wrap">
+  <div class="proof-top"><header class="sh rv"><p class="en">VOICE</p><h2>お客様の声</h2><p class="lead">工事のあとにいただいたアンケートから、一部をご紹介します。</p></header></div>
+  <div class="proof"><article class="pitem rv dl1"><div class="two one"><figure><img src="https://suzushin-toso.com/wp-content/uploads/2020/12/mainimg-1.jpg" alt="S様邸" loading="lazy"><figcaption>S様邸</figcaption></figure></div>
+<div class="bd"><p class="yr"><small>VOICE 01</small></p><h3>色選びから相談にのってもらえました</h3><p class="when">豊川市 S様(外壁・屋根塗装)</p><p>カラーシミュレーションで何パターンも見せてもらえて、イメージ通りの色に決められました。ご近所からも「新築みたい」と言われます。</p></div></article><article class="pitem rv dl2"><div class="two one"><figure><img src="../sample/img/house2.jpg" alt="K様邸" loading="lazy"><figcaption>K様邸</figcaption></figure></div>
+<div class="bd"><p class="yr"><small>VOICE 02</small></p><h3>毎日の報告で、留守中も安心でした</h3><p class="when">豊川市 K様(外壁塗装)</p><p>共働きで日中は家にいないのですが、その日の作業を写真つきで毎日報告してもらえたので、安心してお任せできました。</p></div></article><article class="pitem rv dl3"><div class="two one"><figure><img src="../sample/img/waterproof2.jpg" alt="マンション屋上" loading="lazy"><figcaption>屋上防水</figcaption></figure></div>
+<div class="bd"><p class="yr"><small>VOICE 03</small></p><h3>説明がわかりやすく、正直でした</h3><p class="when">豊川市 マンション管理組合様(防水工事)</p><p>他社では全面改修をすすめられましたが、必要なところだけを正直に提案してもらえました。費用も抑えられて助かりました。</p></div></article></div>
+</div></section><section class="sec s-reasons" id="reasons"><div class="wrap">
+  <header class="sh rv"><p class="en">CRAFTSMANSHIP</p><h2>選ばれる理由</h2><p class="lead">見えなくなるところほど、手を抜かない。それが長持ちする塗装の秘訣です。</p></header>
+  <div class="reasons"><article class="reason rv dl1"><div class="r-img reveal-img"><img src="../sample/img/check.jpg" alt="" loading="lazy"></div><div class="bd"><h3>現地調査で、建物の状態を正直にお伝えします</h3><p>ひび割れ、チョーキング、シーリングの傷みまで、すべて写真でご報告。塗装で良いのか、補修が必要なのかを正直にお伝えします。</p></div></article><article class="reason rv dl2"><div class="r-img reveal-img"><img src="../sample/img/color.jpg" alt="" loading="lazy"></div><div class="bd"><h3>色選びは、見本板とシミュレーションで</h3><p>小さな色見本だけで決めると、仕上がりの印象が変わりがちです。大きな見本板とカラーシミュレーションで、完成のイメージを一緒に確かめます。</p></div></article><article class="reason rv dl3"><div class="r-img reveal-img"><img src="../sample/img/brush.jpg" alt="" loading="lazy"></div><div class="bd"><h3>自社の職人が、最後まで責任をもって</h3><p>塗装職人がひとつひとつ思いを込めて、手作業で塗り上げます。納得のいく作業しか行わないという信念で、社員一丸となって取り組んでいます。</p></div></article></div>
+  <div class="hands"><p class="hands-h rv">見えなくなるところに、手間をかける。</p><div class="hands-row"><figure class="rv dl1"><img src="../sample/img/waterproof2.jpg" alt="防水の下地づくり" loading="lazy"><figcaption>防水は、下地づくりから丁寧に</figcaption></figure><figure class="rv dl2"><img src="../sample/img/hero.jpg" alt="仕上げ塗り" loading="lazy"><figcaption>下塗り・中塗り・上塗りの3回塗り</figcaption></figure><figure class="rv dl3"><img src="../sample/img/house4.jpg" alt="完成した外観" loading="lazy"><figcaption>仕上がりは、お客様と一緒に確認</figcaption></figure></div></div>
+</div></section><section class="sec s-service" id="service"><div class="wrap">
+  <header class="sh rv"><p class="en">SERVICE</p><h2>工事の内容</h2><p class="lead">戸建ての塗り替えから、屋根、防水、マンション・店舗まで。</p></header>
+  <div class="svcs"><a class="svc rv dl1" href="#contact"><img src="../sample/img/house4.jpg" alt="" loading="lazy"><span class="bd"><span class="s-en">WALL</span><b>外壁塗装</b><span class="s-tx">色あせ・ひび割れ・チョーキングが気になったら。</span><span class="s-more">相談する →</span></span></a><a class="svc rv dl2" href="#contact"><img src="../sample/img/hero.jpg" alt="" loading="lazy"><span class="bd"><span class="s-en">ROOF</span><b>屋根塗装・補修</b><span class="s-tx">遮熱塗料で、夏の暑さ対策にも。</span><span class="s-more">相談する →</span></span></a><a class="svc rv dl3" href="#contact"><img src="../sample/img/waterproof.jpg" alt="" loading="lazy"><span class="bd"><span class="s-en">WATERPROOF</span><b>屋上・ベランダ防水</b><span class="s-tx">雨もれの前に、早めの点検を。</span><span class="s-more">相談する →</span></span></a><a class="svc rv dl4" href="#contact"><img src="../sample/img/house3.jpg" alt="" loading="lazy"><span class="bd"><span class="s-en">BUILDING</span><b>マンション・店舗</b><span class="s-tx">住みながら・営業しながらの工事にも対応。</span><span class="s-more">相談する →</span></span></a></div>
+</div></section><section class="sec s-message"><div class="wrap msg">
+  <div class="m-img rv"><div class="reveal-img"><img src="../sample/img/color.jpg" alt=" スズシン塗装店" loading="lazy"></div><p class="m-name"><small></small>スズシン塗装店</p></div>
+  <div class="m-tx rv dl1"><p class="en">MESSAGE</p><h2>10年後に「頼んでよかった」と言っていただける仕事を</h2><p>塗装は、仕上がった直後よりも、何年もたってから差が出る工事です。だからこそ私たちは、見えなくなる下地の処理にいちばん時間をかけています。</p><p>創業から、地元東三河でただ直向きに信頼を築いてきました。工事が終わったあとも、気になることがあれば気軽に声をかけていただける、そんな近くの塗装屋でありたいと思っています。</p></div>
+</div></section><section class="sec s-flow"><div class="wrap"><header class="sh rv"><p class="en">FLOW</p><h2>ご依頼の流れ</h2><p class="lead">はじめての方にも安心していただけるよう、工事の前にしっかりご説明します。</p></header><ol class="flow"><li class="rv dl1"><span class="f-big" aria-hidden="true">01</span><span class="f-no">STEP 1</span><h3>お問い合わせ</h3><p>お電話かフォームから、お気軽にご連絡ください。</p></li><li class="rv dl2"><span class="f-big" aria-hidden="true">02</span><span class="f-no">STEP 2</span><h3>現地調査</h3><p>建物の状態を確かめ、ご要望をうかがいます。</p></li><li class="rv dl3"><span class="f-big" aria-hidden="true">03</span><span class="f-no">STEP 3</span><h3>ご提案・お見積り</h3><p>塗料や工法、色まで、建物に合った方法をご説明します。</p></li><li class="rv dl4"><span class="f-big" aria-hidden="true">04</span><span class="f-no">STEP 4</span><h3>施工・お引き渡し</h3><p>自社の職人が丁寧に仕上げ、一緒に確認します。</p></li></ol></div></section><section class="sec s-profile" id="company"><div class="wrap"><header class="sh rv"><p class="en">COMPANY</p><h2>会社概要</h2></header><table class="info rv"><tr><th>会社名</th><td>スズシン塗装店</td></tr><tr><th>代表者</th><td> スズシン塗装店</td></tr><tr><th>所在地</th><td>〒441-0105 愛知県豊川市伊奈町新町183</td></tr><tr><th>電話</th><td>TEL 0533-74-6545</td></tr><tr><th>事業内容</th><td>外壁塗装・屋根塗装・防水工事・シーリング工事・各種補修工事</td></tr><tr><th>対応エリア</th><td>豊川市・豊橋市・田原市・新城市・蒲郡市など東三河全域</td></tr></table></div></section></main><section class="cta" id="contact">
+  <div class="wrap">
+    <div class="rv"><p class="en">CONTACT</p><h2>まずは、建物の状態を<br>見せてください。</h2><p>現地を拝見して、塗装で良いのか、補修や防水が必要なのか、建物の状態とご予算に合った方法を正直にご提案します。お見積りは無料です。</p></div>
+    <div class="acts rv dl1">
+      <a class="btn btn-main" href="#cf"><span class="tag">無料</span>フォームで相談する <span class="arw">→</span></a>
+      <a class="tel-btn" href="tel:0533746545"><small>お電話でのご相談</small><b>0533-74-6545</b></a>
+    </div>
+  </div>
+</section><section class="sec s-contact"><div class="wrap">
+  <header class="sh rv"><p class="en">FORM</p><h2>無料診断・お見積りのお申し込み</h2><p class="lead">24時間受付。写真を送っていただくと、状態を見てからご連絡できます。</p></header>
+  <div class="demo-try rv">
+    <p class="dt-h">このフォームは、実際に動きます</p>
+    <p>送信すると、その場で <b>①問い合わせ台帳への記録</b> <b>②カレンダーへの現地調査の登録</b> <b>③お客様への自動返信メール</b> が動きます。ご自身のメールアドレスで、ぜひお試しください。お名前はテスト用のもので大丈夫です。</p>
+    <p class="dt-s">※見本のため、通知は合同会社ライズカラーに届きます。いただいた内容は動作確認以外には使いません。</p>
+  </div>
+  <form class="cf rv" id="cf" novalidate>
+    <div class="row"><span class="t">ご相談の内容</span><div class="radios"><label><input type="radio" name="kind" value="外壁塗装" checked> 外壁塗装</label><label><input type="radio" name="kind" value="屋根塗装・補修"> 屋根塗装・補修</label><label><input type="radio" name="kind" value="防水工事"> 防水工事</label><label><input type="radio" name="kind" value="その他"> その他</label></div></div>
+    <div class="row"><label class="t" for="nm">お名前 <span class="req">必須</span></label><input type="text" id="nm" autocomplete="name" maxlength="40" required></div>
+    <div class="row"><label class="t" for="em">メールアドレス <span class="req">必須</span></label><input type="email" id="em" autocomplete="email" maxlength="120" required></div>
+    <div class="row"><label class="t" for="tl">お電話番号</label><input type="tel" id="tl" autocomplete="tel" maxlength="20"></div>
+    <div class="row two-col"><div><label class="t" for="dt">現地調査のご希望日 <span class="req">必須</span></label><input type="date" id="dt" required></div><div><label class="t" for="sl">ご希望の時間帯 <span class="req">必須</span></label><select id="sl" required><option value="">選んでください</option><option>9:00〜10:00</option><option>10:30〜11:30</option><option>13:00〜14:00</option><option>14:30〜15:30</option><option>16:00〜17:00</option></select></div></div>
+    <div class="row"><label class="t" for="ph">気になる箇所の写真 <span class="opt">任意</span></label><label class="photo" for="ph"><input type="file" id="ph" accept="image/*"><span class="ph-box" id="phbox"><span class="ph-plus">＋</span><span>タップして写真を選ぶ(1枚)</span></span></label></div>
+    <div class="row"><label class="t" for="ms">ご相談内容</label><textarea id="ms" maxlength="1000" placeholder="例:築15年の戸建てです。外壁の色あせが気になっています。"></textarea></div>
+    <div class="hp" aria-hidden="true"><label>空欄のままにしてください<input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="send"><button class="btn btn-main" type="submit" id="sendbtn"><span class="tag">無料</span>この内容で申し込む <span class="arw">→</span></button></div>
+    <p class="err" id="err" role="alert" hidden></p>
+  </form>
+
+  <div class="demo-result" id="result" hidden tabindex="-1">
+    <p class="dr-ok">送信しました。いま、裏側でこれだけのことが自動で動きました。</p>
+    <div class="dr-grid">
+      <article class="dr-card"><p class="dr-no">01</p><h3>問い合わせ台帳に記録</h3><p class="dr-tx">スプレッドシートの一覧表に、1行追加されました。親方はスマホで、いつでも一覧を見られます。</p>
+        <div class="dr-sheet" role="table" aria-label="台帳に記録された内容"><div class="r h" role="row"><span>No.</span><span>受付</span><span>お名前</span><span>現地調査</span><span>状況</span></div><div class="r" role="row"><span id="r-no"></span><span id="r-at"></span><span id="r-nm"></span><span id="r-dt"></span><span class="st">未対応</span></div></div></article>
+      <article class="dr-card"><p class="dr-no">02</p><h3>カレンダーに現地調査を登録</h3><p class="dr-tx">ご希望の日時が、Googleカレンダーに予定として入りました。電話や内容のメモも予定の中に入っています。</p>
+        <div class="dr-cal"><div class="day"><small id="c-m"></small><b id="c-d"></b><small id="c-w"></small></div><div class="ev"><small id="c-t"></small><b id="c-n"></b></div></div></article>
+      <article class="dr-card"><p class="dr-no">03</p><h3>お客様に自動返信メール</h3><p class="dr-tx" id="m-tx"></p></article>
+      <article class="dr-card"><p class="dr-no">04</p><h3>親方のスマホに通知</h3><p class="dr-tx">新しい問い合わせが入ったことを、すぐにメールでお知らせします。現場にいても、取りこぼしません。<br><small>(見本では、ライズカラーに通知が届いています)</small></p></article>
+    </div>
+    <p class="dr-foot">現場作業中でも、お客様は24時間申し込めて、親方の手元には一覧と予定が自動でそろいます。</p>
+  </div>
+</div></section><footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div><p class="fname">スズシン塗装店</p><p>〒441-0105 愛知県豊川市伊奈町新町183<br>フリーダイヤル 0533-74-6545／TEL 000-000-0000</p></div>
+      <nav class="fnav" aria-label="フッターメニュー"><a href="#works">施工実績</a><a href="#reasons">選ばれる理由</a><a href="#service">工事の内容</a><a href="#company">会社概要</a><a href="#contact">お問い合わせ</a></nav>
+    </div>
+    <p class="copy">© 2026 スズシン塗装店 All Rights Reserved.</p>
+  </div>
+</footer>
+<div class="sp-bar"><a class="t" href="tel:0533746545"><small>お電話</small>電話で相談</a><a class="m" href="#cf"><small>かんたん入力</small>無料お見積り</a></div>
+<a class="to-top" href="#" aria-label="ページの先頭へ">↑</a>
+<script src="common.js?v=10260500"></script>
+<script>
+(function(){
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbyVOoWKknoyFsi8tA_uPkdrqLWeCd30p7Y2o92dob5pgNq1wuqIl3TqMvksgooyM1465Q/exec'; // Apps Script のウェブアプリURL(…/exec)
+  var $ = function(id){return document.getElementById(id);};
+  var form = $('cf'), err = $('err'), btn = $('sendbtn'), btnHTML = btn.innerHTML, photo = null;
+  var ref = (new URLSearchParams(location.search).get('r') || '').replace(/[^\w\-]/g,'').slice(0,20);
+  if(ref && GAS_URL){ try{ fetch(GAS_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'view',ref:ref,where:'page',ev:'open'})}); }catch(e){} }
+
+  // 希望日:明日〜60日後
+  var pad = function(n){return ('0'+n).slice(-2);};
+  var ymd = function(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());};
+  var t = new Date(); t.setDate(t.getDate()+1); $('dt').min = ymd(t);
+  var m = new Date(); m.setDate(m.getDate()+60); $('dt').max = ymd(m);
+
+  // 写真:スマホの大きな写真を縮小してから送る
+  $('ph').addEventListener('change', function(){
+    var f = this.files && this.files[0]; photo = null;
+    if(!f){ return; }
+    var img = new Image(), url = URL.createObjectURL(f);
+    img.onload = function(){
+      var s = Math.min(1, 1280/Math.max(img.width,img.height));
+      var c = document.createElement('canvas'); c.width = Math.round(img.width*s); c.height = Math.round(img.height*s);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      var data = c.toDataURL('image/jpeg',0.82);
+      photo = {type:'image/jpeg', data:data.split(',')[1]};
+      $('phbox').innerHTML = '<img src="'+data+'" alt="選んだ写真"><span>写真を変える</span>';
+      URL.revokeObjectURL(url);
+    };
+    img.onerror = function(){ showErr('この写真は読み込めませんでした。別の写真をお選びください。'); };
+    img.src = url;
+  });
+
+  function showErr(msg){ err.textContent = msg; err.hidden = false; }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault(); err.hidden = true;
+    var data = {
+      kind: (form.querySelector('input[name=kind]:checked')||{}).value,
+      name: $('nm').value.trim(), email: $('em').value.trim(), phone: $('tl').value.trim(),
+      date: $('dt').value, slot: $('sl').value, message: $('ms').value.trim(),
+      website: $('website').value, ref: ref, photo: photo
+    };
+    if(!data.name){ return showErr('お名前を入力してください。'); }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){ return showErr('メールアドレスをご確認ください。'); }
+    if(!data.date){ return showErr('現地調査のご希望日を選んでください。'); }
+    if(!data.slot){ return showErr('ご希望の時間帯を選んでください。'); }
+    if(!GAS_URL){ return showErr('ただいま準備中です。'); }
+
+    btn.disabled = true; btn.textContent = '送信しています…';
+    fetch(GAS_URL, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(data)})
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if(!res.ok){ throw new Error(res.error || '送信できませんでした。'); }
+        var d = new Date(res.date+'T00:00:00');
+        $('r-no').textContent = res.no; $('r-at').textContent = res.receivedAt;
+        $('r-nm').textContent = res.name+' 様'; $('r-dt').textContent = res.dateLabel+' '+res.slot.split('〜')[0];
+        $('c-m').textContent = (d.getMonth()+1)+'月'; $('c-d').textContent = d.getDate();
+        $('c-w').textContent = '日月火水木金土'.charAt(d.getDay())+'曜日';
+        $('c-t').textContent = res.slot; $('c-n').textContent = '現地調査 '+res.name+'様';
+        $('m-tx').textContent = res.autoReply
+          ? '入力いただいたメールアドレスに、受付完了のメールをお送りしました。受信箱をご確認ください(迷惑メールに入ることもあります)。'
+          : '本日は自動返信の上限に達したため、メールは送られていません。実際のサイトでは、毎回お客様に届きます。';
+        form.hidden = true; document.querySelector('.demo-try').hidden = true;
+        var box = $('result'); box.hidden = false;
+        requestAnimationFrame(function(){ box.classList.add('show'); });
+        box.focus({preventScroll:true}); box.scrollIntoView({behavior:'smooth', block:'start'});
+      })
+      .catch(function(e){
+        showErr(e && e.message && e.message.indexOf('JSON') < 0 ? e.message : '送信できませんでした。電波の良いところで、もう一度お試しください。');
+        btn.disabled = false; btn.innerHTML = btnHTML;
+      });
+  });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

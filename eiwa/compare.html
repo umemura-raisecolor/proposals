@@ -55,7 +55,7 @@ footer{text-align:center;font-size:13px;color:var(--sub);padding:0 16px 30px}
     <section class="panel new">
       <h2><span>ご提案</span>新しいホームページ</h2>
       <div class="frame"><iframe src="./" title="ご提案のホームページ" loading="lazy"></iframe></div>
-      <a class="open" href="./" target="_blank" rel="noopener">ご提案のホームページを開く(フォームも試せます) →</a>
+      <a class="open" data-demo href="./" target="_blank" rel="noopener">ご提案のホームページを開く(フォームも試せます) →</a>
     </section>
   </div>
   <section class="feat">
@@ -66,7 +66,7 @@ footer{text-align:center;font-size:13px;color:var(--sub);padding:0 16px 30px}
       <div class="card"><span class="no">02</span><b>一覧表に記録・スマホに通知</b><p>お申し込みの内容が自動で一覧表にたまり、親方のスマホにすぐお知らせします。</p></div>
       <div class="card"><span class="no">03</span><b>カレンダーに自動登録</b><p>現地調査の希望日が、Googleカレンダーにそのまま入ります。</p></div>
     </div>
-    <a class="feat-btn" href="./#contact" target="_blank" rel="noopener">実際にお申し込みを試してみる →</a>
+    <a class="feat-btn" data-demo href="./#contact" target="_blank" rel="noopener">実際にお申し込みを試してみる →</a>
   </section>
 </main>
 <footer>合同会社ライズカラー 梅村恵美</footer>
@@ -76,5 +76,16 @@ footer{text-align:center;font-size:13px;color:var(--sub);padding:0 16px 30px}
   fit();window.addEventListener('resize',fit);
 })();
 </script>
+<script>
+(function(){
+  var GAS_URL='https://script.google.com/macros/s/AKfycbyVOoWKknoyFsi8tA_uPkdrqLWeCd30p7Y2o92dob5pgNq1wuqIl3TqMvksgooyM1465Q/exec';
+  var ref=(new URLSearchParams(location.search).get('r')||'').replace(/[^\w\-]/g,'').slice(0,20);
+  if(ref){
+    try{fetch(GAS_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'view',ref:ref,where:'compare',ev:'open'})});}catch(e){}
+    document.querySelectorAll('a[data-demo]').forEach(function(a){var h=a.getAttribute('href');var i=h.indexOf('#');a.href=(i<0?h:h.slice(0,i))+'?r='+ref+(i<0?'':h.slice(i));});
+  }
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66a2b055c38a48da9c19547b0177c091"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
