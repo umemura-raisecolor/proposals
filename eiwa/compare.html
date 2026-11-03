@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>ペイントショップ栄和様 ご提案</title>
+<style>
+:root{--ink:#14213d;--sub:#5b6577;--line:#dde2ea;--bg:#f4f6f9;--accent:#c9a24a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7}
+header{background:var(--ink);color:#fff;padding:28px 16px 30px;text-align:center}
+header small{display:block;letter-spacing:.18em;font-size:12px;color:var(--accent)}
+header h1{margin:6px 0 0;font-size:clamp(20px,3.4vw,28px);font-weight:700}
+header p{margin:8px 0 0;font-size:15px;color:#cfd6e3}
+main{max-width:1240px;margin:0 auto;padding:28px 16px 40px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.panel h2{margin:0;padding:14px 18px;font-size:17px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.panel h2 span{font-size:12px;font-weight:700;padding:3px 10px;border-radius:3px;background:#e8ebf0;color:var(--sub)}
+.panel.new h2 span{background:var(--ink);color:#fff}
+.frame{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#eee}
+.frame iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0}
+.panel a.open{display:block;padding:12px 18px;font-size:15px;color:var(--ink);font-weight:700;text-decoration:none;border-top:1px solid var(--line)}
+.panel a.open:hover{background:#f7f8fa}
+.note{margin:26px 0 0;background:#fff;border-left:4px solid var(--accent);padding:18px 20px;font-size:16px}
+.note b{display:block;margin-bottom:6px}
+.note ul{margin:0;padding-left:1.2em}
+footer{text-align:center;font-size:13px;color:var(--sub);padding:0 16px 30px}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <small>FIRST VIEW</small>
+  <h1>ペイントショップ栄和様 ホームページのご提案</h1>
+  <p>今のホームページと、ご提案のホームページを並べました。</p>
+</header>
+<main>
+  <div class="grid">
+    <section class="panel">
+      <h2><span>現在</span>今のホームページ</h2>
+      <div class="frame"><iframe src="https://shop-eiwa.com/" title="今のホームページ" loading="lazy" tabindex="-1"></iframe></div>
+      <a class="open" href="https://shop-eiwa.com/" target="_blank" rel="noopener">今のホームページを開く →</a>
+    </section>
+    <section class="panel new">
+      <h2><span>ご提案</span>新しいホームページ</h2>
+      <div class="frame"><iframe src="./" title="ご提案のホームページ" loading="lazy"></iframe></div>
+      <a class="open" href="./" target="_blank" rel="noopener">ご提案のホームページを開く(フォームも試せます) →</a>
+    </section>
+  </div>
+  <div class="note">
+    <b>新しいホームページでできること</b>
+    <ul>
+      <li>お客様のお申し込みを24時間受け付け、すぐに自動で受付メールを返信</li>
+      <li>お申し込み内容を一覧表に自動で記録し、スマホにお知らせ</li>
+      <li>現地調査の希望日をGoogleカレンダーに自動で登録</li>
+    </ul>
+  </div>
+</main>
+<footer>合同会社ライズカラー 梅村恵美</footer>
+<script>
+(function(){
+  function fit(){document.querySelectorAll('.frame').forEach(function(f){var s=f.clientWidth/1280;var i=f.querySelector('iframe');i.style.transform='scale('+s+')';});}
+  fit();window.addEventListener('resize',fit);
+})();
+</script>
+</body>
+</html>
