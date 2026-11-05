@@ -87,5 +87,5 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
       entry.target.classList.add('visible'); observer.unobserve(entry.target);
     }
   });
-  for (const section of document.querySelectorAll('.section-head')) { section.classList.add('reveal'); observer.observe(section); }
+  for (const [i,section] of [...document.querySelectorAll('.section-head, .reason, .project, .craft > div:last-child')].entries()) { section.classList.add('reveal'); section.style.setProperty('--stagger', (i % 3) * 130 + 'ms'); observer.observe(section); }
 }
