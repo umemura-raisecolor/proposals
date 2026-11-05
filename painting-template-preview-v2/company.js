@@ -1,0 +1,1 @@
+window.PAINT_PREVIEW={name:'青庭塗装',headline:['塗り替えに、','新しい景色を。'],lead:'街に帰ってきたとき、ふと見上げたくなる家へ。色を選ぶ時間から、これからの日々を考える。',images:{hero:'assets/hero.webp',house:'assets/house.webp',craft:'assets/craft.webp',detail:'assets/detail.webp'}};
